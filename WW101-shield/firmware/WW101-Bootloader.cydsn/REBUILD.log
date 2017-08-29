@@ -1,0 +1,101 @@
+--------------- Rebuild Started: 02/24/2017 22:36:29 Project: WW101-Bootloader, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\main.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\cymetadata.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\I2C_Slave.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_I2C_INT.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_I2C.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_I2C_BOOT.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_I2C_SLAVE.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_PM.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_BOOT.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\Bootloader.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\Bootloader_Status1.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\Bootloader_Status1_PM.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\PWM_1.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\PWM_1_PM.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\Bootloader_Status2.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\Bootloader_Status2_PM.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\PWM_2.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\PWM_2_PM.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\Clock_1.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\Clock_2.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_SCBCLK.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_sda.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_sda_PM.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_scl.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_scl_PM.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_SCB_IRQ.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\CyFlash.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\CyLib.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\cyPm.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\cyutils.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\CyBootAsmGnu.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\CyDMA.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\CyLFClk.o"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\WW101-Bootloader.hex"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\WW101-Bootloader.elf"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\WW101-Bootloader.map"
+Deleting file ".\WW101-Bootloader.cycdx"
+Deleting file ".\WW101-Bootloader.rpt"
+Deleting file ".\CortexM0p\ARM_GCC_541\Debug\.deps\SOURCE_C__ARM_GCC_GENERIC.P"
+cydsfit.exe -.appdatapath "C:\Users\Alan\AppData\Local\Cypress Semiconductor\PSoC Creator\4.1" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p "\\vmware-host\Shared Folders\Documents\OneDrive\cypress\WA101\ww101-shield\firmware\WW101-Bootloader.cydsn\WW101-Bootloader.cyprj" -d CY8C4A45AZI-483 -s "\\vmware-host\Shared Folders\Documents\OneDrive\cypress\WA101\ww101-shield\firmware\WW101-Bootloader.cydsn\Generated_Source\PSoC4" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+HDL Generation...
+Synthesis...
+Tech Mapping...
+Analog Placement...
+Analog Routing...
+Analog Code Generation...
+Digital Placement...
+Digital Routing...
+Bitstream Generation...
+Bitstream Verification...
+Static timing analysis...
+API Generation...
+Dependency Generation...
+Cleanup...
+arm-none-eabi-gcc.exe -c main.c -o .\CortexM0p\ARM_GCC_541\Debug\main.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\cyfitter_cfg.c -o .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/cyfitter_cfg.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\cymetadata.c -o .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/cymetadata.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_Slave.c -o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/I2C_Slave.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_Slave_I2C_INT.c -o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_I2C_INT.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/I2C_Slave_I2C_INT.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_Slave_I2C.c -o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_I2C.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/I2C_Slave_I2C.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_Slave_I2C_BOOT.c -o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_I2C_BOOT.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/I2C_Slave_I2C_BOOT.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_Slave_I2C_SLAVE.c -o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_I2C_SLAVE.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/I2C_Slave_I2C_SLAVE.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_Slave_PM.c -o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_PM.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/I2C_Slave_PM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_Slave_BOOT.c -o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_BOOT.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/I2C_Slave_BOOT.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\Bootloader.c -o .\CortexM0p\ARM_GCC_541\Debug\Bootloader.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/Bootloader.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\Bootloader_Status1.c -o .\CortexM0p\ARM_GCC_541\Debug\Bootloader_Status1.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/Bootloader_Status1.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\Bootloader_Status1_PM.c -o .\CortexM0p\ARM_GCC_541\Debug\Bootloader_Status1_PM.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/Bootloader_Status1_PM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\PWM_1.c -o .\CortexM0p\ARM_GCC_541\Debug\PWM_1.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/PWM_1.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\PWM_1_PM.c -o .\CortexM0p\ARM_GCC_541\Debug\PWM_1_PM.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/PWM_1_PM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\Bootloader_Status2.c -o .\CortexM0p\ARM_GCC_541\Debug\Bootloader_Status2.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/Bootloader_Status2.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\Bootloader_Status2_PM.c -o .\CortexM0p\ARM_GCC_541\Debug\Bootloader_Status2_PM.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/Bootloader_Status2_PM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\PWM_2.c -o .\CortexM0p\ARM_GCC_541\Debug\PWM_2.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/PWM_2.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\PWM_2_PM.c -o .\CortexM0p\ARM_GCC_541\Debug\PWM_2_PM.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/PWM_2_PM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\Clock_1.c -o .\CortexM0p\ARM_GCC_541\Debug\Clock_1.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/Clock_1.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\Clock_2.c -o .\CortexM0p\ARM_GCC_541\Debug\Clock_2.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/Clock_2.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_Slave_SCBCLK.c -o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_SCBCLK.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/I2C_Slave_SCBCLK.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_Slave_sda.c -o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_sda.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/I2C_Slave_sda.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_Slave_sda_PM.c -o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_sda_PM.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/I2C_Slave_sda_PM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_Slave_scl.c -o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_scl.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/I2C_Slave_scl.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_Slave_scl_PM.c -o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_scl_PM.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/I2C_Slave_scl_PM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_Slave_SCB_IRQ.c -o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_SCB_IRQ.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/I2C_Slave_SCB_IRQ.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\Cm0plusStart.c -o .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/Cm0plusStart.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\CyFlash.c -o .\CortexM0p\ARM_GCC_541\Debug\CyFlash.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/CyFlash.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\CyLib.c -o .\CortexM0p\ARM_GCC_541\Debug\CyLib.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/CyLib.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\cyPm.c -o .\CortexM0p\ARM_GCC_541\Debug\cyPm.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/cyPm.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\cyutils.c -o .\CortexM0p\ARM_GCC_541\Debug\cyutils.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/cyutils.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\CyBootAsmGnu.S -o .\CortexM0p\ARM_GCC_541\Debug\CyBootAsmGnu.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/CyBootAsmGnu.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\CyDMA.c -o .\CortexM0p\ARM_GCC_541\Debug\CyDMA.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/CyDMA.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\CyLFClk.c -o .\CortexM0p\ARM_GCC_541\Debug\CyLFClk.o -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/CyLFClk.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og
+arm-none-eabi-ar.exe -rs .\CortexM0p\ARM_GCC_541\Debug\WW101-Bootloader.a .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave.o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_I2C_INT.o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_I2C.o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_I2C_BOOT.o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_I2C_SLAVE.o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_PM.o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_BOOT.o .\CortexM0p\ARM_GCC_541\Debug\Bootloader.o .\CortexM0p\ARM_GCC_541\Debug\Bootloader_Status1.o .\CortexM0p\ARM_GCC_541\Debug\Bootloader_Status1_PM.o .\CortexM0p\ARM_GCC_541\Debug\PWM_1.o .\CortexM0p\ARM_GCC_541\Debug\PWM_1_PM.o .\CortexM0p\ARM_GCC_541\Debug\Bootloader_Status2.o .\CortexM0p\ARM_GCC_541\Debug\Bootloader_Status2_PM.o .\CortexM0p\ARM_GCC_541\Debug\PWM_2.o .\CortexM0p\ARM_GCC_541\Debug\PWM_2_PM.o .\CortexM0p\ARM_GCC_541\Debug\Clock_1.o .\CortexM0p\ARM_GCC_541\Debug\Clock_2.o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_SCBCLK.o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_sda.o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_sda_PM.o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_scl.o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_scl_PM.o .\CortexM0p\ARM_GCC_541\Debug\I2C_Slave_SCB_IRQ.o .\CortexM0p\ARM_GCC_541\Debug\CyFlash.o .\CortexM0p\ARM_GCC_541\Debug\CyLib.o .\CortexM0p\ARM_GCC_541\Debug\cyPm.o .\CortexM0p\ARM_GCC_541\Debug\cyutils.o .\CortexM0p\ARM_GCC_541\Debug\CyBootAsmGnu.o .\CortexM0p\ARM_GCC_541\Debug\CyDMA.o .\CortexM0p\ARM_GCC_541\Debug\CyLFClk.o
+arm-none-eabi-ar.exe: creating .\CortexM0p\ARM_GCC_541\Debug\WW101-Bootloader.a
+arm-none-eabi-gcc.exe -Wl,--start-group -o "\\vmware-host\Shared Folders\Documents\OneDrive\cypress\WA101\ww101-shield\firmware\WW101-Bootloader.cydsn\CortexM0p\ARM_GCC_541\Debug\WW101-Bootloader.elf" .\CortexM0p\ARM_GCC_541\Debug\main.o .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o .\CortexM0p\ARM_GCC_541\Debug\WW101-Bootloader.a -mcpu=cortex-m0plus -mthumb -L Generated_Source\PSoC4 -Wl,-Map,.\CortexM0p\ARM_GCC_541\Debug/WW101-Bootloader.map -T Generated_Source\PSoC4\cm0plusgcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
+cyelftool.exe -P "\\vmware-host\Shared Folders\Documents\OneDrive\cypress\WA101\ww101-shield\firmware\WW101-Bootloader.cydsn\CortexM0p\ARM_GCC_541\Debug\WW101-Bootloader.elf" --flash_row_size 128 --flash_size 32768 --flash_offset 0x00000000 --size_var_name Bootloader_SizeBytes --checksum_var_name Bootloader_Checksum --ignore 0xC0
+cyelftool.exe -S "\\vmware-host\Shared Folders\Documents\OneDrive\cypress\WA101\ww101-shield\firmware\WW101-Bootloader.cydsn\CortexM0p\ARM_GCC_541\Debug\WW101-Bootloader.elf"
+Flash used: 7053 of 32768 bytes (21.5 %). Application: 6925 bytes. Metadata: 128 bytes.
+SRAM used: 1816 of 4096 bytes (44.3 %). Stack: 1024 bytes. Heap: 256 bytes.
+--------------- Rebuild Succeeded: 02/24/2017 22:37:15 ---------------
