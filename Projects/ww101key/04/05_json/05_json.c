@@ -1,3 +1,4 @@
+/* Use the JSON_parser library */
 #include <wiced.h>
 #include <JSON.h>
 #include <stdint.h>

@@ -1,6 +1,6 @@
-NAME := App_WW101KEY_07b_05_subcriber
+NAME := App_WW101KEY_07d_01_publisher
 
-$(NAME)_SOURCES := 05_subscriber.c
+$(NAME)_SOURCES := 01_publisher.c
 
 $(NAME)_COMPONENTS := protocols/MQTT
 

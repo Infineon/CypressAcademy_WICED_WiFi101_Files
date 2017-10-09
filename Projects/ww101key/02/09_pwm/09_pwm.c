@@ -11,8 +11,8 @@ void application_start( )
 
     wiced_init();	/* Initialize the WICED device */
 
-    wiced_gpio_deinit(WICED_LED1); // For base board red LED
     wiced_gpio_deinit(WICED_LED2); // For shield
+    wiced_gpio_deinit(WICED_LED1); // For base board red LED
 
     while ( 1 )
     {

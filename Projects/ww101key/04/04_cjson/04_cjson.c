@@ -1,3 +1,4 @@
+/* Use the cJSON parser library */
 #include <wiced.h>
 #include <cJSON.h>
 #include <stdint.h>

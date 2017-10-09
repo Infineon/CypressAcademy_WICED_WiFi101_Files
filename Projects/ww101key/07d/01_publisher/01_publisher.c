@@ -38,8 +38,8 @@
 /******************************************************
  *                      Macros
  ******************************************************/
-//#define MQTT_BROKER_ADDRESS                 "amk6m51qrxr2u.iot.us-east-1.amazonaws.com"
-#define MQTT_BROKER_ADDRESS                 "data.iot.us-east-1.amazonaws.com"
+#define MQTT_BROKER_ADDRESS                 "amk6m51qrxr2u.iot.us-east-1.amazonaws.com"
+//#define MQTT_BROKER_ADDRESS                 "data.iot.us-east-1.amazonaws.com"
 
 #define WICED_TOPIC                         "GJL_TestTopic"
 #define CLIENT_ID                           "wiced_publisher_aws_GJL"
