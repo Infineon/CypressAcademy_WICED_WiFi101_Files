@@ -19,7 +19,7 @@
 
 static void  event_handler( http_client_t* client, http_event_t event, http_response_t* response );
 static void  print_data   ( char* data, uint32_t length );
-static void display_temperature(void);
+static void  update_display(char* line1, char* line2);
 
 static const char root_ca_certificate[] =
         "-----BEGIN CERTIFICATE-----\n"
@@ -68,8 +68,8 @@ http_header_field_t header[1]; // Array of headers
 
 u8g_t display;
 
-char tempStrC[10];  /* Temperature string to print in C */
-char tempStrF[10];  /* Temperature string to print in F */
+char tempStrC[15];  /* String for temperature in C */
+char tempStrF[15];  /* String for temperature in F */
 
 /******************************************************
  *               Function Definitions
@@ -168,6 +168,9 @@ void application_start( void )
 
     WPRINT_APP_INFO( ( "Press WICED_BUTTON1 to send Temperature and Humidity Data\n" ) );
 
+    /* Display ready message on OLED */
+    update_display("Press Button", "to Update");
+
     while(1)
     {
         /* Wait for a button press */
@@ -176,6 +179,10 @@ void application_start( void )
         /* Read temperature from shield over I2C */
         wiced_i2c_read(&i2cDevice, WICED_I2C_START_FLAG | WICED_I2C_STOP_FLAG, &rx_buffer, sizeof(rx_buffer));
         WPRINT_APP_INFO(("Temperature: %.1f\n", rx_buffer.temp)); /* Print temperature to terminal */
+        /* Display ready message on OLED */
+        update_display("Updating","");
+
+        /* Save temperature in C for line 1 of display */
         snprintf(tempStrC, sizeof(tempStrC), "C: %.1f",rx_buffer.temp); /* Format temperature in C for the OLED */
 
         /* Connect to the server */
@@ -243,7 +250,7 @@ static void event_handler( http_client_t* client, http_event_t event, http_respo
                cJSON *root =   cJSON_Parse((const char*)response->payload);
                snprintf(tempStrF, sizeof(tempStrF), "F: %s",cJSON_GetObjectItem(root,"result")->valuestring);
                cJSON_Delete(root);
-               display_temperature();
+               update_display(tempStrC, tempStrF);
             }
             break;
         }
@@ -265,12 +272,12 @@ static void print_data( char* data, uint32_t length )
 
 /* Helper function to display the temperature on the OLED */
 /* The row to show the text at on the display is the argument pos */
-static void display_temperature(void)
+static void update_display(char* line1, char* line2)
 {
     /* Send data to the display */
     u8g_FirstPage(&display);
     do {
-        u8g_DrawStr(&display, 0, 5,  tempStrC);
-        u8g_DrawStr(&display, 0, 20,  tempStrF);
+        u8g_DrawStr(&display, 0, 5,  line1);
+        u8g_DrawStr(&display, 0, 20,  line2);
     } while (u8g_NextPage(&display));
 }
