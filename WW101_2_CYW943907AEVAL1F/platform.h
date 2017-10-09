@@ -34,13 +34,13 @@ PSoC AFE Shield Resources:
 +-----------------------------------------------------------------------------------------------+
 | WICED_NAME    | WICED Pin Name | Arduino Header | Shield Connection     | Alternate Functions |
 +---------------+----------------+----------------+-----------------------+---------------------+
-|WICED_BUTTON1  | WICED_GPIO_12  | D5             | Button MB0            | WICED_PWM_3         |
+|WICED_BUTTON1  | WICED_GPIO_10  | D4             | MB1                   | N/A                 |
 +---------------+----------------+----------------+-----------------------+---------------------+
-|WICED_BUTTON2  | WICED_GPIO_3   | D3             | Button MB1            | WICED_PWM_6         |
+|WICED_BUTTON2  | WICED_GPIO_8   | D12            | MB2                   | N/A                 |
 +---------------+----------------+----------------+-----------------------+---------------------+
-|WICED_LED1     | WICED_GPIO_7   | D10            | LED0                  | WICED_PWM_2         |
+|WICED_LED1     | WICED_GPIO_12  | D5             | LED1                  | WICED_PWM_3         |
 +---------------+----------------+----------------+-----------------------+---------------------+
-|WICED_LED2     | WICED_GPIO_17  | D9             | LED1                  | WICED_PWM_5         |
+|WICED_LED2     | WICED_GPIO_6   | D11            | LED2                  | WICED_PWM_1         |
 +---------------+----------------+----------------+-----------------------+---------------------+
 |WICED_ADC_1    | N/A            | A0             | Ambient Light Sensor  | N/A                 |
 +---------------+----------------+----------------+-----------------------+---------------------+
@@ -380,10 +380,10 @@ typedef enum
 #define WICED_PLATFORM_BUTTON_COUNT  ( 2 )
 
 /* LEDs and buttons on the shield */
-#define WICED_LED1       ( WICED_GPIO_7 )
-#define WICED_LED2       ( WICED_GPIO_17 )
-#define WICED_BUTTON1    ( WICED_GPIO_12 )
-#define WICED_BUTTON2    ( WICED_GPIO_3 )
+#define WICED_LED1       ( WICED_GPIO_12 )
+#define WICED_LED2       ( WICED_GPIO_6  )
+#define WICED_BUTTON1    ( WICED_GPIO_10 )
+#define WICED_BUTTON2    ( WICED_GPIO_8  )
 
 #define WICED_GMAC_PHY_RESET (WICED_GPIO_15)
 
