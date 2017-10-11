@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 1
 
 
    1              		.syntax unified
@@ -18,13 +18,13 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
   15              		.file	"cymetadata.c"
   16              		.text
   17              	.Ltext0:
-  18              		.section	.gnu.lto_.profile.1a3fd8e,"",%progbits
+  18              		.section	.gnu.lto_.profile.b559f69,"",%progbits
   19 0000 789C6361 		.ascii	"x\234ca`\004B \000\000\0009\000\007"
   19      60044220 
   19      00000039 
   19      0007
   20              		.text
-  21              		.section	.gnu.lto_.icf.1a3fd8e,"",%progbits
+  21              		.section	.gnu.lto_.icf.b559f69,"",%progbits
   22 0000 789C6361 		.ascii	"x\234ca`d\000\001\021\006\004`fX\375\342\375&\026\306"
   22      60640001 
   22      11060460 
@@ -36,29 +36,29 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
   23      0300682B 
   23      096C
   24              		.text
-  25              		.section	.gnu.lto_.jmpfuncs.1a3fd8e,"",%progbits
+  25              		.section	.gnu.lto_.jmpfuncs.b559f69,"",%progbits
   26 0000 789C6361 		.ascii	"x\234ca`d\000\001&\006d\000\000\000\236\000\010"
   26      60640001 
   26      26066400 
   26      00009E00 
   26      08
   27              		.text
-  28              		.section	.gnu.lto_.inline.1a3fd8e,"",%progbits
+  28              		.section	.gnu.lto_.inline.b559f69,"",%progbits
   29 0000 789C6361 		.ascii	"x\234ca`d\000\001&\006d\000\000\000\236\000\010"
   29      60640001 
   29      26066400 
   29      00009E00 
   29      08
   30              		.text
-  31              		.section	.gnu.lto_.pureconst.1a3fd8e,"",%progbits
+  31              		.section	.gnu.lto_.pureconst.b559f69,"",%progbits
   32 0000 789C6361 		.ascii	"x\234ca`\004B \000\000\0009\000\007"
   32      60044220 
   32      00000039 
   32      0007
   33              		.text
-  34              		.section	.gnu.lto_cy_meta_chipprotect.1a3fd8e,"",%progbits
+  34              		.section	.gnu.lto_cy_meta_chipprotect.b559f69,"",%progbits
   35 0000 789C6361 		.ascii	"x\234ca`d\000\001] \206\260\030\030\37621n9r\274\215"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 2
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 2
 
 
   35      60640001 
@@ -78,7 +78,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
   38 003c 0000ABA6 		.ascii	"\000\000\253\246\0175"
   38      0F35
   39              		.text
-  40              		.section	.gnu.lto_cy_metadata.1a3fd8e,"",%progbits
+  40              		.section	.gnu.lto_cy_metadata.b559f69,"",%progbits
   41 0000 789C4DCC 		.ascii	"x\234M\314\315J\002Q\024\007\360{\356\365\253L\245\375"
   41      CD4A0251 
   41      1407F07B 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
   48      E778F82A 
   48      9A7E6C78 
   48      BFFAEB38 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 3
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 3
 
 
   49 0094 BD2D89DB 		.ascii	"\275-\211\333\307\340\274\354\324\364_1\360\373c\370"
@@ -147,7 +147,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
   53      883D1D
   54 00ef 79714B   		.ascii	"yqK"
   55              		.text
-  56              		.section	.gnu.lto_cy_meta_flashprotect.1a3fd8e,"",%progbits
+  56              		.section	.gnu.lto_cy_meta_flashprotect.b559f69,"",%progbits
   57 0000 789C3595 		.ascii	"x\2345\225\347[\323W\024\200\0118\352@;\354\266{\357"
   57      E75BD357 
   57      14800938 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
   62      AAD3ED8B 
   62      DB
   63 0072 17C6329E 		.ascii	"\027\3062\236\321|O|\250|\2771L\363]\361\344\210\325"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 4
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 4
 
 
   63      D17C4F7C 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
   74      3A79EBCD 
   74      C49F124F 
   74      4DDB3888 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 5
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 5
 
 
   75 0146 3F29DE60 		.ascii	"?)\336`\213\231\242\335\023\342\315\036{2\337\273\305"
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
   86      ABDBD8DF 
   86      21EEB9
   87 0214 92D447B5 		.ascii	"\222\324G\265\355\342\256\331\252I\262o\023_\3571\016"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 6
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 6
 
 
   87      EDE2AED9 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
   98      1BA2F19F 
   98      292D
   99 02f1 B41A1268 		.ascii	"\264\032\022h\324\247J\267\314\343\271\024\377\211\322"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 7
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 7
 
 
   99      D4A74AB7 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  110      9CFBACD2 
  110      F215
  111 03c4 7F39914F 		.ascii	"\1779\221O+\335\265G\034\274#\247\224\346y\314-\224"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 8
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 8
 
 
  111      2BDDB547 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  122      03701DAE 
  122      413F5C85 
  122      2BF0295C 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 9
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 9
 
 
  123 0499 4BD007BD 		.ascii	"K\320\007\275p\021.@\017\234\207sp\026\316\300i8\005"
@@ -518,7 +518,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  129      D0
  130 0519 8D       		.ascii	"\215"
  131              		.text
- 132              		.section	.gnu.lto_.symbol_nodes.1a3fd8e,"",%progbits
+ 132              		.section	.gnu.lto_.symbol_nodes.b559f69,"",%progbits
  133 0000 789C6361 		.ascii	"x\234ca`d\260c\000\002V&\206V!\006\275\344\312\344\214"
  133      6064B063 
  133      00025626 
@@ -536,16 +536,16 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  135      CB
  136 0038 1097     		.ascii	"\020\227"
  137              		.text
- 138              		.section	.gnu.lto_.refs.1a3fd8e,"",%progbits
+ 138              		.section	.gnu.lto_.refs.b559f69,"",%progbits
  139 0000 789C6361 		.ascii	"x\234ca`\004B \000\000\0009\000\007"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 10
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 10
 
 
  139      60044220 
  139      00000039 
  139      0007
  140              		.text
- 141              		.section	.gnu.lto_.decls.1a3fd8e,"",%progbits
+ 141              		.section	.gnu.lto_.decls.b559f69,"",%progbits
  142 0000 789CBD54 		.ascii	"x\234\275TkL\024W\024\236\263\263<v\026\201lM\323\264"
  142      6B4C1457 
  142      149EB3B3 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  152 00b7 0D601120 		.ascii	"\015`\021 \026\315\236\035\025\005<3\215h\316v\346O"
  152      16CD9E1D 
  152      15053C33 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 11
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 11
 
 
  152      8D68CE76 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  163      1360A480 
  163      B2
  164 0195 C6BC7633 		.ascii	"\306\274v3\377\012\005\234\\\3701\023\010\240\032\371"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 12
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 12
 
 
  164      FF0A059C 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  175      010B1C60 
  176 0276 D839A841 		.ascii	"\3309\250Au\351\326;\250w+\254!\227gw\371\242\300\377"
  176      75E9D63B 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 13
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 13
 
 
  176      A8772BAC 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  187      DAA6C9AA 
  187      9D82
  188 0352 1E226C9B 		.ascii	"\036\"l\233&\354y*\354\245\317;\246#\370\317x*\354\265"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 14
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 14
 
 
  188      26EC792A 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  199      294E8FC7 
  199      EBF6
  200 042a 2BB2DF28 		.ascii	"+\262\337(\247H\3368\273\234\276l\2173\213\242\017\377"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 15
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 15
 
 
  200      A748DE38 
@@ -898,10 +898,10 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  211      6E73FF02 
  211      1863C942 
  212              		.text
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 16
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 16
 
 
- 213              		.section	.gnu.lto_.symtab.1a3fd8e,"",%progbits
+ 213              		.section	.gnu.lto_.symtab.b559f69,"",%progbits
  214 0000 63795F6D 		.ascii	"cy_meta_chipprotect\000"
  214      6574615F 
  214      63686970 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  238              		.text
  239              		.cfi_sections	.debug_frame
  240              		.global	cy_meta_chipprotect
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 17
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 17
 
 
  241              		.global	cy_metadata
@@ -1008,17 +1008,17 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  281 000c 1E000000 		.4byte	.LASF15
  282 0010 0C       		.byte	0xc
  283 0011 CC000000 		.4byte	.LASF16
- 284 0015 22010000 		.4byte	.LASF17
+ 284 0015 15010000 		.4byte	.LASF17
  285 0019 00000000 		.4byte	.Ldebug_line0
  286 001d 02       		.uleb128 0x2
  287 001e 01       		.byte	0x1
  288 001f 06       		.byte	0x6
- 289 0020 D1010000 		.4byte	.LASF0
+ 289 0020 B7010000 		.4byte	.LASF0
  290 0024 03       		.uleb128 0x3
  291 0025 00000000 		.4byte	.LASF9
  292 0029 01       		.byte	0x1
  293 002a 1D       		.byte	0x1d
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 18
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 18
 
 
  294 002b 2F000000 		.4byte	0x2f
@@ -1029,7 +1029,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  299 0036 02       		.uleb128 0x2
  300 0037 02       		.byte	0x2
  301 0038 05       		.byte	0x5
- 302 0039 BE010000 		.4byte	.LASF2
+ 302 0039 A4010000 		.4byte	.LASF2
  303 003d 02       		.uleb128 0x2
  304 003e 02       		.byte	0x2
  305 003f 07       		.byte	0x7
@@ -1037,7 +1037,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  307 0044 02       		.uleb128 0x2
  308 0045 04       		.byte	0x4
  309 0046 05       		.byte	0x5
- 310 0047 C8010000 		.4byte	.LASF4
+ 310 0047 AE010000 		.4byte	.LASF4
  311 004b 02       		.uleb128 0x2
  312 004c 04       		.byte	0x4
  313 004d 07       		.byte	0x7
@@ -1045,11 +1045,11 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  315 0052 02       		.uleb128 0x2
  316 0053 08       		.byte	0x8
  317 0054 05       		.byte	0x5
- 318 0055 B0010000 		.4byte	.LASF6
+ 318 0055 96010000 		.4byte	.LASF6
  319 0059 02       		.uleb128 0x2
  320 005a 08       		.byte	0x8
  321 005b 07       		.byte	0x7
- 322 005c 73010000 		.4byte	.LASF7
+ 322 005c 59010000 		.4byte	.LASF7
  323 0060 04       		.uleb128 0x4
  324 0061 04       		.byte	0x4
  325 0062 05       		.byte	0x5
@@ -1057,9 +1057,9 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  327 0067 02       		.uleb128 0x2
  328 0068 04       		.byte	0x4
  329 0069 07       		.byte	0x7
- 330 006a 15010000 		.4byte	.LASF8
+ 330 006a 4C010000 		.4byte	.LASF8
  331 006e 03       		.uleb128 0x3
- 332 006f 8A010000 		.4byte	.LASF10
+ 332 006f 70010000 		.4byte	.LASF10
  333 0073 02       		.byte	0x2
  334 0074 18       		.byte	0x18
  335 0075 24000000 		.4byte	0x24
@@ -1073,12 +1073,12 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  343 0089 02       		.uleb128 0x2
  344 008a 04       		.byte	0x4
  345 008b 07       		.byte	0x7
- 346 008c A7010000 		.4byte	.LASF11
+ 346 008c 8D010000 		.4byte	.LASF11
  347 0090 07       		.uleb128 0x7
  348 0091 6E000000 		.4byte	0x6e
  349 0095 08       		.uleb128 0x8
- 350 0096 92010000 		.4byte	.LASF12
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 19
+ 350 0096 78010000 		.4byte	.LASF12
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 19
 
 
  351 009a 03       		.byte	0x3
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  405 0009 1B       		.uleb128 0x1b
  406 000a 0E       		.uleb128 0xe
  407 000b 10       		.uleb128 0x10
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 20
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 20
 
 
  408 000c 17       		.uleb128 0x17
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  462 0042 00       		.byte	0
  463 0043 00       		.byte	0
  464 0044 07       		.uleb128 0x7
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 21
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 21
 
 
  465 0045 26       		.uleb128 0x26
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  507      352E342E 
  507      31203230 
  507      31363036 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 22
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 22
 
 
  508 0051 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
@@ -1298,59 +1298,57 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 1
  519      7369676E 
  519      65642069 
  519      6E7400
- 520              	.LASF8:
- 521 0115 756E7369 		.ascii	"unsigned int\000"
- 521      676E6564 
- 521      20696E74 
- 521      00
- 522              	.LASF17:
- 523 0122 433A5C47 		.ascii	"C:\\Git\\WW101\\ww101-shield\\kit_firmware\\PSoC_Ex"
- 523      69745C57 
- 523      57313031 
- 523      5C777731 
- 523      30312D73 
- 524 0150 616D706C 		.ascii	"ample_Projects\\TestProgram4M.cydsn\000"
- 524      655F5072 
- 524      6F6A6563 
- 524      74735C54 
- 524      65737450 
+ 520              	.LASF17:
+ 521 0115 433A5C47 		.ascii	"C:\\Git\\WW101\\ww101-shield\\firmware\\TestProgram"
+ 521      69745C57 
+ 521      57313031 
+ 521      5C777731 
+ 521      30312D73 
+ 522 0143 344D2E63 		.ascii	"4M.cydsn\000"
+ 522      7964736E 
+ 522      00
+ 523              	.LASF8:
+ 524 014c 756E7369 		.ascii	"unsigned int\000"
+ 524      676E6564 
+ 524      20696E74 
+ 524      00
  525              	.LASF7:
- 526 0173 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 526 0159 6C6F6E67 		.ascii	"long long unsigned int\000"
  526      206C6F6E 
  526      6720756E 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc8sbVGV.s 			page 23
-
-
  526      7369676E 
  526      65642069 
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\cclGuuag.s 			page 23
+
+
  527              	.LASF10:
- 528 018a 75696E74 		.ascii	"uint8_t\000"
+ 528 0170 75696E74 		.ascii	"uint8_t\000"
  528      385F7400 
  529              	.LASF12:
- 530 0192 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 530 0178 63795F6D 		.ascii	"cy_meta_flashprotect\000"
  530      6574615F 
  530      666C6173 
  530      6870726F 
  530      74656374 
  531              	.LASF11:
- 532 01a7 73697A65 		.ascii	"sizetype\000"
+ 532 018d 73697A65 		.ascii	"sizetype\000"
  532      74797065 
  532      00
  533              	.LASF6:
- 534 01b0 6C6F6E67 		.ascii	"long long int\000"
+ 534 0196 6C6F6E67 		.ascii	"long long int\000"
  534      206C6F6E 
  534      6720696E 
  534      7400
  535              	.LASF2:
- 536 01be 73686F72 		.ascii	"short int\000"
+ 536 01a4 73686F72 		.ascii	"short int\000"
  536      7420696E 
  536      7400
  537              	.LASF4:
- 538 01c8 6C6F6E67 		.ascii	"long int\000"
+ 538 01ae 6C6F6E67 		.ascii	"long int\000"
  538      20696E74 
  538      00
  539              	.LASF0:
- 540 01d1 7369676E 		.ascii	"signed char\000"
+ 540 01b7 7369676E 		.ascii	"signed char\000"
  540      65642063 
  540      68617200 
  541              		.comm	__gnu_lto_v1,1,1

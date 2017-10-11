@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 1
 
 
    1              		.syntax unified
@@ -18,14 +18,14 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
   15              		.file	"I2C_SCBCLK.c"
   16              		.text
   17              	.Ltext0:
-  18              		.section	.gnu.lto_.profile.1a3e65b,"",%progbits
+  18              		.section	.gnu.lto_.profile.b55f34f,"",%progbits
   19 0000 789C6361 		.ascii	"x\234ca`d`a`\000\222r\222\000\000\277\000B"
   19      60646061 
   19      60009272 
   19      920000BF 
   19      0042
   20              		.text
-  21              		.section	.gnu.lto_.icf.1a3e65b,"",%progbits
+  21              		.section	.gnu.lto_.icf.b55f34f,"",%progbits
   22 0000 789C6361 		.ascii	"x\234ca`d\000\001\005\006\004`e\370\276\243\361\001"
   22      60640001 
   22      05060460 
@@ -40,7 +40,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
   24      85870100 
   24      026C0ED2 
   25              		.text
-  26              		.section	.gnu.lto_.jmpfuncs.1a3e65b,"",%progbits
+  26              		.section	.gnu.lto_.jmpfuncs.b55f34f,"",%progbits
   27 0000 789C6361 		.ascii	"x\234ca`d\000\001q\006\004`e`dd\254\007\21231122\327"
   27      60640001 
   27      71060460 
@@ -50,7 +50,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
   28      B0008501 
   28      16D201B3 
   29              		.text
-  30              		.section	.gnu.lto_.inline.1a3e65b,"",%progbits
+  30              		.section	.gnu.lto_.inline.b55f34f,"",%progbits
   31 0000 789C458B 		.ascii	"x\234E\213\261\015\2000\014\004\337\316\007B(`\003("
   31      B10D8030 
   31      0C04DFCE 
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
   31      0328
   32 0012 10E33013 		.ascii	"\020\3430\023#PRf\016\246`$l!\310\027\226\375\347#\004"
   32      23505266 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 2
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 2
 
 
   32      0EA66024 
@@ -82,7 +82,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
   36      00745C0C 
   36      24
   37              		.text
-  38              		.section	.gnu.lto_.pureconst.1a3e65b,"",%progbits
+  38              		.section	.gnu.lto_.pureconst.b55f34f,"",%progbits
   39 0000 789C6361 		.ascii	"x\234ca`d\340f```e\220b\224b\222b\226ba\000\000\003"
   39      6064E066 
   39      60606065 
@@ -90,7 +90,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
   39      92629662 
   40 0018 E40088   		.ascii	"\344\000\210"
   41              		.text
-  42              		.section	.gnu.lto_I2C_SCBCLK_StartEx.1a3e65b,"",%progbits
+  42              		.section	.gnu.lto_I2C_SCBCLK_StartEx.b55f34f,"",%progbits
   43 0000 789C5551 		.ascii	"x\234UQ\317k\023Q\020\236\357\275}\233\325\246\375\013"
   43      CF6B1351 
   43      109EEFBD 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
   47      90589F22 
   48 0062 E278923F 		.ascii	"\342x\222?\270\004u\253AT\360\024t\372\320\312\334|"
   48      B80475AB 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 3
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 3
 
 
   48      4154F014 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
   60      A5786735 
   60      5BC6FD42 
   60      C447C8
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 4
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 4
 
 
   61 0141 E01113DE 		.ascii	"\340\021\023\336`\302\204\012\312\240\004\305\257\245"
@@ -226,7 +226,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
   70      18BFF60F 
   70      B7E0C0F8 
   71              		.text
-  72              		.section	.gnu.lto_I2C_SCBCLK_Stop.1a3e65b,"",%progbits
+  72              		.section	.gnu.lto_I2C_SCBCLK_Stop.b55f34f,"",%progbits
   73 0000 789C5550 		.ascii	"x\234UP=K\003A\020\235\267{\227\013\032\377A\012\013"
   73      3D4B0341 
   73      109DB77B 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
   74      88E83582 
   74      0682
   75 0025 D6EE2577 		.ascii	"\326\356%w\004\304B\005\255\224\240\010\361[,\005\213"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 5
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 5
 
 
   75      04C44205 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
   86      ECCEC0
   87 00f5 21A23840 		.ascii	"!\2428@\224M\034!\007\362\221~\317\226\255\200P2'=\301"
   87      944D1C21 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 6
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 6
 
 
   87      07F2917E 
@@ -335,7 +335,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
   93      9A7E01B4 
   93      A68CE4
   94              		.text
-  95              		.section	.gnu.lto_I2C_SCBCLK_SetFractionalDividerRegister.1a3e65b,"",%progbits
+  95              		.section	.gnu.lto_I2C_SCBCLK_SetFractionalDividerRegister.b55f34f,"",%progbits
   96 0000 789C6D52 		.ascii	"x\234mR]H\223a\024~\317\373n\337>\2679\275\014\362\302"
   96      5D489361 
   96      147ECFFB 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
   99      18
  100 004a 45D414CB 		.ascii	"E\324\024\313\220\331:\347{g!\364\302\336\237\263\347"
  100      90D93AE7 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 7
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 7
 
 
  100      7B6721F4 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  111      6B321D29 
  111      37841592 
  111      4A398145 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 8
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 8
 
 
  111      4D6051B4 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  123      B3924C11 
  123      E8308532 
  123      08FA
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 9
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 9
 
 
  124 020e 159D1FAD 		.ascii	"\025\235\037\255W(\233\231OSj\013[jEa\241+\265\327\205"
@@ -529,7 +529,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  133      663CFF00 
  133      646735A3 
  134              		.text
- 135              		.section	.gnu.lto_I2C_SCBCLK_GetDividerRegister.1a3e65b,"",%progbits
+ 135              		.section	.gnu.lto_I2C_SCBCLK_GetDividerRegister.b55f34f,"",%progbits
  136 0000 789C2D90 		.ascii	"x\234-\220\275K\003A\020\305\347\355^\342a\360\2437"
  136      BD4B0341 
  136      10C5E7ED 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  137 0012 85858869 		.ascii	"\205\205\210i,D\377\000=PD\0131m H\274\326@\320:\233"
  137      2C44FF00 
  137      3D50440B 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 10
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 10
 
 
  137      316D2048 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  148      DD9D472E 
  148      E3
  149 00f4 43CB008E 		.ascii	"C\313\000\216\015\336\021\343\341\004yP\035^s\232<\211"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 11
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 11
 
 
  149      0DDE11E3 
@@ -625,7 +625,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  153      F407E389 
  153      74BB
  154              		.text
- 155              		.section	.gnu.lto_I2C_SCBCLK_GetFractionalDividerRegister.1a3e65b,"",%progbits
+ 155              		.section	.gnu.lto_I2C_SCBCLK_GetFractionalDividerRegister.b55f34f,"",%progbits
  156 0000 789C6361 		.ascii	"x\234ca`d\000\201i@\254\006\304\322@\314\310\314\300"
  156      60640081 
  156      6940AC06 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  161      E840C3
  162 0070 FFFFCD0D 		.ascii	"\377\377\315\015\007\346\363\035\334\307\007\224\371"
  162      07E6F31D 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 12
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 12
 
 
  162      DCC70794 
@@ -688,7 +688,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  167      330000DA 
  167      DF4371
  168              		.text
- 169              		.section	.gnu.lto_.symbol_nodes.1a3e65b,"",%progbits
+ 169              		.section	.gnu.lto_.symbol_nodes.b55f34f,"",%progbits
  170 0000 789C6361 		.ascii	"x\234ca`d\010g\000\002&\206z\006\206\011\347\030@\324"
  170      60640867 
  170      00022686 
@@ -703,13 +703,13 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  172      00030055 
  172      2F130E
  173              		.text
- 174              		.section	.gnu.lto_.refs.1a3e65b,"",%progbits
+ 174              		.section	.gnu.lto_.refs.b55f34f,"",%progbits
  175 0000 789C6361 		.ascii	"x\234ca`\004B \000\000\0009\000\007"
  175      60044220 
  175      00000039 
  175      0007
  176              		.text
- 177              		.section	.gnu.lto_.decls.1a3e65b,"",%progbits
+ 177              		.section	.gnu.lto_.decls.b55f34f,"",%progbits
  178 0000 789C8D54 		.ascii	"x\234\215ToLSW\024\277\347\275\266\300\243RC\314B\226"
  178      6F4C5357 
  178      14BFE7BD 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  179 0014 CE30B350 		.ascii	"\3160\263P\276\014\007,\313\276,YV'Y\266\314ed|2!\210"
  179      BE0C072C 
  179      CBBE2C59 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 13
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 13
 
 
  179      562759B6 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  190      3B49AA92 
  190      07613B51 
  191 00f7 B94E0FC6 		.ascii	"\271N\017\306\177\332\231\320\026\017\242G\007\325\011"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 14
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 14
 
 
  191      7FDA99D0 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  202      EC958A0E 
  202      B3E0
  203 01cf B499160B 		.ascii	"\264\231\026\013P\363\024\234F\310\021\204$\360\035"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 15
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 15
 
 
  203      50F3149C 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  214      A912
  215 02a1 8594EF68 		.ascii	"\205\224\357h\344\264$\372\025R]\007\317\235\264h\303"
  215      E4B424FA 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 16
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 16
 
 
  215      15525D07 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  226      1D8138DE 
  227 037f 67F17E84 		.ascii	"g\361~\204\242\331J\"\361q\"\221\303_q\005m\357\335"
  227      A2D94A22 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 17
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 17
 
 
  227      F1712291 
@@ -1018,14 +1018,14 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  238      6370AA92 
  238      3D69A68E 
  239 0463 D943BAE5 		.ascii	"\331C\272\345\035\225\025\377\002\364\307;\220"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 18
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 18
 
 
  239      1D9515FF 
  239      02F4C73B 
  239      90
  240              		.text
- 241              		.section	.gnu.lto_.symtab.1a3e65b,"",%progbits
+ 241              		.section	.gnu.lto_.symtab.b55f34f,"",%progbits
  242 0000 4932435F 		.ascii	"I2C_SCBCLK_StartEx\000"
  242      53434243 
  242      4C4B5F53 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  268 00ce 00       		.ascii	"\000"
  269 00cf 00       		.ascii	"\000"
  270 00d0 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 19
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 19
 
 
  270      00000000 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
   20:Generated_Source\PSoC4/I2C_SCBCLK.c **** #include "I2C_SCBCLK.h"
   21:Generated_Source\PSoC4/I2C_SCBCLK.c **** 
   22:Generated_Source\PSoC4/I2C_SCBCLK.c **** #if defined CYREG_PERI_DIV_CMD
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 20
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 20
 
 
   23:Generated_Source\PSoC4/I2C_SCBCLK.c **** 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  312 0010 1860     		str	r0, [r3]
  313              		.loc 1 51 0
  314 0012 7047     		bx	lr
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 21
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 21
 
 
  315              	.L6:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
   90:Generated_Source\PSoC4/I2C_SCBCLK.c **** *
   91:Generated_Source\PSoC4/I2C_SCBCLK.c **** * Returns:
   92:Generated_Source\PSoC4/I2C_SCBCLK.c **** *  None
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 22
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 22
 
 
   93:Generated_Source\PSoC4/I2C_SCBCLK.c **** *
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  361              		.align	1
  362              		.global	I2C_SCBCLK_SetFractionalDividerRegister
  363              		.code	16
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 23
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 23
 
 
  364              		.thumb_func
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  387              		.cfi_offset 5, -8
  388              		.cfi_offset 14, -4
  142:Generated_Source\PSoC4/I2C_SCBCLK.c ****                     (uint32)(~(uint32)(I2C_SCBCLK_DIV_INT_MASK | I2C_SCBCLK_DIV_FRAC_MASK)); 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 24
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 24
 
 
  389              		.loc 1 142 0
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  166:Generated_Source\PSoC4/I2C_SCBCLK.c **** *  Gets the clock divider register value.
  167:Generated_Source\PSoC4/I2C_SCBCLK.c **** *
  168:Generated_Source\PSoC4/I2C_SCBCLK.c **** * Parameters:
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 25
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 25
 
 
  169:Generated_Source\PSoC4/I2C_SCBCLK.c **** *  None
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  192:Generated_Source\PSoC4/I2C_SCBCLK.c **** *
  193:Generated_Source\PSoC4/I2C_SCBCLK.c **** * Returns:
  194:Generated_Source\PSoC4/I2C_SCBCLK.c **** *  Fractional Divide value of the clock
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 26
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 26
 
 
  195:Generated_Source\PSoC4/I2C_SCBCLK.c **** *  0 if the fractional divider is not in use.
@@ -1538,15 +1538,15 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  471 000b 01       		.uleb128 0x1
  472 000c 46000000 		.4byte	.LASF25
  473 0010 0C       		.byte	0xc
- 474 0011 04020000 		.4byte	.LASF26
- 475 0015 9C010000 		.4byte	.LASF27
+ 474 0011 EA010000 		.4byte	.LASF26
+ 475 0015 54010000 		.4byte	.LASF27
  476 0019 00000000 		.4byte	.Ldebug_ranges0+0
  477 001d 00000000 		.4byte	0
  478 0021 00000000 		.4byte	.Ldebug_line0
  479 0025 02       		.uleb128 0x2
  480 0026 01       		.byte	0x1
  481 0027 06       		.byte	0x6
- 482 0028 72020000 		.4byte	.LASF0
+ 482 0028 58020000 		.4byte	.LASF0
  483 002c 02       		.uleb128 0x2
  484 002d 01       		.byte	0x1
  485 002e 08       		.byte	0x8
@@ -1554,18 +1554,18 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  487 0033 02       		.uleb128 0x2
  488 0034 02       		.byte	0x2
  489 0035 05       		.byte	0x5
- 490 0036 59020000 		.4byte	.LASF2
+ 490 0036 3F020000 		.4byte	.LASF2
  491 003a 02       		.uleb128 0x2
  492 003b 02       		.byte	0x2
  493 003c 07       		.byte	0x7
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 27
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 27
 
 
  494 003d 00010000 		.4byte	.LASF3
  495 0041 02       		.uleb128 0x2
  496 0042 04       		.byte	0x4
  497 0043 05       		.byte	0x5
- 498 0044 69020000 		.4byte	.LASF4
+ 498 0044 4F020000 		.4byte	.LASF4
  499 0048 02       		.uleb128 0x2
  500 0049 04       		.byte	0x4
  501 004a 07       		.byte	0x7
@@ -1573,11 +1573,11 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  503 004f 02       		.uleb128 0x2
  504 0050 08       		.byte	0x8
  505 0051 05       		.byte	0x5
- 506 0052 46020000 		.4byte	.LASF6
+ 506 0052 2C020000 		.4byte	.LASF6
  507 0056 02       		.uleb128 0x2
  508 0057 08       		.byte	0x8
  509 0058 07       		.byte	0x7
- 510 0059 ED010000 		.4byte	.LASF7
+ 510 0059 D3010000 		.4byte	.LASF7
  511 005d 03       		.uleb128 0x3
  512 005e 04       		.byte	0x4
  513 005f 05       		.byte	0x5
@@ -1585,19 +1585,19 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  515 0064 02       		.uleb128 0x2
  516 0065 04       		.byte	0x4
  517 0066 07       		.byte	0x7
- 518 0067 8F010000 		.4byte	.LASF8
+ 518 0067 C6010000 		.4byte	.LASF8
  519 006b 04       		.uleb128 0x4
- 520 006c 63020000 		.4byte	.LASF9
+ 520 006c 49020000 		.4byte	.LASF9
  521 0070 02       		.byte	0x2
  522 0071 D201     		.2byte	0x1d2
  523 0073 2C000000 		.4byte	0x2c
  524 0077 04       		.uleb128 0x4
- 525 0078 81010000 		.4byte	.LASF10
+ 525 0078 B8010000 		.4byte	.LASF10
  526 007c 02       		.byte	0x2
  527 007d D301     		.2byte	0x1d3
  528 007f 3A000000 		.4byte	0x3a
  529 0083 04       		.uleb128 0x4
- 530 0084 88010000 		.4byte	.LASF11
+ 530 0084 BF010000 		.4byte	.LASF11
  531 0088 02       		.byte	0x2
  532 0089 D401     		.2byte	0x1d4
  533 008b 48000000 		.4byte	0x48
@@ -1608,23 +1608,23 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  538 0096 02       		.uleb128 0x2
  539 0097 08       		.byte	0x8
  540 0098 04       		.byte	0x4
- 541 0099 46010000 		.4byte	.LASF13
+ 541 0099 4D010000 		.4byte	.LASF13
  542 009d 02       		.uleb128 0x2
  543 009e 01       		.byte	0x1
  544 009f 08       		.byte	0x8
- 545 00a0 54020000 		.4byte	.LASF14
+ 545 00a0 3A020000 		.4byte	.LASF14
  546 00a4 04       		.uleb128 0x4
  547 00a5 10000000 		.4byte	.LASF15
  548 00a9 02       		.byte	0x2
  549 00aa 7E02     		.2byte	0x27e
  550 00ac B0000000 		.4byte	0xb0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 28
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 28
 
 
  551 00b0 05       		.uleb128 0x5
  552 00b1 83000000 		.4byte	0x83
  553 00b5 06       		.uleb128 0x6
- 554 00b6 6E010000 		.4byte	.LASF16
+ 554 00b6 A5010000 		.4byte	.LASF16
  555 00ba 01       		.byte	0x1
  556 00bb 27       		.byte	0x27
  557 00bc 00000000 		.4byte	.LFB0
@@ -1633,7 +1633,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  560 00c5 9C       		.byte	0x9c
  561 00c6 DA000000 		.4byte	0xda
  562 00ca 07       		.uleb128 0x7
- 563 00cb 54010000 		.4byte	.LASF18
+ 563 00cb 8B010000 		.4byte	.LASF18
  564 00cf 01       		.byte	0x1
  565 00d0 27       		.byte	0x27
  566 00d1 83000000 		.4byte	0x83
@@ -1648,7 +1648,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  575 00e9 01       		.uleb128 0x1
  576 00ea 9C       		.byte	0x9c
  577 00eb 06       		.uleb128 0x6
- 578 00ec 13010000 		.4byte	.LASF17
+ 578 00ec 1A010000 		.4byte	.LASF17
  579 00f0 01       		.byte	0x1
  580 00f1 86       		.byte	0x86
  581 00f2 00000000 		.4byte	.LFB2
@@ -1657,13 +1657,13 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  584 00fb 9C       		.byte	0x9c
  585 00fc 3B010000 		.4byte	0x13b
  586 0100 07       		.uleb128 0x7
- 587 0101 3B010000 		.4byte	.LASF19
+ 587 0101 42010000 		.4byte	.LASF19
  588 0105 01       		.byte	0x1
  589 0106 86       		.byte	0x86
  590 0107 77000000 		.4byte	0x77
  591 010b 21000000 		.4byte	.LLST1
  592 010f 07       		.uleb128 0x7
- 593 0110 60010000 		.4byte	.LASF20
+ 593 0110 97010000 		.4byte	.LASF20
  594 0114 01       		.byte	0x1
  595 0115 86       		.byte	0x86
  596 0116 6B000000 		.4byte	0x6b
@@ -1675,10 +1675,10 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  602 0125 83000000 		.4byte	0x83
  603 0129 63000000 		.4byte	.LLST3
  604 012d 0A       		.uleb128 0xa
- 605 012e 4D010000 		.4byte	.LASF22
+ 605 012e 13010000 		.4byte	.LASF22
  606 0132 01       		.byte	0x1
  607 0133 89       		.byte	0x89
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 29
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 29
 
 
  608 0134 83000000 		.4byte	0x83
@@ -1686,7 +1686,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  610 0139 50       		.byte	0x50
  611 013a 00       		.byte	0
  612 013b 0B       		.uleb128 0xb
- 613 013c 28020000 		.4byte	.LASF23
+ 613 013c 0E020000 		.4byte	.LASF23
  614 0140 01       		.byte	0x1
  615 0141 B0       		.byte	0xb0
  616 0142 77000000 		.4byte	0x77
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  662 001d 00       		.byte	0
  663 001e 03       		.uleb128 0x3
  664 001f 24       		.uleb128 0x24
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 30
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 30
 
 
  665 0020 00       		.byte	0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  719 0057 07       		.uleb128 0x7
  720 0058 05       		.uleb128 0x5
  721 0059 00       		.byte	0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 31
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 31
 
 
  722 005a 03       		.uleb128 0x3
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  776 0091 0E       		.uleb128 0xe
  777 0092 3A       		.uleb128 0x3a
  778 0093 0B       		.uleb128 0xb
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 32
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 32
 
 
  779 0094 3B       		.uleb128 0x3b
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  833 002b 50       		.byte	0x50
  834 002c 0E000000 		.4byte	.LVL4
  835 0030 20000000 		.4byte	.LFE2
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 33
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 33
 
 
  836 0034 0400     		.2byte	0x4
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  890 0038 00000000 		.4byte	0
  891 003c 00000000 		.4byte	0
  892              		.section	.debug_ranges,"",%progbits
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 34
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 34
 
 
  893              	.Ldebug_ranges0:
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  922 00da 666C6F61 		.ascii	"float\000"
  922      7400
  923              	.LASF1:
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 35
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 35
 
 
  924 00e0 756E7369 		.ascii	"unsigned char\000"
@@ -2057,101 +2057,99 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 1
  928      7369676E 
  928      65642069 
  928      6E7400
- 929              	.LASF17:
- 930 0113 4932435F 		.ascii	"I2C_SCBCLK_SetFractionalDividerRegister\000"
- 930      53434243 
- 930      4C4B5F53 
- 930      65744672 
- 930      61637469 
- 931              	.LASF19:
- 932 013b 636C6B44 		.ascii	"clkDivider\000"
- 932      69766964 
- 932      657200
- 933              	.LASF13:
- 934 0146 646F7562 		.ascii	"double\000"
- 934      6C6500
- 935              	.LASF22:
- 936 014d 72656756 		.ascii	"regVal\000"
- 936      616C00
- 937              	.LASF18:
- 938 0154 616C6967 		.ascii	"alignClkDiv\000"
- 938      6E436C6B 
- 938      44697600 
- 939              	.LASF20:
- 940 0160 636C6B46 		.ascii	"clkFractional\000"
- 940      72616374 
- 940      696F6E61 
- 940      6C00
- 941              	.LASF16:
- 942 016e 4932435F 		.ascii	"I2C_SCBCLK_StartEx\000"
- 942      53434243 
- 942      4C4B5F53 
- 942      74617274 
- 942      457800
- 943              	.LASF10:
- 944 0181 75696E74 		.ascii	"uint16\000"
- 944      313600
- 945              	.LASF11:
- 946 0188 75696E74 		.ascii	"uint32\000"
- 946      333200
- 947              	.LASF8:
- 948 018f 756E7369 		.ascii	"unsigned int\000"
- 948      676E6564 
- 948      20696E74 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccgllgtg.s 			page 36
+ 929              	.LASF22:
+ 930 0113 72656756 		.ascii	"regVal\000"
+ 930      616C00
+ 931              	.LASF17:
+ 932 011a 4932435F 		.ascii	"I2C_SCBCLK_SetFractionalDividerRegister\000"
+ 932      53434243 
+ 932      4C4B5F53 
+ 932      65744672 
+ 932      61637469 
+ 933              	.LASF19:
+ 934 0142 636C6B44 		.ascii	"clkDivider\000"
+ 934      69766964 
+ 934      657200
+ 935              	.LASF13:
+ 936 014d 646F7562 		.ascii	"double\000"
+ 936      6C6500
+ 937              	.LASF27:
+ 938 0154 433A5C47 		.ascii	"C:\\Git\\WW101\\ww101-shield\\firmware\\TestProgram"
+ 938      69745C57 
+ 938      57313031 
+ 938      5C777731 
+ 938      30312D73 
+ 939 0182 344D2E63 		.ascii	"4M.cydsn\000"
+ 939      7964736E 
+ 939      00
+ 940              	.LASF18:
+ 941 018b 616C6967 		.ascii	"alignClkDiv\000"
+ 941      6E436C6B 
+ 941      44697600 
+ 942              	.LASF20:
+ 943 0197 636C6B46 		.ascii	"clkFractional\000"
+ 943      72616374 
+ 943      696F6E61 
+ 943      6C00
+ 944              	.LASF16:
+ 945 01a5 4932435F 		.ascii	"I2C_SCBCLK_StartEx\000"
+ 945      53434243 
+ 945      4C4B5F53 
+ 945      74617274 
+ 945      457800
+ 946              	.LASF10:
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccikUC3L.s 			page 36
 
 
- 948      00
- 949              	.LASF27:
- 950 019c 433A5C47 		.ascii	"C:\\Git\\WW101\\ww101-shield\\kit_firmware\\PSoC_Ex"
- 950      69745C57 
- 950      57313031 
- 950      5C777731 
- 950      30312D73 
- 951 01ca 616D706C 		.ascii	"ample_Projects\\TestProgram4M.cydsn\000"
- 951      655F5072 
- 951      6F6A6563 
- 951      74735C54 
- 951      65737450 
+ 947 01b8 75696E74 		.ascii	"uint16\000"
+ 947      313600
+ 948              	.LASF11:
+ 949 01bf 75696E74 		.ascii	"uint32\000"
+ 949      333200
+ 950              	.LASF8:
+ 951 01c6 756E7369 		.ascii	"unsigned int\000"
+ 951      676E6564 
+ 951      20696E74 
+ 951      00
  952              	.LASF7:
- 953 01ed 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 953 01d3 6C6F6E67 		.ascii	"long long unsigned int\000"
  953      206C6F6E 
  953      6720756E 
  953      7369676E 
  953      65642069 
  954              	.LASF26:
- 955 0204 47656E65 		.ascii	"Generated_Source\\PSoC4\\I2C_SCBCLK.c\000"
+ 955 01ea 47656E65 		.ascii	"Generated_Source\\PSoC4\\I2C_SCBCLK.c\000"
  955      72617465 
  955      645F536F 
  955      75726365 
  955      5C50536F 
  956              	.LASF23:
- 957 0228 4932435F 		.ascii	"I2C_SCBCLK_GetDividerRegister\000"
+ 957 020e 4932435F 		.ascii	"I2C_SCBCLK_GetDividerRegister\000"
  957      53434243 
  957      4C4B5F47 
  957      65744469 
  957      76696465 
  958              	.LASF6:
- 959 0246 6C6F6E67 		.ascii	"long long int\000"
+ 959 022c 6C6F6E67 		.ascii	"long long int\000"
  959      206C6F6E 
  959      6720696E 
  959      7400
  960              	.LASF14:
- 961 0254 63686172 		.ascii	"char\000"
+ 961 023a 63686172 		.ascii	"char\000"
  961      00
  962              	.LASF2:
- 963 0259 73686F72 		.ascii	"short int\000"
+ 963 023f 73686F72 		.ascii	"short int\000"
  963      7420696E 
  963      7400
  964              	.LASF9:
- 965 0263 75696E74 		.ascii	"uint8\000"
+ 965 0249 75696E74 		.ascii	"uint8\000"
  965      3800
  966              	.LASF4:
- 967 0269 6C6F6E67 		.ascii	"long int\000"
+ 967 024f 6C6F6E67 		.ascii	"long int\000"
  967      20696E74 
  967      00
  968              	.LASF0:
- 969 0272 7369676E 		.ascii	"signed char\000"
+ 969 0258 7369676E 		.ascii	"signed char\000"
  969      65642063 
  969      68617200 
  970              		.comm	__gnu_lto_v1,1,1

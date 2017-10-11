@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 1
 
 
    1              		.syntax unified
@@ -18,14 +18,14 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
   15              		.file	"A2.c"
   16              		.text
   17              	.Ltext0:
-  18              		.section	.gnu.lto_.profile.1a3d305,"",%progbits
+  18              		.section	.gnu.lto_.profile.b55f86e,"",%progbits
   19 0000 789C6361 		.ascii	"x\234ca`d`a`\000\222\352\212\000\000\331\000S"
   19      60646061 
   19      600092EA 
   19      8A0000D9 
   19      0053
   20              		.text
-  21              		.section	.gnu.lto_.icf.1a3d305,"",%progbits
+  21              		.section	.gnu.lto_.icf.b55f86e,"",%progbits
   22 0000 789C6361 		.ascii	"x\234ca`d\000\0015\006\004`c8\373\343\356)v\306i\233"
   22      60640001 
   22      35060460 
@@ -41,7 +41,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
   24      00810513 
   24      7F
   25              		.text
-  26              		.section	.gnu.lto_.jmpfuncs.1a3d305,"",%progbits
+  26              		.section	.gnu.lto_.jmpfuncs.b55f86e,"",%progbits
   27 0000 789C45C9 		.ascii	"x\234E\311\261\001\000 \010\300\260\026\320+\374\225"
   27      B1010020 
   27      08C0B016 
@@ -54,11 +54,11 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
   29 0023 2E215502 		.ascii	".!U\002@"
   29      40
   30              		.text
-  31              		.section	.gnu.lto_.inline.1a3d305,"",%progbits
+  31              		.section	.gnu.lto_.inline.b55f86e,"",%progbits
   32 0000 789C658D 		.ascii	"x\234e\215\311\015\2000\014\004\327\216\343\030\011"
   32      C90D8030 
   32      0C04D78E 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 2
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 2
 
 
   32      E31809
@@ -85,7 +85,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
   37      195CEBC0 
   37      0FE2
   38              		.text
-  39              		.section	.gnu.lto_.pureconst.1a3d305,"",%progbits
+  39              		.section	.gnu.lto_.pureconst.b55f86e,"",%progbits
   40 0000 789C6361 		.ascii	"x\234ca`d\340e```c\220b\224b\222b\226b\221b\225\002"
   40      6064E065 
   40      60606063 
@@ -94,7 +94,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
   41 0018 00059500 		.ascii	"\000\005\225\000\304"
   41      C4
   42              		.text
-  43              		.section	.gnu.lto_A2_SetDriveMode.1a3d305,"",%progbits
+  43              		.section	.gnu.lto_A2_SetDriveMode.b55f86e,"",%progbits
   44 0000 789C7D51 		.ascii	"x\234}QMk\023Q\024\275\347\275\311LE\214[\241\003\025"
   44      4D6B1351 
   44      14BDE7BD 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
   48 0049 DAB4E3BD 		.ascii	"\332\264\343\275\223\254}\360\356\275\357p\316\341\274"
   48      93AC7DF0 
   48      EEBDEF70 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 3
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 3
 
 
   48      CEE1BC
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
   60      F9EB2EC4 
   60      42616F92 
   60      A6
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 4
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 4
 
 
   61 012e 17F19AD9 		.ascii	"\027\361\232\3311j\277\234)-\027hKd\311L&\020\313\276"
@@ -208,7 +208,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
   66 018b AB56BC7F 		.ascii	"\253V\274\177\177\224\233\373"
   66      7F949BFB 
   67              		.text
-  68              		.section	.gnu.lto_A2_Write.1a3d305,"",%progbits
+  68              		.section	.gnu.lto_A2_Write.b55f86e,"",%progbits
   69 0000 789C5551 		.ascii	"x\234UQ=k\024Q\024\275\347\275\371\212\313\342\017p"
   69      3D6B1451 
   69      14BDE7BD 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
   74      5B44254F 
   74      0172301E 
   74      684A610A 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 5
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 5
 
 
   74      BBEA8F42 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
   86      E001383F 
   86      9630076A 
   86      A3FCB3B1 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 6
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 6
 
 
   87 014f A11243CD 		.ascii	"\241\022C\315\236\214T\016\352\033H\020\213A\3668\270"
@@ -346,7 +346,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
   95      1FA3BE
   96 01f3 D36E     		.ascii	"\323n"
   97              		.text
-  98              		.section	.gnu.lto_A2_Read.1a3d305,"",%progbits
+  98              		.section	.gnu.lto_A2_Read.b55f86e,"",%progbits
   99 0000 789C258F 		.ascii	"x\234%\217=K\003A\020\206\347\335\275\304p \376\000"
   99      3D4B0341 
   99      1086E7DD 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  100      0988C46B 
  100      0D04AD
  101 0025 B3C9DD45 		.ascii	"\263\311\335E\020\2134\032,$\235I\374@DIa!gP\024\004"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 7
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 7
 
 
  101      108B341A 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  112      C99108DB 
  112      DD053D7F 
  112      48D71B
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 8
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 8
 
 
  113 00fe 1038618C 		.ascii	"\0208a\214\363?\205\256\021\012\032\3141ty{_\210i\010"
@@ -439,7 +439,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  116 0141 52F40F8B 		.ascii	"R\364\017\213Cr\373"
  116      4372FB
  117              		.text
- 118              		.section	.gnu.lto_A2_ReadDataReg.1a3d305,"",%progbits
+ 118              		.section	.gnu.lto_A2_ReadDataReg.b55f86e,"",%progbits
  119 0000 789C258F 		.ascii	"x\234%\217=K\003A\020\206\347\335\275\304`\010\376\000"
  119      3D4B0341 
  119      1086E7DD 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  126      4D8C9ABA 
  126      45157162 
  126      F4E9E46F 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 9
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 9
 
 
  127 008d 3B162E28 		.ascii	";\026.(\266a\015p\246\206\260\226<^p\225\357\333\312"
@@ -532,13 +532,13 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  137      E81F022A 
  137      7399
  138              		.text
- 139              		.section	.gnu.lto_A2_SetInterruptMode.1a3d305,"",%progbits
+ 139              		.section	.gnu.lto_A2_SetInterruptMode.b55f86e,"",%progbits
  140 0000 789C6D51 		.ascii	"x\234mQ\317k\023A\024~of\223\335$\355\326\273\001s)"
  140      CF6B1341 
  140      147E6F66 
  140      93DD24ED 
  140      D6BB0173 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 10
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 10
 
 
  141 0015 B10705A5 		.ascii	"\261\007\005\245\377\200\366\340M\212\275\026\244\264"
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  152      B594F7FF 
  152      A37C8071 
  152      A6AF
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 11
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 11
 
 
  153 00ec DA73B7A4 		.ascii	"\332s\267\244\037I\243r\353\305\344W\323\217\024\243"
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  164      8EC2EB94 
  164      B213
  165 01c0 E873EAD5 		.ascii	"\350s\352\325j\213e\220\223%u\317^\367\241\020\241L"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 12
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 12
 
 
  165      6A8B6590 
@@ -693,7 +693,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  171 022a 858BFF00 		.ascii	"\205\213\377\000>\315\353b"
  171      3ECDEB62 
  172              		.text
- 173              		.section	.gnu.lto_A2_ClearInterrupt.1a3d305,"",%progbits
+ 173              		.section	.gnu.lto_A2_ClearInterrupt.b55f86e,"",%progbits
  174 0000 789C5590 		.ascii	"x\234U\220\315K[Q\020\305\347\334\373b\242(\371\003"
  174      CD4B5B51 
  174      10C5E7DC 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  178      2B9DC9EB 
  178      422F3CE6 
  178      DE79737E 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 13
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 13
 
 
  179 0059 662C02C9 		.ascii	"f,\002\311\331\343\360\230\343#\376\240\011*\277M\224"
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  190      3E75A33C 
  190      A0662667 
  191 0133 3FE1652C 		.ascii	"?\341e,N2c7\267\372A\013V\301\3022\253\017\320\224\210"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 14
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 14
 
 
  191      4E326337 
@@ -813,7 +813,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  197      F50F9195 
  197      A8CD
  198              		.text
- 199              		.section	.gnu.lto_.symbol_nodes.1a3d305,"",%progbits
+ 199              		.section	.gnu.lto_.symbol_nodes.b55f86e,"",%progbits
  200 0000 789C6361 		.ascii	"x\234ca`d\310`\000\002&\206z\006\206\011\347\030@\324"
  200      6064C860 
  200      00022686 
@@ -829,16 +829,16 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  202      8A000300 
  202      C5DB16E2 
  203              		.text
- 204              		.section	.gnu.lto_.refs.1a3d305,"",%progbits
+ 204              		.section	.gnu.lto_.refs.b55f86e,"",%progbits
  205 0000 789C6361 		.ascii	"x\234ca`\004B \000\000\0009\000\007"
  205      60044220 
  205      00000039 
  205      0007
  206              		.text
- 207              		.section	.gnu.lto_.decls.1a3d305,"",%progbits
+ 207              		.section	.gnu.lto_.decls.b55f86e,"",%progbits
  208 0000 789C8D54 		.ascii	"x\234\215ToL[U\024\277\347\275\266\224\007\264\023\027"
  208      6F4C5B55 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 15
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 15
 
 
  208      14BFE7BD 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  219      87E968DB 
  219      44CD99F4 
  219      5E9760AE 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 16
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 16
 
 
  219      3E7E
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  231      B93ADB9E 
  231      83C7AD0A 
  231      6CC1E3E5 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 17
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 17
 
 
  231      A6
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  243 0286 0F2B7213 		.ascii	"\017+r\023w\226\332\232.\366\333@)\342=\200e*=\016\222"
  243      7796DA9A 
  243      2EF6DB40 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 18
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 18
 
 
  243      29E23D80 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  255 035f 2CCA3863 		.ascii	",\3128c\320\365h\332G\202\003\255\262r\202\351\271)"
  255      D0F568DA 
  255      478203AD 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 19
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 19
 
 
  255      B27282E9 
@@ -1135,10 +1135,10 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  266      ACF45FA6 
  266      660EC2
  267              		.text
- 268              		.section	.gnu.lto_.symtab.1a3d305,"",%progbits
+ 268              		.section	.gnu.lto_.symtab.b55f86e,"",%progbits
  269 0000 41325F53 		.ascii	"A2_SetDriveMode\000"
  269      65744472 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 20
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 20
 
 
  269      6976654D 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  303 00a4 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
  303      00000000 
  304 00ac C6000000 		.ascii	"\306\000\000\000"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 21
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 21
 
 
  305              		.text
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
   22:Generated_Source\PSoC4/A2.c ****         A2_PC =   (A2_PC & \
   23:Generated_Source\PSoC4/A2.c ****                                 (uint32)(~(uint32)(A2_DRIVE_MODE_IND_MASK << \
   24:Generated_Source\PSoC4/A2.c ****                                 (A2_DRIVE_MODE_BITS * (shift))))) | \
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 22
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 22
 
 
   25:Generated_Source\PSoC4/A2.c ****                                 (uint32)((uint32)(mode) << \
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  327              	.LVL0:
   74:Generated_Source\PSoC4/A2.c **** 		A2_SetP4PinDriveMode(A2__0__SHIFT, mode);
  328              		.loc 1 74 0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 23
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 23
 
 
  329 0000 034A     		ldr	r2, .L2
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  102:Generated_Source\PSoC4/A2.c **** *  Service Routines (ISR) can cause corruption of this function. An ISR that 
  103:Generated_Source\PSoC4/A2.c **** *  interrupts this function and performs writes to the Pins component data 
  104:Generated_Source\PSoC4/A2.c **** *  register can cause corrupted port data. To avoid this issue, you should 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 24
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 24
 
 
  105:Generated_Source\PSoC4/A2.c **** *  either use the Per-Pin APIs (primary method) or disable interrupts around 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  395              	.LFB2:
  117:Generated_Source\PSoC4/A2.c **** 
  118:Generated_Source\PSoC4/A2.c **** 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 25
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 25
 
 
  119:Generated_Source\PSoC4/A2.c **** /*******************************************************************************
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  142:Generated_Source\PSoC4/A2.c **** /*******************************************************************************
  143:Generated_Source\PSoC4/A2.c **** * Function Name: A2_ReadDataReg
  144:Generated_Source\PSoC4/A2.c **** ****************************************************************************//**
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 26
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 26
 
 
  145:Generated_Source\PSoC4/A2.c **** *
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  168:Generated_Source\PSoC4/A2.c **** 
  169:Generated_Source\PSoC4/A2.c **** 
  170:Generated_Source\PSoC4/A2.c **** /*******************************************************************************
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 27
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 27
 
 
  171:Generated_Source\PSoC4/A2.c **** * Function Name: A2_SetInterruptMode
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  466              		.loc 1 211 0
  467 0002 1368     		ldr	r3, [r2]
  468              	.LVL5:
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 28
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 28
 
 
  212:Generated_Source\PSoC4/A2.c ****     A2_INTCFG = intrCfg | ((uint32)position & (uint32)mode);
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  238:Generated_Source\PSoC4/A2.c **** 	uint8 maskedStatus = (uint8)(A2_INTSTAT & A2_MASK);
  498              		.loc 1 238 0
  499 0000 0423     		movs	r3, #4
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 29
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 29
 
 
  500 0002 034A     		ldr	r2, .L17
@@ -1721,15 +1721,15 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  531 000b 01       		.uleb128 0x1
  532 000c 28000000 		.4byte	.LASF27
  533 0010 0C       		.byte	0xc
- 534 0011 96010000 		.4byte	.LASF28
- 535 0015 2E010000 		.4byte	.LASF29
+ 534 0011 85010000 		.4byte	.LASF28
+ 535 0015 02010000 		.4byte	.LASF29
  536 0019 00000000 		.4byte	.Ldebug_ranges0+0
  537 001d 00000000 		.4byte	0
  538 0021 00000000 		.4byte	.Ldebug_line0
  539 0025 02       		.uleb128 0x2
  540 0026 01       		.byte	0x1
  541 0027 06       		.byte	0x6
- 542 0028 1A020000 		.4byte	.LASF0
+ 542 0028 00020000 		.4byte	.LASF0
  543 002c 02       		.uleb128 0x2
  544 002d 01       		.byte	0x1
  545 002e 08       		.byte	0x8
@@ -1737,8 +1737,8 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  547 0033 02       		.uleb128 0x2
  548 0034 02       		.byte	0x2
  549 0035 05       		.byte	0x5
- 550 0036 01020000 		.4byte	.LASF2
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 30
+ 550 0036 E7010000 		.4byte	.LASF2
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 30
 
 
  551 003a 02       		.uleb128 0x2
@@ -1748,7 +1748,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  555 0041 02       		.uleb128 0x2
  556 0042 04       		.byte	0x4
  557 0043 05       		.byte	0x5
- 558 0044 11020000 		.4byte	.LASF4
+ 558 0044 F7010000 		.4byte	.LASF4
  559 0048 02       		.uleb128 0x2
  560 0049 04       		.byte	0x4
  561 004a 07       		.byte	0x7
@@ -1756,11 +1756,11 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  563 004f 02       		.uleb128 0x2
  564 0050 08       		.byte	0x8
  565 0051 05       		.byte	0x5
- 566 0052 BF010000 		.4byte	.LASF6
+ 566 0052 AE010000 		.4byte	.LASF6
  567 0056 02       		.uleb128 0x2
  568 0057 08       		.byte	0x8
  569 0058 07       		.byte	0x7
- 570 0059 7F010000 		.4byte	.LASF7
+ 570 0059 6E010000 		.4byte	.LASF7
  571 005d 03       		.uleb128 0x3
  572 005e 04       		.byte	0x4
  573 005f 05       		.byte	0x5
@@ -1768,19 +1768,19 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  575 0064 02       		.uleb128 0x2
  576 0065 04       		.byte	0x4
  577 0066 07       		.byte	0x7
- 578 0067 21010000 		.4byte	.LASF8
+ 578 0067 58010000 		.4byte	.LASF8
  579 006b 04       		.uleb128 0x4
- 580 006c 0B020000 		.4byte	.LASF9
+ 580 006c F1010000 		.4byte	.LASF9
  581 0070 02       		.byte	0x2
  582 0071 D201     		.2byte	0x1d2
  583 0073 2C000000 		.4byte	0x2c
  584 0077 04       		.uleb128 0x4
- 585 0078 02010000 		.4byte	.LASF10
+ 585 0078 39010000 		.4byte	.LASF10
  586 007c 02       		.byte	0x2
  587 007d D301     		.2byte	0x1d3
  588 007f 3A000000 		.4byte	0x3a
  589 0083 04       		.uleb128 0x4
- 590 0084 12010000 		.4byte	.LASF11
+ 590 0084 49010000 		.4byte	.LASF11
  591 0088 02       		.byte	0x2
  592 0089 D401     		.2byte	0x1d4
  593 008b 48000000 		.4byte	0x48
@@ -1795,10 +1795,10 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  602 009d 02       		.uleb128 0x2
  603 009e 01       		.byte	0x1
  604 009f 08       		.byte	0x8
- 605 00a0 DF010000 		.4byte	.LASF14
+ 605 00a0 CE010000 		.4byte	.LASF14
  606 00a4 04       		.uleb128 0x4
  607 00a5 00000000 		.4byte	.LASF15
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 31
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 31
 
 
  608 00a9 02       		.byte	0x2
@@ -1807,7 +1807,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  611 00b0 05       		.uleb128 0x5
  612 00b1 83000000 		.4byte	0x83
  613 00b5 06       		.uleb128 0x6
- 614 00b6 26020000 		.4byte	.LASF16
+ 614 00b6 0C020000 		.4byte	.LASF16
  615 00ba 01       		.byte	0x1
  616 00bb 48       		.byte	0x48
  617 00bc 00000000 		.4byte	.LFB0
@@ -1816,14 +1816,14 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  620 00c5 9C       		.byte	0x9c
  621 00c6 DA000000 		.4byte	0xda
  622 00ca 07       		.uleb128 0x7
- 623 00cb B2010000 		.4byte	.LASF18
+ 623 00cb A1010000 		.4byte	.LASF18
  624 00cf 01       		.byte	0x1
  625 00d0 48       		.byte	0x48
  626 00d1 6B000000 		.4byte	0x6b
  627 00d5 00000000 		.4byte	.LLST0
  628 00d9 00       		.byte	0
  629 00da 06       		.uleb128 0x6
- 630 00db F8010000 		.4byte	.LASF17
+ 630 00db 65010000 		.4byte	.LASF17
  631 00df 01       		.byte	0x1
  632 00e0 6F       		.byte	0x6f
  633 00e1 00000000 		.4byte	.LFB1
@@ -1844,7 +1844,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  648 0105 6B000000 		.4byte	0x6b
  649 0109 00       		.byte	0
  650 010a 09       		.uleb128 0x9
- 651 010b B7010000 		.4byte	.LASF20
+ 651 010b A6010000 		.4byte	.LASF20
  652 010f 01       		.byte	0x1
  653 0110 88       		.byte	0x88
  654 0111 6B000000 		.4byte	0x6b
@@ -1858,14 +1858,14 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  662 0125 A4       		.byte	0xa4
  663 0126 6B000000 		.4byte	0x6b
  664 012a 00000000 		.4byte	.LFB3
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 32
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 32
 
 
  665 012e 10000000 		.4byte	.LFE3-.LFB3
  666 0132 01       		.uleb128 0x1
  667 0133 9C       		.byte	0x9c
  668 0134 06       		.uleb128 0x6
- 669 0135 E4010000 		.4byte	.LASF22
+ 669 0135 D3010000 		.4byte	.LASF22
  670 0139 01       		.byte	0x1
  671 013a CF       		.byte	0xcf
  672 013b 00000000 		.4byte	.LFB4
@@ -1874,27 +1874,27 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  675 0144 9C       		.byte	0x9c
  676 0145 75010000 		.4byte	0x175
  677 0149 07       		.uleb128 0x7
- 678 014a 09010000 		.4byte	.LASF23
+ 678 014a 40010000 		.4byte	.LASF23
  679 014e 01       		.byte	0x1
  680 014f CF       		.byte	0xcf
  681 0150 77000000 		.4byte	0x77
  682 0154 42000000 		.4byte	.LLST2
  683 0158 0A       		.uleb128 0xa
- 684 0159 B2010000 		.4byte	.LASF18
+ 684 0159 A1010000 		.4byte	.LASF18
  685 015d 01       		.byte	0x1
  686 015e CF       		.byte	0xcf
  687 015f 77000000 		.4byte	0x77
  688 0163 01       		.uleb128 0x1
  689 0164 51       		.byte	0x51
  690 0165 0B       		.uleb128 0xb
- 691 0166 19010000 		.4byte	.LASF25
+ 691 0166 50010000 		.4byte	.LASF25
  692 016a 01       		.byte	0x1
  693 016b D1       		.byte	0xd1
  694 016c 83000000 		.4byte	0x83
  695 0170 63000000 		.4byte	.LLST3
  696 0174 00       		.byte	0
  697 0175 0C       		.uleb128 0xc
- 698 0176 CD010000 		.4byte	.LASF24
+ 698 0176 BC010000 		.4byte	.LASF24
  699 017a 01       		.byte	0x1
  700 017b EC       		.byte	0xec
  701 017c 6B000000 		.4byte	0x6b
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  719 0003 25       		.uleb128 0x25
  720 0004 0E       		.uleb128 0xe
  721 0005 13       		.uleb128 0x13
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 33
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 33
 
 
  722 0006 0B       		.uleb128 0xb
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  776 003c 00       		.byte	0
  777 003d 06       		.uleb128 0x6
  778 003e 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 34
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 34
 
 
  779 003f 01       		.byte	0x1
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  833 0076 3F       		.uleb128 0x3f
  834 0077 19       		.uleb128 0x19
  835 0078 03       		.uleb128 0x3
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 35
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 35
 
 
  836 0079 0E       		.uleb128 0xe
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  890 00b0 03       		.uleb128 0x3
  891 00b1 0E       		.uleb128 0xe
  892 00b2 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 36
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 36
 
 
  893 00b3 0B       		.uleb128 0xb
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  947 0051 14000000 		.4byte	.LFE4
  948 0055 0400     		.2byte	0x4
  949 0057 F3       		.byte	0xf3
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 37
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 37
 
 
  950 0058 01       		.uleb128 0x1
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  1004 003c 14000000 		.4byte	.LFE5-.LFB5
  1005 0040 00000000 		.4byte	0
  1006 0044 00000000 		.4byte	0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 38
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 38
 
 
  1007              		.section	.debug_ranges,"",%progbits
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  1037      74696F6E 
  1038              	.LASF12:
  1039 00bc 666C6F61 		.ascii	"float\000"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 39
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 39
 
 
  1039      7400
@@ -2305,102 +2305,100 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 1
  1048              	.LASF13:
  1049 00fb 646F7562 		.ascii	"double\000"
  1049      6C6500
- 1050              	.LASF10:
- 1051 0102 75696E74 		.ascii	"uint16\000"
- 1051      313600
- 1052              	.LASF23:
- 1053 0109 706F7369 		.ascii	"position\000"
- 1053      74696F6E 
- 1053      00
- 1054              	.LASF11:
- 1055 0112 75696E74 		.ascii	"uint32\000"
- 1055      333200
- 1056              	.LASF25:
- 1057 0119 696E7472 		.ascii	"intrCfg\000"
- 1057      43666700 
- 1058              	.LASF8:
- 1059 0121 756E7369 		.ascii	"unsigned int\000"
- 1059      676E6564 
- 1059      20696E74 
- 1059      00
- 1060              	.LASF29:
- 1061 012e 433A5C47 		.ascii	"C:\\Git\\WW101\\ww101-shield\\kit_firmware\\PSoC_Ex"
- 1061      69745C57 
- 1061      57313031 
- 1061      5C777731 
- 1061      30312D73 
- 1062 015c 616D706C 		.ascii	"ample_Projects\\TestProgram4M.cydsn\000"
- 1062      655F5072 
- 1062      6F6A6563 
- 1062      74735C54 
- 1062      65737450 
- 1063              	.LASF7:
- 1064 017f 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1064      206C6F6E 
- 1064      6720756E 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 40
+ 1050              	.LASF29:
+ 1051 0102 433A5C47 		.ascii	"C:\\Git\\WW101\\ww101-shield\\firmware\\TestProgram"
+ 1051      69745C57 
+ 1051      57313031 
+ 1051      5C777731 
+ 1051      30312D73 
+ 1052 0130 344D2E63 		.ascii	"4M.cydsn\000"
+ 1052      7964736E 
+ 1052      00
+ 1053              	.LASF10:
+ 1054 0139 75696E74 		.ascii	"uint16\000"
+ 1054      313600
+ 1055              	.LASF23:
+ 1056 0140 706F7369 		.ascii	"position\000"
+ 1056      74696F6E 
+ 1056      00
+ 1057              	.LASF11:
+ 1058 0149 75696E74 		.ascii	"uint32\000"
+ 1058      333200
+ 1059              	.LASF25:
+ 1060 0150 696E7472 		.ascii	"intrCfg\000"
+ 1060      43666700 
+ 1061              	.LASF8:
+ 1062 0158 756E7369 		.ascii	"unsigned int\000"
+ 1062      676E6564 
+ 1062      20696E74 
+ 1062      00
+ 1063              	.LASF17:
+ 1064 0165 41325F57 		.ascii	"A2_Write\000"
+ 1064      72697465 
+ 1064      00
+ 1065              	.LASF7:
+ 1066 016e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 40
 
 
- 1064      7369676E 
- 1064      65642069 
- 1065              	.LASF28:
- 1066 0196 47656E65 		.ascii	"Generated_Source\\PSoC4\\A2.c\000"
- 1066      72617465 
- 1066      645F536F 
- 1066      75726365 
- 1066      5C50536F 
- 1067              	.LASF18:
- 1068 01b2 6D6F6465 		.ascii	"mode\000"
- 1068      00
- 1069              	.LASF20:
- 1070 01b7 41325F52 		.ascii	"A2_Read\000"
- 1070      65616400 
- 1071              	.LASF6:
- 1072 01bf 6C6F6E67 		.ascii	"long long int\000"
- 1072      206C6F6E 
- 1072      6720696E 
- 1072      7400
- 1073              	.LASF24:
- 1074 01cd 41325F43 		.ascii	"A2_ClearInterrupt\000"
- 1074      6C656172 
- 1074      496E7465 
- 1074      72727570 
+ 1066      206C6F6E 
+ 1066      6720756E 
+ 1066      7369676E 
+ 1066      65642069 
+ 1067              	.LASF28:
+ 1068 0185 47656E65 		.ascii	"Generated_Source\\PSoC4\\A2.c\000"
+ 1068      72617465 
+ 1068      645F536F 
+ 1068      75726365 
+ 1068      5C50536F 
+ 1069              	.LASF18:
+ 1070 01a1 6D6F6465 		.ascii	"mode\000"
+ 1070      00
+ 1071              	.LASF20:
+ 1072 01a6 41325F52 		.ascii	"A2_Read\000"
+ 1072      65616400 
+ 1073              	.LASF6:
+ 1074 01ae 6C6F6E67 		.ascii	"long long int\000"
+ 1074      206C6F6E 
+ 1074      6720696E 
  1074      7400
- 1075              	.LASF14:
- 1076 01df 63686172 		.ascii	"char\000"
- 1076      00
- 1077              	.LASF22:
- 1078 01e4 41325F53 		.ascii	"A2_SetInterruptMode\000"
- 1078      6574496E 
- 1078      74657272 
- 1078      7570744D 
- 1078      6F646500 
- 1079              	.LASF17:
- 1080 01f8 41325F57 		.ascii	"A2_Write\000"
- 1080      72697465 
- 1080      00
+ 1075              	.LASF24:
+ 1076 01bc 41325F43 		.ascii	"A2_ClearInterrupt\000"
+ 1076      6C656172 
+ 1076      496E7465 
+ 1076      72727570 
+ 1076      7400
+ 1077              	.LASF14:
+ 1078 01ce 63686172 		.ascii	"char\000"
+ 1078      00
+ 1079              	.LASF22:
+ 1080 01d3 41325F53 		.ascii	"A2_SetInterruptMode\000"
+ 1080      6574496E 
+ 1080      74657272 
+ 1080      7570744D 
+ 1080      6F646500 
  1081              	.LASF2:
- 1082 0201 73686F72 		.ascii	"short int\000"
+ 1082 01e7 73686F72 		.ascii	"short int\000"
  1082      7420696E 
  1082      7400
  1083              	.LASF9:
- 1084 020b 75696E74 		.ascii	"uint8\000"
+ 1084 01f1 75696E74 		.ascii	"uint8\000"
  1084      3800
  1085              	.LASF4:
- 1086 0211 6C6F6E67 		.ascii	"long int\000"
+ 1086 01f7 6C6F6E67 		.ascii	"long int\000"
  1086      20696E74 
  1086      00
  1087              	.LASF0:
- 1088 021a 7369676E 		.ascii	"signed char\000"
+ 1088 0200 7369676E 		.ascii	"signed char\000"
  1088      65642063 
  1088      68617200 
  1089              	.LASF16:
- 1090 0226 41325F53 		.ascii	"A2_SetDriveMode\000"
+ 1090 020c 41325F53 		.ascii	"A2_SetDriveMode\000"
  1090      65744472 
  1090      6976654D 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccbp2R8Y.s 			page 41
-
-
  1090      6F646500 
  1091              		.comm	__gnu_lto_v1,1,1
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLx5Mkm.s 			page 41
+
+
  1092              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
