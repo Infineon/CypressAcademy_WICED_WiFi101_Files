@@ -1,16 +1,16 @@
-Loading plugins phase: Elapsed time ==> 0s.115ms
+Loading plugins phase: Elapsed time ==> 0s.147ms
 <CYPRESSTAG name="CyDsfit arguments...">
-cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Git\WW101\ww101-shield\kit_firmware\PSoC_Example_Projects\WW101-Shield.cydsn\WW101-Shield.cyprj -d CY8C4A45AZI-483 -s C:\Git\WW101\ww101-shield\kit_firmware\PSoC_Example_Projects\WW101-Shield.cydsn\Generated_Source\PSoC4 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Git\WW101\ww101-shield\firmware\Shield.cydsn\Shield.cyprj -d CY8C4A45AZI-483 -s C:\Git\WW101\ww101-shield\firmware\Shield.cydsn\Generated_Source\PSoC4 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 </CYPRESSTAG>
 <CYPRESSTAG name="Design elaboration results...">
 ADD: sdb.M0061: information: Info from component: VDAC. The UAB_VDAC_v1_10 component (VDAC) is a prototype component. It has not been tested to production quality and care should be taken if used in a shipping product.
- * C:\Git\WW101\ww101-shield\kit_firmware\PSoC_Example_Projects\WW101-Shield.cydsn\TopDesign\TopDesign.cysch (Instance:VDAC)
+ * C:\Git\WW101\ww101-shield\firmware\Shield.cydsn\TopDesign\TopDesign.cysch (Instance:VDAC)
 
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 4s.788ms
+Elaboration phase: Elapsed time ==> 5s.026ms
 <CYPRESSTAG name="HDL generation results...">
 </CYPRESSTAG>
-HDL generation phase: Elapsed time ==> 0s.215ms
+HDL generation phase: Elapsed time ==> 0s.213ms
 <CYPRESSTAG name="Synthesis results...">
 
      | | | | | | |
@@ -26,35 +26,35 @@ HDL generation phase: Elapsed time ==> 0s.215ms
      | | | | | | |
 
 ======================================================================
-Compiling:  WW101-Shield.v
+Compiling:  Shield.v
 Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\bin\warp.exe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Git\WW101\ww101-shield\kit_firmware\PSoC_Example_Projects\WW101-Shield.cydsn\WW101-Shield.cyprj -dcpsoc3 WW101-Shield.v -verilog
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Git\WW101\ww101-shield\firmware\Shield.cydsn\Shield.cyprj -dcpsoc3 Shield.v -verilog
 ======================================================================
 
 ======================================================================
-Compiling:  WW101-Shield.v
+Compiling:  Shield.v
 Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\bin\warp.exe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Git\WW101\ww101-shield\kit_firmware\PSoC_Example_Projects\WW101-Shield.cydsn\WW101-Shield.cyprj -dcpsoc3 WW101-Shield.v -verilog
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Git\WW101\ww101-shield\firmware\Shield.cydsn\Shield.cyprj -dcpsoc3 Shield.v -verilog
 ======================================================================
 
 ======================================================================
-Compiling:  WW101-Shield.v
+Compiling:  Shield.v
 Program  :   vlogfe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Git\WW101\ww101-shield\kit_firmware\PSoC_Example_Projects\WW101-Shield.cydsn\WW101-Shield.cyprj -dcpsoc3 -verilog WW101-Shield.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Git\WW101\ww101-shield\firmware\Shield.cydsn\Shield.cyprj -dcpsoc3 -verilog Shield.v
 ======================================================================
 
 vlogfe V6.3 IR 41:  Verilog parser
-Mon Oct 09 10:57:43 2017
+Thu Oct 12 21:12:21 2017
 
 
 ======================================================================
-Compiling:  WW101-Shield.v
+Compiling:  Shield.v
 Program  :   vpp
-Options  :    -yv2 -q10 WW101-Shield.v
+Options  :    -yv2 -q10 Shield.v
 ======================================================================
 
 vpp V6.3 IR 41:  Verilog Pre-Processor
-Mon Oct 09 10:57:43 2017
+Thu Oct 12 21:12:21 2017
 
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'
@@ -80,19 +80,19 @@ Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\c
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Using control file 'WW101-Shield.ctl'.
+Using control file 'Shield.ctl'.
 
 vlogfe:  No errors.
 
 
 ======================================================================
-Compiling:  WW101-Shield.v
+Compiling:  Shield.v
 Program  :   tovif
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Git\WW101\ww101-shield\kit_firmware\PSoC_Example_Projects\WW101-Shield.cydsn\WW101-Shield.cyprj -dcpsoc3 -verilog WW101-Shield.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Git\WW101\ww101-shield\firmware\Shield.cydsn\Shield.cyprj -dcpsoc3 -verilog Shield.v
 ======================================================================
 
 tovif V6.3 IR 41:  High-level synthesis
-Mon Oct 09 10:57:43 2017
+Thu Oct 12 21:12:21 2017
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -103,9 +103,9 @@ Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\c
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'C:\Git\WW101\ww101-shield\kit_firmware\PSoC_Example_Projects\WW101-Shield.cydsn\codegentemp\WW101-Shield.ctl'.
+Linking 'C:\Git\WW101\ww101-shield\firmware\Shield.cydsn\codegentemp\Shield.ctl'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
-Linking 'C:\Git\WW101\ww101-shield\kit_firmware\PSoC_Example_Projects\WW101-Shield.cydsn\codegentemp\WW101-Shield.v'.
+Linking 'C:\Git\WW101\ww101-shield\firmware\Shield.cydsn\codegentemp\Shield.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
@@ -114,21 +114,21 @@ Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\conte
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Bus_Connect_v2_40\Bus_Connect_v2_40.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\cypress.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
-WW101-Shield.v (line 1219, col 24):  Warning: (W460) 't_fvalid' unassigned in module 'Scan_ADC_v1_30_8'.
-tovif:  WW101-Shield.v:  Warning: (W5120) Attempt to connect scalar net 'Net_552' with a formal 't_chid' of size 4. Some bits of the formal 't_chid' will be left unconnected.
-tovif:  WW101-Shield.v:  Warning: (W5120) Attempt to connect scalar net 'Net_554' with a formal 't_da' of size 12. Some bits of the formal 't_da' will be left unconnected.
+Shield.v (line 1136, col 24):  Warning: (W460) 't_fvalid' unassigned in module 'Scan_ADC_v1_30_7'.
+tovif:  Shield.v:  Warning: (W5120) Attempt to connect scalar net 'Net_552' with a formal 't_chid' of size 4. Some bits of the formal 't_chid' will be left unconnected.
+tovif:  Shield.v:  Warning: (W5120) Attempt to connect scalar net 'Net_554' with a formal 't_da' of size 12. Some bits of the formal 't_da' will be left unconnected.
 
 tovif:  No errors.  3 warnings.
 
 
 ======================================================================
-Compiling:  WW101-Shield.v
+Compiling:  Shield.v
 Program  :   topld
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Git\WW101\ww101-shield\kit_firmware\PSoC_Example_Projects\WW101-Shield.cydsn\WW101-Shield.cyprj -dcpsoc3 -verilog WW101-Shield.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Git\WW101\ww101-shield\firmware\Shield.cydsn\Shield.cyprj -dcpsoc3 -verilog Shield.v
 ======================================================================
 
 topld V6.3 IR 41:  Synthesis and optimization
-Mon Oct 09 10:57:43 2017
+Thu Oct 12 21:12:22 2017
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -139,9 +139,9 @@ Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\c
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'C:\Git\WW101\ww101-shield\kit_firmware\PSoC_Example_Projects\WW101-Shield.cydsn\codegentemp\WW101-Shield.ctl'.
+Linking 'C:\Git\WW101\ww101-shield\firmware\Shield.cydsn\codegentemp\Shield.ctl'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
-Linking 'C:\Git\WW101\ww101-shield\kit_firmware\PSoC_Example_Projects\WW101-Shield.cydsn\codegentemp\WW101-Shield.v'.
+Linking 'C:\Git\WW101\ww101-shield\firmware\Shield.cydsn\codegentemp\Shield.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
@@ -212,11 +212,6 @@ Aliasing zero to \EZI2C:select_s_wire\
 Aliasing one to \EZI2C:tmpOE__sda_net_0\
 Aliasing \EZI2C:tmpOE__scl_net_0\ to \EZI2C:tmpOE__sda_net_0\
 Aliasing \EZI2C:cts_wire\ to \EZI2C:select_s_wire\
-Aliasing \BootloadTimer:Net_75\ to \EZI2C:select_s_wire\
-Aliasing \BootloadTimer:Net_69\ to \EZI2C:tmpOE__sda_net_0\
-Aliasing \BootloadTimer:Net_66\ to \EZI2C:select_s_wire\
-Aliasing \BootloadTimer:Net_82\ to \EZI2C:select_s_wire\
-Aliasing \BootloadTimer:Net_72\ to \EZI2C:select_s_wire\
 Aliasing tmpOE__GPIO_net_0 to \EZI2C:tmpOE__sda_net_0\
 Aliasing tmpOE__CSINTR_net_0 to \EZI2C:tmpOE__sda_net_0\
 Aliasing tmpOE__PROXLED_net_0 to \EZI2C:tmpOE__sda_net_0\
@@ -302,100 +297,94 @@ Removing Rhs of wire zero[12] = \EZI2C:select_s_wire\[2]
 Removing Rhs of wire one[16] = \EZI2C:tmpOE__sda_net_0\[11]
 Removing Lhs of wire \EZI2C:tmpOE__scl_net_0\[19] = one[16]
 Removing Lhs of wire \EZI2C:cts_wire\[28] = zero[12]
-Removing Lhs of wire \BootloadTimer:Net_81\[52] = Net_30[64]
-Removing Lhs of wire \BootloadTimer:Net_75\[53] = zero[12]
-Removing Lhs of wire \BootloadTimer:Net_69\[54] = one[16]
-Removing Lhs of wire \BootloadTimer:Net_66\[55] = zero[12]
-Removing Lhs of wire \BootloadTimer:Net_82\[56] = zero[12]
-Removing Lhs of wire \BootloadTimer:Net_72\[57] = zero[12]
-Removing Lhs of wire tmpOE__GPIO_net_0[68] = one[16]
-Removing Lhs of wire tmpOE__CSINTR_net_0[74] = one[16]
-Removing Lhs of wire tmpOE__PROXLED_net_0[85] = one[16]
-Removing Lhs of wire \CapSense:Net_95\[114] = zero[12]
-Removing Lhs of wire \CapSense:Net_94\[115] = zero[12]
-Removing Lhs of wire \CapSense:Net_93\[119] = zero[12]
-Removing Lhs of wire \CapSense:Net_92\[138] = zero[12]
-Removing Lhs of wire \CapSense:tmpOE__Sns_net_6\[141] = one[16]
-Removing Lhs of wire \CapSense:tmpOE__Sns_net_5\[142] = one[16]
-Removing Lhs of wire \CapSense:tmpOE__Sns_net_4\[143] = one[16]
-Removing Lhs of wire \CapSense:tmpOE__Sns_net_3\[144] = one[16]
-Removing Lhs of wire \CapSense:tmpOE__Sns_net_2\[145] = one[16]
-Removing Lhs of wire \CapSense:tmpOE__Sns_net_1\[146] = one[16]
-Removing Lhs of wire \CapSense:tmpOE__Sns_net_0\[147] = one[16]
-Removing Lhs of wire \CapSense:Net_57\[167] = zero[12]
-Removing Lhs of wire \CapSense:Net_56\[168] = zero[12]
-Removing Lhs of wire \CapSense:Net_55\[169] = zero[12]
-Removing Lhs of wire \CapSense:Net_54\[170] = zero[12]
-Removing Lhs of wire \CapSense:Net_44\[173] = zero[12]
-Removing Lhs of wire \CapSense:Net_46\[174] = zero[12]
-Removing Lhs of wire \CapSense:Net_47\[175] = zero[12]
-Removing Lhs of wire \CapSense:Net_48\[176] = zero[12]
-Removing Lhs of wire \CapSense:tmpOE__Cmod_net_0\[178] = one[16]
-Removing Lhs of wire \VDAC:Net_478\[222] = \VDAC:Net_30\[221]
-Removing Lhs of wire \VDAC:Net_541\[223] = zero[12]
-Removing Lhs of wire \VDAC:Net_539\[224] = zero[12]
-Removing Lhs of wire \VDAC:mi\[228] = zero[12]
-Removing Lhs of wire \VDAC:strobe\[229] = zero[12]
-Removing Lhs of wire tmpOE__VDAC_A1_net_0[248] = one[16]
-Removing Rhs of wire \ADC:sarClock\[824] = \ADC:Net_428\[854]
-Removing Lhs of wire \ADC:Net_410\[846] = zero[12]
-Removing Lhs of wire \ADC:st_sel_1\[847] = zero[12]
-Removing Lhs of wire \ADC:st_sel_0\[848] = zero[12]
-Removing Lhs of wire \ADC:Net_412\[849] = zero[12]
-Removing Lhs of wire \ADC:Net_413\[850] = zero[12]
-Removing Lhs of wire \ADC:Net_414\[851] = zero[12]
-Removing Lhs of wire \ADC:Net_415\[852] = zero[12]
-Removing Lhs of wire \ADC:Net_416\[853] = zero[12]
-Removing Lhs of wire \ADC:Net_431\[855] = zero[12]
-Removing Lhs of wire \ADC:tmpOE__Bypass_net_0\[861] = one[16]
-Removing Lhs of wire tmpOE__THERM_BUF_net_0[1222] = one[16]
-Removing Lhs of wire tmpOE__THERM_REF_HI_net_0[1229] = one[16]
-Removing Lhs of wire tmpOE__THERM_REF_MID_net_0[1235] = one[16]
-Removing Lhs of wire tmpOE__THERM_REF_LO_net_0[1245] = one[16]
-Removing Lhs of wire tmpOE__TIA_IN_net_0[1271] = one[16]
-Removing Lhs of wire tmpOE__TIA_OUT_A0_net_0[1278] = one[16]
-Removing Lhs of wire tmpOE__POT_A2_net_0[1286] = one[16]
-Removing Lhs of wire \UART:select_s_wire\[1304] = zero[12]
-Removing Rhs of wire \UART:rx_wire\[1305] = \UART:Net_1268\[1306]
-Removing Lhs of wire \UART:Net_1170\[1309] = \UART:Net_847\[1303]
-Removing Lhs of wire \UART:sclk_s_wire\[1310] = zero[12]
-Removing Lhs of wire \UART:mosi_s_wire\[1311] = zero[12]
-Removing Lhs of wire \UART:miso_m_wire\[1312] = zero[12]
-Removing Lhs of wire \UART:tmpOE__tx_net_0\[1314] = one[16]
-Removing Lhs of wire \UART:tmpOE__rx_net_0\[1323] = one[16]
-Removing Lhs of wire \UART:cts_wire\[1327] = zero[12]
-Removing Lhs of wire tmpOE__CBLED3_net_0[1354] = one[16]
-Removing Lhs of wire tmpOE__CBLED2_net_0[1360] = one[16]
-Removing Lhs of wire tmpOE__CBLED1_net_0[1366] = one[16]
-Removing Lhs of wire tmpOE__CBLED0_net_0[1372] = one[16]
-Removing Lhs of wire tmpOE__LED2_net_0[1378] = one[16]
-Removing Lhs of wire tmpOE__D12_net_0[1386] = one[16]
-Removing Lhs of wire tmpOE__MB1_net_0[1393] = one[16]
-Removing Lhs of wire tmpOE__LED1_net_0[1400] = one[16]
-Removing Lhs of wire tmpOE__MB2_net_0[1408] = one[16]
-Removing Lhs of wire tmpOE__D5_net_0[1415] = one[16]
-Removing Lhs of wire tmpOE__D4_net_0[1421] = one[16]
-Removing Lhs of wire tmpOE__D11_net_0[1428] = one[16]
-Removing Lhs of wire \SmartIO:clock\[1446] = zero[12]
-Removing Lhs of wire \SmartIO:data0_in\[1447] = zero[12]
-Removing Lhs of wire \SmartIO:data1_in\[1450] = zero[12]
-Removing Lhs of wire \SmartIO:data2_in\[1453] = zero[12]
-Removing Lhs of wire \SmartIO:data3_in\[1456] = zero[12]
-Removing Lhs of wire \SmartIO:data4_in\[1459] = zero[12]
-Removing Lhs of wire \SmartIO:data5_in\[1462] = zero[12]
-Removing Lhs of wire \SmartIO:data6_in\[1465] = zero[12]
-Removing Lhs of wire \SmartIO:data7_in\[1468] = zero[12]
-Removing Lhs of wire \SmartIO:Net_654\[1471] = Net_738[1409]
-Removing Lhs of wire \SmartIO:Net_766\[1474] = Net_794[1394]
-Removing Lhs of wire \SmartIO:Net_776\[1477] = zero[12]
-Removing Lhs of wire \SmartIO:Net_797\[1479] = zero[12]
-Removing Lhs of wire \SmartIO:Net_798\[1481] = zero[12]
-Removing Lhs of wire \SmartIO:Net_799\[1483] = Net_739[1416]
-Removing Lhs of wire \SmartIO:Net_800\[1486] = zero[12]
-Removing Lhs of wire \SmartIO:Net_801\[1488] = Net_773[1429]
+Removing Lhs of wire tmpOE__GPIO_net_0[52] = one[16]
+Removing Lhs of wire tmpOE__CSINTR_net_0[58] = one[16]
+Removing Lhs of wire tmpOE__PROXLED_net_0[69] = one[16]
+Removing Lhs of wire \CapSense:Net_95\[98] = zero[12]
+Removing Lhs of wire \CapSense:Net_94\[99] = zero[12]
+Removing Lhs of wire \CapSense:Net_93\[103] = zero[12]
+Removing Lhs of wire \CapSense:Net_92\[122] = zero[12]
+Removing Lhs of wire \CapSense:tmpOE__Sns_net_6\[125] = one[16]
+Removing Lhs of wire \CapSense:tmpOE__Sns_net_5\[126] = one[16]
+Removing Lhs of wire \CapSense:tmpOE__Sns_net_4\[127] = one[16]
+Removing Lhs of wire \CapSense:tmpOE__Sns_net_3\[128] = one[16]
+Removing Lhs of wire \CapSense:tmpOE__Sns_net_2\[129] = one[16]
+Removing Lhs of wire \CapSense:tmpOE__Sns_net_1\[130] = one[16]
+Removing Lhs of wire \CapSense:tmpOE__Sns_net_0\[131] = one[16]
+Removing Lhs of wire \CapSense:Net_57\[151] = zero[12]
+Removing Lhs of wire \CapSense:Net_56\[152] = zero[12]
+Removing Lhs of wire \CapSense:Net_55\[153] = zero[12]
+Removing Lhs of wire \CapSense:Net_54\[154] = zero[12]
+Removing Lhs of wire \CapSense:Net_44\[157] = zero[12]
+Removing Lhs of wire \CapSense:Net_46\[158] = zero[12]
+Removing Lhs of wire \CapSense:Net_47\[159] = zero[12]
+Removing Lhs of wire \CapSense:Net_48\[160] = zero[12]
+Removing Lhs of wire \CapSense:tmpOE__Cmod_net_0\[162] = one[16]
+Removing Lhs of wire \VDAC:Net_478\[206] = \VDAC:Net_30\[205]
+Removing Lhs of wire \VDAC:Net_541\[207] = zero[12]
+Removing Lhs of wire \VDAC:Net_539\[208] = zero[12]
+Removing Lhs of wire \VDAC:mi\[212] = zero[12]
+Removing Lhs of wire \VDAC:strobe\[213] = zero[12]
+Removing Lhs of wire tmpOE__VDAC_A1_net_0[232] = one[16]
+Removing Rhs of wire \ADC:sarClock\[808] = \ADC:Net_428\[838]
+Removing Lhs of wire \ADC:Net_410\[830] = zero[12]
+Removing Lhs of wire \ADC:st_sel_1\[831] = zero[12]
+Removing Lhs of wire \ADC:st_sel_0\[832] = zero[12]
+Removing Lhs of wire \ADC:Net_412\[833] = zero[12]
+Removing Lhs of wire \ADC:Net_413\[834] = zero[12]
+Removing Lhs of wire \ADC:Net_414\[835] = zero[12]
+Removing Lhs of wire \ADC:Net_415\[836] = zero[12]
+Removing Lhs of wire \ADC:Net_416\[837] = zero[12]
+Removing Lhs of wire \ADC:Net_431\[839] = zero[12]
+Removing Lhs of wire \ADC:tmpOE__Bypass_net_0\[845] = one[16]
+Removing Lhs of wire tmpOE__THERM_BUF_net_0[1206] = one[16]
+Removing Lhs of wire tmpOE__THERM_REF_HI_net_0[1213] = one[16]
+Removing Lhs of wire tmpOE__THERM_REF_MID_net_0[1219] = one[16]
+Removing Lhs of wire tmpOE__THERM_REF_LO_net_0[1229] = one[16]
+Removing Lhs of wire tmpOE__TIA_IN_net_0[1255] = one[16]
+Removing Lhs of wire tmpOE__TIA_OUT_A0_net_0[1262] = one[16]
+Removing Lhs of wire tmpOE__POT_A2_net_0[1270] = one[16]
+Removing Lhs of wire \UART:select_s_wire\[1288] = zero[12]
+Removing Rhs of wire \UART:rx_wire\[1289] = \UART:Net_1268\[1290]
+Removing Lhs of wire \UART:Net_1170\[1293] = \UART:Net_847\[1287]
+Removing Lhs of wire \UART:sclk_s_wire\[1294] = zero[12]
+Removing Lhs of wire \UART:mosi_s_wire\[1295] = zero[12]
+Removing Lhs of wire \UART:miso_m_wire\[1296] = zero[12]
+Removing Lhs of wire \UART:tmpOE__tx_net_0\[1298] = one[16]
+Removing Lhs of wire \UART:tmpOE__rx_net_0\[1307] = one[16]
+Removing Lhs of wire \UART:cts_wire\[1311] = zero[12]
+Removing Lhs of wire tmpOE__CBLED3_net_0[1338] = one[16]
+Removing Lhs of wire tmpOE__CBLED2_net_0[1344] = one[16]
+Removing Lhs of wire tmpOE__CBLED1_net_0[1350] = one[16]
+Removing Lhs of wire tmpOE__CBLED0_net_0[1356] = one[16]
+Removing Lhs of wire tmpOE__LED2_net_0[1362] = one[16]
+Removing Lhs of wire tmpOE__D12_net_0[1370] = one[16]
+Removing Lhs of wire tmpOE__MB1_net_0[1377] = one[16]
+Removing Lhs of wire tmpOE__LED1_net_0[1384] = one[16]
+Removing Lhs of wire tmpOE__MB2_net_0[1392] = one[16]
+Removing Lhs of wire tmpOE__D5_net_0[1399] = one[16]
+Removing Lhs of wire tmpOE__D4_net_0[1405] = one[16]
+Removing Lhs of wire tmpOE__D11_net_0[1412] = one[16]
+Removing Lhs of wire \SmartIO:clock\[1430] = zero[12]
+Removing Lhs of wire \SmartIO:data0_in\[1431] = zero[12]
+Removing Lhs of wire \SmartIO:data1_in\[1434] = zero[12]
+Removing Lhs of wire \SmartIO:data2_in\[1437] = zero[12]
+Removing Lhs of wire \SmartIO:data3_in\[1440] = zero[12]
+Removing Lhs of wire \SmartIO:data4_in\[1443] = zero[12]
+Removing Lhs of wire \SmartIO:data5_in\[1446] = zero[12]
+Removing Lhs of wire \SmartIO:data6_in\[1449] = zero[12]
+Removing Lhs of wire \SmartIO:data7_in\[1452] = zero[12]
+Removing Lhs of wire \SmartIO:Net_654\[1455] = Net_738[1393]
+Removing Lhs of wire \SmartIO:Net_766\[1458] = Net_794[1378]
+Removing Lhs of wire \SmartIO:Net_776\[1461] = zero[12]
+Removing Lhs of wire \SmartIO:Net_797\[1463] = zero[12]
+Removing Lhs of wire \SmartIO:Net_798\[1465] = zero[12]
+Removing Lhs of wire \SmartIO:Net_799\[1467] = Net_739[1400]
+Removing Lhs of wire \SmartIO:Net_800\[1470] = zero[12]
+Removing Lhs of wire \SmartIO:Net_801\[1472] = Net_773[1413]
 
 ------------------------------------------------------
-Aliased 0 equations, 100 wires.
+Aliased 0 equations, 94 wires.
 ------------------------------------------------------
 
 ----------------------------------------------------------
@@ -417,22 +406,19 @@ topld:  No errors.
 
 CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp
 Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\bin\warp.exe
-Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Git\WW101\ww101-shield\kit_firmware\PSoC_Example_Projects\WW101-Shield.cydsn\WW101-Shield.cyprj -dcpsoc3 WW101-Shield.v -verilog
+Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Git\WW101\ww101-shield\firmware\Shield.cydsn\Shield.cyprj -dcpsoc3 Shield.v -verilog
 </CYPRESSTAG>
-Warp synthesis phase: Elapsed time ==> 1s.201ms
+Warp synthesis phase: Elapsed time ==> 1s.211ms
 <CYPRESSTAG name="Fitter results...">
 <CYPRESSTAG name="Fitter startup details...">
-cyp3fit: V4.1.0.2686, Family: PSoC3, Started at: Monday, 09 October 2017 10:57:44
-Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Git\WW101\ww101-shield\kit_firmware\PSoC_Example_Projects\WW101-Shield.cydsn\WW101-Shield.cyprj -d CY8C4A45AZI-483 WW101-Shield.v -verilog
+cyp3fit: V4.1.0.2686, Family: PSoC3, Started at: Thursday, 12 October 2017 21:12:22
+Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Git\WW101\ww101-shield\firmware\Shield.cydsn\Shield.cyprj -d CY8C4A45AZI-483 Shield.v -verilog
 </CYPRESSTAG>
 <CYPRESSTAG name="Design parsing">
 Design parsing phase: Elapsed time ==> 0s.031ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Tech Mapping">
 <CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
-
-Removing unused cells resulting from optimization
-Done removing unused cells.
 <CYPRESSTAG name="Global Clock Selection" icon="FILE_RPT_TECHM">
     Alignment-Only Clock: Automatic-assigning  clock 'ADC_intUabClock'. Fanout=0
     Fixed Function Clock 3: Automatic-assigning  clock 'CapSense_ModClk'. Signal=\CapSense:Net_1423_ff3\
@@ -440,7 +426,6 @@ Done removing unused cells.
     Fixed Function Clock 0: Automatic-assigning  clock 'EZI2C_SCBCLK'. Signal=\EZI2C:Net_847_ff0\
     Fixed Function Clock 1: Automatic-assigning  clock 'UART_SCBCLK'. Signal=\UART:Net_847_ff1\
     Fixed Function Clock 13: Automatic-assigning  clock 'VDAC_internalClock'. Signal=\VDAC:Net_30_ff13\
-    Fixed Function Clock 4: Automatic-assigning  clock 'Clock_1'. Signal=Net_30_ff4
 <CYPRESSTAG name="UDB Clock/Enable Remapping Results">
 </CYPRESSTAG>
 </CYPRESSTAG>
@@ -1951,15 +1936,6 @@ Design Equations
             is_nmi = 0
         }
 
-    interrupt: Name =BL_INT
-        PORT MAP (
-            interrupt => Net_1743 );
-        Properties:
-        {
-            int_type = "10"
-            is_nmi = 0
-        }
-
     interrupt: Name =\CapSense:ISR\
         PORT MAP (
             interrupt => \CapSense:Net_120\ );
@@ -1987,14 +1963,14 @@ Technology mapping summary
 
 Resource Type                 : Used : Free :  Max :  % Used
 ============================================================
-Interrupts                    :    4 :   21 :   25 : 16.00 %
+Interrupts                    :    3 :   22 :   25 : 12.00 %
 IO                            :   36 :    2 :   38 : 94.74 %
 Segment LCD                   :    0 :    1 :    1 :  0.00 %
 CapSense                      :    1 :    0 :    1 : 100.00 %
 Die Temp                      :    0 :    1 :    1 :  0.00 %
 Serial Communication (SCB)    :    2 :    1 :    3 : 66.67 %
 DMA Channels                  :    0 :    8 :    8 :  0.00 %
-Timer/Counter/PWM             :    1 :    7 :    8 : 12.50 %
+Timer/Counter/PWM             :    0 :    8 :    8 :  0.00 %
 Decimator                     :    0 :    2 :    2 :  0.00 %
 Smart IO Ports                :    1 :    0 :    1 : 100.00 %
 Comparator/Opamp              :    4 :    0 :    4 : 100.00 %
@@ -2006,8 +1982,8 @@ SAR ADC                       :    1 :    0 :    1 : 100.00 %
 DAC                           :      :      :      :        
   7-bit IDAC                  :    2 :    0 :    2 : 100.00 %
 </CYPRESSTAG>
-Technology Mapping: Elapsed time ==> 0s.053ms
-Tech Mapping phase: Elapsed time ==> 0s.084ms
+Technology Mapping: Elapsed time ==> 0s.075ms
+Tech Mapping phase: Elapsed time ==> 0s.087ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Placement">
 <CYPRESSTAG name="FFB & IO Pre Placement">
@@ -2068,21 +2044,20 @@ ClockGenBlock                       : CLK_GEN_[FFB(CLK_GEN,0)]
 CyDesignWideVoltageReference        : REF_PRB0.REF1                      
 \PVref_ALS:cy_psoc4_pref\           : REF_PRB0.REF2                      
 \ADC:vssa_kelvin_0\                 : Vref_[FFB(Vref,0)]                 
-\BootloadTimer:cy_m0s8_tcpwm_1\     : TCPWM_[FFB(TCPWM,0)]               
 
 </CYPRESSTAG>
 </CYPRESSTAG>
 <CYPRESSTAG name="Real Analog Placement">
 Info: plm.M0038: The pin named \CapSense:Sns(5)\ at location [IOP=(2)][IoId=(3)] prevents usage of special purposes: F(OA,1). (App=cydsfit)
-Elapsed time ==> 0.1765944s
+Elapsed time ==> 0.1756149s
 </CYPRESSTAG>
-Analog Placement phase: Elapsed time ==> 1s.201ms
+Analog Placement phase: Elapsed time ==> 1s.213ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Routing">
 <CYPRESSTAG name="Analog Routing">
-Route success=True, Iterations=1 Elapsed=0.0556791 secs
+Route success=True, Iterations=1 Elapsed=0.0561804 secs
 </CYPRESSTAG>
-Analog Routing phase: Elapsed time ==> 0s.069ms
+Analog Routing phase: Elapsed time ==> 0s.066ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Code Generation">
 ============ Analog Final Answer Routes ============
@@ -2427,7 +2402,7 @@ Mux Info {
     }
   }
 }
-Analog Code Generation phase: Elapsed time ==> 0s.031ms
+Analog Code Generation phase: Elapsed time ==> 0s.032ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Placement">
 <CYPRESSTAG name="Detailed placement messages">
@@ -2445,7 +2420,7 @@ PLD Packing: Elapsed time ==> 0s.000ms
 Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
 <CYPRESSTAG name="Final Partitioning Summary">
 Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
-Partitioning: Elapsed time ==> 0s.015ms
+Partitioning: Elapsed time ==> 0s.026ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Final Placement Summary">
 
@@ -2485,15 +2460,6 @@ Intr container @ [IntrContainer=(0)]:
     interrupt: Name =\ADC:IRQ\
         PORT MAP (
             interrupt => \ADC:Net_423\ );
-        Properties:
-        {
-            int_type = "10"
-            is_nmi = 0
-        }
-  Intr@ [IntrContainer=(0)][IntrId=(17)] 
-    interrupt: Name =BL_INT
-        PORT MAP (
-            interrupt => Net_1743 );
         Properties:
         {
             int_type = "10"
@@ -4014,8 +3980,7 @@ Clock group 0:
             ff_div_12 => \ADC:sarClock_ff12\ ,
             ff_div_0 => \EZI2C:Net_847_ff0\ ,
             ff_div_1 => \UART:Net_847_ff1\ ,
-            ff_div_13 => \VDAC:Net_30_ff13\ ,
-            ff_div_4 => Net_30_ff4 );
+            ff_div_13 => \VDAC:Net_30_ff13\ );
         Properties:
         {
         }
@@ -4152,26 +4117,7 @@ CSIDAC7 group 0:
             cy_registers = ""
             leg3_needed = 1
         }
-TCPWM group 0: 
-    Tcpwm Block @ F(TCPWM,0): 
-    m0s8tcpwmcell: Name =\BootloadTimer:cy_m0s8_tcpwm_1\
-        PORT MAP (
-            clock => Net_30_ff4 ,
-            capture => zero ,
-            count => one ,
-            reload => zero ,
-            stop => zero ,
-            start => zero ,
-            tr_underflow => Net_26 ,
-            tr_overflow => Net_25 ,
-            tr_compare_match => Net_27 ,
-            line => Net_28 ,
-            line_compl => Net_29 ,
-            interrupt => Net_1743 );
-        Properties:
-        {
-            cy_registers = ""
-        }
+TCPWM group 0: empty
 OA group 0: 
     Comparator/Opamp @ F(OA,0): 
     p4abufcell: Name =\Opamp_ALS2:cy_psoc4_abuf\
@@ -4413,33 +4359,33 @@ Port | Pin | Fixed |      Type |       Drive Mode |               Name | Connect
 </CYPRESSTAG>
 </CYPRESSTAG>
 </CYPRESSTAG>
-Digital component placer commit/Report: Elapsed time ==> 0s.046ms
-Digital Placement phase: Elapsed time ==> 0s.216ms
+Digital component placer commit/Report: Elapsed time ==> 0s.038ms
+Digital Placement phase: Elapsed time ==> 0s.225ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Routing">
-"C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\bin/sjrouter.exe" --xml-path "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\dev\psoc4/8/route_arch-rrg.cydata" --vh2-path "WW101-Shield_r.vh2" --pcf-path "WW101-Shield.pco" --des-name "WW101-Shield" --dsf-path "WW101-Shield.dsf"
+"C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\bin/sjrouter.exe" --xml-path "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\dev\psoc4/8/route_arch-rrg.cydata" --vh2-path "Shield_r.vh2" --pcf-path "Shield.pco" --des-name "Shield" --dsf-path "Shield.dsf"
 Routing successful.
-Digital Routing phase: Elapsed time ==> 0s.400ms
+Digital Routing phase: Elapsed time ==> 0s.284ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Generation">
-Bitstream Generation phase: Elapsed time ==> 0s.253ms
+Bitstream Generation phase: Elapsed time ==> 0s.256ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Verification">
 Bitstream Verification phase: Elapsed time ==> 0s.015ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Static timing analysis">
 No timing parameter file available for CY8C4A45AZI-483
-Static timing analysis phase: Elapsed time ==> 0s.000ms
+Static timing analysis phase: Elapsed time ==> 0s.001ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Data reporting">
 Data reporting phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Database update...">
-Design database save phase: Elapsed time ==> 0s.232ms
+Design database save phase: Elapsed time ==> 0s.256ms
 </CYPRESSTAG>
-cydsfit: Elapsed time ==> 2s.603ms
+cydsfit: Elapsed time ==> 2s.524ms
 </CYPRESSTAG>
-Fitter phase: Elapsed time ==> 2s.603ms
-API generation phase: Elapsed time ==> 8s.080ms
-Dependency generation phase: Elapsed time ==> 0s.031ms
-Cleanup phase: Elapsed time ==> 0s.000ms
+Fitter phase: Elapsed time ==> 2s.525ms
+API generation phase: Elapsed time ==> 6s.889ms
+Dependency generation phase: Elapsed time ==> 0s.034ms
+Cleanup phase: Elapsed time ==> 0s.001ms

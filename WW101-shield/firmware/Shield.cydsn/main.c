@@ -24,7 +24,7 @@
 
 /* Constants used to calculate humidity */
 /* This is the capacitance of the sensor at 55% RH with 0.1pF resolution */
-#define CAPACITANCE_AT_55_RH        (1800)
+#define CAPACITANCE_AT_55_RH        (1850)
 /* Sensitivity numerator and denominator indicate sensitivity of the sensor */
 #define SENSITIVITY_NUMERATOR       (31)
 #define SENSITIVITY_DENOMINATOR     (100)
@@ -95,7 +95,6 @@ bool capLedBase = false;        /* Setting for whether the CapSense LEDs are con
 
 /* Function prototypes */
 /* Interrupt Service Routines */
-CY_ISR_PROTO(BL_ISR);
 CY_ISR_PROTO(ADC_ISR_Callback);
 void SysTickISRCallback(void);
 /* Humidity calculation */
@@ -110,7 +109,7 @@ void processCapSense(void);
 int main(void)
 {
     /* Local variables */
-    bool    BootloadCountFlag = false;
+    bool    pressFlag = false;
     uint8   interruptState = 0;   /* Variable to store the status returned by CyEnterCriticalSection() */
     int32   dacValPrev = 0;
     float32 dacVal;
@@ -120,12 +119,11 @@ int main(void)
     int16   thermistorResistance; /* Variables for temperature calculation */
     int16   temp16; /* Temperature expressed as a 16 bit integer in 1/100th of a degree */
     uint32  i;
-
-    CyGlobalIntEnable; /* Enable global interrupts. */
-
-    BL_INT_StartEx(BL_ISR); /* Interrupt to start the bootloader */ 
+    // Range of POT for bootloader entry testing
+    float32 potMin = 3.3;
+    float32 potMax = 0.0;
     
-    /* This starts both master and slave but only one will be used at at time */
+    CyGlobalIntEnable; /* Enable global interrupts. */
 
     EZI2C_Start();
     #ifdef ENABLE_TUNER
@@ -145,6 +143,16 @@ int main(void)
     ADC_IRQ_Enable();
     
     CapSense_Start();   
+    /* Over-ride IDAC values for buttons but keep auto for Prox and Humidity */
+    CapSense_BUTTON0_IDAC_MOD0_VALUE =          7u;
+    CapSense_BUTTON0_SNS0_IDAC_COMP0_VALUE =    6u;
+    CapSense_BUTTON1_IDAC_MOD0_VALUE =          7u;
+    CapSense_BUTTON1_SNS0_IDAC_COMP0_VALUE =    7u;
+    CapSense_BUTTON2_IDAC_MOD0_VALUE =          9u;
+    CapSense_BUTTON2_SNS0_IDAC_COMP0_VALUE =    7u;
+    CapSense_BUTTON3_IDAC_MOD0_VALUE =          9u;
+    CapSense_BUTTON3_SNS0_IDAC_COMP0_VALUE =    8u;
+    /* Setup first widget and run the scan */    
     CapSense_SetupWidget(CapSense_BUTTON0_WDGT_ID);
     CapSense_Scan();      
     
@@ -166,17 +174,29 @@ int main(void)
         /* Look for bootloader entry - both mechanical buttons held down for 2 seconds */
         if((MB1_Read() == PRESSED) && (MB2_Read() == PRESSED))
         {
-            if(BootloadCountFlag == false)
+            // Reset pot range checking when buttons are first pressed
+            if(pressFlag == false)
             {
-                BootloadTimer_Start();
+                pressFlag = true;
+                potMin = LocData.potVal;
+                potMax = LocData.potVal;
             }
-            BootloadCountFlag = true;
+            if(LocData.potVal < potMin)
+            {
+                potMin = LocData.potVal;
+            }
+            else if(LocData.potVal > potMax)
+            {
+                potMax = LocData.potVal;
+            }
+            if((potMax - potMin) > 1.0) /* Pot moved more than 1V, time to bootload */
+            {
+                Bootloadable_Load();
+            }
         }
-        else if(BootloadCountFlag == true)
+        else /* Buttons not pressed */
         {
-            BootloadCountFlag = false;
-            BootloadTimer_Stop();
-            BootloadTimer_WriteCounter(0);
+            pressFlag = false;
         }
 
         /* CapSense Scanning */
@@ -276,17 +296,6 @@ int main(void)
         
     } /* End of main infinite loop */
 } /* End of main */
-
-/*******************************************************************************
-* Function Name: void BL_ISR( void )
-********************************************************************************/
-/* ISR for the bootloader timer */
-/* If we get here it is time to launch the bootloader */
-CY_ISR(BL_ISR)
-{
-    BootloadTimer_ClearInterrupt(BootloadTimer_INTR_MASK_TC);
-    Bootloadable_Load();
-}
 
 /*******************************************************************************
 * Function Name: void SysTick( void )
