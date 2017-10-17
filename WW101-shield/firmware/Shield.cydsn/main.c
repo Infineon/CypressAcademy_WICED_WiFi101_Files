@@ -100,8 +100,12 @@ void SysTickISRCallback(void);
 /* Humidity calculation */
 __inline uint16 CalculateCapacitance(uint16 rawCounts, uint16 refsensorCounts);
 __inline uint16 CalculateHumidity(uint16 capacitance);
-/*CapSense */
+/*Processing function for each major system */
+void processButtons(void);
 void processCapSense(void);
+void processADC(void);
+void processDAC(void);
+void processI2C(void);
 
 /*******************************************************************************
 * Function Name: int  main( void )
@@ -109,19 +113,7 @@ void processCapSense(void);
 int main(void)
 {
     /* Local variables */
-    bool    pressFlag = false;
-    uint8   interruptState = 0;   /* Variable to store the status returned by CyEnterCriticalSection() */
-    int32   dacValPrev = 0;
-    float32 dacVal;
-    int32   dacCode;
-    int16   alsCurrent; /* Variable to store ALS current */
-    int16   illum16; /* Illuminance as a 16 bit value (lux) */
-    int16   thermistorResistance; /* Variables for temperature calculation */
-    int16   temp16; /* Temperature expressed as a 16 bit integer in 1/100th of a degree */
     uint32  i;
-    // Range of POT for bootloader entry testing
-    float32 potMin = 3.3;
-    float32 potMax = 0.0;
     
     CyGlobalIntEnable; /* Enable global interrupts. */
 
@@ -171,134 +163,24 @@ int main(void)
     
     for(;;)
     {
-        /* Look for bootloader entry - both mechanical buttons held down for 2 seconds */
-        if((MB1_Read() == PRESSED) && (MB2_Read() == PRESSED))
-        {
-            // Reset pot range checking when buttons are first pressed
-            if(pressFlag == false)
-            {
-                pressFlag = true;
-                potMin = LocData.potVal;
-                potMax = LocData.potVal;
-            }
-            if(LocData.potVal < potMin)
-            {
-                potMin = LocData.potVal;
-            }
-            else if(LocData.potVal > potMax)
-            {
-                potMax = LocData.potVal;
-            }
-            if((potMax - potMin) > 1.0) /* Pot moved more than 1V, time to bootload */
-            {
-                Bootloadable_Load();
-            }
-        }
-        else /* Buttons not pressed */
-        {
-            pressFlag = false;
-        }
-
-        /* CapSense Scanning */
-        processCapSense();
-        
-        /* Read and update mechanical button state */
-        if(MB1_Read() == PRESSED)
-        {
-            LocData.buttonVal |= (BVAL_MB1_MASK);
-        }
-        else
-        {
-           LocData.buttonVal &= (~BVAL_MB1_MASK);
-        }
-        if(MB1_Read() == PRESSED)
-        {
-            LocData.buttonVal |= (BVAL_MB2_MASK);
-        }
-        else
-        {
-            LocData.buttonVal &= (~BVAL_MB2_MASK);
-        }
-        
-        /* Update CapSense buttons if set to base board control */
-        if(capLedBase == true)
-        {
-            CBLED0_Write(!(LocData.ledVal & BVAL_B0_MASK));
-            CBLED1_Write(!(LocData.ledVal & BVAL_B1_MASK));
-            CBLED2_Write(!(LocData.ledVal & BVAL_B2_MASK));
-            CBLED3_Write(!(LocData.ledVal & BVAL_B3_MASK));
-        }
- 
-        /* Set VDAC value if it has changed */
-        dacVal = LocData.dacVal;
-        if(dacValPrev != dacVal)
-        {
-            dacValPrev = dacVal;
-            // DAC range is 2.4V, Valid inputs are -4096 to 4094
-            dacCode = (int32)(((dacVal * 8192.0)/2.4) - 4096.0);
-            if (dacCode < -4096)
-            {
-                dacCode = -4096;
-            }
-            VDAC_SetValue(VDAC_SaturateTwosComp(dacCode));
-        }
-        
-        /* Process ADC results that were captured in the interrupt */
-        if(adcState == PROCESS)
-        {
-            /* ALS */
-            /* Calculate the photodiode current */
-			alsCurrent = (adcResults[ALS] * ALS_CURRENT_SCALE_FACTOR_NUMERATOR)/ALS_CURRENT_SCALE_FACTOR_DENOMINATOR; 
-			
-			/* If the calculated current is negative, limit it to zero */
-			if(alsCurrent < 0)
-			{
-				alsCurrent = 0;
-			}
-			
-			/* Calculate the light illuminance */
-            illum16 = (alsCurrent * ALS_LIGHT_SCALE_FACTOR_NUMERATOR)/ALS_LIGHT_SCALE_FACTOR_DENOMINATOR;
-			LocData.illuminance = (float32)(illum16);
-            
-            /* Thermistor */
-            /* Calculate thermistor resistance */
-            thermistorResistance = Thermistor_GetResistance(adcResults[THERM_REF], adcResults[THERM]);           
-                           
-            /* Calculate temperature in degree Celsius using the Component API */
-            temp16 = Thermistor_GetTemperature(thermistorResistance);
-            /* Convert tempearture to a float */
-            LocData.temperature = ((float32)(temp16))/100.0;
-            
-            /* POT */
-            LocData.potVal = ADC_CountsTo_Volts(POT, adcResults[POT]);
-            
-            adcState = DONE;
-        }
-        
-        /* Update I2C registers to/from local copy if it isn't busy */
-        /* Enter critical section to check if I2C bus is busy or not */
-        interruptState = CyEnterCriticalSection();
-        if(!(EZI2C_EzI2CGetActivity() & EZI2C_EZI2C_STATUS_BUSY))
-        {
-            /* Get values that are written by the master */
-            LocData.dacVal = I2Cbuf.dacVal;
-            LocData.ledVal = I2Cbuf.ledVal;
-            LocData.ledControl = I2Cbuf.ledControl;
-            capLedBase = LocData.ledControl & CAPLEDMASK;
-            /* Send values that are updated by the slave */
-            I2Cbuf.buttonVal = LocData.buttonVal;
-            I2Cbuf.temperature = LocData.temperature;
-            I2Cbuf.humidity = LocData.humidity;
-            I2Cbuf.illuminance = LocData.illuminance;
-            I2Cbuf.potVal = LocData.potVal;
-        }
-        CyExitCriticalSection(interruptState); 
-        
-    } /* End of main infinite loop */
+        processButtons();  /* Mechanical buttons and bootloader entry */
+        processCapSense(); /* CapSense Scanning */
+        processDAC();      /* VDAC output voltage setting */
+        processADC();      /* Process ADC results after each scan completes */
+        processI2C();      /* Copy date between I2C registers and local operating registers */
+    }
 } /* End of main */
 
 /*******************************************************************************
 * Function Name: void SysTick( void )
+********************************************************************************
+*
+* Summary:
+*  This is the SysTick Timer callback ISR. It is called every 1ms and performs 2 functions:
+*  1. It starts a new ADC conversion every 100ms be setting adcState to RUNNING.
+*  2. It resets the CapSense interrupt line every 2nd time it is called.
+*     Since the CapSense interrupt may be asserted at any time, this guarantees a pulse
+*     on the CapSense interrupt output pin between 1ms and 2ms.
 ********************************************************************************/
 /* 1ms SysTick ISR */
 /* This is used to start a new ADC conversion every 100ms
@@ -333,6 +215,12 @@ void SysTickISRCallback(void)
 
 /*******************************************************************************
 * Function Name: void ADC_ISR_Callback( void )
+********************************************************************************
+*
+* Summary:
+*  This function is called each time the ADC finishes a full set of conversions.
+*  It copies the results to an array and sets the adcState to PROCESS. This causes
+*  the processADC funciton to calculate values from the latest results.
 ********************************************************************************/
 /* ADC converstion is done - capture all ADC values */
 CY_ISR(ADC_ISR_Callback)
@@ -347,7 +235,81 @@ CY_ISR(ADC_ISR_Callback)
 }
 
 /*******************************************************************************
-* Function Name: void procesCapsense( void )
+* Function Name: void processButtons( void )
+********************************************************************************
+*
+* Summary:
+*  This function looks at the state of each mechanical button and sets the I2C
+*  register bits appropriatly.
+*
+*  It also looks for bootloader entry which required both buttons held down while
+*  the POT is moved by more than 1V.
+*******************************************************************************/
+void processButtons(void)
+{
+    static bool    pressFlag = false;    
+    static float32 potMin = 3.3;
+    static float32 potMax = 0.0;
+    
+    /* Read and update mechanical button state */
+    if(MB1_Read() == PRESSED)
+    {
+        LocData.buttonVal |= (BVAL_MB1_MASK);
+    }
+    else
+    {
+       LocData.buttonVal &= (~BVAL_MB1_MASK);
+    }
+    if(MB1_Read() == PRESSED)
+    {
+        LocData.buttonVal |= (BVAL_MB2_MASK);
+    }
+    else
+    {
+        LocData.buttonVal &= (~BVAL_MB2_MASK);
+    }
+    
+    /* Update CapSense buttons if set to base board control */
+    if(capLedBase == true)
+    {
+        CBLED0_Write(!(LocData.ledVal & BVAL_B0_MASK));
+        CBLED1_Write(!(LocData.ledVal & BVAL_B1_MASK));
+        CBLED2_Write(!(LocData.ledVal & BVAL_B2_MASK));
+        CBLED3_Write(!(LocData.ledVal & BVAL_B3_MASK));
+    }
+    
+    /* Look for bootloader entry - both mechanical buttons held down and
+       POT rotated at least 1V */
+    if((MB1_Read() == PRESSED) && (MB2_Read() == PRESSED))
+    {
+        // Reset pot range checking when buttons are first pressed
+        if(pressFlag == false)
+        {
+            pressFlag = true;
+            potMin = LocData.potVal;
+            potMax = LocData.potVal;
+        }
+        if(LocData.potVal < potMin)
+        {
+            potMin = LocData.potVal;
+        }
+        else if(LocData.potVal > potMax)
+        {
+            potMax = LocData.potVal;
+        }
+        if((potMax - potMin) > 1.0) /* Pot moved more than 1V, time to bootload */
+        {
+            Bootloadable_Load();
+        }
+    }
+    else /* Buttons not pressed */
+    {
+        pressFlag = false;
+    }
+}
+
+/*******************************************************************************
+* Function Name: void processCapsense( void )
 ********************************************************************************
 *
 * Summary:
@@ -493,6 +455,120 @@ void processCapSense(void)
         #endif
         CapSense_Scan();
     }
+}
+
+/*******************************************************************************
+* Function Name: void processADC( void )
+********************************************************************************
+*
+* Summary:
+*  This function calculates all values from the ADC each time a scan completes.
+*  The variable adcState is set to PROCESS by the ADC ISR each time a scan finishes.
+*  Once processing is done, the adcState variable is set to DONE so that the
+*  next scan can start.
+*
+* The values calculated are: Ambient light, temperature, and POT voltage.
+*******************************************************************************/
+void processADC(void)
+{
+    int16   alsCurrent; /* Variable to store ALS current */
+    int16   illum16; /* Illuminance as a 16 bit value (lux) */
+    int16   thermistorResistance; /* Variables for temperature calculation */
+    int16   temp16; /* Temperature expressed as a 16 bit integer in 1/100th of a degree */
+
+    /* Process ADC results that were captured in the interrupt */
+    if(adcState == PROCESS)
+    {
+        /* ALS */
+        /* Calculate the photodiode current */
+		alsCurrent = (adcResults[ALS] * ALS_CURRENT_SCALE_FACTOR_NUMERATOR)/ALS_CURRENT_SCALE_FACTOR_DENOMINATOR; 
+		
+		/* If the calculated current is negative, limit it to zero */
+		if(alsCurrent < 0)
+		{
+			alsCurrent = 0;
+		}
+		
+		/* Calculate the light illuminance */
+        illum16 = (alsCurrent * ALS_LIGHT_SCALE_FACTOR_NUMERATOR)/ALS_LIGHT_SCALE_FACTOR_DENOMINATOR;
+		LocData.illuminance = (float32)(illum16);
+        
+        /* Thermistor */
+        /* Calculate thermistor resistance */
+        thermistorResistance = Thermistor_GetResistance(adcResults[THERM_REF], adcResults[THERM]);           
+                       
+        /* Calculate temperature in degree Celsius using the Component API */
+        temp16 = Thermistor_GetTemperature(thermistorResistance);
+        /* Convert tempearture to a float */
+        LocData.temperature = ((float32)(temp16))/100.0;
+        
+        /* POT */
+        LocData.potVal = ADC_CountsTo_Volts(POT, adcResults[POT]);
+        
+        adcState = DONE;
+    }
+}
+
+/*******************************************************************************
+* Function Name: void processDAC( void )
+********************************************************************************
+*
+* Summary:
+*  This function sets the DAC output voltage based on the value copied from the I2C register.
+*******************************************************************************/
+void processDAC(void)
+{
+    static int32   dacValPrev = 0;
+    float32 dacVal;
+    int32   dacCode;
+
+    /* Set VDAC value if it has changed */
+    dacVal = LocData.dacVal;
+    if(dacValPrev != dacVal)
+    {
+        dacValPrev = dacVal;
+        // DAC range is 2.4V, Valid inputs are -4096 to 4094
+        dacCode = (int32)(((dacVal * 8192.0)/2.4) - 4096.0);
+        if (dacCode < -4096)
+        {
+            dacCode = -4096;
+        }
+        VDAC_SetValue(VDAC_SaturateTwosComp(dacCode));
+    }
+}
+
+/*******************************************************************************
+* Function Name: void processI2C( void )
+********************************************************************************
+*
+* Summary:
+*  This function copies date from/to the I2C registers to local values that are
+*  used in the rest of the firmware. The values are:
+*  From I2C: Desired DAC Voltage, LED states (if LEDs are under baseboard control), LED control register
+*  To I2C:   Button Values, Temperature, Humidity, Ambient Light, POT Voltage
+*******************************************************************************/
+void processI2C(void)
+{
+    uint8   interruptState;   /* Variable to store the status returned by CyEnterCriticalSection() */
+    
+    /* Update I2C registers to/from local copy if it isn't busy */
+    /* Enter critical section to check if I2C bus is busy or not */
+    interruptState = CyEnterCriticalSection();
+    if(!(EZI2C_EzI2CGetActivity() & EZI2C_EZI2C_STATUS_BUSY))
+    {
+        /* Get values that are written by the master */
+        LocData.dacVal = I2Cbuf.dacVal;
+        LocData.ledVal = I2Cbuf.ledVal;
+        LocData.ledControl = I2Cbuf.ledControl;
+        capLedBase = LocData.ledControl & CAPLEDMASK;
+        /* Send values that are updated by the slave */
+        I2Cbuf.buttonVal = LocData.buttonVal;
+        I2Cbuf.temperature = LocData.temperature;
+        I2Cbuf.humidity = LocData.humidity;
+        I2Cbuf.illuminance = LocData.illuminance;
+        I2Cbuf.potVal = LocData.potVal;
+    }
+    CyExitCriticalSection(interruptState); 
 }
 
 /*******************************************************************************

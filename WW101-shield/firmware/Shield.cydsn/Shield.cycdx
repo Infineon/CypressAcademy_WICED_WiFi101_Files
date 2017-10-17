@@ -5,7 +5,7 @@
   <block name="D_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="CBLED3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="D12" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="MB1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="MB2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="CBLED0" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="LED2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="PWR_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
@@ -1759,7 +1759,7 @@
   <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="D4" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="D11" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="MB2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="MB1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="D5" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="GND_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="PWR_4" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
