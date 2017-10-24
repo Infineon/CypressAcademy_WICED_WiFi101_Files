@@ -166,8 +166,8 @@ void application_start( )
 	}
 
     /* Start threads that interact with the shield (PSoC and OLED) */
-    wiced_rtos_create_thread(&getWeatherDataThreadHandle, THREAD_BASE_PRIORITY+2, NULL, getWeatherDataThread, THREAD_STACK_SIZE, NULL);
     wiced_rtos_create_thread(&getCapSenseThreadHandle, THREAD_BASE_PRIORITY+2, NULL, getCapSenseThread, THREAD_STACK_SIZE, NULL);
+	wiced_rtos_create_thread(&getWeatherDataThreadHandle, THREAD_BASE_PRIORITY+2, NULL, getWeatherDataThread, THREAD_STACK_SIZE, NULL);
     wiced_rtos_create_thread(&displayThreadHandle, THREAD_BASE_PRIORITY+4, NULL, displayThread, THREAD_STACK_SIZE, NULL);
 
     /* Start up the MQTT connection to the server */
@@ -222,6 +222,9 @@ void application_start( )
         return;
     }
 
+    /* Update the display so that the IP address is shown */
+    wiced_rtos_set_semaphore(&displaySemaphore);
+
     wiced_mqtt_init( mqtt_object );
 
     /* Get IP Address for MyThing and save in the Thing data structure */
@@ -229,7 +232,6 @@ void application_start( )
     snprintf(iot_data[MY_THING].ip_str, sizeof(iot_data[MY_THING].ip_str), "%d.%d.%d.%d",
                    (int)((ipAddress.ip.v4 >> 24) & 0xFF), (int)((ipAddress.ip.v4 >> 16) & 0xFF),
                    (int)((ipAddress.ip.v4 >> 8) & 0xFF),  (int)(ipAddress.ip.v4 & 0xFF));
-
 
     WPRINT_APP_INFO(("[MQTT] Opening connection..."));
     connection_retries = 0;
@@ -298,7 +300,6 @@ void application_start( )
         /* Start the publish thread */
         /* This has to be done after the subscriptions are done so that we can get an initial state from all things */
         wiced_rtos_create_thread(&publishThreadHandle, THREAD_BASE_PRIORITY+1, NULL, publishThread, THREAD_STACK_SIZE, NULL);
-
 
         /* Wait and then start command thread last so that help info is displayed at the bottom of the terminal window */
         wiced_rtos_delay_milliseconds(5500);
@@ -416,18 +417,20 @@ void getWeatherDataThread(wiced_thread_arg_t arg)
 /* Thread to read CapSense button values */
 void getCapSenseThread(wiced_thread_arg_t arg)
 {
-    uint8_t CapSenseValues;
-
+    uint8_t CapSenseValues = 0;
     wiced_bool_t buttonPressed = WICED_FALSE;
 
     /* Buffer to set the offset */
-    uint8_t offset[] = {BUTTON_OFFSET_REG};
+    uint8_t offset = BUTTON_OFFSET_REG;
 
     while(1)
     {
+        /* Wait 100 milliseconds */
+         wiced_rtos_delay_milliseconds( 100 );
+
         /* Get I2C data - use a Mutex to prevent conflicts */
         wiced_rtos_lock_mutex(&i2cMutex);
-        wiced_i2c_write(&i2cPsoc, WICED_I2C_START_FLAG | WICED_I2C_STOP_FLAG, offset, sizeof(offset)); /* Set the offset */
+        wiced_i2c_write(&i2cPsoc, WICED_I2C_START_FLAG | WICED_I2C_STOP_FLAG, &offset, sizeof(offset)); /* Set the offset */
         wiced_i2c_read(&i2cPsoc, WICED_I2C_START_FLAG | WICED_I2C_STOP_FLAG, &CapSenseValues, sizeof(CapSenseValues)); /* Get data */
         wiced_rtos_unlock_mutex(&i2cMutex);
 
@@ -478,9 +481,6 @@ void getCapSenseThread(wiced_thread_arg_t arg)
         {
             buttonPressed = WICED_FALSE;
         }
-
-        /* Wait 100 milliseconds */
-        wiced_rtos_delay_milliseconds( 50 );
     }
 }
 
