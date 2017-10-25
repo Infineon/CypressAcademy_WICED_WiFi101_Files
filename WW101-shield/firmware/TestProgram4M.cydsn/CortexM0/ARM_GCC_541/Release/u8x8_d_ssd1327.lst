@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 1
 
 
    1              		.syntax unified
@@ -18,14 +18,14 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
   15              		.file	"u8x8_d_ssd1327.c"
   16              		.text
   17              	.Ltext0:
-  18              		.section	.gnu.lto_.profile.ba9e633,"",%progbits
+  18              		.section	.gnu.lto_.profile.50a24bb0,"",%progbits
   19 0000 789C6361 		.ascii	"x\234ca`d`c`\000\2227\230:\031\001\005\015\001q"
   19      60646063 
   19      60009237 
   19      983A1901 
   19      050D0171 
   20              		.text
-  21              		.section	.gnu.lto_.icf.ba9e633,"",%progbits
+  21              		.section	.gnu.lto_.icf.50a24bb0,"",%progbits
   22 0000 789C6361 		.ascii	"x\234ca`d\000\001\027\006\004\340fX\335z\374\006\033"
   22      60640001 
   22      170604E0 
@@ -51,14 +51,14 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
   26      000065B1 
   27 0058 20C7     		.ascii	" \307"
   28              		.text
-  29              		.section	.gnu.lto_.jmpfuncs.ba9e633,"",%progbits
+  29              		.section	.gnu.lto_.jmpfuncs.50a24bb0,"",%progbits
   30 0000 789C8590 		.ascii	"x\234\205\220M\012\3020\020\205\363&\251\272\262n\334"
   30      4D0AC230 
   30      1085F326 
   30      A9BAB26E 
   30      DC
   31 0011 B9F09A5D 		.ascii	"\271\360\232]%\"\"\271Aq-X\377\275\200x\005]y\005]["
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 2
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 2
 
 
   31      252222B9 
@@ -114,11 +114,11 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
   41      1B
   42 00d2 C12A69E8 		.ascii	"\301*i\350"
   43              		.text
-  44              		.section	.gnu.lto_.inline.ba9e633,"",%progbits
+  44              		.section	.gnu.lto_.inline.50a24bb0,"",%progbits
   45 0000 789C7552 		.ascii	"x\234uR\313J\003A\020\354\356\235\315\256y\270#\036"
   45      CB4A0341 
   45      10ECEE9D 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 3
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 3
 
 
   45      CDAE79B8 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
   57 00d9 CA458C5C 		.ascii	"\312E\214\\0e\360\313\252*\2470\253\010\363!,r\210\223"
   57      3065F0CB 
   57      AA2AA730 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 4
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 4
 
 
   57      AB08F321 
@@ -216,7 +216,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
   64      073FE209 
   64      74AF
   65              		.text
-  66              		.section	.gnu.lto_.pureconst.ba9e633,"",%progbits
+  66              		.section	.gnu.lto_.pureconst.50a24bb0,"",%progbits
   67 0000 789C6361 		.ascii	"x\234ca`d\340d```a\220b\222d\225`\227\002\000\002\300"
   67      6064E064 
   67      60606061 
@@ -224,7 +224,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
   67      95609702 
   68 0017 0086     		.ascii	"\000\206"
   69              		.text
-  70              		.section	.gnu.lto_u8x8_ssd1327_8to32.isra.0.ba9e633,"",%progbits
+  70              		.section	.gnu.lto_u8x8_ssd1327_8to32.isra.0.50a24bb0,"",%progbits
   71 0000 789C9556 		.ascii	"x\234\225V]l\024U\024\276g\356\354\314\354\354\316n"
   71      5D6C1455 
   71      14BE67EE 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
   73 0024 6F264454 		.ascii	"o&DTJPc\014\241`L|\350\300\264KK\200\020\"\205\226\305"
   73      4A50630C 
   73      A1604C7C 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 5
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 5
 
 
   73      E8C0B44B 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
   85 0107 946FF56A 		.ascii	"\224o\365j\312k\244&2\232\200\275P\014\315PL\"|\005"
   85      CA6BA426 
   85      329A80BD 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 6
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 6
 
 
   85      500CCD50 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
   96      DC3D6CC8 
   97 01e8 0F9B4757 		.ascii	"\017\233GW\370\250m\351B_I\035:s*9\222x\270\3151\252"
   97      F8A86DE9 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 7
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 7
 
 
   97      425F491D 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  109      59ECDB6E 
  109      B0EB81A9 
  109      AE
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 8
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 8
 
 
  110 02cc 014EACAB 		.ascii	"\001N\254\253\353\257\313f\325\003\267\326u\363\320"
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  121      646EA7A2 
  121      14CE043A 
  121      6B6FD60D 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 9
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 9
 
 
  121      64605AB8 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  132      9D65CA
  133 0480 6B066A0C 		.ascii	"k\006j\014\317\027O\335\2263\224S\337,\345\223OzL\362"
  133      CF174FDD 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 10
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 10
 
 
  133      96339453 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  144      016409
  145 055d D3517D0D 		.ascii	"\323Q}\015\247\346\276:\227\236\340\350\273\230\343"
  145      A7E6BE3A 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 11
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 11
 
 
  145      979EE0E8 
@@ -626,7 +626,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  150      F11FEB84 
  150      0B6C
  151              		.text
- 152              		.section	.gnu.lto_u8x8_d_ssd1327_96x96_generic.ba9e633,"",%progbits
+ 152              		.section	.gnu.lto_u8x8_d_ssd1327_96x96_generic.50a24bb0,"",%progbits
  153 0000 789C8D57 		.ascii	"x\234\215W\335s\024U\026\277\247o\177M\317G\342\002"
  153      DD731455 
  153      16BFA76F 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  158      F7BBBF73 
  158      EE39
  159 006b A7EFE802 		.ascii	"\247\357\350\002\004}\226\206\205x\022\257g\360\013"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 12
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 12
 
 
  159      047D9686 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  170      F8002471 
  170      BE0F
  171 013c 51A885A8 		.ascii	"Q\250\205\250\300)\001u0\007\255O\3277&u\371\020#o7"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 13
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 13
 
 
  171      C0290175 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  183 020c FE1B61B3 		.ascii	"\376\033a\263\314\305O.4B\036\034\302\357A\374\036\200"
  183      CCC54F2E 
  183      34421E1C 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 14
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 14
 
 
  183      C2EF41FC 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  194      8F19C301 
  194      FE4461F6 
  195 02ea BC974A64 		.ascii	"\274\227Jd)L\026>\276\375\321\356-a\037\263\305!L\202"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 15
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 15
 
 
  195      294C163E 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  206      416EDCB1 
  206      C6B68E
  207 03c8 A4356A50 		.ascii	"\2445jPg\006\275\350\275\375\345\006Se@\011@\033D\343"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 16
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 16
 
 
  207      6706BDE8 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  219 0498 4CA6B3D8 		.ascii	"L\246\263\330i\303\225MW\312N\373\201\23312RU\023E\352"
  219      69C3954D 
  219      57CA4EFB 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 17
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 17
 
 
  219      819B3132 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  230      A0C2331B 
  231 0571 2711B6A1 		.ascii	"'\021\266\241\246\252\316{3I\270\214q\351\005cB\312"
  231      A6AACE7B 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 18
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 18
 
 
  231      3349B88C 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  242      DCC84071 
  242      2ECFA323 
  243 0657 776C67A5 		.ascii	"wlg\245\027\203y\376\231`\000$\326\273\215UR\030\301"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 19
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 19
 
 
  243      178379FE 
@@ -1138,13 +1138,13 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  254      BEBEF0E2 
  254      6A89
  255 0730 5F5801FF 		.ascii	"_X\001\377\206\265\277\003w\215YY"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 20
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 20
 
 
  255      86B5BF03 
  255      778D5959 
  256              		.text
- 257              		.section	.gnu.lto_u8x8_d_ssd1327_96x96_powersave0_seq.ba9e633,"",%progbits
+ 257              		.section	.gnu.lto_u8x8_d_ssd1327_96x96_powersave0_seq.50a24bb0,"",%progbits
  258 0000 789C6361 		.ascii	"x\234ca`d\000\201\355@\014a10\374eb\\\337\372d%\307"
  258      60640081 
  258      ED400C61 
@@ -1189,7 +1189,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  266      00B94E3F 
  266      3D
  267              		.text
- 268              		.section	.gnu.lto_u8x8_d_ssd1327_96x96_powersave1_seq.ba9e633,"",%progbits
+ 268              		.section	.gnu.lto_u8x8_d_ssd1327_96x96_powersave1_seq.50a24bb0,"",%progbits
  269 0000 789C6361 		.ascii	"x\234ca`d\000\201\355@\014a10\374eb\\\337\372d%\307"
  269      60640081 
  269      ED400C61 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  270 0017 17A65666 		.ascii	"\027\246Vf\006\306\377\214@\376\305\226\015s\230A|F"
  270      06C6FF8C 
  270      40FEC596 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 21
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 21
 
 
  270      0D739841 
@@ -1235,7 +1235,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  277      820100CF 
  277      B03F7F
  278              		.text
- 279              		.section	.gnu.lto_u8x8_d_ssd1327_seeed_96x96.part.1.ba9e633,"",%progbits
+ 279              		.section	.gnu.lto_u8x8_d_ssd1327_seeed_96x96.part.1.50a24bb0,"",%progbits
  280 0000 789C8D53 		.ascii	"x\234\215SKH\224Q\024\276\337\177\377y8\241\030m\\\014"
  280      4B489451 
  280      14BEDF7F 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  283      914DE7DC 
  284 0050 7F1C145C 		.ascii	"\177\034\024\\t\341\347\276\276\357|\347|\367\374\246"
  284      74E1E7BE 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 22
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 22
 
 
  284      BEEF7CE7 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  295      FAAFB519 
  296 0127 09568858 		.ascii	"\011V\210X\001b\231\350\331\234g\2027\327\373\267&\325"
  296      016299E8 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 23
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 23
 
 
  296      D99C6782 
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  307      2BFC9282 
  307      DBC50282 
  307      D1DA
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 24
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 24
 
 
  308 0213 1D5BA31D 		.ascii	"\035[\243\035q\203\325\236Xh\356\341\340\213w\016no"
@@ -1426,7 +1426,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  317 02b0 0FD7AD4A 		.ascii	"\017\327\255J\353"
  317      EB
  318              		.text
- 319              		.section	.gnu.lto_u8x8_d_ssd1327_96x96_init_seq.ba9e633,"",%progbits
+ 319              		.section	.gnu.lto_u8x8_d_ssd1327_96x96_init_seq.50a24bb0,"",%progbits
  320 0000 789C4D94 		.ascii	"x\234M\224gS\233G\024\205\337\225\2501%\275*\275\367"
  320      67539B47 
  320      1485DF95 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  321      63A4C178 
  321      7014
  322 0025 82870C31 		.ascii	"\202\207\0141\031\233\022 `$\252,!0\246\032L\0232E\021"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 25
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 25
 
 
  322      199B1220 
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  333      4F7DA6AA 
  333      6D93C5AD 
  333      EB17
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 26
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 26
 
 
  334 0105 8D992ACE 		.ascii	"\215\231*\316\201\226\337\032\375Y\331Y9\236\002\363"
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  345      474A5778 
  345      F65E83FE 
  345      56D9E0E4 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 27
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 27
 
 
  345      BEBC
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  357      2CF6F1C9 
  357      19F2B6F9 
  357      F29CD4
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 28
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 28
 
 
  358 02b3 33F20095 		.ascii	"3\362\000\225zC\274\327\013\361\336\333\3431N\3671h"
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  369      FC1FE003 
  370 0381 33CCA7C1 		.ascii	"3\314\247\301\024\230d~\017x\301\004s\017\373\2171\037"
  370      1498647E 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 29
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 29
 
 
  370      0F78C104 
@@ -1707,7 +1707,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  375      7F01AACF 
  375      7CE2
  376              		.text
- 377              		.section	.gnu.lto_u8x8_d_ssd1327_seeed_96x96.ba9e633,"",%progbits
+ 377              		.section	.gnu.lto_u8x8_d_ssd1327_seeed_96x96.50a24bb0,"",%progbits
  378 0000 789C9D55 		.ascii	"x\234\235UmO\034U\024\276\347\336y\331\231]\226u\211"
  378      6D4F1C55 
  378      14BEE7DE 
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  383      068D
  384 006b 01A3EB05 		.ascii	"\001\243\353\005\223\261\347\360\276\027\377\300\307"
  384      93B1E7F0 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 30
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 30
 
 
  384      BE17FFC0 
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  396      4B652A35 
  396      A40D8EC8 
  396      BCC6A91B 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 31
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 31
 
 
  396      EF
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  407      597C
  408 0216 5A817504 		.ascii	"Z\201u\004w\036m\037\004\005\266` \005\326X\277\206"
  408      771E6D1F 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 32
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 32
 
 
  408      0405B660 
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  419      A8C31EEF 
  420 02e9 08A50FDB 		.ascii	"\010\245\017\3336\037\035\325\325as \226:\254\207-\372"
  420      361F1DD5 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 33
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 33
 
 
  420      D5617320 
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  431      F7E21A73 
  432 03ca 32CC0D66 		.ascii	"2\314\015f7wZr\320\373\0033\377\333\334Kis/\223\271"
  432      37775A72 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 34
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 34
 
 
  432      D0FB0333 
@@ -2018,7 +2018,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  439      E6AE8A3F 
  439      012A517D 
  440              		.text
- 441              		.section	.gnu.lto_u8x8_ssd1327_96x96_display_info.ba9e633,"",%progbits
+ 441              		.section	.gnu.lto_u8x8_ssd1327_96x96_display_info.50a24bb0,"",%progbits
  442 0000 789C2DCC 		.ascii	"x\234-\314MK\002Q\024\306\361\373\334q\362m\246\321"
  442      4D4B0251 
  442      14C6F1FB 
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  445      1DF13E1C 
  445      EFE677FF 
  446 0043 70CE8929 		.ascii	"p\316\211)(\276#\203\374\224\2124\216\273\243\2127\323"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 35
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 35
 
 
  446      28BE2383 
@@ -2085,7 +2085,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  454      444E6D00 
  454      6C276E9A 
  455              		.text
- 456              		.section	.gnu.lto_u8x8_d_ssd1327_seeed_96x96_flip0_seq.ba9e633,"",%progbits
+ 456              		.section	.gnu.lto_u8x8_d_ssd1327_seeed_96x96_flip0_seq.50a24bb0,"",%progbits
  457 0000 789C2D8E 		.ascii	"x\234-\216\261J\303P\024\206\357\237[[\253\322N\212"
  457      B14AC350 
  457      1486EF9F 
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  458      1451626D 
  459 002a 3289D841 		.ascii	"2\211\330AP0\243\223J\352ZTZ\212h\254\377\345$\360q"
  459      5030A393 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 36
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 36
 
 
  459      4AEA5A54 
@@ -2158,10 +2158,10 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  470      A3A2FE01 
  470      6C0D7D27 
  471              		.text
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 37
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 37
 
 
- 472              		.section	.gnu.lto_u8x8_d_ssd1327_seeed_96x96_flip1_seq.ba9e633,"",%progbits
+ 472              		.section	.gnu.lto_u8x8_d_ssd1327_seeed_96x96_flip1_seq.50a24bb0,"",%progbits
  473 0000 789C2D8E 		.ascii	"x\234-\216\301JBA\024\206\347\314\3505KrU\024\314KT"
  473      C14A4241 
  473      1486E7CC 
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  483      9A63091D 
  484 00cc BE061B1C 		.ascii	"\276\006\033\034\357@\227\337oe'\023dO*Y_\271J\322\236"
  484      EF4097DF 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 38
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 38
 
 
  484      6F652713 
@@ -2237,7 +2237,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  487      9132E21F 
  487      58E07E44 
  488              		.text
- 489              		.section	.gnu.lto_.symbol_nodes.ba9e633,"",%progbits
+ 489              		.section	.gnu.lto_.symbol_nodes.50a24bb0,"",%progbits
  490 0000 789C558E 		.ascii	"x\234U\216MJ\003A\024\204\353\365\233\236I2\311L2\036"
  490      4D4A0341 
  490      1484EBF5 
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  498 008a 0C123F96 		.ascii	"\014\022?\226a\342K\031%~$\345\177\317j\012\373Y{\264"
  498      61E24B19 
  498      257E24E5 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 39
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 39
 
 
  498      7FCF6A0A 
@@ -2309,7 +2309,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  503      0291CA66 
  503      4E
  504              		.text
- 505              		.section	.gnu.lto_.refs.ba9e633,"",%progbits
+ 505              		.section	.gnu.lto_.refs.50a24bb0,"",%progbits
  506 0000 789C0DC7 		.ascii	"x\234\015\307\301\025\000\020\014D\301\315OBx\016Z\320"
  506      C1150010 
  506      0C44C1CD 
@@ -2324,7 +2324,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  508      B71E1165 
  508      00E1
  509              		.text
- 510              		.section	.gnu.lto_.decls.ba9e633,"",%progbits
+ 510              		.section	.gnu.lto_.decls.50a24bb0,"",%progbits
  511 0000 789CBD5A 		.ascii	"x\234\275Z{PTW\232\357\323\247\201\246i\300\000\311"
  511      7B505457 
  511      9AEFD3A7 
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  513 0024 1E9BDD3F 		.ascii	"\036\233\335?\246R\233Ivj\227\251\236\246i\265g\240"
  513      A6529B49 
  513      766A97A9 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 40
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 40
 
 
  513      9EA669B5 
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  524      3E
  525 00fd 1722E66F 		.ascii	"\027\"\346o\023\310gp_\004\022\015R\014\022\017\262"
  525      13C86770 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 41
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 41
 
 
  525      5F04120D 
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  536      DC24
  537 01d8 4620CF89 		.ascii	"F \317\211M$?@\036\251\230]\304&5\331'.s\212\237,\227"
  537      4D243F40 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 42
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 42
 
 
  537      1EA9985D 
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  549 02a7 9ADA292F 		.ascii	"\232\332)/\335Z\352}\252\020\324\036@p\265\300P\003"
  549      DD5AEA7D 
  549      AA10D41E 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 43
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 43
 
 
  549      4070B5C0 
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  560      54CE357A 
  560      7B76F32B 
  561 0385 4D0773F3 		.ascii	"M\007s\363\322\345\264f\304F\373\201\332t-\277\225\257"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 44
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 44
 
 
  561      D2E5B466 
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  572      D20D739C 
  572      97E6E814 
  572      C37B3FED 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 45
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 45
 
 
  573 0461 E6108FC1 		.ascii	"\346\020\217\301|P\253.\364\316\"\334\304\202p\366\371"
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  584 052a CEF5C2BD 		.ascii	"\316\365\302\275\314\357\331\2725\2074x\224)\267\333"
  584      CCEFD9BA 
  584      35873478 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 46
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 46
 
 
  584      9429B7DB 
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  596 05ff A130F404 		.ascii	"\2410\364\004\3441\310\014\310,H\272:\014M\302u\012"
  596      E431C80C 
  596      C82C48BA 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 47
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 47
 
 
  596      3A0C4DC2 
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  607      5214889B 
  607      E8
  608 06e0 59A03E3B 		.ascii	"Y\240>;\\\334\032\200\202\303\335o\217L\330\022\177"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 48
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 48
 
 
  608      5CDC1A80 
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  619      A37A3EFC 
  619      CD556B18 
  620 07b8 DADA9173 		.ascii	"\332\332\221s\350\365\035\202\243F\030\332\362\340\303"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 49
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 49
 
 
  620      E8F51D82 
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  632 0883 38D7E97A 		.ascii	"8\327\351z\355\324]->\313\206\255\231\353?\256\305\203"
  632      EDD45D2D 
  632      3ECB86AD 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 50
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 50
 
 
  632      99EB3FAE 
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  644      06690139 
  644      047210A4 
  644      19E4
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 51
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 51
 
 
  645 0962 004893A2 		.ascii	"\000H\223\242\240h\271\350|\"\325+-,T\273<H\017J\320"
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  656      C831D200 
  656      56B80FA0 
  657 0a35 2CDED312 		.ascii	",\336\323\022x\257+\330M\015)\241+\335\243e\324Sy!l"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 52
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 52
 
 
  657      78AF2BD8 
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  668      C304867A 
  668      25437AE5 
  668      865CA586 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 53
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 53
 
 
  668      EC
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  679      EFEB
  680 0bd8 9CF176DA 		.ascii	"\234\361v\332z\217\331\232W\330y\352[\002\376\200\332"
  680      7A8FD99A 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 54
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 54
 
 
  680      57D879EA 
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  691      43D2
  692 0cac 8F66A4C9 		.ascii	"\217f\244\311g\304\311\347\350\344\003;\007\263\275"
  692      67C4C9E7 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 55
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 55
 
 
  692      E8E4033B 
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  703      8C4CCE
  704 0d7e 20FDF491 		.ascii	" \375\364\221\311\031\326S\206\272sO\2330\356a\014\017"
  704      C919D653 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 56
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 56
 
 
  704      86BA734F 
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  715      FA81025D 
  715      CCD1
  716 0e62 C514BD3A 		.ascii	"\305\024\275:c\356v n`Qo*~\356\320\340\203LI/\230\273"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 57
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 57
 
 
  716      63EE7620 
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  727      8B979A94 
  727      E88D8AC4 
  727      A9E4E8
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 58
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 58
 
 
  728 0f44 4A8A2E3B 		.ascii	"J\212.;:yQ\371\005\315\035\005\272\212\243\253(\272"
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  740      1297109F 
  741 1010 688F5A66 		.ascii	"h\217ZfM\2122&\306E\375C\004A\300\335\017\255\361V\363"
  741      4D8A3226 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 59
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 59
 
 
  741      C645FD43 
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  752      12E26D76 
  752      03C4
  753 10f1 D16C377C 		.ascii	"\321l7|j\264\330\015q\266\020\246\311G\306\331\346C"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 60
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 60
 
 
  753      6AB4D80D 
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  764      31312493 
  764      FDC87A43 
  764      47A2DD1C 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 61
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 61
 
 
  764      43EF
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  775      AE7A
  776 1297 C36D0E25 		.ascii	"\303m\016%\304\177\012kf\\a\216\004\360\037\276\003"
  776      C47F0A6B 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 62
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 62
 
 
  776      665C618E 
@@ -3685,7 +3685,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  780      01BCE7
  781 12f1 647F     		.ascii	"d\177"
  782              		.text
- 783              		.section	.gnu.lto_.symtab.ba9e633,"",%progbits
+ 783              		.section	.gnu.lto_.symtab.50a24bb0,"",%progbits
  784 0000 75387838 		.ascii	"u8x8_d_ssd1327_seeed_96x96\000"
  784      5F645F73 
  784      73643133 
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  799 0062 00       		.ascii	"\000"
  800 0063 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
  800      00000000 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 63
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 63
 
 
  801 006b 6A010000 		.ascii	"j\001\000\000"
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  830      00000000 
  831 0120 7F010000 		.ascii	"\177\001\000\000"
  832 0124 75387838 		.ascii	"u8x8_d_helper_display_setup_memory\000"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 64
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 64
 
 
  832      5F645F68 
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
   12:..\u8g2\csrc/u8x8_d_ssd1327.c **** 
   13:..\u8g2\csrc/u8x8_d_ssd1327.c ****   * Redistributions of source code must retain the above copyright notice, this list 
   14:..\u8g2\csrc/u8x8_d_ssd1327.c ****     of conditions and the following disclaimer.
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 65
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 65
 
 
   15:..\u8g2\csrc/u8x8_d_ssd1327.c ****     
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
   69:..\u8g2\csrc/u8x8_d_ssd1327.c ****   uint8_t a,b;
   70:..\u8g2\csrc/u8x8_d_ssd1327.c ****   uint8_t i, j;
   71:..\u8g2\csrc/u8x8_d_ssd1327.c ****   uint8_t *dest;
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 66
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 66
 
 
   72:..\u8g2\csrc/u8x8_d_ssd1327.c ****   
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  126:..\u8g2\csrc/u8x8_d_ssd1327.c ****       u8x8_cad_SendArg(u8x8, arg_int );	/* ssd1327 has range from 0 to 255 */
  127:..\u8g2\csrc/u8x8_d_ssd1327.c ****       u8x8_cad_EndTransfer(u8x8);
  128:..\u8g2\csrc/u8x8_d_ssd1327.c ****       break;
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 67
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 67
 
 
  129:..\u8g2\csrc/u8x8_d_ssd1327.c **** #endif
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  183:..\u8g2\csrc/u8x8_d_ssd1327.c ****   /* pre_chip_disable_wait_ns = */ 10,
  184:..\u8g2\csrc/u8x8_d_ssd1327.c ****   /* reset_pulse_width_ms = */ 100, 	
  185:..\u8g2\csrc/u8x8_d_ssd1327.c ****   /* post_reset_wait_ms = */ 100, 		/**/
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 68
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 68
 
 
  186:..\u8g2\csrc/u8x8_d_ssd1327.c ****   /* sda_setup_time_ns = */ 100,		/* */
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  240:..\u8g2\csrc/u8x8_d_ssd1327.c ****   
  241:..\u8g2\csrc/u8x8_d_ssd1327.c ****   //? U8X8_CA(0x0ad, 0x002),		/* master configuration: disable embedded DC-DC, enable internal VCOM
  242:..\u8g2\csrc/u8x8_d_ssd1327.c ****   //? U8X8_C(0x086),				/* full current range (0x084, 0x085, 0x086) */
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 69
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 69
 
 
  243:..\u8g2\csrc/u8x8_d_ssd1327.c ****   
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  871 0006 1500     		movs	r5, r2
  872              	.LVL1:
  873 0008 1F00     		movs	r7, r3
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 70
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 70
 
 
  874              	.LBB8:
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  920 0042 7B79     		ldrb	r3, [r7, #5]
  921              	.LVL11:
  133:..\u8g2\csrc/u8x8_d_ssd1327.c ****       x+=u8x8->x_offset/2;
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 71
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 71
 
 
  922              		.loc 1 133 0
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  966 0074 009B     		ldr	r3, [sp]
  967 0076 2000     		movs	r0, r4
  968 0078 D91C     		adds	r1, r3, #3
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 72
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 72
 
 
  969 007a C9B2     		uxtb	r1, r1
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  1015 00b8 0123     		movs	r3, #1
   83:..\u8g2\csrc/u8x8_d_ssd1327.c ****       if ( a&1 ) v |= 0xf0;
  1016              		.loc 1 83 0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 73
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 73
 
 
  1017 00ba 0021     		movs	r1, #0
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  1061              	.LVL34:
  1062              	.LBE11:
  1063              	.LBE10:
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 74
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 74
 
 
  156:..\u8g2\csrc/u8x8_d_ssd1327.c **** 	  ptr += 8;
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  282:..\u8g2\csrc/u8x8_d_ssd1327.c ****     return 1;
  283:..\u8g2\csrc/u8x8_d_ssd1327.c ****   if ( msg == U8X8_MSG_DISPLAY_SETUP_MEMORY )
  1110              		.loc 1 283 0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 75
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 75
 
 
  1111 012a 0929     		cmp	r1, #9
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  306:..\u8g2\csrc/u8x8_d_ssd1327.c ****     return 1;
  307:..\u8g2\csrc/u8x8_d_ssd1327.c ****   }
  308:..\u8g2\csrc/u8x8_d_ssd1327.c ****   return 0;
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 76
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 76
 
 
  1143              		.loc 1 308 0
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  1189 017c 00000000 		.word	.LANCHOR1
  1190              		.cfi_endproc
  1191              	.LFE2:
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 77
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 77
 
 
  1192              		.size	u8x8_d_ssd1327_seeed_96x96, .-u8x8_d_ssd1327_seeed_96x96
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  1246 002c A8       		.byte	-88
  1247 002d 16       		.byte	22
  1248 002e 5F       		.byte	95
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 78
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 78
 
 
  1249 002f 15       		.byte	21
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  1303 0062 15       		.byte	21
  1304 0063 A2       		.byte	-94
  1305 0064 16       		.byte	22
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 79
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 79
 
 
  1306 0065 20       		.byte	32
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  1356 002c 03       		.uleb128 0x3
  1357 002d 2E030000 		.4byte	.LASF3
  1358 0031 02       		.byte	0x2
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 80
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 80
 
 
  1359 0032 1D       		.byte	0x1d
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  1413 0098 19040000 		.4byte	.LASF13
  1414 009c 03       		.byte	0x3
  1415 009d 24       		.byte	0x24
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 81
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 81
 
 
  1416 009e 45000000 		.4byte	0x45
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  1470 0113 3F01     		.2byte	0x13f
  1471 0115 0D030000 		.4byte	0x30d
  1472 0119 14       		.byte	0x14
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 82
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 82
 
 
  1473 011a 06       		.uleb128 0x6
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  1527 018f 06       		.uleb128 0x6
  1528 0190 4F060000 		.4byte	.LASF32
  1529 0194 04       		.byte	0x4
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 83
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 83
 
 
  1530 0195 4B01     		.2byte	0x14b
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  1584 0205 D7       		.byte	0xd7
  1585 0206 8C000000 		.4byte	0x8c
  1586 020a 03       		.byte	0x3
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 84
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 84
 
 
  1587 020b 08       		.uleb128 0x8
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  1641 0277 08       		.uleb128 0x8
  1642 0278 7B000000 		.4byte	.LASF52
  1643 027c 04       		.byte	0x4
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 85
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 85
 
 
  1644 027d FF       		.byte	0xff
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  1698 02ee C9       		.byte	0xc9
  1699 02ef 8C000000 		.4byte	0x8c
  1700 02f3 04       		.byte	0x4
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 86
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 86
 
 
  1701 02f4 08       		.uleb128 0x8
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  1755 0369 0A       		.uleb128 0xa
  1756 036a 04       		.byte	0x4
  1757 036b 8C000000 		.4byte	0x8c
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 87
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 87
 
 
  1758 036f 0A       		.uleb128 0xa
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  1812 03dd 01       		.byte	0x1
  1813 03de 47       		.byte	0x47
  1814 03df 69030000 		.4byte	0x369
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 88
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 88
 
 
  1815 03e3 00       		.byte	0
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  1869 045d 63       		.byte	0x63
  1870 045e 42030000 		.4byte	0x342
  1871 0462 12       		.uleb128 0x12
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 89
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 89
 
 
  1872 0463 7800     		.ascii	"x\000"
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  1926 04eb 1D030000 		.4byte	.LLST6
  1927 04ef 18       		.uleb128 0x18
  1928 04f0 36040000 		.4byte	0x436
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 90
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 90
 
 
  1929 04f4 70030000 		.4byte	.LLST7
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  1983 0590 9B050000 		.4byte	0x59b
  1984 0594 1F       		.uleb128 0x1f
  1985 0595 01       		.uleb128 0x1
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 91
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 91
 
 
  1986 0596 50       		.byte	0x50
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  2040 05f3 00       		.sleb128 0
  2041 05f4 1F       		.uleb128 0x1f
  2042 05f5 01       		.uleb128 0x1
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 92
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 92
 
 
  2043 05f6 51       		.byte	0x51
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  2097 0647 01       		.uleb128 0x1
  2098 0648 51       		.byte	0x51
  2099 0649 02       		.uleb128 0x2
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 93
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 93
 
 
  2100 064a 08       		.byte	0x8
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  2154 069b 51       		.byte	0x51
  2155 069c 02       		.uleb128 0x2
  2156 069d 08       		.byte	0x8
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 94
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 94
 
 
  2157 069e 20       		.byte	0x20
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  2211 070d 02       		.uleb128 0x2
  2212 070e 74       		.byte	0x74
  2213 070f 00       		.sleb128 0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 95
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 95
 
 
  2214 0710 1F       		.uleb128 0x1f
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  2268 076d 01       		.byte	0x1
  2269 076e 28       		.byte	0x28
  2270 076f 79070000 		.4byte	0x779
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 96
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 96
 
 
  2271 0773 05       		.uleb128 0x5
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  2325 07e8 C6070000 		.4byte	0x7c6
  2326 07ec 23       		.uleb128 0x23
  2327 07ed 80030000 		.4byte	0x380
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 97
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 97
 
 
  2328 07f1 FC070000 		.4byte	0x7fc
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  2382 0870 1F02     		.2byte	0x21f
  2383 0872 27       		.uleb128 0x27
  2384 0873 EF020000 		.4byte	.LASF85
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 98
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 98
 
 
  2385 0877 EF020000 		.4byte	.LASF85
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  2439 002b 04       		.uleb128 0x4
  2440 002c 24       		.uleb128 0x24
  2441 002d 00       		.byte	0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 99
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 99
 
 
  2442 002e 0B       		.uleb128 0xb
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  2496 0064 0D       		.uleb128 0xd
  2497 0065 00       		.byte	0
  2498 0066 03       		.uleb128 0x3
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 100
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 100
 
 
  2499 0067 0E       		.uleb128 0xe
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  2553 009d 0F       		.uleb128 0xf
  2554 009e 00       		.byte	0
  2555 009f 0B       		.uleb128 0xb
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 101
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 101
 
 
  2556 00a0 0B       		.uleb128 0xb
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  2610 00d6 00       		.byte	0
  2611 00d7 12       		.uleb128 0x12
  2612 00d8 34       		.uleb128 0x34
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 102
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 102
 
 
  2613 00d9 00       		.byte	0
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  2667 010f 49       		.uleb128 0x49
  2668 0110 13       		.uleb128 0x13
  2669 0111 00       		.byte	0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 103
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 103
 
 
  2670 0112 00       		.byte	0
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  2724 0149 13       		.uleb128 0x13
  2725 014a 00       		.byte	0
  2726 014b 00       		.byte	0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 104
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 104
 
 
  2727 014c 1A       		.uleb128 0x1a
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  2781 0184 8A8201   		.uleb128 0x410a
  2782 0187 00       		.byte	0
  2783 0188 02       		.uleb128 0x2
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 105
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 105
 
 
  2784 0189 18       		.uleb128 0x18
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  2838 01c4 00       		.byte	0
  2839 01c5 03       		.uleb128 0x3
  2840 01c6 0E       		.uleb128 0xe
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 106
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 106
 
 
  2841 01c7 3A       		.uleb128 0x3a
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  2895 0016 28000000 		.4byte	.LVL5
  2896 001a 2B000000 		.4byte	.LVL6-1
  2897 001e 0100     		.2byte	0x1
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 107
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 107
 
 
  2898 0020 50       		.byte	0x50
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  2952 00af F3       		.byte	0xf3
  2953 00b0 01       		.uleb128 0x1
  2954 00b1 51       		.byte	0x51
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 108
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 108
 
 
  2955 00b2 9F       		.byte	0x9f
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  3009 012e 51       		.byte	0x51
  3010 012f 9F       		.byte	0x9f
  3011 0130 00000000 		.4byte	0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 109
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 109
 
 
  3012 0134 00000000 		.4byte	0
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  3066 01b2 01       		.uleb128 0x1
  3067 01b3 52       		.byte	0x52
  3068 01b4 9F       		.byte	0x9f
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 110
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 110
 
 
  3069 01b5 4A010000 		.4byte	.LVL49
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  3123 0240 3A010000 		.4byte	.LVL45
  3124 0244 0100     		.2byte	0x1
  3125 0246 57       		.byte	0x57
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 111
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 111
 
 
  3126 0247 3A010000 		.4byte	.LVL45
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  3180 02d6 00000000 		.4byte	0
  3181 02da 00000000 		.4byte	0
  3182              	.LLST5:
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 112
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 112
 
 
  3183 02de 08000000 		.4byte	.LVL1
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  3237 0366 51       		.byte	0x51
  3238 0367 9F       		.byte	0x9f
  3239 0368 00000000 		.4byte	0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 113
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 113
 
 
  3240 036c 00000000 		.4byte	0
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  3294 03f4 53       		.byte	0x53
  3295 03f5 54000000 		.4byte	.LVL15
  3296 03f9 58000000 		.4byte	.LVL16
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 114
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 114
 
 
  3297 03fd 0200     		.2byte	0x2
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  3351 047f 0100     		.2byte	0x1
  3352 0481 56       		.byte	0x56
  3353 0482 B4000000 		.4byte	.LVL26
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 115
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 115
 
 
  3354 0486 B6000000 		.4byte	.LVL27
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  3408 050f E4000000 		.4byte	.LVL33
  3409 0513 0B00     		.2byte	0xb
  3410 0515 91       		.byte	0x91
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 116
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 116
 
 
  3411 0516 58       		.sleb128 -40
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  3465 0596 43010000 		.4byte	.LVL48-1
  3466 059a 0100     		.2byte	0x1
  3467 059c 53       		.byte	0x53
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 117
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 117
 
 
  3468 059d 43010000 		.4byte	.LVL48-1
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  3511      00
  3512              	.LASF48:
  3513 0023 7370695F 		.ascii	"spi_mode\000"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 118
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 118
 
 
  3513      6D6F6465 
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  3535      32375F73 
  3535      65656564 
  3536              	.LASF44:
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 119
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 119
 
 
  3537 00e0 706F7374 		.ascii	"post_reset_wait_ms\000"
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  3555      2D736563 
  3555      74696F6E 
  3556              	.LASF41:
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 120
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 120
 
 
  3557 0216 706F7374 		.ascii	"post_chip_enable_wait_ns\000"
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  3578              	.LASF46:
  3579 02cb 73636B5F 		.ascii	"sck_pulse_width_ns\000"
  3579      70756C73 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 121
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 121
 
 
  3579      655F7769 
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  3600      00
  3601              	.LASF53:
  3602 0399 74696C65 		.ascii	"tile_height\000"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 122
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 122
 
 
  3602      5F686569 
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  3623              	.LASF43:
  3624 0452 72657365 		.ascii	"reset_pulse_width_ms\000"
  3624      745F7075 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 123
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 123
 
 
  3624      6C73655F 
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  3644      00
  3645              	.LASF56:
  3646 0511 70697865 		.ascii	"pixel_width\000"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 124
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 124
 
 
  3646      6C5F7769 
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 1
  3669              	.LASF28:
  3670 05c8 6932635F 		.ascii	"i2c_started\000"
  3670      73746172 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccLUQVZj.s 			page 125
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccDevoss.s 			page 125
 
 
  3670      74656400 

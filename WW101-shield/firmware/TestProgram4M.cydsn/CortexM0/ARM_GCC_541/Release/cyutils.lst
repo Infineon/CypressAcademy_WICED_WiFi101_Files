@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 1
 
 
    1              		.syntax unified
@@ -18,14 +18,14 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
   15              		.file	"cyutils.c"
   16              		.text
   17              	.Ltext0:
-  18              		.section	.gnu.lto_.profile.b55d7d6,"",%progbits
+  18              		.section	.gnu.lto_.profile.50a2f787,"",%progbits
   19 0000 789C6361 		.ascii	"x\234ca`d`a`\000\222\002|\000\000\230\000)"
   19      60646061 
   19      60009202 
   19      7C000098 
   19      0029
   20              		.text
-  21              		.section	.gnu.lto_.icf.b55d7d6,"",%progbits
+  21              		.section	.gnu.lto_.icf.50a2f787,"",%progbits
   22 0000 789C6361 		.ascii	"x\234ca`d\000\001>\006\004`b\230\177cy\037\027\343\346"
   22      60640001 
   22      3E060460 
@@ -35,7 +35,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
   23      3100002C 
   23      1F05CC
   24              		.text
-  25              		.section	.gnu.lto_.jmpfuncs.b55d7d6,"",%progbits
+  25              		.section	.gnu.lto_.jmpfuncs.50a2f787,"",%progbits
   26 0000 789C6361 		.ascii	"x\234ca`d\000\001>\006\004`b`bdd\256\257g\004\202z\006"
   26      60640001 
   26      3E060460 
@@ -44,7 +44,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
   27 0018 000B1B01 		.ascii	"\000\013\033\001\236"
   27      9E
   28              		.text
-  29              		.section	.gnu.lto_.inline.b55d7d6,"",%progbits
+  29              		.section	.gnu.lto_.inline.50a2f787,"",%progbits
   30 0000 789C6361 		.ascii	"x\234ca`d\000\001g\006\004`b`\340`gddT\000J13\357\020"
   30      60640001 
   30      67060460 
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
   32      C1C8C0CC 
   32      C0C235C1 
   32      8F81
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 2
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 2
 
 
   33 0038 E3831E13 		.ascii	"\343\203\036\023\003\343\013v\026\010\0116\002\000\353"
@@ -67,14 +67,14 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
   33      0200EB
   34 0047 050753   		.ascii	"\005\007S"
   35              		.text
-  36              		.section	.gnu.lto_.pureconst.b55d7d6,"",%progbits
+  36              		.section	.gnu.lto_.pureconst.50a2f787,"",%progbits
   37 0000 789C6361 		.ascii	"x\234ca`d`e```b\220b\224\002\000\000\355\000B"
   37      60646065 
   37      60606062 
   37      90629402 
   37      0000ED00 
   38              		.text
-  39              		.section	.gnu.lto_CySetReg24.b55d7d6,"",%progbits
+  39              		.section	.gnu.lto_CySetReg24.50a2f787,"",%progbits
   40 0000 789C6591 		.ascii	"x\234e\221Mh\023A\024\307\347?\223\315f\243-^\352\305"
   40      4D681341 
   40      14C7E73F 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
   48      2342AAB7 
   48      B9995BA2 
   48      C11D01F8 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 3
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 3
 
 
   48      28AD
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
   60      4C355343 
   60      1FE94E7D 
   60      78501430 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 4
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 4
 
 
   61 017e A53C4E94 		.ascii	"\245<N\224\0005AI\235\002\017Q\000\265 \177v}\340\327"
@@ -232,13 +232,13 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
   70      E8
   71 022f FA4A     		.ascii	"\372J"
   72              		.text
-  73              		.section	.gnu.lto_CyGetReg24.b55d7d6,"",%progbits
+  73              		.section	.gnu.lto_CyGetReg24.50a2f787,"",%progbits
   74 0000 789C6D52 		.ascii	"x\234mRMh\023A\024\236ofw\263\233\244\305\2037{\210"
   74      4D681341 
   74      149E6F66 
   74      77B39BA4 
   74      C583377B 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 5
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 5
 
 
   75 0015 6028B9E8 		.ascii	"`(\271\350E<+\036\274\212\275\026\244$9\010\325Jm\005"
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
   86      A9538FDE 
   86      66FCE11B 
   86      4C2DAE17 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 6
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 6
 
 
   86      90B5
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
   98 01bb 4F48B2DC 		.ascii	"OH\262\334\267\242{\010\245\033$10\275Z\322Y\321\204"
   98      B7A27B08 
   98      A51B2431 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 7
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 7
 
 
   98      30BD5AD2 
@@ -402,7 +402,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
  106      BF01BDAB 
  106      15CF
  107              		.text
- 108              		.section	.gnu.lto_.symbol_nodes.b55d7d6,"",%progbits
+ 108              		.section	.gnu.lto_.symbol_nodes.50a2f787,"",%progbits
  109 0000 789C6361 		.ascii	"x\234ca`dPa\000\002&\206z\006\206\011\347\030@\324\256"
  109      60645061 
  109      00022686 
@@ -413,16 +413,16 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
  110      0003008F 
  110      D5079E
  111              		.text
- 112              		.section	.gnu.lto_.refs.b55d7d6,"",%progbits
+ 112              		.section	.gnu.lto_.refs.50a2f787,"",%progbits
  113 0000 789C6361 		.ascii	"x\234ca`\004B \000\000\0009\000\007"
  113      60044220 
  113      00000039 
  113      0007
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 8
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 8
 
 
  114              		.text
- 115              		.section	.gnu.lto_.decls.b55d7d6,"",%progbits
+ 115              		.section	.gnu.lto_.decls.50a2f787,"",%progbits
  116 0000 789C8D52 		.ascii	"x\234\215RMHTQ\024\276\347\275Q\307\347\370\203\210"
  116      4D485451 
  116      14BEE7BD 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
  126      D09D
  127 00c5 F07C16D3 		.ascii	"\360|\026\323\301\330O\363~m1\020\035\035\324\"\010"
  127      C1D84FF3 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 9
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 9
 
 
  127      7E6D3110 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
  138      6B7A6FF0 
  138      1CE1
  139 0198 B42A029D 		.ascii	"\264*\002\235`R5\231\275:1\032\306\036\304\030t\000"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 10
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 10
 
 
  139      60523599 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
  150      0D902AA9 
  151 0275 63E4E463 		.ascii	"c\344\344c\364\016\373z\243?!\3231b#\271~O\011O\"\220"
  151      F40EFB7A 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 11
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 11
 
 
  151      A33F21D3 
@@ -643,7 +643,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
  159      3DFA1B7E 
  160 031c 805C     		.ascii	"\200\\"
  161              		.text
- 162              		.section	.gnu.lto_.symtab.b55d7d6,"",%progbits
+ 162              		.section	.gnu.lto_.symtab.50a2f787,"",%progbits
  163 0000 43795365 		.ascii	"CySetReg24\000"
  163      74526567 
  163      323400
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
  169      323400
  170 0025 00       		.ascii	"\000"
  171 0026 00       		.ascii	"\000"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 12
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 12
 
 
  172 0027 00       		.ascii	"\000"
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
   18:Generated_Source\PSoC4/cyutils.c **** 
   19:Generated_Source\PSoC4/cyutils.c ****     /***************************************************************************
   20:Generated_Source\PSoC4/cyutils.c ****     * Function Name: CySetReg24
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 13
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 13
 
 
   21:Generated_Source\PSoC4/cyutils.c ****     ************************************************************************//**
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
  223              		.global	CyGetReg24
  224              		.code	16
  225              		.thumb_func
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 14
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 14
 
 
  226              		.type	CyGetReg24, %function
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
  252              		.loc 1 68 0
  253              		@ sp needed
  254 0010 7047     		bx	lr
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 15
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 15
 
 
  255              		.cfi_endproc
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
  309 005f 05       		.byte	0x5
  310 0060 696E7400 		.ascii	"int\000"
  311 0064 02       		.uleb128 0x2
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 16
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 16
 
 
  312 0065 04       		.byte	0x4
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
  366 00d9 21       		.byte	0x21
  367 00da E7000000 		.4byte	0xe7
  368 00de 01       		.uleb128 0x1
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 17
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 17
 
 
  369 00df 50       		.byte	0x50
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
  423 0004 0E       		.uleb128 0xe
  424 0005 13       		.uleb128 0x13
  425 0006 0B       		.uleb128 0xb
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 18
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 18
 
 
  426 0007 03       		.uleb128 0x3
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
  480 003d 06       		.uleb128 0x6
  481 003e 2E       		.uleb128 0x2e
  482 003f 01       		.byte	0x1
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 19
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 19
 
 
  483 0040 3F       		.uleb128 0x3f
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
  537 0077 00       		.byte	0
  538 0078 03       		.uleb128 0x3
  539 0079 0E       		.uleb128 0xe
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 20
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 20
 
 
  540 007a 3A       		.uleb128 0x3a
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
  594 00b1 0B       		.uleb128 0xb
  595 00b2 49       		.uleb128 0x49
  596 00b3 13       		.uleb128 0x13
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 21
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 21
 
 
  597 00b4 02       		.uleb128 0x2
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
  651 0062 53       		.byte	0x53
  652 0063 08000000 		.4byte	.LVL5
  653 0067 12000000 		.4byte	.LFE1
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 22
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 22
 
 
  654 006b 0400     		.2byte	0x4
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
  708 000e 0000     		.2byte	0
  709 0010 00000000 		.4byte	.LFB0
  710 0014 12000000 		.4byte	.LFE0-.LFB0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 23
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 23
 
 
  711 0018 00000000 		.4byte	.LFB1
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
  741      676E6564 
  741      20636861 
  741      7200
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 24
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 24
 
 
  742              	.LASF16:
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 1
  764      00
  765              	.LASF2:
  766 0193 73686F72 		.ascii	"short int\000"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccuxCQ24.s 			page 25
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4x7dG.s 			page 25
 
 
  766      7420696E 

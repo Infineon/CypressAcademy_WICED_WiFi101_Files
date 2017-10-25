@@ -6,7 +6,7 @@
 // Range to sweep the DAC
 #define TEST_LIMIT_DAC_MAX 2.1
 #define TEST_LIMIT_DAC_MIN 0.0
-// mV difference in read voltage and actually 
+// max mV difference in set voltage and measured voltage for a passing result 
 #define TEST_LIMIT_DAC_MAX_DIFF (0.1)
 
 // put hand over sensor... it must detect less than this number

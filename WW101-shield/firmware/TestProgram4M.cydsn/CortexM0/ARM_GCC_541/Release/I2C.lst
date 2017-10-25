@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 1
 
 
    1              		.syntax unified
@@ -18,14 +18,14 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
   15              		.file	"I2C.c"
   16              		.text
   17              	.Ltext0:
-  18              		.section	.gnu.lto_.profile.b5589b3,"",%progbits
+  18              		.section	.gnu.lto_.profile.50a2d24b,"",%progbits
   19 0000 789C6361 		.ascii	"x\234ca`d`a`\000\222\225\232\000\001\205\000\255"
   19      60646061 
   19      60009295 
   19      9A000185 
   19      00AD
   20              		.text
-  21              		.section	.gnu.lto_.icf.b5589b3,"",%progbits
+  21              		.section	.gnu.lto_.icf.50a2d24b,"",%progbits
   22 0000 789C6361 		.ascii	"x\234ca`d\000\001;\006\004\340bx\360\373\346c&\306\371"
   22      60640001 
   22      3B0604E0 
@@ -49,7 +49,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
   26      333F0300 
   26      F4821FC0 
   27              		.text
-  28              		.section	.gnu.lto_.jmpfuncs.b5589b3,"",%progbits
+  28              		.section	.gnu.lto_.jmpfuncs.50a2d24b,"",%progbits
   29 0000 789C6361 		.ascii	"x\234ca`d\000\001\037\006\004\340\000b&\306\277L\214"
   29      60640001 
   29      1F0604E0 
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
   30 0013 B3767F39 		.ascii	"\263v\1779\305\372\205\251\225\231\201\221\203q9\243"
   30      C5FA85A9 
   30      95998191 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 2
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 2
 
 
   30      837139A3 
@@ -71,7 +71,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
   32      01221800 
   32      EB5C09F7 
   33              		.text
-  34              		.section	.gnu.lto_.inline.b5589b3,"",%progbits
+  34              		.section	.gnu.lto_.inline.50a2d24b,"",%progbits
   35 0000 789C7D8E 		.ascii	"x\234}\216\253\021\200@\014D7\367\3478\006A\001\240"
   35      AB118040 
   35      0C4437F7 
@@ -104,7 +104,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
   41 006b BC1D3799 		.ascii	"\274\0357\231<\020\276"
   41      3C10BE
   42              		.text
-  43              		.section	.gnu.lto_.pureconst.b5589b3,"",%progbits
+  43              		.section	.gnu.lto_.pureconst.50a2d24b,"",%progbits
   44 0000 789C6361 		.ascii	"x\234ca`d\020d``\340`\220`\224`\222b\226`\225b\223b"
   44      60641064 
   44      6060E060 
@@ -114,11 +114,11 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
   45      00097101 
   45      07
   46              		.text
-  47              		.section	.gnu.lto_I2C_ScbEnableIntr.b5589b3,"",%progbits
+  47              		.section	.gnu.lto_I2C_ScbEnableIntr.50a2d24b,"",%progbits
   48 0000 789C6361 		.ascii	"x\234ca`d\000\201}@,\017\304\322@\314\310\314\300\310"
   48      60640081 
   48      7D402C0F 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 3
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 3
 
 
   48      C4D240CC 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
   60 00d3 4D890FCE 		.ascii	"M\211\017\316/-JN\215\011\010\316w6\211\3614r\326Kf"
   60      2F2D4A4E 
   60      8D0908CE 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 4
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 4
 
 
   60      773689F1 
@@ -186,7 +186,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
   61 00e8 00008DE8 		.ascii	"\000\000\215\350PE"
   61      5045
   62              		.text
-  63              		.section	.gnu.lto_I2C_Init.b5589b3,"",%progbits
+  63              		.section	.gnu.lto_I2C_Init.50a2d24b,"",%progbits
   64 0000 789C6361 		.ascii	"x\234ca`d\000\201\325@,\017\304\322@\314\310\314\300"
   64      60640081 
   64      D5402C0F 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
   74      24D008A0 
   74      81B2EEA9 
   74      79A945
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 5
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 5
 
 
   75 00bf 8925A929 		.ascii	"\211%\251)\361\301\371\245E\311\2511\001\301\371\316"
@@ -250,7 +250,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
   76      00E01D4A 
   76      56
   77              		.text
-  78              		.section	.gnu.lto_I2C_Enable.b5589b3,"",%progbits
+  78              		.section	.gnu.lto_I2C_Enable.50a2d24b,"",%progbits
   79 0000 789C7D4F 		.ascii	"x\234}OMKBA\024\275gF\237B\024\3553j\353&(\372\007."
   79      4D4B4241 
   79      14BD6746 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
   88 00ad FD73D86D 		.ascii	"\375s\330m\255\313\327\202\026\367\252\323\276\217|"
   88      ADCBD782 
   88      16F7AAD3 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 6
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 6
 
 
   88      BE8F7C
@@ -340,7 +340,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
   96 0145 025E217F 		.ascii	"\002^!\177\237"
   96      9F
   97              		.text
-  98              		.section	.gnu.lto_I2C_Start.b5589b3,"",%progbits
+  98              		.section	.gnu.lto_I2C_Start.50a2d24b,"",%progbits
   99 0000 789C9591 		.ascii	"x\234\225\221\273/\004a\024\305\357\271\337\354\256"
   99      BB2F0461 
   99      14C5EFB9 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  102 0035 840685C8 		.ascii	"\204\006\205\310F\261\022\217(\030\367\316\012\021\032"
  102      46B1128F 
  102      2818F7CE 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 7
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 7
 
 
  102      0A111A
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  114      18DAAC30 
  114      77487AEE 
  114      01FFA4B1 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 8
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 8
 
 
  114      5BD3
@@ -457,7 +457,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  121      3CC1
  122 018e 22       		.ascii	"\""
  123              		.text
- 124              		.section	.gnu.lto_I2C_Stop.b5589b3,"",%progbits
+ 124              		.section	.gnu.lto_I2C_Stop.50a2d24b,"",%progbits
  125 0000 789C7D91 		.ascii	"x\234}\221\315K\033Q\024\305\357yo&\211-\322\3426\021"
  125      CD4B1B51 
  125      14C5EF79 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  128      A4B88890 
  128      A2
  129 0048 16EDF4DE 		.ascii	"\026\355\364\336LUZl/\314\274\031\356\271\277sx\327"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 9
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 9
 
 
  129      4C555A6C 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  140      B8E1AF31 
  140      131951EC 
  140      CC
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 10
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 10
 
 
  141 0128 78399DC7 		.ascii	"x9\235\307t&\307\227\026C\001\011\254 \301\236\253\310"
@@ -584,7 +584,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  149      BDF40B96 
  149      D9D5FD
  150              		.text
- 151              		.section	.gnu.lto_I2C_SetRxFifoLevel.b5589b3,"",%progbits
+ 151              		.section	.gnu.lto_I2C_SetRxFifoLevel.50a2d24b,"",%progbits
  152 0000 789C5D51 		.ascii	"x\234]Q\317k\023Q\020\236\357\275\354&Z\233\202\036"
  152      CF6B1351 
  152      109EEFBD 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  154 0023 52571082 		.ascii	"RW\020\202\201P\305[_\222M\012\026\244VZ\374I\017*\211"
  154      8150C55B 
  154      5F924D0A 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 11
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 11
 
 
  154      16A4565A 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  165      32AAB079 
  165      0990CAD2 
  166 0106 A8677CBF 		.ascii	"\250g|\277`\274\316\356\027\263{b,\301E\035|#\020\003"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 12
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 12
 
 
  166      60BCCEEE 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  177 01d1 279C33A7 		.ascii	"'\2343\247R\231\013\331qgl$\225I\036\032;:\234<0NV\332"
  177      52990BD9 
  177      71676C24 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 13
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 13
 
 
  177      95491E1A 
@@ -730,7 +730,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  178      17BC
  179 01fb D4B5     		.ascii	"\324\265"
  180              		.text
- 181              		.section	.gnu.lto_I2C_SetTxFifoLevel.b5589b3,"",%progbits
+ 181              		.section	.gnu.lto_I2C_SetTxFifoLevel.50a2d24b,"",%progbits
  182 0000 789C5D51 		.ascii	"x\234]QAk\023Q\020~\337{\273\333\2504=\364h\205\\j\351"
  182      416B1351 
  182      107EDF7B 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  191      20E8BD50 
  191      AB551313 
  191      CFB42E6B 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 14
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 14
 
 
  191      7DCFD6
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  203      DE7EEB52 
  203      4C342B8A 
  203      DBD7777B 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 15
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 15
 
 
  203      752B268E 
@@ -870,7 +870,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  209      8B85DC3F 
  209      9A0FD3E3 
  210              		.text
- 211              		.section	.gnu.lto_I2C_SetCustomInterruptHandler.b5589b3,"",%progbits
+ 211              		.section	.gnu.lto_I2C_SetCustomInterruptHandler.50a2d24b,"",%progbits
  212 0000 789C2550 		.ascii	"x\234%P\277K\202Q\024\275\347\275\017\265\240h\222 "
  212      BF4B8251 
  212      14BDE7BD 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  217 0058 8324889D 		.ascii	"\203$\210\235{\242\224K\000\272P.PR \211\276\030\010"
  217      7BA2944B 
  217      00BA502E 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 16
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 16
 
 
  217      50522089 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  229      C7EAD38B 
  229      66D48CAF 
  230 0133 6D9AEBAB 		.ascii	"m\232\353\253\241X\"\0361\303\313\241X`>\2744\027\230"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 17
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 17
 
 
  230      A158221E 
@@ -969,7 +969,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  231      8846FE00 
  231      2F6779CB 
  232              		.text
- 233              		.section	.gnu.lto_.symbol_nodes.b5589b3,"",%progbits
+ 233              		.section	.gnu.lto_.symbol_nodes.50a2d24b,"",%progbits
  234 0000 789C558C 		.ascii	"x\234U\214\313\015\302@\014\005\237\327\331\374\303"
  234      CB0DC240 
  234      0C059FD7 
@@ -1011,18 +1011,18 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  242      02601F44 
  242      0C
  243              		.text
- 244              		.section	.gnu.lto_.refs.b5589b3,"",%progbits
+ 244              		.section	.gnu.lto_.refs.50a2d24b,"",%progbits
  245 0000 789C6361 		.ascii	"x\234ca`d\340c```bf`addaa\344`\344dd\000\000\002\213"
  245      6064E063 
  245      60606062 
  245      66606164 
  245      646161E4 
  246 001c 003B     		.ascii	"\000;"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 18
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 18
 
 
  247              		.text
- 248              		.section	.gnu.lto_.decls.b5589b3,"",%progbits
+ 248              		.section	.gnu.lto_.decls.50a2d24b,"",%progbits
  249 0000 789C9595 		.ascii	"x\234\225\225yL\024W\030\300\347\315,\327\262\013\225"
  249      794C1457 
  249      18C0E7CD 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  260      FBEBCB6C 
  260      22404641 
  260      8617B0AF 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 19
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 19
 
 
  260      62FB
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  271      47B1
  272 01b2 6FA13264 		.ascii	"o\2412d@\277 h*T\216B\341\032\257\241\244\254\302\342"
  272      40BF2068 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 20
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 20
 
 
  272      2A548E42 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  283      D37ABA84 
  283      35AE0E8E 
  284 028c FD1920A4 		.ascii	"\375\031 \244\222y\327N\307q\201\026T\003\217\223\355"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 21
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 21
 
 
  284      9279D74E 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  295      DF73CFB6 
  295      CF7FD1C8 
  295      AF
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 22
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 22
 
 
  296 0365 90C82FCB 		.ascii	"\220\310/\313\221\357\237|l\3272\227\317\347\350i\303"
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  307      979EAC0F 
  307      166A28A0 
  307      B32F
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 23
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 23
 
 
  308 0437 A7C857F6 		.ascii	"\247\310W\366`\177\264\312\203\036\005\320#\003z\011"
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  319      3E822490 
  320 050c 6F6C9828 		.ascii	"ol\230(\017\242'\335\002\204\221\1779\351~\314\315\336"
  320      0FA227DD 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 24
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 24
 
 
  320      0284917F 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  331      3B0BE3DF 
  332 05e3 4B48B3A6 		.ascii	"KH\263\246\245\210\333#\277\345d\333M\212\3552\266d"
  332      A588DB23 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 25
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 25
 
 
  332      BFE564DB 
@@ -1476,7 +1476,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  339 0664 18F2378E 		.ascii	"\030\3627\216\212ue"
  339      8A7565
  340              		.text
- 341              		.section	.gnu.lto_.symtab.b5589b3,"",%progbits
+ 341              		.section	.gnu.lto_.symtab.50a2d24b,"",%progbits
  342 0000 4932435F 		.ascii	"I2C_Init\000"
  342      496E6974 
  342      00
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  354 0032 4932435F 		.ascii	"I2C_Start\000"
  354      53746172 
  354      7400
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 26
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 26
 
 
  355 003c 00       		.ascii	"\000"
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  388 00e3 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
  388      00000000 
  389 00eb C7000000 		.ascii	"\307\000\000\000"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 27
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 27
 
 
  390 00ef 4932435F 		.ascii	"I2C_customIntrHandler\000"
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  422 0194 02       		.ascii	"\002"
  423 0195 00       		.ascii	"\000"
  424 0196 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 28
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 28
 
 
  424      00000000 
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
   20:Generated_Source\PSoC4/I2C.c **** #if (I2C_SCB_MODE_I2C_INC)
   21:Generated_Source\PSoC4/I2C.c ****     #include "I2C_I2C_PVT.h"
   22:Generated_Source\PSoC4/I2C.c **** #endif /* (I2C_SCB_MODE_I2C_INC) */
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 29
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 29
 
 
   23:Generated_Source\PSoC4/I2C.c **** 
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
   77:Generated_Source\PSoC4/I2C.c **** *  If re-initialization of the component is required, then the 
   78:Generated_Source\PSoC4/I2C.c **** *  I2C_Init() function can be called before the 
   79:Generated_Source\PSoC4/I2C.c **** *  I2C_Start() or I2C_Enable() function.
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 30
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 30
 
 
   80:Generated_Source\PSoC4/I2C.c **** */
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  126:Generated_Source\PSoC4/I2C.c ****     if (I2C_SCB_MODE_UNCONFIG_RUNTM_CFG)
  127:Generated_Source\PSoC4/I2C.c ****     {
  128:Generated_Source\PSoC4/I2C.c ****         I2C_initVar = 0u;
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 31
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 31
 
 
  129:Generated_Source\PSoC4/I2C.c ****     }
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  166:Generated_Source\PSoC4/I2C.c **** *  must first be initialized to operate in one of the following configurations: 
  167:Generated_Source\PSoC4/I2C.c **** *  I2C, SPI, UART or EZ I2C, using the mode-specific initialization API. 
  168:Generated_Source\PSoC4/I2C.c **** *  Otherwise this function does not enable the component.
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 32
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 32
 
 
  169:Generated_Source\PSoC4/I2C.c **** *
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  203:Generated_Source\PSoC4/I2C.c **** *  or EZI2C. Otherwise this function does not enable the component.
  204:Generated_Source\PSoC4/I2C.c **** *
  205:Generated_Source\PSoC4/I2C.c **** * \globalvars
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 33
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 33
 
 
  206:Generated_Source\PSoC4/I2C.c **** *  I2C_initVar - used to check initial configuration, modified
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  260:Generated_Source\PSoC4/I2C.c **** 
  261:Generated_Source\PSoC4/I2C.c **** #if (I2C_SCB_IRQ_INTERNAL)
  262:Generated_Source\PSoC4/I2C.c ****     I2C_ClearPendingInt();
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 34
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 34
 
 
  263:Generated_Source\PSoC4/I2C.c **** #endif /* (I2C_SCB_IRQ_INTERNAL) */
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  317:Generated_Source\PSoC4/I2C.c **** #if (I2C_SCB_IRQ_INTERNAL)
  318:Generated_Source\PSoC4/I2C.c ****     /*******************************************************************************
  319:Generated_Source\PSoC4/I2C.c ****     * Function Name: I2C_SetCustomInterruptHandler
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 35
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 35
 
 
  320:Generated_Source\PSoC4/I2C.c ****     ****************************************************************************//**
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  192:Generated_Source\PSoC4/I2C.c **** 
  493              		.loc 1 192 0
  494              		@ sp needed
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 36
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 36
 
 
  495 0014 10BD     		pop	{r4, pc}
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  543              	.L8:
  544 0018 00000000 		.word	.LANCHOR0
  545              		.cfi_endproc
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 37
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 37
 
 
  546              	.LFE3:
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  396:Generated_Source\PSoC4/I2C.c ****     }
  397:Generated_Source\PSoC4/I2C.c **** #endif /* (!I2C_CY_SCBIP_V1) */
  398:Generated_Source\PSoC4/I2C.c **** 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 38
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 38
 
 
  399:Generated_Source\PSoC4/I2C.c **** #elif (I2C_SCB_MODE_SPI_CONST_CFG)
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  262:Generated_Source\PSoC4/I2C.c **** #endif /* (I2C_SCB_IRQ_INTERNAL) */
  577              		.loc 1 262 0
  578 000e 0820     		movs	r0, #8
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 39
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 39
 
 
  249:Generated_Source\PSoC4/I2C.c **** 
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  623 0004 1040     		ands	r0, r2
  624              	.LVL8:
  283:Generated_Source\PSoC4/I2C.c **** 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 40
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 40
 
 
  625              		.loc 1 283 0
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  669 0006 0B68     		ldr	r3, [r1]
  670              	.LVL14:
  314:Generated_Source\PSoC4/I2C.c **** 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 41
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 41
 
 
  671              		.loc 1 314 0
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  716              		.cfi_endproc
  717              	.LFE7:
  718              		.size	I2C_SetCustomInterruptHandler, .-I2C_SetCustomInterruptHandler
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 42
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 42
 
 
  719              		.global	I2C_customIntrHandler
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  773 0049 04       		.byte	0x4
  774 004a 07       		.byte	0x7
  775 004b 62010000 		.4byte	.LASF5
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 43
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 43
 
 
  776 004f 02       		.uleb128 0x2
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  830 00b8 04       		.byte	0x4
  831 00b9 07       		.byte	0x7
  832 00ba 2A020000 		.4byte	.LASF16
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 44
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 44
 
 
  833 00be 08       		.uleb128 0x8
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  887 0130 00       		.byte	0
  888 0131 00       		.byte	0
  889 0132 00       		.byte	0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 45
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 45
 
 
  890 0133 0C       		.uleb128 0xc
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  944 01b4 0E       		.uleb128 0xe
  945 01b5 22000000 		.4byte	.LVL6
  946 01b9 A5020000 		.4byte	0x2a5
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 46
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 46
 
 
  947 01bd 0F       		.uleb128 0xf
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  1001 0238 4F01     		.2byte	0x14f
  1002 023a 00000000 		.4byte	.LFB7
  1003 023e 0C000000 		.4byte	.LFE7-.LFB7
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 47
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 47
 
 
  1004 0242 01       		.uleb128 0x1
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  1058              	.Ldebug_abbrev0:
  1059 0000 01       		.uleb128 0x1
  1060 0001 11       		.uleb128 0x11
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 48
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 48
 
 
  1061 0002 01       		.byte	0x1
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  1115 0038 00       		.byte	0
  1116 0039 49       		.uleb128 0x49
  1117 003a 13       		.uleb128 0x13
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 49
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 49
 
 
  1118 003b 00       		.byte	0
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  1172 0071 13       		.uleb128 0x13
  1173 0072 11       		.uleb128 0x11
  1174 0073 01       		.uleb128 0x1
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 50
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 50
 
 
  1175 0074 12       		.uleb128 0x12
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  1229 00ae 0B       		.uleb128 0xb
  1230 00af 59       		.uleb128 0x59
  1231 00b0 0B       		.uleb128 0xb
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 51
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 51
 
 
  1232 00b1 00       		.byte	0
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  1286 00ee 0E       		.uleb128 0xe
  1287 00ef 3A       		.uleb128 0x3a
  1288 00f0 0B       		.uleb128 0xb
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 52
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 52
 
 
  1289 00f1 3B       		.uleb128 0x3b
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  1343 0128 05       		.uleb128 0x5
  1344 0129 49       		.uleb128 0x49
  1345 012a 13       		.uleb128 0x13
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 53
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 53
 
 
  1346 012b 02       		.uleb128 0x2
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  1400 001d 00000000 		.4byte	0
  1401              	.LLST1:
  1402 0021 08000000 		.4byte	.LVL9
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 54
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 54
 
 
  1403 0025 0C000000 		.4byte	.LVL11
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  1457 0040 00000000 		.4byte	.LFB7
  1458 0044 0C000000 		.4byte	.LFE7-.LFB7
  1459 0048 00000000 		.4byte	0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 55
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 55
 
 
  1460 004c 00000000 		.4byte	0
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  1493      63757374 
  1493      6F6D496E 
  1493      74724861 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 56
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 56
 
 
  1493      6E646C65 
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  1514      6C6500
  1515              	.LASF12:
  1516 0185 646F7562 		.ascii	"double\000"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 57
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 57
 
 
  1516      6C6500
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  1540      74797065 
  1540      00
  1541              	.LASF6:
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 58
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 58
 
 
  1542 0233 6C6F6E67 		.ascii	"long long int\000"
@@ -3478,6 +3478,6 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 1
  1566      56617200 
  1567              		.comm	__gnu_lto_v1,1,1
  1568              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccM7GiW8.s 			page 59
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccPtngPA.s 			page 59
 
 

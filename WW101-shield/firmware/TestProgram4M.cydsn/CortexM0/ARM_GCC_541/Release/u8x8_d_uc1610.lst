@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 1
 
 
    1              		.syntax unified
@@ -18,14 +18,14 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
   15              		.file	"u8x8_d_uc1610.c"
   16              		.text
   17              	.Ltext0:
-  18              		.section	.gnu.lto_.profile.ba9ad92,"",%progbits
+  18              		.section	.gnu.lto_.profile.50a25f98,"",%progbits
   19 0000 789C6361 		.ascii	"x\234ca`d`e`\000\222\367\231j\001\003\234\001j"
   19      60646065 
   19      600092F7 
   19      996A0103 
   19      9C016A
   20              		.text
-  21              		.section	.gnu.lto_.icf.ba9ad92,"",%progbits
+  21              		.section	.gnu.lto_.icf.50a25f98,"",%progbits
   22 0000 789C6361 		.ascii	"x\234ca`d\000\001\013\006\004\340d\270u\265\367\013"
   22      60640001 
   22      0B0604E0 
@@ -48,7 +48,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
   25      0032C81C 
   26 004c 36       		.ascii	"6"
   27              		.text
-  28              		.section	.gnu.lto_.jmpfuncs.ba9ad92,"",%progbits
+  28              		.section	.gnu.lto_.jmpfuncs.50a25f98,"",%progbits
   29 0000 789C8590 		.ascii	"x\234\205\220\275N\002Q\020\205\357\231{%\026\006\250"
   29      BD4E0251 
   29      1085EF99 
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
   30      C147B0DA 
   30      25866263 
   30      43B18589 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 2
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 2
 
 
   30      85A5
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
   41      24FA7912 
   41      C4D7A0
   42 00f4 9104F13E 		.ascii	"\221\004\361>\\\374Af\021d\003\353Xo\012\224t\277\013"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 3
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 3
 
 
   42      5CFC4166 
@@ -129,7 +129,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
   43      66C1433F 
   43      F1F49269 
   44              		.text
-  45              		.section	.gnu.lto_.inline.ba9ad92,"",%progbits
+  45              		.section	.gnu.lto_.inline.50a25f98,"",%progbits
   46 0000 789C9590 		.ascii	"x\234\225\220;N\0031\020\206g\306\223\340$\273\211{"
   46      3B4E0331 
   46      108667C6 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
   55 00a6 BD4EBE53 		.ascii	"\275N\276S\213[\246\315[\207\367\334\211\3228$\273%"
   55      8B5BA6CD 
   55      5B87F7DC 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 4
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 4
 
 
   55      89D23824 
@@ -212,14 +212,14 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
   61      F007FEAA 
   61      6D1B
   62              		.text
-  63              		.section	.gnu.lto_.pureconst.ba9ad92,"",%progbits
+  63              		.section	.gnu.lto_.pureconst.50a25f98,"",%progbits
   64 0000 789C6361 		.ascii	"x\234ca`d`e```b\220b\222\002\000\000\357\000C"
   64      60646065 
   64      60606062 
   64      90629202 
   64      0000EF00 
   65              		.text
-  66              		.section	.gnu.lto_u8x8_convert_tile_for_uc1610.ba9ad92,"",%progbits
+  66              		.section	.gnu.lto_u8x8_convert_tile_for_uc1610.50a25f98,"",%progbits
   67 0000 789C8D54 		.ascii	"x\234\215T[oTU\024\336\337\336\347\314\034\346\332\232"
   67      5B6F5455 
   67      14DEDFDE 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
   70 0038 A1A42648 		.ascii	"\241\244&H@Aa(\305\031\2520\005\246\300P\007%\251>H"
   70      40416128 
   70      C519AA30 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 5
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 5
 
 
   70      05A6C050 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
   82 010f 1627C713 		.ascii	"\026'\307\023\357\353b\246\203\341\207Z\341\374\220"
   82      EFEB62A6 
   82      83E1875A 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 6
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 6
 
 
   82      E1FC90
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
   94 01e7 A8194D37 		.ascii	"\250\031M7\026\227\316F\246\261gP\233\3630\216#\215"
   94      1697CE46 
   94      A6B16750 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 7
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 7
 
 
   94      9BF3308E 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  105      8405259A 
  105      47236A46 
  105      A33E5669 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 8
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 8
 
 
  106 02d0 7E194DDC 		.ascii	"~\031M\334bP\305\352R\356\327\020e\303^I\314\333\"\236"
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  117      36F7BFBE 
  117      AD9F56
  118 03a6 6F6EDCF2 		.ascii	"on\334\362\342\226\201\376\015On\350\355\351\027x\303"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 9
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 9
 
 
  118      E29681FE 
@@ -490,7 +490,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  119      FE03F07E 
  119      E96C
  120              		.text
- 121              		.section	.gnu.lto_u8x8_d_uc1610_ea_dogxl160.ba9ad92,"",%progbits
+ 121              		.section	.gnu.lto_u8x8_d_uc1610_ea_dogxl160.50a25f98,"",%progbits
  122 0000 789C9D58 		.ascii	"x\234\235XkPTG\026\356s{\336\314\003f\014j$+>X\327\037"
  122      6B505447 
  122      16EE737B 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  131      7717FFEE 
  131      34875D66 
  131      27CDECB8 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 10
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 10
 
 
  131      C1A3
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  143 0187 D6745CFB 		.ascii	"\326t\\\373\304%\2473\256\266\373\347\013V\003\267\376"
  143      C425A733 
  143      AEB6FBE7 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 11
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 11
 
 
  143      0B5603B7 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  155 0257 48500F77 		.ascii	"HP\017wx\277n\016\374\0018\324H\217S\320\026N\260\320"
  155      78BF6E0E 
  155      FC0138D4 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 12
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 12
 
 
  155      488F53D0 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  166      A4
  167 033a 89A9F411 		.ascii	"\211\251\364\021\346\010c,\2049\2520\367\316n\333.\025"
  167      E608632C 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 13
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 13
 
 
  167      8439AA30 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  179      1F5F2965 
  179      DE287FD2 
  180 0418 E107F4E7 		.ascii	"\341\007\364\347\344\010\177\020\242\257\006\"\352\210"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 14
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 14
 
 
  180      E4087F10 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  191      706C3C83 
  191      0B4D44B7 
  191      E086
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 15
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 15
 
 
  192 04f1 3507FABD 		.ascii	"5\007\372\2753v\220\352\027\340&sp\241\354V\034\325"
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  203 05b8 A10B78B2 		.ascii	"\241\013x\262\300@\314\005\012\203;>\0146\246\270\222"
  203      C040CC05 
  203      0A833B3E 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 16
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 16
 
 
  203      0C36A6B8 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  214      3DEA0140 
  214      28C6B021 
  214      3903
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 17
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 17
 
 
  215 069e 656F8966 		.ascii	"eo\211fd\357\024\023P\237\332\344\322\250\311\255\365"
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  225      45F2CD68 
  226 076a 6AA6B613 		.ascii	"j\246\266\023\365j\203\332\303\324{\210z\226\020}\270"
  226      F56A83DA 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 18
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 18
 
 
  226      C3D47B88 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  238 083c 367FA56D 		.ascii	"6\177\245m\226\"\312\307\344\2113\307\371\224\257\314"
  238      9622CAC7 
  238      E48933C7 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 19
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 19
 
 
  238      F994AFCC 
@@ -1125,7 +1125,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  247      1FF603
  248 08e8 403B     		.ascii	"@;"
  249              		.text
- 250              		.section	.gnu.lto_u8x8_uc1610_display_info.ba9ad92,"",%progbits
+ 250              		.section	.gnu.lto_u8x8_uc1610_display_info.50a25f98,"",%progbits
  251 0000 789C2DCE 		.ascii	"x\234-\316OK\002A\030\307\361\371\315\354\256Z\256V"
  251      4F4B0241 
  251      18C7F1F9 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  252      20FD
  253 0024 A1D45CB7 		.ascii	"\241\324\\\267\222B\257\006\235:t/\202(\330\304K\345"
  253      9242AF06 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 20
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 20
 
 
  253      9D3A742F 
@@ -1198,10 +1198,10 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  264      F907
  265 00f9 E4687875 		.ascii	"\344hxu"
  266              		.text
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 21
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 21
 
 
- 267              		.section	.gnu.lto_u8x8_d_uc1610_dogxl160_init_seq.ba9ad92,"",%progbits
+ 267              		.section	.gnu.lto_u8x8_d_uc1610_dogxl160_init_seq.50a25f98,"",%progbits
  268 0000 789C4D92 		.ascii	"x\234M\222\333SRQ\024\207\317\346b\222\202\335\257\247"
  268      DB535251 
  268      1487CFE6 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  278      C48459
  279 00cd E8257EAB 		.ascii	"\350%~\253\025m\327*\262\371%C#\253\365\"(\303\372\242"
  279      156DD72A 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 22
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 22
 
 
  279      B2F92543 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  290      35D0D4CF 
  290      2E07
  291 01a0 CD33C96F 		.ascii	"\3153\311oQZO\226h\372G\241\376`\217N\331\026\336\310"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 23
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 23
 
 
  291      515A4F96 
@@ -1378,12 +1378,12 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  302      813EE065 
  302      B2C472AC 
  303 027b 41FA0F7F 		.ascii	"A\372\017\177F\211\320"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 24
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 24
 
 
  303      4689D0
  304              		.text
- 305              		.section	.gnu.lto_u8x8_d_uc1610_dogxl160_powersave0_seq.ba9ad92,"",%progbits
+ 305              		.section	.gnu.lto_u8x8_d_uc1610_dogxl160_powersave0_seq.50a25f98,"",%progbits
  306 0000 789C6361 		.ascii	"x\234ca`d\000\201\355@\014a10\374eb\\\337\372d%\307"
  306      60640081 
  306      ED400C61 
@@ -1428,7 +1428,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  314      00B94E3F 
  314      3D
  315              		.text
- 316              		.section	.gnu.lto_u8x8_d_uc1610_dogxl160_powersave1_seq.ba9ad92,"",%progbits
+ 316              		.section	.gnu.lto_u8x8_d_uc1610_dogxl160_powersave1_seq.50a25f98,"",%progbits
  317 0000 789C6361 		.ascii	"x\234ca`d\000\201\355@\014a10\374eb\\\337\372d%\307"
  317      60640081 
  317      ED400C61 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  318      06C6FF8C 
  318      40FEC596 
  318      0D739841 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 25
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 25
 
 
  318      7C46
@@ -1474,7 +1474,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  325      820100CF 
  325      B03F7F
  326              		.text
- 327              		.section	.gnu.lto_u8x8_d_uc1610_dogxl160_flip0_seq.ba9ad92,"",%progbits
+ 327              		.section	.gnu.lto_u8x8_d_uc1610_dogxl160_flip0_seq.50a25f98,"",%progbits
  328 0000 789C6361 		.ascii	"x\234ca`d\000\201\355@\014a10\374eb\\\337\372d%\307"
  328      60640081 
  328      ED400C61 
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  332 004d FFFD003F 		.ascii	"\377\375\000?D\232\011\310}\274\374\337t6\210\264(\220"
  332      449A09C8 
  332      7DBCFCDF 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 26
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 26
 
 
  332      743688B4 
@@ -1522,7 +1522,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  336      00B37B3F 
  336      27
  337              		.text
- 338              		.section	.gnu.lto_u8x8_d_uc1610_dogxl160_flip1_seq.ba9ad92,"",%progbits
+ 338              		.section	.gnu.lto_u8x8_d_uc1610_dogxl160_flip1_seq.50a25f98,"",%progbits
  339 0000 789C6361 		.ascii	"x\234ca`d\000\201\355@\014a10\374eb\\\337\372d%\307"
  339      60640081 
  339      ED400C61 
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  345      8CEB18
  346 007d 65188D64 		.ascii	"e\030\215d\030\327\002\2515@\274\032\210W\001\361J "
  346      18D702A9 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 27
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 27
 
 
  346      3540BC1A 
@@ -1570,7 +1570,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  347      0000B7BE 
  347      3F56
  348              		.text
- 349              		.section	.gnu.lto_.symbol_nodes.ba9ad92,"",%progbits
+ 349              		.section	.gnu.lto_.symbol_nodes.50a25f98,"",%progbits
  350 0000 789C55CD 		.ascii	"x\234U\315\261J\003A\020\306\361ogn/\271KrI$\275Z\372"
  350      B14A0341 
  350      10C6F16F 
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  359      9DC0DF1E 
  359      AD11A20D 
  359      DA3BDD
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 28
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 28
 
 
  360 00b7 DBA5EA97 		.ascii	"\333\245\352\227z\027Rw\251\333U\332WiO\335\245\366"
@@ -1635,7 +1635,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  362      7E016DBC 
  362      63D0
  363              		.text
- 364              		.section	.gnu.lto_.refs.ba9ad92,"",%progbits
+ 364              		.section	.gnu.lto_.refs.50a25f98,"",%progbits
  365 0000 789C05C1 		.ascii	"x\234\005\3011\016\000 \010\004\301cAP\023\013\013\033"
  365      310E0020 
  365      0804C163 
@@ -1649,7 +1649,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  367 0024 A945DFFA 		.ascii	"\251E\337\372\015\246\000\311"
  367      0DA600C9 
  368              		.text
- 369              		.section	.gnu.lto_.decls.ba9ad92,"",%progbits
+ 369              		.section	.gnu.lto_.decls.50a25f98,"",%progbits
  370 0000 789CBD59 		.ascii	"x\234\275Y{PTW\232\357sO\003Mw\003\021H\326\235rg\234"
  370      7B505457 
  370      9AEF734F 
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  375      67BBF871 
  375      EF77EEEF 
  375      7CE77B9C 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 29
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 29
 
 
  375      73EE
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  388 0139 E353920F 		.ascii	"\343S\222\0178\226\001\266\001\266\003\364\334\346?"
  388      389601B6 
  388      01B603F4 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 30
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 30
 
 
  388      DCE63F
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  399      4D1C
  400 0213 2D17FDE7 		.ascii	"-\027\375\347k\320\207\013P\324\002\015\252B\221d0\302"
  400      6BD0870B 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 31
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 31
 
 
  400      50D4020D 
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  411      B32388EC 
  411      74F408EC 
  411      17
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 32
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 32
 
 
  412 02e6 4D97CA05 		.ascii	"M\227\312\005\346W\004\210\331\355'\007\214\276\243"
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  423      B8868DB1 
  423      67F47C
  424 03ba 7588CF31 		.ascii	"u\210\3171\316\373\034#?gQ5Yg\0350\3069y\2146)\274#"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 33
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 33
 
 
  424      CEFB1C23 
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  435      3E18A357 
  435      1EA3
  436 0493 07F91EE4 		.ascii	"\007\371\036\344\266\367A\036~{9\337\017_g~\317\324"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 34
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 34
 
 
  436      B6F7411E 
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  447 055c 9F6F5422 		.ascii	"\237oT\"ri\320C\310\326\003\222\302\373\234\0169D\257"
  447      7269D043 
  447      C8D60392 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 35
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 35
 
 
  447      C2FB9C0E 
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  458      8D62D43B 
  458      5EF2A074 
  459 0635 51E9D2B0 		.ascii	"Q\351\322\260w\227\224\271\230U\272t\311[6hta/\270\261"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 36
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 36
 
 
  459      779794B9 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  471 0707 3614ABA5 		.ascii	"6\024\253\245\025\300\304x\2050\277\204$\032J\243\205"
  471      15C0C478 
  471      8530BF84 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 37
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 37
 
 
  471      241A4AA3 
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  482      7962
  483 07e2 C4679970 		.ascii	"\304g\231p\277\273a\332\250\312S\275*O\333<y\352?81"
  483      BFBB61DA 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 38
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 38
 
 
  483      A8CA53BD 
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  494      D0043806 
  494      380A
  495 08bb 6804D400 		.ascii	"h\004\324\000\216\000\032\000\365\200\303\200:\300!"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 39
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 39
 
 
  495      8E001A00 
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  506      A4547A4A 
  506      752B3DC9 
  506      F61CEF
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 40
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 40
 
 
  507 098d CBEA1BB0 		.ascii	"\313\352\033\260\354\317\277\254\246\273\214b\236\231"
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  518      E832EDE5 
  518      E3
  519 0a60 1EE7BE7F 		.ascii	"\036\347\276\177\356\025\236\3573\304Wh\210\277\225"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 41
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 41
 
 
  519      EE159EEF 
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  530      666BE186 
  530      CEF6
  531 0b39 EF09F720 		.ascii	"\357\011\367 \265u@\2625m\354\354\014\237\011\356\347"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 42
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 42
 
 
  531      B57540B2 
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  542      820EDE5B 
  542      7E7B9D
  543 0c13 3F9E6483 		.ascii	"?\236d\203g\324\347^b\223=\3133\370\275\234[\343:\217"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 43
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 43
 
 
  543      67D4E75E 
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  554      0F1A995C 
  554      81FC1D24 
  554      93
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 44
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 44
 
 
  555 0ced 2BC8A20A 		.ascii	"+\310\242\012\326\354\312\033\305\370\034\323\320sh"
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  566      4BEE21F5 
  566      CB8BE72A 
  566      76216717 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 45
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 45
 
 
  566      52F6647D 
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  578 0e8d 5DFE75BD 		.ascii	"]\376u\275\016E\206\261>\267;\"H\237]\240w\007\366\354"
  578      0E4586B1 
  578      3EB73B22 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 46
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 46
 
 
  578      489F5DA0 
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  590      49CB1CE6 
  590      C4854B6D 
  590      09
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 47
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 47
 
 
  591 0f6e 56E7C2C8 		.ascii	"V\347\302\310\025K>\376\353\030\313\312d\207\325\351"
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  603      62539C26 
  603      4B4292E5 
  603      0B537454 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 48
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 48
 
 
  603      D417BFFE 
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  615 1115 CDECB2FE 		.ascii	"\315\354\262\376\205GL0\203\347\3116;k\377\221\247]"
  615      85474C30 
  615      83E7C936 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 49
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 49
 
 
  615      3B6BFF91 
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  627 11e6 06122D49 		.ascii	"\006\022-I\325\233*\336o\254\277O\201\320X\177\304\363"
  627      D59B2ADE 
  627      6FACBF4F 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 50
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 50
 
 
  627      81D0587F 
@@ -2974,7 +2974,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  634 1264 FD0F3DF1 		.ascii	"\375\017=\361\034x"
  634      1C78
  635              		.text
- 636              		.section	.gnu.lto_.symtab.ba9ad92,"",%progbits
+ 636              		.section	.gnu.lto_.symtab.50a25f98,"",%progbits
  637 0000 75387838 		.ascii	"u8x8_d_uc1610_ea_dogxl160\000"
  637      5F645F75 
  637      63313631 
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  647      00000000 
  648 0046 56010000 		.ascii	"V\001\000\000"
  649 004a 75387838 		.ascii	"u8x8_cad_EndTransfer\000"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 51
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 51
 
 
  649      5F636164 
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  679 00f5 75387838 		.ascii	"u8x8_cad_SendSequence\000"
  679      5F636164 
  679      5F53656E 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 52
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 52
 
 
  679      64536571 
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  705              		.section	.text.u8x8_d_uc1610_ea_dogxl160,"ax",%progbits
  706              		.align	1
  707              		.global	u8x8_d_uc1610_ea_dogxl160
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 53
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 53
 
 
  708              		.code	16
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
   49:..\u8g2\csrc/u8x8_d_uc1610.c ****   U8X8_C(0x040),            			/* set scroll line lsb to zero */
   50:..\u8g2\csrc/u8x8_d_uc1610.c ****   U8X8_C(0x050),            			/* set scroll line msb to zero */
   51:..\u8g2\csrc/u8x8_d_uc1610.c ****   U8X8_C(0x02b),            			/* set panelloading */
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 54
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 54
 
 
   52:..\u8g2\csrc/u8x8_d_uc1610.c ****   U8X8_C(0x0eb),            			/* set bias 1/2 */  
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  106:..\u8g2\csrc/u8x8_d_uc1610.c **** static const uint8_t u8x8_d_uc1610_dogxl160_powersave1_seq[] = {
  107:..\u8g2\csrc/u8x8_d_uc1610.c ****   U8X8_START_TRANSFER(),             	/* enable chip, delay is part of the transfer start */
  108:..\u8g2\csrc/u8x8_d_uc1610.c ****   U8X8_C(0x0ae),		                /* display off,  UC1610 */
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 55
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 55
 
 
  109:..\u8g2\csrc/u8x8_d_uc1610.c ****   U8X8_END_TRANSFER(),             	/* disable chip */
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  163:..\u8g2\csrc/u8x8_d_uc1610.c ****   /* flipmode_x_offset = */ 0,
  164:..\u8g2\csrc/u8x8_d_uc1610.c ****   /* pixel_width = */ 160,
  165:..\u8g2\csrc/u8x8_d_uc1610.c ****   /* pixel_height = */ 104
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 56
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 56
 
 
  166:..\u8g2\csrc/u8x8_d_uc1610.c **** };
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  725              		.cfi_offset 14, -4
  209:..\u8g2\csrc/u8x8_d_uc1610.c ****   uint8_t x, c, page;
  210:..\u8g2\csrc/u8x8_d_uc1610.c ****   uint8_t *ptr;
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 57
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 57
 
 
  211:..\u8g2\csrc/u8x8_d_uc1610.c ****   switch(msg)
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  770              	.LVL6:
  771              	.L6:
  772 0036 4749     		ldr	r1, .L24
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 58
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 58
 
 
  219:..\u8g2\csrc/u8x8_d_uc1610.c ****       break;
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  810              		.loc 1 235 0
  811 0066 2368     		ldr	r3, [r4]
  812 0068 DB7C     		ldrb	r3, [r3, #19]
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 59
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 59
 
 
  813              	.L21:
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  265:..\u8g2\csrc/u8x8_d_uc1610.c ****       u8x8_cad_SendArg(u8x8, page);
  266:..\u8g2\csrc/u8x8_d_uc1610.c ****       u8x8_cad_SendCmd(u8x8, 0x0f6 );	/* window end column */
  267:..\u8g2\csrc/u8x8_d_uc1610.c ****       u8x8_cad_SendArg(u8x8, 159);		/* end of display */
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 60
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 60
 
 
  268:..\u8g2\csrc/u8x8_d_uc1610.c ****       u8x8_cad_SendCmd(u8x8, 0x0f7 );	/* window end page */
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  853 0098 5F79     		ldrb	r7, [r3, #5]
  854              	.LVL20:
  251:..\u8g2\csrc/u8x8_d_uc1610.c ****     
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 61
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 61
 
 
  855              		.loc 1 251 0
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  896              		.loc 1 265 0
  897 00c8 3100     		movs	r1, r6
  898 00ca 2000     		movs	r0, r4
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 62
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 62
 
 
  899 00cc FFF7FEFF 		bl	u8x8_cad_SendArg
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  945              	.LVL39:
  946              	.L12:
  947              	.LBB4:
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 63
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 63
 
 
  948              	.LBB5:
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  993              	.LVL51:
  289:..\u8g2\csrc/u8x8_d_uc1610.c **** 	
  994              		.loc 1 289 0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 64
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 64
 
 
  995 013e 002B     		cmp	r3, #0
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  1045 000f 28       		.byte	40
  1046 0010 14       		.byte	20
  1047 0011 0D       		.byte	13
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 65
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 65
 
 
  1048 0012 00       		.byte	0
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  1102              	u8x8_d_uc1610_dogxl160_powersave1_seq:
  1103 0042 18       		.byte	24
  1104 0043 15       		.byte	21
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 66
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 66
 
 
  1105 0044 AE       		.byte	-82
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  1156 0032 1D       		.byte	0x1d
  1157 0033 37000000 		.4byte	0x37
  1158 0037 02       		.uleb128 0x2
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 67
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 67
 
 
  1159 0038 01       		.byte	0x1
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  1213 009e 45000000 		.4byte	0x45
  1214 00a2 03       		.uleb128 0x3
  1215 00a3 8A030000 		.4byte	.LASF14
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 68
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 68
 
 
  1216 00a7 03       		.byte	0x3
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  1270 011a 06       		.uleb128 0x6
  1271 011b 5C000000 		.4byte	.LASF23
  1272 011f 04       		.byte	0x4
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 69
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 69
 
 
  1273 0120 4001     		.2byte	0x140
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  1327 0195 4B01     		.2byte	0x14b
  1328 0197 8C000000 		.4byte	0x8c
  1329 019b 25       		.byte	0x25
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 70
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 70
 
 
  1330 019c 06       		.uleb128 0x6
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  1384 020b 08       		.uleb128 0x8
  1385 020c EA030000 		.4byte	.LASF43
  1386 0210 04       		.byte	0x4
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 71
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 71
 
 
  1387 0211 D8       		.byte	0xd8
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  1441 027d FF       		.byte	0xff
  1442 027e 8C000000 		.4byte	0x8c
  1443 0282 10       		.byte	0x10
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 72
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 72
 
 
  1444 0283 06       		.uleb128 0x6
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  1498 02f4 08       		.uleb128 0x8
  1499 02f5 9F020000 		.4byte	.LASF61
  1500 02f9 04       		.byte	0x4
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 73
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 73
 
 
  1501 02fa CA       		.byte	0xca
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  1555 036f 0A       		.uleb128 0xa
  1556 0370 04       		.byte	0x4
  1557 0371 75030000 		.4byte	0x375
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 74
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 74
 
 
  1558 0375 0E       		.uleb128 0xe
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  1612 03e4 CF       		.byte	0xcf
  1613 03e5 8C000000 		.4byte	0x8c
  1614 03e9 00000000 		.4byte	.LFB1
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 75
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 75
 
 
  1615 03ed 60010000 		.4byte	.LFE1-.LFB1
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  1669 0470 0E010000 		.4byte	.LBB4
  1670 0474 18000000 		.4byte	.LBE4-.LBB4
  1671 0478 01       		.byte	0x1
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 76
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 76
 
 
  1672 0479 1B01     		.2byte	0x11b
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  1726 04f2 00       		.byte	0
  1727 04f3 20       		.uleb128 0x20
  1728 04f4 48000000 		.4byte	.LVL8
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 77
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 77
 
 
  1729 04f8 97070000 		.4byte	0x797
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  1783 0555 20       		.uleb128 0x20
  1784 0556 7C000000 		.4byte	.LVL15
  1785 055a AF070000 		.4byte	0x7af
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 78
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 78
 
 
  1786 055e 6F050000 		.4byte	0x56f
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  1840 05b2 00       		.byte	0
  1841 05b3 20       		.uleb128 0x20
  1842 05b4 AC000000 		.4byte	.LVL24
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 79
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 79
 
 
  1843 05b8 AF070000 		.4byte	0x7af
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  1897 060f 01       		.uleb128 0x1
  1898 0610 50       		.byte	0x50
  1899 0611 02       		.uleb128 0x2
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 80
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 80
 
 
  1900 0612 74       		.byte	0x74
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  1954 0663 01       		.uleb128 0x1
  1955 0664 51       		.byte	0x51
  1956 0665 02       		.uleb128 0x2
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 81
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 81
 
 
  1957 0666 09       		.byte	0x9
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  2011 06b7 22       		.uleb128 0x22
  2012 06b8 30010000 		.4byte	.LVL48
  2013 06bc D3070000 		.4byte	0x7d3
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 82
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 82
 
 
  2014 06c0 21       		.uleb128 0x21
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  2068 0720 23       		.uleb128 0x23
  2069 0721 FE000000 		.4byte	.LASF74
  2070 0725 01       		.byte	0x1
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 83
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 83
 
 
  2071 0726 6A       		.byte	0x6a
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  2125 07a1 3A02     		.2byte	0x23a
  2126 07a3 24       		.uleb128 0x24
  2127 07a4 D3030000 		.4byte	.LASF82
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 84
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 84
 
 
  2128 07a8 D3030000 		.4byte	.LASF82
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  2182 001c 00       		.byte	0
  2183 001d 00       		.byte	0
  2184 001e 03       		.uleb128 0x3
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 85
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 85
 
 
  2185 001f 16       		.uleb128 0x16
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  2239 0055 13       		.uleb128 0x13
  2240 0056 01       		.byte	0x1
  2241 0057 03       		.uleb128 0x3
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 86
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 86
 
 
  2242 0058 0E       		.uleb128 0xe
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  2296 008e 19       		.uleb128 0x19
  2297 008f 49       		.uleb128 0x49
  2298 0090 13       		.uleb128 0x13
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 87
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 87
 
 
  2299 0091 01       		.uleb128 0x1
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  2353 00c7 13       		.uleb128 0x13
  2354 00c8 00       		.byte	0
  2355 00c9 00       		.byte	0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 88
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 88
 
 
  2356 00ca 11       		.uleb128 0x11
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  2410 0100 0B       		.uleb128 0xb
  2411 0101 27       		.uleb128 0x27
  2412 0102 19       		.uleb128 0x19
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 89
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 89
 
 
  2413 0103 49       		.uleb128 0x49
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  2467 013a 13       		.uleb128 0x13
  2468 013b 02       		.uleb128 0x2
  2469 013c 17       		.uleb128 0x17
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 90
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 90
 
 
  2470 013d 00       		.byte	0
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  2524 0173 00       		.byte	0
  2525 0174 31       		.uleb128 0x31
  2526 0175 13       		.uleb128 0x13
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 91
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 91
 
 
  2527 0176 02       		.uleb128 0x2
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  2581 01b5 03       		.uleb128 0x3
  2582 01b6 0E       		.uleb128 0xe
  2583 01b7 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 92
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 92
 
 
  2584 01b8 0B       		.uleb128 0xb
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  2638 003f 0400     		.2byte	0x4
  2639 0041 F3       		.byte	0xf3
  2640 0042 01       		.uleb128 0x1
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 93
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 93
 
 
  2641 0043 51       		.byte	0x51
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  2695 00c0 6E000000 		.4byte	.LVL13
  2696 00c4 0400     		.2byte	0x4
  2697 00c6 F3       		.byte	0xf3
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 94
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 94
 
 
  2698 00c7 01       		.uleb128 0x1
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  2752 014b 36000000 		.4byte	.LVL6
  2753 014f 0200     		.2byte	0x2
  2754 0151 7D       		.byte	0x7d
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 95
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 95
 
 
  2755 0152 00       		.sleb128 0
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  2809 01dc 00       		.sleb128 0
  2810 01dd 50010000 		.4byte	.LVL56
  2811 01e1 60010000 		.4byte	.LFE1
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 96
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 96
 
 
  2812 01e5 0200     		.2byte	0x2
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  2866 0251 B6000000 		.4byte	.LVL26
  2867 0255 0100     		.2byte	0x1
  2868 0257 56       		.byte	0x56
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 97
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 97
 
 
  2869 0258 C0000000 		.4byte	.LVL28
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  2923 02df 1E010000 		.4byte	.LVL44
  2924 02e3 0800     		.2byte	0x8
  2925 02e5 77       		.byte	0x77
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 98
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 98
 
 
  2926 02e6 00       		.sleb128 0
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  2980 0353 16010000 		.4byte	.LVL41
  2981 0357 18010000 		.4byte	.LVL42
  2982 035b 0300     		.2byte	0x3
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 99
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 99
 
 
  2983 035d 73       		.byte	0x73
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  3026      6F6E745F 
  3026      696E7665 
  3026      7273655F 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 100
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 100
 
 
  3026      6D6F6465 
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  3050      65745F77 
  3050      6169745F 
  3050      6D7300
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 101
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 101
 
 
  3051              	.LASF7:
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  3072      696E7400 
  3073              	.LASF86:
  3074 01ef 75387838 		.ascii	"u8x8_cad_SendData\000"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 102
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 102
 
 
  3074      5F636164 
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  3094      5472616E 
  3094      73666572 
  3095              	.LASF61:
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 103
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 103
 
 
  3096 029f 785F706F 		.ascii	"x_pos\000"
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  3118              	.LASF10:
  3119 0373 6C6F6E67 		.ascii	"long long unsigned int\000"
  3119      206C6F6E 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 104
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 104
 
 
  3119      6720756E 
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  3140              	.LASF76:
  3141 0428 75387838 		.ascii	"u8x8_d_uc1610_dogxl160_flip1_seq\000"
  3141      5F645F75 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 105
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 105
 
 
  3141      63313631 
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  3163 04ef 795F706F 		.ascii	"y_pos\000"
  3163      7300
  3164              	.LASF81:
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 106
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 106
 
 
  3165 04f5 75387838 		.ascii	"u8x8_cad_SendSequence\000"
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 1
  3185      5F645F75 
  3185      63313631 
  3185      305F646F 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccUEpXna.s 			page 107
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccCROx22.s 			page 107
 
 
  3185      67786C31 

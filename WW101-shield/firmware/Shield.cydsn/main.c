@@ -1,8 +1,19 @@
+/*
+* This is the default program for the PSoC 4 on the shield. It monitors CapSense, reads analog sensors,
+* and stores values in I2C registers so that they can be read from a baseboard. It sets a DAC output
+* voltage based on an I2C register value. It also maps the mechanical buttons and LEDs to Arduino 
+* pins using the SmartIO component.
+*
+* A bootloader is included. Bootloader mode is entered by holding both mechanical buttons while
+* turning the POT by at least 1V.
+*
+* See the CY8CKIT-032 kit guide for details.
+*/
 #include "project.h"
 #include "regmap.h"
 #include <stdbool.h>
 
-/* Use this to run the tuner. */
+/* Uncomment this to run the CapSense tuner. */
 //#define ENABLE_TUNER
 
 /* Button State */
@@ -161,6 +172,25 @@ int main(void)
         }
     }
     
+    /* Initialize I2C and local data registers to 0's */
+    I2Cbuf.dacVal = 0.0;
+    I2Cbuf.ledVal = 0x00;
+    I2Cbuf.ledControl = 0x00;
+    I2Cbuf.buttonVal = 0x00;
+    I2Cbuf.temperature = 0.0;
+    I2Cbuf.humidity = 0.0;
+    I2Cbuf.illuminance = 0.0;
+    I2Cbuf.potVal = 0.0;
+    
+    LocData.dacVal = 0.0;
+    LocData.ledVal = 0x00;
+    LocData.ledControl = 0x00;
+    LocData.buttonVal = 0x00;
+    LocData.temperature = 0.0;
+    LocData.humidity = 0.0;
+    LocData.illuminance = 0.0;
+    LocData.potVal = 0.0;
+    
     for(;;)
     {
         processButtons();  /* Mechanical buttons and bootloader entry */
@@ -247,7 +277,7 @@ CY_ISR(ADC_ISR_Callback)
 *******************************************************************************/
 void processButtons(void)
 {
-    static bool    pressFlag = false;    
+    /* Set min at 3.3 and max at 0.0 to guarantee they are beyond the actual range */
     static float32 potMin = 3.3;
     static float32 potMax = 0.0;
     
@@ -260,7 +290,7 @@ void processButtons(void)
     {
        LocData.buttonVal &= (~BVAL_MB1_MASK);
     }
-    if(MB1_Read() == PRESSED)
+    if(MB2_Read() == PRESSED)
     {
         LocData.buttonVal |= (BVAL_MB2_MASK);
     }
@@ -282,18 +312,12 @@ void processButtons(void)
        POT rotated at least 1V */
     if((MB1_Read() == PRESSED) && (MB2_Read() == PRESSED))
     {
-        // Reset pot range checking when buttons are first pressed
-        if(pressFlag == false)
-        {
-            pressFlag = true;
-            potMin = LocData.potVal;
-            potMax = LocData.potVal;
-        }
+        /* Check pot reading compared to stored min/max */
         if(LocData.potVal < potMin)
         {
             potMin = LocData.potVal;
         }
-        else if(LocData.potVal > potMax)
+        if(LocData.potVal > potMax)
         {
             potMax = LocData.potVal;
         }
@@ -302,9 +326,10 @@ void processButtons(void)
             Bootloadable_Load();
         }
     }
-    else /* Buttons not pressed */
+    else /* Buttons not both pressed - reset POT range values */
     {
-        pressFlag = false;
+        potMin = 3.3;
+        potMax = 0.0;
     }
 }
 

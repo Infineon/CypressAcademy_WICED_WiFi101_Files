@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 1
 
 
    1              		.syntax unified
@@ -18,14 +18,14 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
   15              		.file	"u8x8_display.c"
   16              		.text
   17              	.Ltext0:
-  18              		.section	.gnu.lto_.profile.ba9bd8a,"",%progbits
+  18              		.section	.gnu.lto_.profile.50a274c6,"",%progbits
   19 0000 789C6361 		.ascii	"x\234ca`d`c`\000\222\317\231f3\002\000\005m\001\222"
   19      60646063 
   19      600092CF 
   19      99663302 
   19      00056D01 
   20              		.text
-  21              		.section	.gnu.lto_.icf.ba9bd8a,"",%progbits
+  21              		.section	.gnu.lto_.icf.50a274c6,"",%progbits
   22 0000 789C6361 		.ascii	"x\234ca`d\000\001?\006\004\340e8q\360\326\021^\306}"
   22      60640001 
   22      3F0604E0 
@@ -53,12 +53,12 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
   27      0000D289 
   27      2662
   28              		.text
-  29              		.section	.gnu.lto_.jmpfuncs.ba9bd8a,"",%progbits
+  29              		.section	.gnu.lto_.jmpfuncs.50a274c6,"",%progbits
   30 0000 789C8D92 		.ascii	"x\234\215\222\273N\303@\020E\347\256\035\307I\200\270"
   30      BB4EC340 
   30      1045E7AE 
   30      1DC74980 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 2
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 2
 
 
   30      B8
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
   42      0D54C5E1 
   43 00df 04A8949C 		.ascii	"\004\250\224\234\016)\354\363}xiF\253\341\210\343U\023"
   43      0E29ECF3 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 3
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 3
 
 
   43      7D786946 
@@ -143,7 +143,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
   47      03DB777A 
   47      34
   48              		.text
-  49              		.section	.gnu.lto_.inline.ba9bd8a,"",%progbits
+  49              		.section	.gnu.lto_.inline.50a274c6,"",%progbits
   50 0000 789C6361 		.ascii	"x\234ca`d\000\001}&\0068\340a``ced`b\336!\316\300y\303"
   50      60640001 
   50      7D260638 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
   56      9B934362 
   56      0B501CAC 
   56      9A
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 4
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 4
 
 
   57 008f 81456253 		.ascii	"\201EbS/\027\003\307\2733\214\230\032\030\031XZ\330"
@@ -198,7 +198,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
   59      B540
   60 00c6 E4       		.ascii	"\344"
   61              		.text
-  62              		.section	.gnu.lto_.pureconst.ba9bd8a,"",%progbits
+  62              		.section	.gnu.lto_.pureconst.50a274c6,"",%progbits
   63 0000 789C6361 		.ascii	"x\234ca`d\220d``\340a\220b\224d\222d\226d\221d\225d"
   63      60649064 
   63      6060E061 
@@ -210,7 +210,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
   64      0015
   65 0026 C401B8   		.ascii	"\304\001\270"
   66              		.text
-  67              		.section	.gnu.lto_u8x8_d_helper_display_setup_memory.ba9bd8a,"",%progbits
+  67              		.section	.gnu.lto_u8x8_d_helper_display_setup_memory.50a274c6,"",%progbits
   68 0000 789C8D91 		.ascii	"x\234\215\221\313K[Q\020\306\347;\347\336$J\024w.\014"
   68      CB4B5B51 
   68      10C6E73B 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
   72      E2
   73 0064 BB861F68 		.ascii	"\273\206\037h\202J\254\023\365\373\024 \201\361\201"
   73      824AAC13 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 5
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 5
 
 
   73      F5FB1420 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
   84      3579144B 
   85 0146 2375A235 		.ascii	"#u\2425\213I\\\273\213C\016\2218\333d\356Bn\261Y\270"
   85      8B495CBB 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 6
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 6
 
 
   85      8B430E91 
@@ -335,7 +335,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
   91      F7BF
   92 01c6 22       		.ascii	"\""
   93              		.text
-  94              		.section	.gnu.lto_u8x8_d_helper_display_init.ba9bd8a,"",%progbits
+  94              		.section	.gnu.lto_u8x8_d_helper_display_init.50a274c6,"",%progbits
   95 0000 789C8D94 		.ascii	"x\234\215\224\315O\023A\030\306\347\331\351n[lI\211"
   95      CD4F1341 
   95      18C6E7D9 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
   98      28448DF1 
   99 004c 00F57D67 		.ascii	"\000\365}gW\332\012i:\311\316\2763\231y\336\347\367"
   99      57DA0A69 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 7
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 7
 
 
   99      3AC9CEBE 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  110      92928DDA 
  110      13
  111 0123 6FFDCC20 		.ascii	"o\375\314 \265\357\337\323\231\246P+n\023\275?E\\\335"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 8
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 8
 
 
  111      B5EFDFD3 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  122      71CA679B 
  122      945DCD53 
  122      3E97A81A 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 9
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 9
 
 
  122      CF11
@@ -521,7 +521,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  130      F55F001E 
  130      92E9
  131              		.text
- 132              		.section	.gnu.lto_u8x8_DrawTile.ba9bd8a,"",%progbits
+ 132              		.section	.gnu.lto_u8x8_DrawTile.50a274c6,"",%progbits
  133 0000 789C8592 		.ascii	"x\234\205\222\337K\024Q\024\307\357w\356\354\354\270"
  133      DF4B1451 
  133      14C7EF77 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  135      E5CFCDD4 
  136 0039 52ABD16A 		.ascii	"R\253\321j\013\355\007\221\264TK\230F\210\017\346\204"
  136      0BED0791 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 10
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 10
 
 
  136      B4544B98 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  147      E7A4B9BE 
  147      4D5CBFE2 
  147      46A21B
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 11
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 11
 
 
  148 0111 B6CE772A 		.ascii	"\266\316w*.\361m\260\335\233\346.\3043E!\201\003\233"
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  159      E40CF711 
  159      6AE4
  160 01e2 1A232096 		.ascii	"\032# \226\370\017@w\026\243\004\350\012p\022\023\377"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 12
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 12
 
 
  160      F80F4077 
@@ -718,13 +718,13 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  171      D9D15AB3 
  171      B6A2F2
  172 02c1 7069556D 		.ascii	"piUm\265N\213_\257\367W5"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 13
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 13
 
 
  172      B54E8B5F 
  172      AFF75735 
  173              		.text
- 174              		.section	.gnu.lto_u8x8_SetupMemory.ba9bd8a,"",%progbits
+ 174              		.section	.gnu.lto_u8x8_SetupMemory.50a274c6,"",%progbits
  175 0000 789C4D50 		.ascii	"x\234MPMKBQ\020\235s\257\275g\220\375\201\036$\264\020"
  175      4D4B4251 
  175      109D73AF 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  185      FFEF284E 
  185      6089
  186 00cc 8DCA74C3 		.ascii	"\215\312t\303\364z)\323\370\266\316\263\366\000\213"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 14
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 14
 
 
  186      F47A29D3 
@@ -824,7 +824,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  194      E491F917 
  194      756984B1 
  195              		.text
- 196              		.section	.gnu.lto_u8x8_InitDisplay.ba9bd8a,"",%progbits
+ 196              		.section	.gnu.lto_u8x8_InitDisplay.50a274c6,"",%progbits
  197 0000 789C4D50 		.ascii	"x\234MP\273J\003Q\020\235s\357f7\212\372\003.\030\260"
  197      BB4A0351 
  197      109D73EF 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  199      9758DAA8 
  199      E0832822 
  199      C6674CA9 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 15
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 15
 
 
  199      D52A88
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  211 00ff 0B2D056C 		.ascii	"\013-\005l\260\265H\216E\037\261\012y\337y\312\036;"
  211      B0B5488E 
  211      451FB10A 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 16
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 16
 
 
  211      79DF79CA 
@@ -927,7 +927,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  216      9325F32F 
  216      427F8485 
  217              		.text
- 218              		.section	.gnu.lto_u8x8_SetPowerSave.ba9bd8a,"",%progbits
+ 218              		.section	.gnu.lto_u8x8_SetPowerSave.50a274c6,"",%progbits
  219 0000 789C2D50 		.ascii	"x\234-PKK[a\020\235\363\31557\022\365\017x\241.\204"
  219      4B4B5B61 
  219      109DF3CD 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  224      6C183460 
  224      30807FE6 
  225 0073 B9656AE6 		.ascii	"\271ej\346\254\304\311\305}\275\235\317\301g\242\242"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 17
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 17
 
 
  225      ACC4C9C5 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  236      8397E062 
  236      C8
  237 0146 A28EAE30 		.ascii	"\242\216\2560l]\325#\021\224\324;?=\356m\007\242\016"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 18
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 18
 
 
  237      6C5DD523 
@@ -1044,7 +1044,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  241      B327F10A 
  241      A94A9540 
  242              		.text
- 243              		.section	.gnu.lto_u8x8_SetFlipMode.ba9bd8a,"",%progbits
+ 243              		.section	.gnu.lto_u8x8_SetFlipMode.50a274c6,"",%progbits
  244 0000 789C2D50 		.ascii	"x\234-PMK[Q\020\235s\347\231\227\242\361\017\370@\027"
  244      4D4B5B51 
  244      109D73E7 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  250 0076 652BF1C7 		.ascii	"e+\361\307\277\353\261\345*|&j\230P\211\260\214.A\375"
  250      BFEBB1E5 
  250      2A7C266A 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 19
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 19
 
 
  250      985089B0 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  262 0152 ED0565A3 		.ascii	"\355\005e\243\242\016b\330\201\227\227&\341\371\034"
  262      A20E62D8 
  262      81979726 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 20
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 20
 
 
  262      E1F91C
@@ -1157,7 +1157,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  265      F4113AC1 
  265      93E8
  266              		.text
- 267              		.section	.gnu.lto_u8x8_SetContrast.ba9bd8a,"",%progbits
+ 267              		.section	.gnu.lto_u8x8_SetContrast.50a274c6,"",%progbits
  268 0000 789C2D50 		.ascii	"x\234-P;Kca\020\235\363\31557\342\343\017xA\013!\244"
  268      3B4B6361 
  268      109DF3CD 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  275      BD457E32 
  275      3E038E8C 
  275      C5B3
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 21
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 21
 
 
  276 0094 85DB5A1D 		.ascii	"\205\333Z\035\015\032d\\\316\257\\\205\270\036$\375"
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  287      976D015C 
  287      A360A06B 
  287      899A178B 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 22
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 22
 
 
  287      758C
@@ -1272,7 +1272,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  289      60B4F71D 
  290 0191 25B994F2 		.ascii	"%\271\224\362"
  291              		.text
- 292              		.section	.gnu.lto_u8x8_RefreshDisplay.ba9bd8a,"",%progbits
+ 292              		.section	.gnu.lto_u8x8_RefreshDisplay.50a274c6,"",%progbits
  293 0000 789C4D50 		.ascii	"x\234MP\317+DQ\024>\337\275o\346\2152\262\367\212\262"
  293      CF2B4451 
  293      143EDFBD 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  301      11C4FDEC 
  302 00a0 49E9391A 		.ascii	"I\3519\032\313\033\2236f\246\337\324xZc\035\232\371"
  302      CB1B9336 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 23
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 23
 
 
  302      66A6DFD4 
@@ -1374,11 +1374,11 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  313      05C0B985 
  313      C2
  314              		.text
- 315              		.section	.gnu.lto_u8x8_ClearDisplayWithTile.ba9bd8a,"",%progbits
+ 315              		.section	.gnu.lto_u8x8_ClearDisplayWithTile.50a274c6,"",%progbits
  316 0000 789C8D94 		.ascii	"x\234\215\224MLTW\024\307\357\377\335\3671\303\3140"
  316      4D4C5457 
  316      14C7EFFF 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 24
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 24
 
 
  316      DDF731C3 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  328 00d2 B75DB919 		.ascii	"\267]\271\031\202\326\255c\323\263\221\212\213J%\225"
  328      82D6AD63 
  328      D3B3918A 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 25
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 25
 
 
  328      8B4A2595 
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  340 01aa CA538C27 		.ascii	"\312S\214'!\346\210JU.X\026=\344#$\347{Ff$_Cq\214vv"
  340      21E6884A 
  340      552E5816 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 26
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 26
 
 
  340      3DE42324 
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  351      C8
  352 0291 10C2EFA7 		.ascii	"\020\302\357\247\325\357\257\265\032\331\240Ud\2438"
  352      D5EFAFB5 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 27
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 27
 
 
  352      1AD9A055 
@@ -1618,11 +1618,11 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  363      BF38
  364 0366 585FF71F 		.ascii	"X_\367\037\304~\315f"
  364      C47ECD66 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 28
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 28
 
 
  365              		.text
- 366              		.section	.gnu.lto_u8x8_ClearDisplay.ba9bd8a,"",%progbits
+ 366              		.section	.gnu.lto_u8x8_ClearDisplay.50a274c6,"",%progbits
  367 0000 789C4D50 		.ascii	"x\234MP\277k\223a\020\276\347\275/i,D\334\015\230\301"
  367      BF6B9361 
  367      10BEE7BD 
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  378 00c8 37833835 		.ascii	"7\20385&\316h\272\265W\337\312\216\211\275\225\353\203"
  378      26CE68BA 
  378      B557DFCA 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 29
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 29
 
 
  378      8E89BD95 
@@ -1738,14 +1738,14 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  389      5E2B6B74 
  390 01a4 E5D9AB57 		.ascii	"\345\331\253W\316\336(\226)\260\234\317\315]\374\007"
  390      CEDE2896 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 30
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 30
 
 
  390      29B09CCF 
  390      CD5DFC07 
  391 01b4 BE0BB238 		.ascii	"\276\013\2628"
  392              		.text
- 393              		.section	.gnu.lto_u8x8_FillDisplay.ba9bd8a,"",%progbits
+ 393              		.section	.gnu.lto_u8x8_FillDisplay.50a274c6,"",%progbits
  394 0000 789C4D50 		.ascii	"x\234MPMkSQ\020\235s\357\313KZHqo\240YXB7\001]\3457"
  394      4D6B5351 
  394      109D73EF 
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  404      20459C22 
  404      54911178 
  404      E579B719 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 31
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 31
 
 
  404      8B88
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  416      3F91F70E 
  416      ECAD586E 
  416      DB4C33DA 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 32
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 32
 
 
  416      216C2347 
@@ -1875,7 +1875,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  419      3035FE0F 
  419      B037C34E 
  420              		.text
- 421              		.section	.gnu.lto_.symbol_nodes.ba9bd8a,"",%progbits
+ 421              		.section	.gnu.lto_.symbol_nodes.50a274c6,"",%progbits
  422 0000 789C55C9 		.ascii	"x\234U\311+\016\302@\024\205\341s\347\321\351\364a\330"
  422      2B0EC240 
  422      1485E173 
@@ -1918,19 +1918,19 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  430 0094 BC3C6C15 		.ascii	"\274<l\025q_\304\326\377\342\007\324\023`O"
  430      715FC4D6 
  430      FFE207D4 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 33
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 33
 
 
  430      13604F
  431              		.text
- 432              		.section	.gnu.lto_.refs.ba9bd8a,"",%progbits
+ 432              		.section	.gnu.lto_.refs.50a274c6,"",%progbits
  433 0000 789C6361 		.ascii	"x\234ca`d`c```\344f\340ad\000\000\000\361\000%"
  433      60646063 
  433      606060E4 
  433      66E06164 
  433      000000F1 
  434              		.text
- 435              		.section	.gnu.lto_.decls.ba9bd8a,"",%progbits
+ 435              		.section	.gnu.lto_.decls.50a274c6,"",%progbits
  436 0000 789CBD58 		.ascii	"x\234\275X{PTW\232\357sO74M\003\212d\326\235bw\255\024"
  436      7B505457 
  436      9AEF734F 
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  445      103BC852 
  445      100788
  446 00b2 1B318EFF 		.ascii	"\0331\216\377A\272\200\037\3411I6\"A\242@\026B\333\004"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 34
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 34
 
 
  446      41BA801F 
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  457      111F9EEB 
  457      981F760D 
  457      3F96
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 35
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 35
 
 
  458 018c 4AFDA7FB 		.ascii	"J\375\247\373\361\031H>H\001H\242\324O\220\360Z<\216"
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  469      8AA4D4A4 
  469      5C74E4BF 
  470 0264 8EE1699B 		.ascii	"\216\341i\233JF\377\344\353\224\374\243$*;\222:!\305"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 36
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 36
 
 
  470      4A46FFE4 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  482 0335 F9E5A4F6 		.ascii	"\371\345\244\366\032\301\306I\325F\003\222\214\014\247"
  482      1AC1C649 
  482      D5460392 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 37
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 37
 
 
  482      8C0CA7
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  494      34B3916B 
  494      DA461E5D 
  494      6B2B
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 38
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 38
 
 
  495 041f 30E00936 		.ascii	"0\340\0116\356W\225\353\216\353q\256\236*\017\232_\214"
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  506      0F510CBA 
  506      0F3200F2 
  506      35C8
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 39
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 39
 
 
  507 04fa 23903190 		.ascii	"#\2201\220~\220{ \303 O@\276\001y\0142\012\362\034\344"
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  517      9DDB
  518 05ca 23F02DBA 		.ascii	"#\360-\272\026\010\227\006v4\206\2439\261\332\323\343"
  518      16089706 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 40
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 40
 
 
  518      763486A3 
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  529      77CDA439 
  529      204CD9
  530 06a7 82890BD3 		.ascii	"\202\211\013\323\006A\016S\377\321\361\307F\274\203"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 41
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 41
 
 
  530      06410E53 
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  541      724B4FC0 
  542 0774 DD2944A3 		.ascii	"\335)D\243\035\002 \266K\035\310\344=!\304\242\006!"
  542      1D0220B6 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 42
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 42
 
 
  542      4B1DC8E4 
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  553      86354FA0 
  553      319047A3 
  554 0853 231DE07F 		.ascii	"#\035\340\177\005\254\032\364C\005:\012]\362A\343I+"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 43
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 43
 
 
  554      05AC1AF4 
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  565      FAAFE8E8 
  565      FD74F4E4 
  565      34B1E5
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 44
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 44
 
 
  566 0929 C613D3EB 		.ascii	"\306\023\323\353EbQ\205\3307\276\327z\277R\024\327B"
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  577      4E8DC239 
  577      3E0A5768 
  577      148A2FF4 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 45
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 45
 
 
  578 0a04 16858D87 		.ascii	"\026\205\215\207K\253d\232\211\014\254\320\220`\266"
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  589      452A144E 
  589      92589A5F 
  589      631313
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 46
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 46
 
 
  590 0add 2CE81B94 		.ascii	",\350\033\224\212\357\3569aU\362\320\317\362\260c\357"
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  601      1D8249
  602 0baa 28260ED5 		.ascii	"(&\016\325K\037\356\202\310+^q\375\244\364\215\326\360"
  602      4B1FEE82 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 47
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 47
 
 
  602      C82B5E71 
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  613      CEA2E849 
  613      C88D0245 
  613      DF
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 48
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 48
 
 
  614 0c82 096F9016 		.ascii	"\011o\220\0264!,\326\241)\341\015\350wr\347\227[\364"
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  625      08C5B4F3 
  625      BC12C1
  626 0d52 1C88DA9F 		.ascii	"\034\210\332\237\212 \341#KL\331\263-\341\001\331\317"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 49
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 49
 
 
  626      8A20E123 
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  637 0e24 2B175B12 		.ascii	"+\027[\022-\313\354N\267\335cItx\335N\353*\213\327\356"
  637      2DCBEC4E 
  637      B7DD6349 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 50
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 50
 
 
  637      7478DD4E 
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  649 0f00 1E465BE6 		.ascii	"\036F[\346\262<H\341w\270\222R G\236T\233\317\314\242"
  649      B23C48E1 
  649      77B89252 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 51
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 51
 
 
  649      20479E54 
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  661 0fd8 9E200E97 		.ascii	"\236 \016\227\303\027F\037\375\302c]\361\037P\322\263"
  661      C317461F 
  661      FDC2635D 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 52
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 52
 
 
  661      F11F50D2 
@@ -3102,7 +3102,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  670      BFC80195 
  670      75
  671              		.text
- 672              		.section	.gnu.lto_.symtab.ba9bd8a,"",%progbits
+ 672              		.section	.gnu.lto_.symtab.50a274c6,"",%progbits
  673 0000 75387838 		.ascii	"u8x8_d_helper_display_setup_memory\000"
  673      5F645F68 
  673      656C7065 
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  679      5F645F68 
  679      656C7065 
  679      725F6469 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 53
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 53
 
 
  679      73706C61 
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  709      00
  710 00eb 00       		.ascii	"\000"
  711 00ec 00       		.ascii	"\000"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 54
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 54
 
 
  712 00ed 00       		.ascii	"\000"
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  741 0199 00       		.ascii	"\000"
  742 019a 00       		.ascii	"\000"
  743 019b 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 55
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 55
 
 
  743      00000000 
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
   10:..\u8g2\csrc/u8x8_display.c ****   Redistribution and use in source and binary forms, with or without modification, 
   11:..\u8g2\csrc/u8x8_display.c ****   are permitted provided that the following conditions are met:
   12:..\u8g2\csrc/u8x8_display.c **** 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 56
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 56
 
 
   13:..\u8g2\csrc/u8x8_display.c ****   * Redistributions of source code must retain the above copyright notice, this list 
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
   57:..\u8g2\csrc/u8x8_display.c **** }
  778              		.loc 1 57 0
  779              		@ sp needed
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 57
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 57
 
 
   56:..\u8g2\csrc/u8x8_display.c ****       u8x8->x_offset = u8x8->display_info->default_x_offset;
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  820 0010 E568     		ldr	r5, [r4, #12]
  821 0012 1A00     		movs	r2, r3
  822 0014 1421     		movs	r1, #20
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 58
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 58
 
 
  823 0016 2000     		movs	r0, r4
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  868 005c 70BD     		pop	{r4, r5, r6, pc}
  869              		.cfi_endproc
  870              	.LFE1:
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 59
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 59
 
 
  871              		.size	u8x8_d_helper_display_init, .-u8x8_d_helper_display_init
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  911              	.LVL15:
  912 0016 A047     		blx	r4
  913              	.LVL16:
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 60
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 60
 
 
   90:..\u8g2\csrc/u8x8_display.c **** }
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
   97:..\u8g2\csrc/u8x8_display.c **** 
   98:..\u8g2\csrc/u8x8_display.c **** void u8x8_InitDisplay(u8x8_t *u8x8)
   99:..\u8g2\csrc/u8x8_display.c **** {
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 61
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 61
 
 
  960              		.loc 1 99 0
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  1007              	.LVL22:
  1008 000a A047     		blx	r4
  1009              	.LVL23:
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 62
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 62
 
 
  106:..\u8g2\csrc/u8x8_display.c **** }
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  114:..\u8g2\csrc/u8x8_display.c **** {
  1056              		.loc 1 114 0
  1057              		.cfi_startproc
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 63
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 63
 
 
  1058              		@ args = 0, pretend = 0, frame = 0
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  1105              	.LVL31:
  121:..\u8g2\csrc/u8x8_display.c **** }
  1106              		.loc 1 121 0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 64
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 64
 
 
  1107              		@ sp needed
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  1148 0012 0091     		str	r1, [sp]
  1149              		.loc 1 132 0
  1150 0014 557C     		ldrb	r5, [r2, #17]
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 65
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 65
 
 
  1151              	.LVL34:
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  1195              	.LVL39:
  1196 0000 13B5     		push	{r0, r1, r4, lr}
  1197              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 66
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 66
 
 
  1198              		.cfi_offset 0, -16
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  1245 0004 0822     		movs	r2, #8
  1246 0006 0449     		ldr	r1, .L16
  1247 0008 6846     		mov	r0, sp
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 67
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 67
 
 
  1248              	.LVL45:
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  1300 0028 23030000 		.4byte	.LASF0
  1301 002c 03       		.uleb128 0x3
  1302 002d 9E020000 		.4byte	.LASF3
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 68
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 68
 
 
  1303 0031 02       		.byte	0x2
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  1357 0097 03       		.uleb128 0x3
  1358 0098 6D030000 		.4byte	.LASF13
  1359 009c 03       		.byte	0x3
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 69
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 69
 
 
  1360 009d 24       		.byte	0x24
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  1414 0112 04       		.byte	0x4
  1415 0113 3F01     		.2byte	0x13f
  1416 0115 0D030000 		.4byte	0x30d
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 70
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 70
 
 
  1417 0119 14       		.byte	0x14
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  1471 018e 24       		.byte	0x24
  1472 018f 06       		.uleb128 0x6
  1473 0190 52050000 		.4byte	.LASF32
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 71
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 71
 
 
  1474 0194 04       		.byte	0x4
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  1528 0204 04       		.byte	0x4
  1529 0205 D7       		.byte	0xd7
  1530 0206 8C000000 		.4byte	0x8c
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 72
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 72
 
 
  1531 020a 03       		.byte	0x3
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  1585 0276 0F       		.byte	0xf
  1586 0277 08       		.uleb128 0x8
  1587 0278 90000000 		.4byte	.LASF52
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 73
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 73
 
 
  1588 027c 04       		.byte	0x4
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  1642 02ed 04       		.byte	0x4
  1643 02ee C9       		.byte	0xc9
  1644 02ef 8C000000 		.4byte	0x8c
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 74
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 74
 
 
  1645 02f3 04       		.byte	0x4
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  1699 0368 00       		.byte	0
  1700 0369 0A       		.uleb128 0xa
  1701 036a 04       		.byte	0x4
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 75
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 75
 
 
  1702 036b 8C000000 		.4byte	0x8c
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  1756 03e0 00       		.sleb128 0
  1757 03e1 FC030000 		.4byte	0x3fc
  1758 03e5 13       		.uleb128 0x13
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 76
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 76
 
 
  1759 03e6 01       		.uleb128 0x1
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  1813 042b 13       		.uleb128 0x13
  1814 042c 01       		.uleb128 0x1
  1815 042d 50       		.byte	0x50
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 77
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 77
 
 
  1816 042e 02       		.uleb128 0x2
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  1870 0476 14       		.uleb128 0x14
  1871 0477 46000000 		.4byte	.LVL7
  1872 047b 5C080000 		.4byte	0x85c
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 78
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 78
 
 
  1873 047f 90040000 		.4byte	0x490
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  1927 04c7 63040000 		.4byte	.LASF87
  1928 04cb 01       		.byte	0x1
  1929 04cc 52       		.byte	0x52
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 79
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 79
 
 
  1930 04cd 8C000000 		.4byte	0x8c
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  1984 053e 03       		.uleb128 0x3
  1985 053f F3       		.byte	0xf3
  1986 0540 01       		.uleb128 0x1
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 80
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 80
 
 
  1987 0541 50       		.byte	0x50
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  2041 058f 01       		.uleb128 0x1
  2042 0590 30       		.byte	0x30
  2043 0591 13       		.uleb128 0x13
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 81
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 81
 
 
  2044 0592 01       		.uleb128 0x1
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  2098 05e3 00000000 		.4byte	.LFB5
  2099 05e7 0E000000 		.4byte	.LFE5-.LFB5
  2100 05eb 01       		.uleb128 0x1
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 82
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 82
 
 
  2101 05ec 9C       		.byte	0x9c
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  2155 064f E6000000 		.4byte	.LASF73
  2156 0653 01       		.byte	0x1
  2157 0654 6C       		.byte	0x6c
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 83
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 83
 
 
  2158 0655 8C000000 		.4byte	0x8c
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  2212 06b5 50       		.byte	0x50
  2213 06b6 03       		.uleb128 0x3
  2214 06b7 F3       		.byte	0xf3
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 84
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 84
 
 
  2215 06b8 01       		.uleb128 0x1
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  2269 0706 01       		.uleb128 0x1
  2270 0707 30       		.byte	0x30
  2271 0708 00       		.byte	0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 85
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 85
 
 
  2272 0709 00       		.byte	0
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  2326 076d 53       		.byte	0x53
  2327 076e 02       		.uleb128 0x2
  2328 076f 7D       		.byte	0x7d
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 86
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 86
 
 
  2329 0770 00       		.sleb128 0
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  2383 07d0 74       		.byte	0x74
  2384 07d1 00       		.sleb128 0
  2385 07d2 13       		.uleb128 0x13
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 87
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 87
 
 
  2386 07d3 01       		.uleb128 0x1
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  2440 0839 05       		.uleb128 0x5
  2441 083a 03       		.byte	0x3
  2442 083b 00000000 		.4byte	.LANCHOR0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 88
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 88
 
 
  2443 083f 13       		.uleb128 0x13
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  2497 0011 00       		.byte	0
  2498 0012 00       		.byte	0
  2499 0013 02       		.uleb128 0x2
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 89
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 89
 
 
  2500 0014 24       		.uleb128 0x24
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  2554 004a 3A       		.uleb128 0x3a
  2555 004b 0B       		.uleb128 0xb
  2556 004c 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 90
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 90
 
 
  2557 004d 05       		.uleb128 0x5
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  2611 0083 00       		.byte	0
  2612 0084 0B       		.uleb128 0xb
  2613 0085 0B       		.uleb128 0xb
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 91
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 91
 
 
  2614 0086 49       		.uleb128 0x49
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  2668 00bc 18       		.uleb128 0x18
  2669 00bd 9742     		.uleb128 0x2117
  2670 00bf 19       		.uleb128 0x19
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 92
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 92
 
 
  2671 00c0 01       		.uleb128 0x1
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  2725 00fc 14       		.uleb128 0x14
  2726 00fd 898201   		.uleb128 0x4109
  2727 0100 01       		.byte	0x1
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 93
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 93
 
 
  2728 0101 11       		.uleb128 0x11
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  2782 013a 13       		.uleb128 0x13
  2783 013b 02       		.uleb128 0x2
  2784 013c 17       		.uleb128 0x17
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 94
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 94
 
 
  2785 013d 00       		.byte	0
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  2839 0176 00       		.byte	0
  2840 0177 00       		.byte	0
  2841 0178 1C       		.uleb128 0x1c
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 95
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 95
 
 
  2842 0179 01       		.uleb128 0x1
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  2896 000a 50       		.byte	0x50
  2897 000b 0D000000 		.4byte	.LVL2-1
  2898 000f 5C000000 		.4byte	.LVL10
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 96
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 96
 
 
  2899 0013 0100     		.2byte	0x1
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  2953 0091 17000000 		.4byte	.LVL16-1
  2954 0095 1A000000 		.4byte	.LFE2
  2955 0099 0400     		.2byte	0x4
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 97
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 97
 
 
  2956 009b F3       		.byte	0xf3
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  3010 0118 50       		.byte	0x50
  3011 0119 9F       		.byte	0x9f
  3012 011a 00000000 		.4byte	0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 98
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 98
 
 
  3013 011e 00000000 		.4byte	0
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  3067 019d 9F       		.byte	0x9f
  3068 019e 00000000 		.4byte	0
  3069 01a2 00000000 		.4byte	0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 99
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 99
 
 
  3070              	.LLST11:
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  3124 0229 F3       		.byte	0xf3
  3125 022a 01       		.uleb128 0x1
  3126 022b 50       		.byte	0x50
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 100
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 100
 
 
  3127 022c 9F       		.byte	0x9f
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  3181 02b5 F3       		.byte	0xf3
  3182 02b6 01       		.uleb128 0x1
  3183 02b7 50       		.byte	0x50
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 101
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 101
 
 
  3184 02b8 9F       		.byte	0x9f
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  3238 003c 0E000000 		.4byte	.LFE7
  3239 0040 00000000 		.4byte	.LFB8
  3240 0044 0E000000 		.4byte	.LFE8
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 102
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 102
 
 
  3241 0048 00000000 		.4byte	.LFB9
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  3267      756C745F 
  3267      6D736700 
  3268              	.LASF2:
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 103
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 103
 
 
  3269 0074 73686F72 		.ascii	"short int\000"
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  3293      655F7075 
  3293      6C73655F 
  3293      77696474 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 104
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 104
 
 
  3293      685F6E73 
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  3313      745F7069 
  3313      6E5F7374 
  3314              	.LASF69:
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 105
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 105
 
 
  3315 0227 75387838 		.ascii	"u8x8_InitDisplay\000"
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  3338              	.LASF15:
  3339 02c6 6C6F6E67 		.ascii	"long double\000"
  3339      20646F75 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 106
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 106
 
 
  3339      626C6500 
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  3361              	.LASF70:
  3362 038f 75387838 		.ascii	"u8x8_SetPowerSave\000"
  3362      5F536574 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 107
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 107
 
 
  3362      506F7765 
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  3382      00
  3383              	.LASF56:
  3384 043a 70697865 		.ascii	"pixel_width\000"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 108
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 108
 
 
  3384      6C5F7769 
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  3406      7400
  3407              	.LASF82:
  3408 04f1 6D656D73 		.ascii	"memset\000"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 109
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 109
 
 
  3408      657400
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 1
  3432      63686970 
  3432      5F646973 
  3432      61626C65 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\cc4nRaPe.s 			page 110
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccv4Z2jf.s 			page 110
 
 
  3432      5F776169 

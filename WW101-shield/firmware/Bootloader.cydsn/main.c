@@ -1,13 +1,12 @@
-/* ========================================
- *
- * Copyright Cypress Semiconductor, 2017
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF Cypress Semiconductor.
- *
- * ========================================
+/*
+* This is the I2C bootloader that is included in the Shield projet.
+*
+* While in bootloader mode, LED1 and LED2 will flash in an alternating pattern at about 1Hz.
+*
+* Bootloader mode can only be exited by either reseting the PSoC 4 on the shield or by
+* bootloading new firmware.
+*
+* See the CY8CKIT-032 kit guide for details.
 */
 #include <project.h>
 
@@ -18,14 +17,15 @@ int main()
     CyGlobalIntEnable;
 
     /* Blink LEDs */
+    SmartIO_Start();
     PWM_1_Start();
-
+    
     /* Start bootloader communication */
     Bootloader_Start();
 
     for(;;)
     {
-        /* Place your application code here. */
+        /* We never get here since the bootloader starts first. */
     }
 }
 

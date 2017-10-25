@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 1
 
 
    1              		.syntax unified
@@ -18,14 +18,14 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
   15              		.file	"D11_PM.c"
   16              		.text
   17              	.Ltext0:
-  18              		.section	.gnu.lto_.profile.b55f61d,"",%progbits
+  18              		.section	.gnu.lto_.profile.50a2ec0d,"",%progbits
   19 0000 789C6361 		.ascii	"x\234ca`d`a`\000\222\034l\000\000\200\000\031"
   19      60646061 
   19      6000921C 
   19      6C000080 
   19      0019
   20              		.text
-  21              		.section	.gnu.lto_.icf.b55f61d,"",%progbits
+  21              		.section	.gnu.lto_.icf.50a2ec0d,"",%progbits
   22 0000 789C6361 		.ascii	"x\234ca`d\000\001a\006\004`fx\261\347\325\0276\306\245"
   22      60640001 
   22      61060460 
@@ -36,14 +36,14 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
   23      302B0300 
   23      6097095E 
   24              		.text
-  25              		.section	.gnu.lto_.jmpfuncs.b55f61d,"",%progbits
+  25              		.section	.gnu.lto_.jmpfuncs.50a2ec0d,"",%progbits
   26 0000 789C6361 		.ascii	"x\234ca`d\000\001\016\006\004`\202b\000\001^\000\022"
   26      60640001 
   26      0E060460 
   26      82620001 
   26      5E0012
   27              		.text
-  28              		.section	.gnu.lto_.inline.b55f61d,"",%progbits
+  28              		.section	.gnu.lto_.inline.50a2ec0d,"",%progbits
   29 0000 789C6361 		.ascii	"x\234ca`d\000\001\015\006\004`b``ead`bY \317\300\266"
   29      60640001 
   29      0D060460 
@@ -54,17 +54,17 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
   30      0047FC03 
   30      5E
   31              		.text
-  32              		.section	.gnu.lto_.pureconst.b55f61d,"",%progbits
+  32              		.section	.gnu.lto_.pureconst.50a2ec0d,"",%progbits
   33 0000 789C6361 		.ascii	"x\234ca`d`e```b\220b\222\002\000\000\357\000C"
   33      60646065 
   33      60606062 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 2
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 2
 
 
   33      90629202 
   33      0000EF00 
   34              		.text
-  35              		.section	.gnu.lto_D11_Sleep.b55f61d,"",%progbits
+  35              		.section	.gnu.lto_D11_Sleep.50a2ec0d,"",%progbits
   36 0000 789C4D50 		.ascii	"x\234MP\277KBQ\024\276\337\275\317\247DA{\021\322\346"
   36      BF4B4251 
   36      14BEDFBD 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
   46      7CDFD726 
   46      C7CFFC41 
   46      511B047D 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 3
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 3
 
 
   46      68DD37CB 
@@ -159,7 +159,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
   54 014d 0FB7007D 		.ascii	"\017\267\000}\365"
   54      F5
   55              		.text
-  56              		.section	.gnu.lto_D11_backup.b55f61d,"",%progbits
+  56              		.section	.gnu.lto_D11_backup.50a2ec0d,"",%progbits
   57 0000 789C6361 		.ascii	"x\234ca`d\000\001k \206\260\030\030\37621\256\177\263"
   57      60640001 
   57      6B2086B0 
@@ -178,12 +178,12 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
   60 0039 42318128 		.ascii	"B1\201(\006\306\025\214\026\014\000\345\232\024I"
   60      06C6158C 
   60      160C00E5 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 4
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 4
 
 
   60      9A1449
   61              		.text
-  62              		.section	.gnu.lto_D11_Wakeup.b55f61d,"",%progbits
+  62              		.section	.gnu.lto_D11_Wakeup.50a2ec0d,"",%progbits
   63 0000 789C4D90 		.ascii	"x\234M\220\277KBQ\024\307\357\367\336\327{\022\005\015"
   63      BF4B4251 
   63      14C7EFF7 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
   73      BE
   74 00bf B9253814 		.ascii	"\271%8\024\240\331\374|5R}\231\227r\212\264\002yPr\347"
   74      A0D9FC7C 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 5
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 5
 
 
   74      35527D99 
@@ -281,7 +281,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
   82      03AB027D 
   82      3B
   83              		.text
-  84              		.section	.gnu.lto_.symbol_nodes.b55f61d,"",%progbits
+  84              		.section	.gnu.lto_.symbol_nodes.50a2ec0d,"",%progbits
   85 0000 789C6361 		.ascii	"x\234ca`d\320a\000\002&\306z\006\206\011\347\030\030"
   85      6064D061 
   85      000226C6 
@@ -296,9 +296,9 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
   87      0600BE6F 
   87      0842
   88              		.text
-  89              		.section	.gnu.lto_.refs.b55f61d,"",%progbits
+  89              		.section	.gnu.lto_.refs.50a2ec0d,"",%progbits
   90 0000 789C6361 		.ascii	"x\234ca`d\340f`\000\222\214\214L\214L@\222\001\000\001"
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 6
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 6
 
 
   90      6064E066 
@@ -307,7 +307,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
   90      40920100 
   91 0015 54001B   		.ascii	"T\000\033"
   92              		.text
-  93              		.section	.gnu.lto_.decls.b55f61d,"",%progbits
+  93              		.section	.gnu.lto_.decls.50a2ec0d,"",%progbits
   94 0000 789C8D54 		.ascii	"x\234\215T]HT[\024\336\353\234\231\034O\243VF\364P0"
   94      5D48545B 
   94      14DEEB9C 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
  104 00b5 B727D26A 		.ascii	"\267'\322j\033\204\001P\300(\014\003\2203\010aR\304"
  104      1B840150 
  104      C0280C03 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 7
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 7
 
 
  104      90330861 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
  116 018c CC11101C 		.ascii	"\314\021\020\034\303\377\335\375:U]&8\276\276\251\032"
  116      C3FFDDFD 
  116      3A555D26 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 8
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 8
 
 
  116      38BEBEA9 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
  128 0265 DC111CBD 		.ascii	"\334\021\034\275\303-\0146\014N\270\211\322\011N\321"
  128      C32D0C36 
  128      0C4EB889 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 9
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 9
 
 
  128      D2094ED1 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
  139      3585
  140 0346 8E3C978B 		.ascii	"\216<\227\2139V\352\333\364\362\022\237\276\241\330"
  140      3956EADB 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 10
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 10
 
 
  140      F4F2129F 
@@ -572,7 +572,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
  146      FB0342B9 
  146      C6CB
  147              		.text
- 148              		.section	.gnu.lto_.symtab.b55f61d,"",%progbits
+ 148              		.section	.gnu.lto_.symtab.50a2ec0d,"",%progbits
  149 0000 4431315F 		.ascii	"D11_Sleep\000"
  149      536C6565 
  149      7000
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
  163      6572726E 
  163      6F272027 
  163      2D667369 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 11
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 11
 
 
  164 0033 2D666E6F 		.ascii	"-fno-trapv' '-fno-openmp' '-fno-openacc' '-mcpu=cor"
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
   29:Generated_Source\PSoC4/D11_PM.c **** *  It should not be called for GPIO or GPIO_OVT pins.
   30:Generated_Source\PSoC4/D11_PM.c **** *
   31:Generated_Source\PSoC4/D11_PM.c **** * <b>Note</b> This function is available in PSoC 4 only.
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 12
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 12
 
 
   32:Generated_Source\PSoC4/D11_PM.c **** *
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
  201              		.section	.text.D11_Wakeup,"ax",%progbits
  202              		.align	1
  203              		.global	D11_Wakeup
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 13
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 13
 
 
  204              		.code	16
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
  221 0006 1A60     		str	r2, [r3]
  222              		.loc 1 97 0
  223 0008 7047     		bx	lr
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 14
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 14
 
 
  224              	.L6:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
  276 0044 C5010000 		.4byte	.LASF4
  277 0048 02       		.uleb128 0x2
  278 0049 04       		.byte	0x4
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 15
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 15
 
 
  279 004a 07       		.byte	0x7
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
  333 00b2 97010000 		.4byte	.LASF15
  334 00b6 03       		.byte	0x3
  335 00b7 24       		.byte	0x24
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 16
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 16
 
 
  336 00b8 6B000000 		.4byte	0x6b
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
  390 000d 11       		.uleb128 0x11
  391 000e 01       		.uleb128 0x1
  392 000f 10       		.uleb128 0x10
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 17
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 17
 
 
  393 0010 17       		.uleb128 0x17
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
  447 0046 01       		.uleb128 0x1
  448 0047 13       		.uleb128 0x13
  449 0048 00       		.byte	0
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 18
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 18
 
 
  450 0049 00       		.byte	0
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
  504 0080 00       		.byte	0
  505 0081 03       		.uleb128 0x3
  506 0082 0E       		.uleb128 0xe
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 19
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 19
 
 
  507 0083 3A       		.uleb128 0x3a
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
  550      352E342E 
  550      31203230 
  550      31363036 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 20
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 20
 
 
  551 004d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 1
  570              	.LASF23:
  571 0157 4431315F 		.ascii	"D11_backup\000"
  571      6261636B 
-ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccElT96h.s 			page 21
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccoC5v80.s 			page 21
 
 
  571      757000
