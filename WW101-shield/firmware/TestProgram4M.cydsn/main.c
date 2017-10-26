@@ -333,6 +333,23 @@ void handleBaseSwitch(void)
 }
 
 /*******************************************************************************
+* Function Name: handleBaseSwitch(void)
+********************************************************************************
+*
+* Summary:
+*   This function is the ISR for the input connected to D11. This is driven by
+*   MB2 on the shield. An ISR is used to turn LED2 on the shieild on/off based
+*   on the button state.
+********************************************************************************/
+void handleShieldButton(void)
+{
+    // Look at mechanical Button2 from shield and drive LED2
+    // (Button1 and LED1 are done in hardware)
+    D11_Write(!D12_Read());
+    D12_ClearInterrupt();
+}
+
+/*******************************************************************************
 * Function Name: testParameters(void)
 ********************************************************************************
 *
@@ -447,8 +464,10 @@ int main(void)
    
     // Start ISR for the timer and regiser the callback function for when the timer expires.
     SWISR_StartEx(handleBaseSwitch);
-
     Timer_Start();
+    
+    // Start ISR for the button input from the shield to drive the corresponding LED on the shield
+    D12ISR_StartEx(handleShieldButton);
     
     // Initialize the U8 Display
     u8x8_Setup(&u8x8, u8x8_d_ssd1306_128x64_noname, u8x8_cad_ssd13xx_i2c, u8x8_byte_hw_i2c, psoc_gpio_and_delay_cb);
@@ -478,10 +497,6 @@ int main(void)
         // Variables to hold the current and previous state of the button on the baseboard
         static int b1Prev=1;
         int b1State;
-        
-        // Look at mechanical Button2 from shield and drive LED2
-        // (Button1 and LED1 are done in hardware)
-        D12_Write(!D11_Read());
         
         // Read the values of the Analog Arduino Pins if a conversion has completed
         if(ADC_IsEndConversion(ADC_RETURN_STATUS)) // The three Arduino A inputs are connected to the channel 0,1,2
@@ -529,7 +544,10 @@ int main(void)
         
             // Send the updated DAC value to the PSoC 4 on the shield
             I2C_I2CMasterWriteBuf(PSOC_AFE_I2C,(uint8 *)&sendBuff,sizeof(sendBuff),I2C_I2C_MODE_COMPLETE_XFER);
-            while (0u == (I2C_I2CMasterStatus() & I2C_I2C_MSTAT_WR_CMPLT));
+            while (0u == (I2C_I2CMasterStatus() & I2C_I2C_MSTAT_WR_CMPLT))
+            {
+                /* Wait forever until I2C completes */        
+            }
         }
         
         /* Check all of the test limits and set success bits as appropriate */

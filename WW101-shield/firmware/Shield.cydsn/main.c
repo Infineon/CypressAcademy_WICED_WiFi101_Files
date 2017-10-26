@@ -95,13 +95,13 @@ typedef enum {
 volatile dataSet_t I2Cbuf;   /* I2C buffer containing the data set */
 volatile dataSet_t LocData;  /* Local working copy of the data set */
 
-uint16 capacitance;			    /* Capacitance of the humidity sensor */
-uint16 humidity;			    /* Measured humidity */
+volatile uint16 capacitance;			    /* Capacitance of the humidity sensor */
+volatile uint16 humidity;			    /* Measured humidity */
 
-uint32 adcState = DONE;          /* The ADC states are: RUNNING, PROCESS and DONE */
-int16  adcResults[NUM_CHAN];     /* Array to hold raw ADC results */
+volatile uint32 adcState = DONE;          /* The ADC states are: RUNNING, PROCESS and DONE */
+volatile int16  adcResults[NUM_CHAN];     /* Array to hold raw ADC results */
 
-bool capLedBase = false;        /* Setting for whether the CapSense LEDs are controlled by CapSense or I2C */
+volatile bool capLedBase = false;        /* Setting for whether the CapSense LEDs are controlled by CapSense or I2C */
 
 
 /* Function prototypes */
@@ -123,7 +123,6 @@ void processI2C(void);
 ********************************************************************************/
 int main(void)
 {
-    /* Local variables */
     uint32  i;
     
     CyGlobalIntEnable; /* Enable global interrupts. */
@@ -322,7 +321,7 @@ void processButtons(void)
             potMax = LocData.potVal;
         }
         if((potMax - potMin) > 1.0) /* Pot moved more than 1V, time to bootload */
-        {
+        {        
             Bootloadable_Load();
         }
     }
@@ -438,10 +437,10 @@ void processCapSense(void)
                 }
                 
                 /* Now that butons have all been processed, set interrupt state */
-                if(LocData.buttonVal != buttonValPrev) /* At least 1 button state changed */
+                if((LocData.buttonVal & BVAL_ALLB_MASK) != buttonValPrev) /* At least 1 CapSense button state changed */
                 {
                     CSINTR_Write(1);
-                    buttonValPrev = LocData.buttonVal;
+                    buttonValPrev = (LocData.buttonVal & BVAL_ALLB_MASK);
                 }
                 
                 /* Setup Proximity scan */
