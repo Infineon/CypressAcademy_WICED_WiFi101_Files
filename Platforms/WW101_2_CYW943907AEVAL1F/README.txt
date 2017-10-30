@@ -1,10 +1,10 @@
 --------------------------------------------
-CYW943907AEVAL1F - README
+WW101_2_CYW943907AEVAL1F - README
 --------------------------------------------
 
 Provider    : Cypress
 Website     : http://www.cypress.com/products/wireless-connectivity
-Description : Cypress CYW943907AEVAL1F
+Description : Combo of Cypress CYW943907AEVAL1F and PSoC AFE Sheild V2.*
 
 Module
   Mfr       : Cypress
