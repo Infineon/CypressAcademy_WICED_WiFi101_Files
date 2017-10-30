@@ -1,5 +1,34 @@
 /*
- * $ Copyright Broadcom Corporation $
+ * Copyright 2017, Cypress Semiconductor Corporation or a subsidiary of 
+ * Cypress Semiconductor Corporation. All Rights Reserved.
+ * 
+ * This software, associated documentation and materials ("Software"),
+ * is owned by Cypress Semiconductor Corporation
+ * or one of its subsidiaries ("Cypress") and is protected by and subject to
+ * worldwide patent protection (United States and foreign),
+ * United States copyright laws and international treaty provisions.
+ * Therefore, you may use this Software only as provided in the license
+ * agreement accompanying the software package from which you
+ * obtained this Software ("EULA").
+ * If no EULA applies, Cypress hereby grants you a personal, non-exclusive,
+ * non-transferable license to copy, modify, and compile the Software
+ * source code solely for use in connection with Cypress's
+ * integrated circuit products. Any reproduction, modification, translation,
+ * compilation, or representation of this Software except as specified
+ * above is prohibited without the express written permission of Cypress.
+ *
+ * Disclaimer: THIS SOFTWARE IS PROVIDED AS-IS, WITH NO WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, NONINFRINGEMENT, IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. Cypress
+ * reserves the right to make changes to the Software without notice. Cypress
+ * does not assume any liability arising out of the application or use of the
+ * Software or any product or circuit described in the Software. Cypress does
+ * not authorize its products for use in any products where a malfunction or
+ * failure of the Cypress product may reasonably be expected to result in
+ * significant property damage, injury or death ("High Risk Product"). By
+ * including Cypress's product in a High Risk Product, the manufacturer
+ * of such system or application assumes all risk of such use and in doing
+ * so agrees to indemnify Cypress against all liability.
  */
 
 /** @file
@@ -9,6 +38,7 @@
 #include "platform_ethernet.h"
 #include "platform_appscr4.h"
 #include "platform_mfi.h"
+#include "wiced_filesystem.h"
 #include "wiced_platform.h"
 #include "gpio_button.h"
 
@@ -112,7 +142,25 @@ platform_ethernet_config_t platform_ethernet_config =
     .speed_adv     = PLATFORM_ETHERNET_SPEED_ADV(AUTO),
 };
 
+#ifdef USING_EXTERNAL_ADC
+/* ADC peripherals. Used WICED/platform/MCU/wiced_platform_common.c */
+const platform_adc_t platform_adc_peripherals[] =
+{
+    [WICED_ADC_1] = { (uint8_t)0x00, &max11615_adc_driver },
+    [WICED_ADC_2] = { (uint8_t)0x01, &max11615_adc_driver },
+    [WICED_ADC_3] = { (uint8_t)0x02, &max11615_adc_driver },
+    [WICED_ADC_4] = { (uint8_t)0x03, &max11615_adc_driver },
+    [WICED_ADC_5] = { (uint8_t)0x04, &max11615_adc_driver },
+    [WICED_ADC_6] = { (uint8_t)0x05, &max11615_adc_driver },
+};
+#endif /* USING_EXTERNAL_ADC */
+
 /* PWM peripherals. Used by WICED/platform/MCU/wiced_platform_common.c */
+/* The PWMs can be re-assigned to different I/Os using the pin mux functionality
+ * The comments below indicate which pins each PWM can be assigned to
+ * In order to re-assign a PWM, just change the first argument in the entry for that row to the desired pin name
+ * For example, to re-assign WICED_PWM_1 to PIN_GPIO_0, just change PIN_GPIO_10 to PIN_GPIO_0
+ */
 const platform_pwm_t platform_pwm_peripherals[] =
 {
     [WICED_PWM_1]  = {PIN_GPIO_10,  PIN_FUNCTION_PWM0, },   /* or PIN_GPIO_0, PIN_GPIO_8,  PIN_GPIO_12, PIN_GPIO_14, PIN_GPIO_16, PIN_PWM_0   */
@@ -151,14 +199,14 @@ const platform_i2c_t platform_i2c_peripherals[] =
         .pin_sda                 = &platform_gpio_pins[WICED_GPIO_48],
         .pin_scl                 = &platform_gpio_pins[WICED_GPIO_49],
         .driver                  = &i2c_gsio_driver,
-		//.driver                  = &i2c_bb_driver, // GJL This allows clock stretching
+	//.driver                  = &i2c_bb_driver, // GJL This allows clock stretching
     },
 
     [WICED_I2C_2] =
     {
         .port                    = BCM4390X_I2C_1,
-	    .pin_sda                 = &platform_gpio_pins[WICED_GPIO_50], //GJL
-	    .pin_scl                 = &platform_gpio_pins[WICED_GPIO_51], //GJL
+	.pin_sda                 = &platform_gpio_pins[WICED_GPIO_50],
+	.pin_scl                 = &platform_gpio_pins[WICED_GPIO_51],
         .driver                  = &i2c_gsio_driver,
     },
 };
@@ -243,6 +291,11 @@ const platform_i2s_t i2s_interfaces[WICED_I2S_MAX] =
         .port_info          = &i2s_port_info[BCM4390X_I2S_1],
         .stream_direction   = PLATFORM_I2S_WRITE,
     },
+    [WICED_I2S_4] =
+    {
+        .port_info          = &i2s_port_info[BCM4390X_I2S_1],
+        .stream_direction   = PLATFORM_I2S_READ,
+    },
 };
 
 const platform_hibernation_t hibernation_config =
@@ -266,7 +319,7 @@ const gpio_button_t platform_gpio_buttons[] =
         .polarity   = WICED_ACTIVE_LOW,
         .gpio       = WICED_BUTTON2,
         .trigger    = IRQ_TRIGGER_BOTH_EDGES,
-    },
+    }
 };
 
 const wiced_gpio_t platform_gpio_leds[PLATFORM_LED_COUNT] =
@@ -279,7 +332,7 @@ const wiced_gpio_t platform_gpio_leds[PLATFORM_LED_COUNT] =
 const wiced_i2c_device_t auth_chip_i2c_device =
 {
     .port          = AUTH_IC_I2C_PORT,
-    .address       = 0x10,
+    .address       = 0x11,
     .address_width = I2C_ADDRESS_WIDTH_7BIT,
     .speed_mode    = I2C_STANDARD_SPEED_MODE,
 };
@@ -288,6 +341,52 @@ const platform_mfi_auth_chip_t platform_auth_chip =
 {
     .i2c_device = &auth_chip_i2c_device,
     .reset_pin  = WICED_GPIO_AUTH_RST
+};
+
+#if !PLATFORM_NO_SDIO
+#ifdef WICED_SDMMC_SUPPORT
+
+/* put this extern variable to platform_mcu_peripheral.h later */
+extern const wiced_block_device_driver_t sdmmc_block_device_driver;
+
+/** SD/MMC Filesystem */
+
+/* Initialisation data for SD/MMC device */
+static wiced_block_device_init_data_t block_device_sdmmc_init_data =
+{
+    .base_address_offset                        = -1,  /* Value -1 requests use of first free offset */
+    .maximum_size                               = 0,   /* Value 0 requests use of maximum size of DDR */
+    .volatile_and_requires_format_when_mounting = WICED_FALSE,
+};
+
+/* Block device for SD/MMC device */
+wiced_block_device_t block_device_sdmmc =
+{
+    .init_data            = &block_device_sdmmc_init_data,
+    .driver               = &sdmmc_block_device_driver,
+    .device_specific_data = NULL,
+};
+#endif /* WICED_SDMMC_SUPPORT */
+#endif /* !PLATFORM_NO_SDIO */
+
+/* Block device for USB device */
+wiced_block_device_t block_device_usb =
+{
+    .init_data            = NULL,
+    .driver               = NULL,
+    .device_specific_data = NULL,    /* store media handle provided by usb stack */
+};
+
+/* List of all filesystem devices on this platform - for interactive selection - e.g. console app */
+const filesystem_list_t all_filesystem_devices[] =
+{
+#if !PLATFORM_NO_SDIO
+#ifdef WICED_SDMMC_SUPPORT
+    { &block_device_sdmmc,     WICED_FILESYSTEM_HANDLE_FILEX, "SD" },
+#endif /* WICED_SDMMC_SUPPORT */
+#endif /* !PLATFORM_NO_SDIO */
+    { &block_device_usb,     WICED_FILESYSTEM_HANDLE_FILEX_USBX, "USB" },
+    { NULL, 0, NULL },
 };
 
 /******************************************************
