@@ -3,7 +3,7 @@
 
 // Use one of the following defines depending on if you are using the shield board
 //#define PWM_PIN WICED_PWM_2 // For shield board Rev 1*
-#define PWM_PIN_WICED_PWM_3 // For shield board Rev 2.*
+#define PWM_PIN WICED_PWM_3 // For shield board Rev 2.*
 //#define PWM_PIN WICED_PWM_4 // For base board red LED. Also need to change PWM_4 mux in platform.c from PIN_GPIO_15 to PIN_PWM_3
 
 void application_start( )
