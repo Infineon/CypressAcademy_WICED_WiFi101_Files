@@ -222,16 +222,16 @@ void application_start( )
         return;
     }
 
-    /* Update the display so that the IP address is shown */
-    wiced_rtos_set_semaphore(&displaySemaphore);
-
-    wiced_mqtt_init( mqtt_object );
-
     /* Get IP Address for MyThing and save in the Thing data structure */
     wiced_ip_get_ipv4_address(WICED_STA_INTERFACE, &ipAddress);
     snprintf(iot_data[MY_THING].ip_str, sizeof(iot_data[MY_THING].ip_str), "%d.%d.%d.%d",
                    (int)((ipAddress.ip.v4 >> 24) & 0xFF), (int)((ipAddress.ip.v4 >> 16) & 0xFF),
                    (int)((ipAddress.ip.v4 >> 8) & 0xFF),  (int)(ipAddress.ip.v4 & 0xFF));
+
+    /* Update the display so that the IP address is shown */
+    wiced_rtos_set_semaphore(&displaySemaphore);
+
+    wiced_mqtt_init( mqtt_object );
 
     WPRINT_APP_INFO(("[MQTT] Opening connection..."));
     connection_retries = 0;
@@ -326,7 +326,7 @@ void publish_button_isr(void* arg)
      char pubCmd[4]; /* Command pushed onto the queue to determine what to publish */
      pubCmd[0] = WEATHER_CMD;
      /* Note - only WICED_NO_WAIT is supported in an ISR so if the queue is full we won't publish */
-     wiced_rtos_push_to_queue(&pubQueue, &pubCmd, WICED_NO_WAIT); /* Push value onto queue*/
+     wiced_rtos_push_to_queue(&pubQueue, pubCmd, WICED_NO_WAIT); /* Push value onto queue*/
 }
 
 
@@ -350,7 +350,7 @@ void alert_button_isr(void* arg)
      /* Publish the alert */
      pubCmd[0] = ALERT_CMD;
      /* Note - only WICED_NO_WAIT is supported in an ISR so if the queue is full we won't publish */
-     wiced_rtos_push_to_queue(&pubQueue, &pubCmd, WICED_NO_WAIT); /* Push value onto queue*/
+     wiced_rtos_push_to_queue(&pubQueue, pubCmd, WICED_NO_WAIT); /* Push value onto queue*/
 }
 
 
@@ -584,33 +584,33 @@ void commandThread(wiced_thread_arg_t arg)
 				WPRINT_APP_INFO(("Temperature: %.1f\n", iot_data[MY_THING].temp)); /* Print temperature to terminal */
 			    /* Publish temperature to the cloud */
 				pubCmd[0] = TEMPERATURE_CMD;
-				wiced_rtos_push_to_queue(&pubQueue, &pubCmd, WICED_WAIT_FOREVER); /* Push value onto queue*/
+				wiced_rtos_push_to_queue(&pubQueue, pubCmd, WICED_WAIT_FOREVER); /* Push value onto queue*/
 				break;
 			case 'h': /* Print humidity to terminal and publish */
 				WPRINT_APP_INFO(("Humidity: %.1f\t\n", iot_data[MY_THING].humidity)); /* Print humidity to terminal */
 			    /* Publish humidity to the cloud */
 				pubCmd[0] = HUMIDITY_CMD;
-				wiced_rtos_push_to_queue(&pubQueue, &pubCmd, WICED_WAIT_FOREVER); /* Push value onto queue*/
+				wiced_rtos_push_to_queue(&pubQueue, pubCmd, WICED_WAIT_FOREVER); /* Push value onto queue*/
 				break;
             case 'l': /* Print light value to terminal and publish */
                 WPRINT_APP_INFO(("Light: %.1f\t\n", iot_data[MY_THING].light)); /* Print humidity to terminal */
                 /* Publish light value to the cloud */
                 pubCmd[0] = LIGHT_CMD;
-                wiced_rtos_push_to_queue(&pubQueue, &pubCmd, WICED_WAIT_FOREVER); /* Push value onto queue*/
+                wiced_rtos_push_to_queue(&pubQueue, pubCmd, WICED_WAIT_FOREVER); /* Push value onto queue*/
                 break;
 			case 'A': /* Publish Weather Alert ON */
 				WPRINT_APP_INFO(("Weather Alert ON\n"));
 				iot_data[MY_THING].alert = WICED_TRUE;
 			    wiced_rtos_set_semaphore(&displaySemaphore); /* Update display */
 	            pubCmd[0] = ALERT_CMD;
-				wiced_rtos_push_to_queue(&pubQueue, &pubCmd, WICED_WAIT_FOREVER); /* Push value onto queue*/
+				wiced_rtos_push_to_queue(&pubQueue, pubCmd, WICED_WAIT_FOREVER); /* Push value onto queue*/
 				break;
 			case 'a': /* Publish Weather Alert OFF */
 				WPRINT_APP_INFO(("Weather Alert OFF\n"));
 				iot_data[MY_THING].alert = WICED_FALSE;
                 wiced_rtos_set_semaphore(&displaySemaphore); /* Update display */
 				pubCmd[0] = ALERT_CMD;
-				wiced_rtos_push_to_queue(&pubQueue, &pubCmd, WICED_WAIT_FOREVER); /* Push value onto queue*/
+				wiced_rtos_push_to_queue(&pubQueue, pubCmd, WICED_WAIT_FOREVER); /* Push value onto queue*/
 				break;
 			case 'P': /* Turn on printing of updates to all things */
 			    WPRINT_APP_INFO(("Thing Updates ON\n"));
@@ -620,7 +620,7 @@ void commandThread(wiced_thread_arg_t arg)
                 WPRINT_APP_INFO(("Thing Updates OFF\n"));
                 printAll = WICED_FALSE;
                 break;
-            case 'x': /* Print current state of all non-zero things */
+            case 'x': /* Print current state of all things */
                 for(loop = 0; loop <= MAX_THING; loop++)
                 {
                     print_thing_info(loop);
@@ -663,14 +663,14 @@ void publishThread(wiced_thread_arg_t arg)
 
 	/* Publish the IP address to the server one time */
 	pubCmd[0] = IP_CMD;
-	wiced_rtos_push_to_queue(&pubQueue, &pubCmd, WICED_WAIT_FOREVER); /* Push value onto queue*/
+	wiced_rtos_push_to_queue(&pubQueue, pubCmd, WICED_WAIT_FOREVER); /* Push value onto queue*/
 
 	/* Push a shadow/get command to the publish queue for all things to get initial state */
     for(thingNumber=0; thingNumber <= MAX_THING; thingNumber++)
     {
         pubCmd[0] = GET_CMD;
         pubCmd[1] = thingNumber; /* 2nd byte of the message will be the thing number */
-        wiced_rtos_push_to_queue(&pubQueue, &pubCmd, WICED_WAIT_FOREVER); /* Push value onto queue*/
+        wiced_rtos_push_to_queue(&pubQueue, pubCmd, WICED_WAIT_FOREVER); /* Push value onto queue*/
     }
 
     while ( 1 )
@@ -744,7 +744,7 @@ void publish30sec(void* arg)
 	char pubCmd[4]; /* Command pushed onto the queue to determine what to publish */
 	pubCmd[0] = WEATHER_CMD;
 	/* Must use WICED_NO_WAIT here because waiting is not allowed in a timer - if the queue is full we wont publish */
-	wiced_rtos_push_to_queue(&pubQueue, &pubCmd, WICED_NO_WAIT); /* Push value onto queue*/
+	wiced_rtos_push_to_queue(&pubQueue, pubCmd, WICED_NO_WAIT); /* Push value onto queue*/
 }
 
 

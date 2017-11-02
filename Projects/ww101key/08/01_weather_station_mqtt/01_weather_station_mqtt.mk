@@ -1,6 +1,6 @@
-NAME := App_WW101KEY_08_01_weather_station
+NAME := App_WW101KEY_08_01_weather_station_mqtt
 
-$(NAME)_SOURCES := 01_weather_station.c
+$(NAME)_SOURCES := 01_weather_station_mqtt.c
 
 $(NAME)_COMPONENTS := graphics/u8g \
 		              utilities/cJSON \
