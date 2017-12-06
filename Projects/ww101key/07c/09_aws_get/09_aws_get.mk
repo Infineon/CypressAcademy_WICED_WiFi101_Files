@@ -1,10 +1,8 @@
-NAME := App_WW101KEY_08_01_weather_station_mqtt
+NAME := apps_ww101key_07c_09_aws_get
 
-$(NAME)_SOURCES := 01_weather_station_mqtt.c
+$(NAME)_SOURCES    := 09_aws_get.c
 
-$(NAME)_COMPONENTS := graphics/u8g \
-		              utilities/cJSON \
-                      protocols/MQTT
+$(NAME)_COMPONENTS := protocols/HTTP_client
 
 WIFI_CONFIG_DCT_H := wifi_config_dct.h
 

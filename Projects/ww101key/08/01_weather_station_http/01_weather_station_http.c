@@ -14,6 +14,11 @@
 /* The highest number thing that you want to get information on */
 #define MAX_THING 39
 
+/* I2C port to use. If the platform already defines it, use that, otherwise default to WICED_I2C_2 */
+#ifndef PLATFORM_ARDUINO_I2C
+#define PLATFORM_ARDUINO_I2C ( WICED_I2C_2 )
+#endif
+
 /* I2C device addresses */
 #define PSOC_ADDRESS (0x42)
 #define DISP_ADDRESS (0x3C)
@@ -88,7 +93,7 @@ iot_data_t iot_holding;     /* Temporary holding location */
 
 /* I2C for the Analog Coprocessor - used for weather data and for CapSense button values */
 const wiced_i2c_device_t i2cPsoc = {
-    .port = WICED_I2C_2,
+    .port = PLATFORM_ARDUINO_I2C,
     .address = PSOC_ADDRESS,
     .address_width = I2C_ADDRESS_WIDTH_7BIT,
     .speed_mode = I2C_STANDARD_SPEED_MODE
@@ -179,7 +184,7 @@ void application_start( )
 
     /* Initialize the root CA Certificate so that our thing can validate the AWS server is authentic */
     char * root_ca_cert;
-    resource_get_readonly_buffer( &resources_apps_DIR_ww101key_DIR_awskeys_DIR_rootca_cer, CERT_OFFSET, MAX_CERT_SIZE, &size_root, (const void **) &root_ca_cert );
+    resource_get_readonly_buffer( &resources_apps_DIR_ww101_DIR_awskeys_DIR_rootca_cer, CERT_OFFSET, MAX_CERT_SIZE, &size_root, (const void **) &root_ca_cert );
     ret = wiced_tls_init_root_ca_certificates( root_ca_cert, size_root );
     if ( ret != WICED_SUCCESS )
     {
@@ -190,8 +195,8 @@ void application_start( )
     /* Initialize the local certificate and private key so the AWS server can validate our thing */
     char * client_cert;
     char * client_privkey;
-    resource_get_readonly_buffer( &resources_apps_DIR_ww101key_DIR_awskeys_DIR_client_cer, CERT_OFFSET, MAX_CERT_SIZE, &size_cert, (const void **) &client_cert );
-    resource_get_readonly_buffer( &resources_apps_DIR_ww101key_DIR_awskeys_DIR_privkey_cer, CERT_OFFSET, MAX_CERT_SIZE, &size_key, (const void **) &client_privkey );
+    resource_get_readonly_buffer( &resources_apps_DIR_ww101_DIR_awskeys_DIR_client_cer, CERT_OFFSET, MAX_CERT_SIZE, &size_cert, (const void **) &client_cert );
+    resource_get_readonly_buffer( &resources_apps_DIR_ww101_DIR_awskeys_DIR_privkey_cer, CERT_OFFSET, MAX_CERT_SIZE, &size_key, (const void **) &client_privkey );
     ret = wiced_tls_init_identity(&tls_identity, client_privkey, size_key, (const uint8_t*) client_cert, size_cert );
     if ( ret != WICED_SUCCESS )
     {
@@ -423,7 +428,7 @@ void displayThread(wiced_thread_arg_t arg)
 	/* Initialize the OLED display */
 	wiced_i2c_device_t display_i2c =
     {
-        .port          = WICED_I2C_2,
+        .port          = PLATFORM_ARDUINO_I2C,
         .address       = DISP_ADDRESS,
         .address_width = I2C_ADDRESS_WIDTH_7BIT,
         .flags         = 0,
@@ -590,15 +595,16 @@ void httpThread(wiced_thread_arg_t arg)
     http_method_t method;
     char resource[50];
 
-    /* Initialize the HTTP Client */
-    http_client_init( &client, WICED_STA_INTERFACE, http_event_handler, &tls_identity );
-    /* configure HTTP client parameters */
+    /* Define HTTP client configuration parameters */
     client_configuration.flag = (http_client_configuration_flags_t)(HTTP_CLIENT_CONFIG_FLAG_SERVER_NAME | HTTP_CLIENT_CONFIG_FLAG_MAX_FRAGMENT_LEN);
     client_configuration.server_name = (uint8_t*)SERVER_HOST;
     client_configuration.max_fragment_length = TLS_FRAGMENT_LENGTH_1024;
-    http_client_configure(&client, &client_configuration);
     /* If you set hostname, library will make sure subject name in the server certificate is matching with host name you are trying to connect. Pass NULL if you don't want to enable this check */
     client.peer_cn = NULL;
+
+    /* Initialize and configure the HTTP Client */
+    http_client_init( &client, WICED_STA_INTERFACE, http_event_handler, &tls_identity );
+    http_client_configure(&client, &client_configuration);
 
 	/* Post the IP address to the server one time */
 	httpCmd[0] = IP_CMD;
@@ -654,7 +660,10 @@ void httpThread(wiced_thread_arg_t arg)
         /* Connect to the server */
         if(!connected)
         {
-            connected = WICED_TRUE;
+            /*  Need to de-init and re-init client in case the server has disconnected us */
+            http_client_deinit( &client );
+            http_client_init( &client, WICED_STA_INTERFACE, event_handler, NULL );
+            http_client_configure(&client, &client_configuration);
             WPRINT_APP_INFO( ( "Connecting to %s\n", SERVER_HOST ) );
             if ( ( ret = http_client_connect( &client, (const wiced_ip_address_t*)&server_address, SERVER_PORT, HTTP_USE_TLS, CONNECT_TIMEOUT_MS ) ) != WICED_SUCCESS )
             {
@@ -716,6 +725,7 @@ static void http_event_handler( http_client_t* client, http_event_t event, http_
     switch( event )
     {
         case HTTP_CONNECTED:
+            connected = WICED_TRUE;
             break;
 
         case HTTP_DISCONNECTED:
@@ -734,7 +744,11 @@ static void http_event_handler( http_client_t* client, http_event_t event, http_
                 cJSON *root = cJSON_Parse((char*) response->payload);
                 cJSON *state = cJSON_GetObjectItem(root,"state");
                 cJSON *reported = cJSON_GetObjectItem(state,"reported");
-                snprintf(iot_holding.ip_str, sizeof(iot_holding.ip_str), cJSON_GetObjectItem(reported,"IPAddress")->valuestring);
+                cJSON *ipValue = cJSON_GetObjectItem(reported,"IPAddress");
+                if(ipValue->type == cJSON_String) /* Make sure we have a string */
+                {
+                    snprintf(iot_holding.ip_str, sizeof(iot_holding.ip_str), cJSON_GetObjectItem(reported,"IPAddress")->valuestring);
+                }
                 iot_holding.temp = (float) cJSON_GetObjectItem(reported,"temperature")->valuedouble;
                 iot_holding.humidity = (float) cJSON_GetObjectItem(reported,"humidity")->valuedouble;
                 iot_holding.light = (float) cJSON_GetObjectItem(reported,"light")->valuedouble;

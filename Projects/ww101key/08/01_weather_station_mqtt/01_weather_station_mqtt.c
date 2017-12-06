@@ -13,6 +13,11 @@
 /* The highest number thing on the MQTT Broker that you want to subscribe to */
 #define MAX_THING 39
 
+/* I2C port to use. If the platform already defines it, use that, otherwise default to WICED_I2C_2 */
+#ifndef PLATFORM_ARDUINO_I2C
+#define PLATFORM_ARDUINO_I2C ( WICED_I2C_2 )
+#endif
+
 /* I2C device addresses */
 #define PSOC_ADDRESS (0x42)
 #define DISP_ADDRESS (0x3C)
@@ -82,7 +87,7 @@ iot_data_t iot_data[40];
 
 /* I2C for the Analog Coprocessor - used for weather data and for CapSense button values */
 const wiced_i2c_device_t i2cPsoc = {
-    .port = WICED_I2C_2,
+    .port          = PLATFORM_ARDUINO_I2C,
     .address = PSOC_ADDRESS,
     .address_width = I2C_ADDRESS_WIDTH_7BIT,
     .speed_mode = I2C_STANDARD_SPEED_MODE
@@ -172,10 +177,10 @@ void application_start( )
 
     /* Start up the MQTT connection to the server */
     /* Get AWS root certificate, client certificate and private key respectively */
-    resource_get_readonly_buffer( &resources_apps_DIR_aws_iot_DIR_rootca_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.ca_cert );
+    resource_get_readonly_buffer( &resources_apps_DIR_ww101_DIR_awskeys_DIR_rootca_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.ca_cert );
     security.ca_cert_len = size_out;
 
-    resource_get_readonly_buffer( &resources_apps_DIR_aws_iot_DIR_client_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.cert );
+    resource_get_readonly_buffer( &resources_apps_DIR_ww101_DIR_awskeys_DIR_client_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.cert );
     if(size_out < 64)
     {
         WPRINT_APP_INFO( ( "\nNot a valid Certificate! Please replace the dummy certificate file 'resources/app/aws_iot/client.cer' with the one got from AWS\n\n" ) );
@@ -183,7 +188,7 @@ void application_start( )
     }
     security.cert_len = size_out;
 
-    resource_get_readonly_buffer( &resources_apps_DIR_aws_iot_DIR_privkey_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.key );
+    resource_get_readonly_buffer( &resources_apps_DIR_ww101_DIR_awskeys_DIR_privkey_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.key );
     if(size_out < 64)
     {
         WPRINT_APP_INFO( ( "\nNot a valid Private Key! Please replace the dummy private key file 'resources/app/aws_iot/privkey.cer' with the one got from AWS\n\n" ) );
@@ -498,7 +503,7 @@ void displayThread(wiced_thread_arg_t arg)
 	/* Initialize the OLED display */
 	wiced_i2c_device_t display_i2c =
     {
-        .port          = WICED_I2C_2,
+        .port          = PLATFORM_ARDUINO_I2C,
         .address       = DISP_ADDRESS,
         .address_width = I2C_ADDRESS_WIDTH_7BIT,
         .flags         = 0,
