@@ -1,8 +1,0 @@
-C:/Git/WW101/ww101-shield/firmware/TestProgram4M.cydsn/CortexM0/ARM_GCC_541/Release/CyBootAsmGnu.o : C:/Git/WW101/ww101-shield/firmware/TestProgram4M.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s C:/Git/WW101/ww101-shield/firmware/TestProgram4M.cydsn/Generated_Source/PSoC4/cydevicegnu_trm.inc C:/Git/WW101/ww101-shield/firmware/TestProgram4M.cydsn/Generated_Source/PSoC4/cyfittergnu.inc 
-
-C:/Git/WW101/ww101-shield/firmware/TestProgram4M.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s : 
-
-C:/Git/WW101/ww101-shield/firmware/TestProgram4M.cydsn/Generated_Source/PSoC4/cydevicegnu_trm.inc : 
-
-C:/Git/WW101/ww101-shield/firmware/TestProgram4M.cydsn/Generated_Source/PSoC4/cyfittergnu.inc : 
-
