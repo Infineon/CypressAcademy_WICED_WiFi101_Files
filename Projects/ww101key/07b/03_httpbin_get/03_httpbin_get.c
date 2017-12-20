@@ -52,8 +52,6 @@ void application_start( void )
                                                  (uint8_t)(GET_IPV4_ADDRESS(ip_address) >> 8),
                                                  (uint8_t)(GET_IPV4_ADDRESS(ip_address) >> 0) ) );
 
-
-
     /* Configure HTTP client parameters */
     client_configuration.flag = (http_client_configuration_flags_t)(HTTP_CLIENT_CONFIG_FLAG_SERVER_NAME | HTTP_CLIENT_CONFIG_FLAG_MAX_FRAGMENT_LEN);
     client_configuration.server_name = (uint8_t*)SERVER_HOST;
@@ -91,13 +89,10 @@ void application_start( void )
 //        loop ++;
 //    }
 
-    /* Check to see if the server has disconnected us. If so, we need to de-init, re-init and re-connect */
+    /* Check to see if the server has disconnected. If so, we need to re-connect */
     /* Usually the server won't disconnect between requests since the requests happen quickly. */
     if(!connected)
     {
-        http_client_deinit( &client );
-        http_client_init( &client, WICED_STA_INTERFACE, event_handler, NULL );
-        http_client_configure(&client, &client_configuration);
         if ( ( result = http_client_connect( &client, (const wiced_ip_address_t*)&ip_address, SERVER_PORT, HTTP_NO_SECURITY, CONNECT_TIMEOUT_MS ) ) == WICED_SUCCESS )
         {
             connected = WICED_TRUE;
@@ -138,6 +133,7 @@ static void event_handler( http_client_t* client, http_event_t event, http_respo
         case HTTP_DISCONNECTED:
         {
             connected = WICED_FALSE;
+            http_client_disconnect( client ); /* Need to keep client connection state synchronized with the server */
             WPRINT_APP_INFO(( "Disconnected from %s\n", SERVER_HOST ));
             break;
         }

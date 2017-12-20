@@ -53,8 +53,6 @@ void application_start( void )
                                                  (uint8_t)(GET_IPV4_ADDRESS(ip_address) >> 8),
                                                  (uint8_t)(GET_IPV4_ADDRESS(ip_address) >> 0) ) );
 
-
-
     /* Lock the DCT to allow us to access the certificate and key */
      platform_dct_security_t* dct_security = NULL;
 
@@ -86,7 +84,6 @@ void application_start( void )
     /* Initialize and configure client */
     http_client_init( &client, WICED_STA_INTERFACE, event_handler, NULL );
     http_client_configure(&client, &client_configuration);
-    client.peer_cn = NULL; /* If you set hostname, library will make sure subject name in the server certificate is matching with host name you are trying to connect. Pass NULL if you don't want to enable this check */
 
     /* Connect to the server */
     if ( ( result = http_client_connect( &client, (const wiced_ip_address_t*)&ip_address, SERVER_PORT, HTTP_USE_TLS, CONNECT_TIMEOUT_MS ) ) == WICED_SUCCESS )
@@ -117,15 +114,10 @@ void application_start( void )
 //        loop ++;
 //    }
 
-    /* Check to see if the server has disconnected us. If so, we need to de-init, re-init and re-connect */
+    /* Check to see if the server has disconnected. If so, we need to re-connect */
     /* Usually the server won't disconnect between requests since the requests happen quickly. */
     if(!connected)
     {
-        http_client_deinit( &client );
-        http_client_init( &client, WICED_STA_INTERFACE, event_handler, NULL );
-        http_client_configure(&client, &client_configuration);
-        client.peer_cn = NULL; /* If you set hostname, library will make sure subject name in the server certificate is matching with host name you are trying to connect. Pass NULL if you don't want to enable this check */
-
         if ( ( result = http_client_connect( &client, (const wiced_ip_address_t*)&ip_address, SERVER_PORT, HTTP_USE_TLS, CONNECT_TIMEOUT_MS ) ) == WICED_SUCCESS )
         {
             connected = WICED_TRUE;
@@ -166,6 +158,7 @@ static void event_handler( http_client_t* client, http_event_t event, http_respo
         case HTTP_DISCONNECTED:
         {
             connected = WICED_FALSE;
+            http_client_disconnect( client ); /* Need to keep client connection state synchronized with the server */
             WPRINT_APP_INFO(( "Disconnected from %s\n", SERVER_HOST ));
             break;
         }

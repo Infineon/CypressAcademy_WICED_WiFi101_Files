@@ -138,9 +138,6 @@ void application_start( void )
     client_configuration.max_fragment_length = TLS_FRAGMENT_LENGTH_1024;
     http_client_configure(&client, &client_configuration);
 
-    /* if you set hostname, library will make sure subject name in the server certificate is matching with host name you are trying to connect. pass NULL if you don't want to enable this check */
-    client.peer_cn = NULL;
-
     wiced_gpio_input_irq_enable(WICED_BUTTON1, IRQ_TRIGGER_FALLING_EDGE, button_isr, NULL); /* Setup interrupt */
 
     WPRINT_APP_INFO( ( "Press WICED_BUTTON1 to Toggle LED State\n" ) );
@@ -191,6 +188,7 @@ static void event_handler( http_client_t* client, http_event_t event, http_respo
 
         case HTTP_DISCONNECTED:
         {
+            http_client_disconnect( client ); /* Need to keep client connection state synchronized with the server */
             WPRINT_APP_INFO(( "Disconnected from %s\n", SERVER_HOST ));
             break;
         }

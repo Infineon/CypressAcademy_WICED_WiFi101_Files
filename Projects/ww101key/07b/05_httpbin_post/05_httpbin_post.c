@@ -117,6 +117,7 @@ static void event_handler( http_client_t* client, http_event_t event, http_respo
         case HTTP_DISCONNECTED:
         {
             connected = WICED_FALSE;
+            http_client_disconnect( client ); /* Need to keep client connection state synchronized with the server */
             WPRINT_APP_INFO(( "Disconnected from %s\n", SERVER_HOST ));
             break;
         }
