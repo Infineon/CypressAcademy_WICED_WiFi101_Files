@@ -94,6 +94,10 @@ void application_start( void )
     http_client_init( &client, WICED_STA_INTERFACE, event_handler, NULL );
     http_client_configure(&client, &client_configuration);
 
+    /* If you set client.peer_cn to the name of the host you are trying to connect to, the library will make
+     * sure it matches the certificate sent by the server */
+    client.peer_cn = (uint8_t*) SERVER_HOST;
+
     /* Connect to the server */
     if ( ( result = http_client_connect( &client, (const wiced_ip_address_t*)&ip_address, SERVER_PORT, HTTP_USE_TLS, CONNECT_TIMEOUT_MS ) ) == WICED_SUCCESS )
     {
@@ -128,6 +132,7 @@ static void event_handler( http_client_t* client, http_event_t event, http_respo
     switch( event )
     {
         case HTTP_CONNECTED:
+            /* This state is never called */
             break;
 
         /* This is called when we are disconnected by the server */

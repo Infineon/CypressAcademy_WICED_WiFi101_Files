@@ -111,6 +111,7 @@ static void event_handler( http_client_t* client, http_event_t event, http_respo
     switch( event )
     {
         case HTTP_CONNECTED:
+            /* This state is never called */
             break;
 
         /* This is called when we are disconnected by the server */

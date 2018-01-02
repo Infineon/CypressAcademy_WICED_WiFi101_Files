@@ -1,4 +1,4 @@
-NAME := apps_ww101key_07c_09_initialstate_led
+NAME := apps_ww101key_07b_09_initialstate_led
 
 $(NAME)_SOURCES    := 09_initialstate_led.c
 

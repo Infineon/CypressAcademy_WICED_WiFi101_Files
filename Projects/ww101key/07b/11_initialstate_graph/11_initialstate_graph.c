@@ -124,6 +124,10 @@ void application_start( void )
     client_configuration.max_fragment_length = TLS_FRAGMENT_LENGTH_1024;
     http_client_configure(&client, &client_configuration);
 
+    /* If you set client.peer_cn to the name of the host you are trying to connect to, the library will make
+     * sure it matches the certificate sent by the server */
+    client.peer_cn = (uint8_t*) SERVER_HOST;
+
     /* Setup I2C master */
     const wiced_i2c_device_t i2cDevice = {
         .port = PLATFORM_ARDUINO_I2C,
@@ -207,7 +211,7 @@ static void event_handler( http_client_t* client, http_event_t event, http_respo
     switch( event )
     {
         case HTTP_CONNECTED:
-            WPRINT_APP_INFO(( "Connected to %s\n", SERVER_HOST ));
+            /* This state is never called */
             break;
 
         case HTTP_DISCONNECTED:

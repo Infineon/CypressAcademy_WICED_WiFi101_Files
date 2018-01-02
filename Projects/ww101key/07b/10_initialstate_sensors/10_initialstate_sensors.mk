@@ -1,4 +1,4 @@
-NAME := apps_ww101key_07c_10_initialstate_sensors
+NAME := apps_ww101key_07b_10_initialstate_sensors
 
 $(NAME)_SOURCES    := 10_initialstate_sensors.c
 

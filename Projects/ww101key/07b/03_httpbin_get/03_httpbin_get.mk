@@ -1,4 +1,4 @@
-NAME := apps_ww101key_07c_03_httpbin_get
+NAME := apps_ww101key_07b_03_httpbin_get
 
 $(NAME)_SOURCES    := 03_httpbin_get.c
 

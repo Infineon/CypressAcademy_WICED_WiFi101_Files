@@ -1,4 +1,4 @@
-NAME := apps_ww101key_07c_11_initialstate_graph
+NAME := apps_ww101key_07b_11_initialstate_graph
 
 $(NAME)_SOURCES    := 11_initialstate_graph.c
 
