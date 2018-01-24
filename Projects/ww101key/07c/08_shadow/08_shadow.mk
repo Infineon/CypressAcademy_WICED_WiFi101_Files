@@ -1,6 +1,6 @@
-NAME := App_WW101KEY_07c_05_shadow
+NAME := App_WW101KEY_07c_08_shadow
 
-$(NAME)_SOURCES := 05_shadow.c
+$(NAME)_SOURCES := 08_shadow.c
 
 $(NAME)_SOURCES += aws_config.c \
                    aws_common.c
