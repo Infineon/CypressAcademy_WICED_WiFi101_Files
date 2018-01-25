@@ -1,0 +1,77 @@
+Partlist
+
+Exported from ww101board.brd at 12/21/2017 6:50 PM
+
+EAGLE Version 7.5.0 Copyright (c) 1988-2015 CadSoft
+
+Assembly variant: 
+
+Part     Value                     Package                Library    Position (mm)         Orientation
+
+B0       B                         BUTTON_PASSIVE_10MM    ww101board (43 6.5)              R90
+B1       B                         BUTTON_PASSIVE_10MM    ww101board (43 21.5)             R90
+B2       B                         BUTTON_PASSIVE_10MM    ww101board (43 36.5)             R180
+B3       B                         BUTTON_PASSIVE_10MM    ww101board (43 51.5)             R180
+C1       1uF                       0603-CAP               ww101board (12.7508 8.147)       R0
+C2       0.1uF                     0603-CAP               ww101board (12.7508 9.8242)      R0
+C3       1uF                       0603-CAP               ww101board (13.5128 17.7546)     R270
+C4       0.1uF                     0603-CAP               ww101board (14.9098 17.7546)     R270
+C5       1uF                       0603-CAP               ww101board (22.4536 1.4478)      R270
+C6       0.1uF                     0603-CAP               ww101board (23.8506 1.4478)      R270
+C7       0.1uF                     0603-CAP               ww101board (16.3068 17.7546)     R270
+C8       1uF                       0603-CAP               ww101board (17.7038 17.7546)     R270
+C9       0.1uF                     0603-CAP               ww101board (19.1008 17.7546)     R270
+C10      0.1uF                     0603-CAP               ww101board (10.25498125 5.02581875) R270
+C11      180pF                     0603-CAP               ww101board (17.6022 1.6002)      R90
+C12      2.2nF                     0603-CAP               ww101board (21.8948 17.7546)     R90
+C13      1uF                       0603-CAP               ww101board (19.2278 1.778)       R270
+C14      10nF                      0603-CAP               ww101board (20.4978 17.7546)     R90
+C15      0.1uF                     0603-CAP               ww101board (29.96691875 10.294621875) R180
+C16      0.1uF                     0603-CAP               ww101board (8.9916 44.08678125)  R270
+C17      10uF                      0603-CAP               ww101board (27.4853375 27.912059375) R180
+CLED0    red                       CHIP-LED0603           ww101board (34.25 6.6)           R180
+CLED1    red                       CHIP-LED0603           ww101board (34.25 21.5)          R0
+CLED2    red                       CHIP-LED0603           ww101board (34.25 36.5)          R0
+CLED3    red                       CHIP-LED0603           ww101board (34.25 51.5)          R0
+D1       ALS                       ALS                    ww101board (20.84578125 3.0988)  R270
+HUMIDITY HPP801A031                HUMIDITY               ww101board (7.12 2.76)           R180
+J5                                 JMP-3-NO-PTH-2.54      ww101board (33.32225625 32.006546875) R270
+J6       U8G-096-OLED              096-SSD1306            ww101board (31.72 14.3)          R90
+J7       0                         1X05_LOCK              ww101board (19.48 27.46)         R90
+LED1     red                       CHIP-LED0603           ww101board (18.73 45.64)         R0
+LED2     red                       CHIP-LED0603           ww101board (18.77 55.49)         R0
+MB1      EVQPE1                    SWITCH                 ww101board (24.7 44.73)          R0
+MB2      EVQPE1                    SWITCH                 ww101board (24.7 54.33)          R0
+PROX     red                       CHIP-LED0603           ww101board (31.343596875 0.93218125) R90
+R1       10K                       0603-RES               ww101board (29.5440625 4.8763)   R0
+R2       10K                       3386P                  ww101board (10.5 50.34)          R0
+R3       560                       0603-RES               ww101board (36 6.5)              R270
+R4       560                       0603-RES               ww101board (36 21.5)             R90
+R5       560                       0603-RES               ww101board (36 36.5)             R90
+R6       560                       0603-RES               ww101board (36 51.5)             R90
+R7       560                       0603-RES               ww101board (21.96 45.57)         R90
+R8       560                       0603-RES               ww101board (21.96 55.44)         R90
+R9       10K                       0603-RES               ww101board (27.74 51.92)         R0
+R10      10K                       0603-RES               ww101board (27.72 49.64)         R0
+R11      THERMISTOR-5              R-5                    ww101board (29.528221875 3.2436) R0
+R12      220K                      0603-RES               ww101board (11.597659375 5.025503125) R270
+R13      560                       0603-RES               ww101board (25.995340625 16.27431875) R0
+R14      560                       0603-RES               ww101board (26.035340625 18.21431875) R0
+R15      560                       0603-RES               ww101board (26.035340625 19.83431875) R0
+R16      560                       0603-RES               ww101board (25.995340625 21.82431875) R0
+R17      0                         0603-RES               ww101board (51.09 39.54)         R180
+R18      DNP                       0603-RES               ww101board (14.7574 39.4208)     R0
+R19      DNP                       0603-RES               ww101board (14.732 35.6362)      MR180
+R20      DNP                       0603-RES               ww101board (14.7574 38.0238)     R0
+R21      DNP                       0603-RES               ww101board (14.732 36.8554)      MR180
+R22      10K                       0603-RES               ww101board (29.96691875 11.69161875) R180
+R23      560                       0603-RES               ww101board (28.39211875 0.934721875) R0
+R24      0R                        0603-RES               ww101board (24.4068625 -3.53568125) R180
+R25      0R                        0603-RES               ww101board (18.50898125 -5.1943) R90
+R26      50K                       0603-RES               ww101board (19.05 40.6146)       R180
+R27      50K                       0603-RES               ww101board (28.194 -2.8702)      R180
+R30      JMP-3-1_2                 JMP-3-1_2              ww101board (8.778459375 26.599140625) R90
+R31      JMP-3-2_3                 JMP-3-2_3              ww101board (8.86658125 23.157259375) R90
+R32                                JMP-3-NO               ww101board (35.432996875 29.53511875) R90
+U$1      ARDUINO_R3_SHIELDNOLABELS UNO_R3_SHIELD_NOLABELS ww101board (-0.03 0.01)          R0
+U7       CY8C4A45-48               TQFP-7X7-48            ww101board (20.23 8.9)           R0
