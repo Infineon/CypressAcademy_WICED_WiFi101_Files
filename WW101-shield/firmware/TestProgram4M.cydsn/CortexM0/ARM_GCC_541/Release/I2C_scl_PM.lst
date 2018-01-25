@@ -1,0 +1,1256 @@
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"I2C_scl_PM.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.section	.gnu.lto_.profile.50a2aee8,"",%progbits
+  19 0000 789C6361 		.ascii	"x\234ca`d`a`\000\222\034l\000\000\200\000\031"
+  19      60646061 
+  19      6000921C 
+  19      6C000080 
+  19      0019
+  20              		.text
+  21              		.section	.gnu.lto_.icf.50a2aee8,"",%progbits
+  22 0000 789C6361 		.ascii	"x\234ca`d\000\001a\006\004`f\370\320\332:\203\237q\351"
+  22      60640001 
+  22      61060460 
+  22      66F8D0DA 
+  22      3A839F71 
+  23 0015 D305364C 		.ascii	"\323\0056L3f\334\273\312\312\000\000P\270\010\016"
+  23      3366DCBB 
+  23      CACA0000 
+  23      50B8080E 
+  24              		.text
+  25              		.section	.gnu.lto_.jmpfuncs.50a2aee8,"",%progbits
+  26 0000 789C6361 		.ascii	"x\234ca`d\000\001\016\006\004`\202b\000\001^\000\022"
+  26      60640001 
+  26      0E060460 
+  26      82620001 
+  26      5E0012
+  27              		.text
+  28              		.section	.gnu.lto_.inline.50a2aee8,"",%progbits
+  29 0000 789C6361 		.ascii	"x\234ca`d\000\001\015\006\004`b``ead`bY \317\300\266"
+  29      60640001 
+  29      0D060460 
+  29      62606065 
+  29      61646062 
+  30 0019 409E0922 		.ascii	"@\236\011\"\206!\304\000\000G\374\003^"
+  30      8621C400 
+  30      0047FC03 
+  30      5E
+  31              		.text
+  32              		.section	.gnu.lto_.pureconst.50a2aee8,"",%progbits
+  33 0000 789C6361 		.ascii	"x\234ca`d`e```b\220b\222\002\000\000\357\000C"
+  33      60646065 
+  33      60606062 
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 2
+
+
+  33      90629202 
+  33      0000EF00 
+  34              		.text
+  35              		.section	.gnu.lto_I2C_scl_Sleep.50a2aee8,"",%progbits
+  36 0000 789C4D50 		.ascii	"x\234MP=K\003A\020\335\267{\371P\020\354\265\260\010"
+  36      3D4B0341 
+  36      10DDB77B 
+  36      F95010EC 
+  36      B5B008
+  37 0013 421A03E2 		.ascii	"B\032\003\342?H\241\026B0m\340\220x\235\030\210Zg\363"
+  37      3F48A116 
+  37      42306DE0 
+  37      90789D18 
+  37      885A67F3 
+  38 0027 71985848 		.ascii	"q\230XH@\214\225\004\013I\374\210\321\316`\023\202v"
+  38      408C9504 
+  38      0B49FC88 
+  38      D1CE6013 
+  38      8276
+  39 0039 7E546261 		.ascii	"~Tba#\012)\202E\004\323(\2718si\034Xf\367\315\333\367"
+  39      230A2982 
+  39      4504D328 
+  39      B9387369 
+  39      1C5866F7 
+  40 0050 66C61010 		.ascii	"f\306\020\020\034\013\224\246)O\320\201\022\220\305"
+  40      1C0B94A6 
+  40      294FD081 
+  40      1290C5
+  41 005f 4721D27E 		.ascii	"G!\322~\011\360E\373!R\022)\364d_\242\265\335n\310`"
+  41      09F045FB 
+  41      21521229 
+  41      F4645FA2 
+  41      B5DD6EC8 
+  42 0074 4553BCD9 		.ascii	"ES\274\331\007JW\233\260\225\020\003\351*\011T\020\024"
+  42      074A579B 
+  42      B0951003 
+  42      E92A0954 
+  42      1014
+  43 0086 447BBF72 		.ascii	"D{\277r\366\307\2749\246M\015\213\250\302\313v\365\345"
+  43      F6C7BC39 
+  43      A64D0D8B 
+  43      A8C2CB76 
+  43      F5E5
+  44 0098 A61E0CB2 		.ascii	"\246\036\014\262\272y\343\351)C\012[\021\332%\006{}"
+  44      BA79E3E9 
+  44      29430A5B 
+  44      11DA2506 
+  44      7B7D
+  45 00aa 49C959B5 		.ascii	"I\311Y\265\321\372\331q\216G\370SV\261o\311n=\371\276"
+  45      D1FAD971 
+  45      8E47F853 
+  45      56B16FC9 
+  45      6E3DF9BE 
+  46 00be A5AD2458 		.ascii	"\245\255$X\377\345\343\256l\014\237\371|Q\033\004=d"
+  46      FFE5E3AE 
+  46      6C0C9FF9 
+  46      7C511B04 
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 3
+
+
+  46      3D64
+  47 00d0 9D3D6F19 		.ascii	"\235=o\031\207\351\034u\244p\212I\234`\222\214\317P"
+  47      87E91C75 
+  47      A4708A49 
+  47      9C60928C 
+  47      CF50
+  48 00e2 86682353 		.ascii	"\206h#S:\012\260\336\1771\303\025k4>_}\251\276\316k"
+  48      3A0AB0DE 
+  48      7F31C315 
+  48      6B343E5F 
+  48      7DA9BECE 
+  49 00f7 3D4E5881 		.ascii	"=NX\201\346a\270s\377|;\312\202\332\305=\250\321\022"
+  49      E661B873 
+  49      FF7C3BCA 
+  49      82DAC53D 
+  49      A8D112
+  50 010a CE59928A 		.ascii	"\316Y\222\212\273\327\227\005\177\250\306\003j\323V"
+  50      BBD79705 
+  50      7FA8C603 
+  50      6AD356
+  51 0119 5E5C908B 		.ascii	"^\\\220\213\343n\001u\204\250i\321A\246\371\353aKw5"
+  51      E36E0175 
+  51      84A869D1 
+  51      41A6F9EB 
+  51      614B7735 
+  52 012d 5DEA9C66 		.ascii	"]\352\234f#J`\336Z\267\222+\233\326\252\031Ml%\343V"
+  52      234A60DE 
+  52      5AB7922B 
+  52      9BD6AA19 
+  52      4D6C25E3 
+  53 0142 2C124D84 		.ascii	",\022M\204\347b\213\263as#\276fF\226f\342\342\017\243"
+  53      E7628BB3 
+  53      617323BE 
+  53      66469666 
+  53      E2E20FA3 
+  54 0156 5A7FA4   		.ascii	"Z\177\244"
+  55              		.text
+  56              		.section	.gnu.lto_I2C_scl_backup.50a2aee8,"",%progbits
+  57 0000 789C6361 		.ascii	"x\234ca`d\000\001k \206\260\030\030\37621\256\177\263"
+  57      60640001 
+  57      6B2086B0 
+  57      1818FE32 
+  57      31AE7FB3 
+  58 0014 F327EF17 		.ascii	"\363'\357\027\246Vf\240 \220{\341\356\212\343\374\026"
+  58      A65666A0 
+  58      20907BE1 
+  58      EE8AE3FC 
+  58      16
+  59 0025 DB1A3A16 		.ascii	"\333\032:\0264\030\26423\376cb`\\\316(\363\217\211\021"
+  59      3418B432 
+  59      33FE6362 
+  59      605CCE28 
+  59      F38F8911 
+  60 0039 42318128 		.ascii	"B1\201(\006\306\025\214\026\014\000\345\232\024I"
+  60      06C6158C 
+  60      160C00E5 
+  60      9A1449
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 4
+
+
+  61              		.text
+  62              		.section	.gnu.lto_I2C_scl_Wakeup.50a2aee8,"",%progbits
+  63 0000 789C4D90 		.ascii	"x\234M\220\277KBQ\024\307\357\367\336\327\323\202\240"
+  63      BF4B4251 
+  63      14C7EFF7 
+  63      DED7D382 
+  63      A0
+  64 0011 A9258786 		.ascii	"\251%\207\206\010\034\312\250\376\003\007i\010$WA\342"
+  64      081CCAA8 
+  64      FE030769 
+  64      08245741 
+  64      E2
+  65 0022 F5B648B0 		.ascii	"\365\266H\260\232\337\365\307#]B\222\334B\232\264\237"
+  65      9ADFF5C7 
+  65      235D4292 
+  65      DC429AB4 
+  65      9F
+  66 0033 D6964D4F 		.ascii	"\326\226MO\311\255\037S9\264D\201\2034(\324\250v\356"
+  66      C9AD1F53 
+  66      39B44481 
+  66      833428D4 
+  66      A876EE
+  67 0046 73E9C2E5 		.ascii	"s\351\302\345\334\373=\347\236\317\367\\\215\201\251"
+  67      DCFB3DE7 
+  67      9ECFF75C 
+  67      8D81A9
+  68 0055 15A2304F 		.ascii	"\025\2420Oq\2066\004\003\317?3\226\364r@\035\244\027"
+  68      71863604 
+  68      03CF3F33 
+  68      96F47240 
+  68      1DA417
+  69 0068 CCE2B0F0 		.ascii	"\314\342\260\360\313\373\034\215\203v\215\373\313\222"
+  69      CBFB1C8D 
+  69      83768DFB 
+  69      CB92
+  70 0076 D647B3B3 		.ascii	"\326G\263\263$+\016l\301\330\220\273\235\030\312\360"
+  70      242B0E6C 
+  70      C1D890BB 
+  70      9D18CAF0 
+  71 0086 332AFBBC 		.ascii	"3*\373\274\035\034O\352\031U6;J\242\002]\341\252\033"
+  71      1D1C4FEA 
+  71      1955363B 
+  71      4AA2025D 
+  71      E1AA1B
+  72 0099 8E1C0ED3 		.ascii	"\216\034\016\323\322i\351\365#\217\306\231-H\356R\211"
+  72      D269E9F5 
+  72      238FC699 
+  72      2D48EE52 
+  72      89
+  73 00aa 82F53857 		.ascii	"\202\3658WQ\264\221\272\357\275\325\307\325\253\264"
+  73      51B491BA 
+  73      EFBDD5C7 
+  73      D5ABB4
+  74 00b9 50E0A2DD 		.ascii	"P\340\242\335x\361\374p[p(@\255\366\375\356\261\372"
+  74      78F1FC70 
+  74      5B702840 
+  74      ADF6FDEE 
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 5
+
+
+  74      B1FA
+  75 00cb 322BE514 		.ascii	"2+\345\024i9\362\240\344\316\343\353\303D\011'I\351"
+  75      6939F2A0 
+  75      E4CEE3EB 
+  75      C3440927 
+  75      49E9
+  76 00dd EA02E764 		.ascii	"\352\002\347d\374\014>7yxw\223\363\006\026l\241\341"
+  76      FC0C3E37 
+  76      79787793 
+  76      F306166C 
+  76      A1E1
+  77 00ef 02250C5C 		.ascii	"\002%\014\\\317\270D\200\265\321(\236N+\330\177\322"
+  77      CFB84480 
+  77      B5D1289E 
+  77      4E2BD87F 
+  77      D2
+  78 0100 984B6A7D 		.ascii	"\230Kj}5K\332\350\232\315\346\245F\322SzP\320\025%C"
+  78      354BDAE8 
+  78      9ACDE6A5 
+  78      46D2537A 
+  78      50D01525 
+  79 0115 9C159A40 		.ascii	"\234\025\232@\3075|\270R\034T\2515Yf\035\244\234BH\365"
+  79      C7357CB8 
+  79      521C54A9 
+  79      3559661D 
+  79      A49C4248 
+  80 012a 747FA64B 		.ascii	"t\177\246K\276i2b\316\205\314\0353\261\271gn\305\"\361"
+  80      BE693262 
+  80      CE85CC1D 
+  80      33B1B967 
+  80      6EC522F1 
+  81 013e FD846146 		.ascii	"\375\204aF\303\221xp5\272\266\034\214\355\032\333\261"
+  81      C3917870 
+  81      35BAB61C 
+  81      8CED1ADB 
+  81      B1
+  82 014f F0FAA2C1 		.ascii	"\360\372\242\301\376\000\301n\177\036"
+  82      FE00C16E 
+  82      7F1E
+  83              		.text
+  84              		.section	.gnu.lto_.symbol_nodes.50a2aee8,"",%progbits
+  85 0000 789C6361 		.ascii	"x\234ca`d\320a\000\002&\306z\006\206\011\347\030\030"
+  85      6064D061 
+  85      000226C6 
+  85      7A068609 
+  85      E71818
+  86 0013 80D4AE06 		.ascii	"\200\324\256\006E\006\006V\006\206\006!\006\006f&\246"
+  86      45060656 
+  86      06860621 
+  86      06066626 
+  86      A6
+  87 0024 7A461409 		.ascii	"zF\024\011\006\000\276o\010B"
+  87      0600BE6F 
+  87      0842
+  88              		.text
+  89              		.section	.gnu.lto_.refs.50a2aee8,"",%progbits
+  90 0000 789C6361 		.ascii	"x\234ca`d\340f`\000\222\214\214L\214L@\222\001\000\001"
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 6
+
+
+  90      6064E066 
+  90      6000928C 
+  90      8C4C8C4C 
+  90      40920100 
+  91 0015 54001B   		.ascii	"T\000\033"
+  92              		.text
+  93              		.section	.gnu.lto_.decls.50a2aee8,"",%progbits
+  94 0000 789C8D54 		.ascii	"x\234\215T]HTA\024\236s\257\253\353\315\237\310\212"
+  94      5D485441 
+  94      149E73AF 
+  94      ABEBCD9F 
+  94      C88A
+  95 0012 1E7AB0D8 		.ascii	"\036z\260\330r\237\014\255\347\250\026\262\210BZ\265"
+  95      729F0CAD 
+  95      E7A816B2 
+  95      88425AB5 
+  96 0022 174174BB 		.ascii	"\027At\273T\024\271\350\356\203OM\366\243\365P\231a"
+  96      5414B9E8 
+  96      EE834F4D 
+  96      F6A3F550 
+  96      9961
+  97 0034 2A5A52D0 		.ascii	"*ZR\320\257\266f\271\265j\266\226m\333j\224\021\204"
+  97      AFB666B9 
+  97      B56AB696 
+  97      6DDB6A94 
+  97      1184
+  98 0046 58694454 		.ascii	"XiDT\024a)\251\375\260\235\231\271w\357\032\032\015"
+  98      146129A9 
+  98      FDB09D99 
+  98      B977EF1A 
+  98      1A0D
+  99 0058 7BE6CC99 		.ascii	"{\346\314\231\371\316w~f\356\306\020 l8L\204\274D=\216"
+  99      F9CE777E 
+  99      66EEC610 
+  99      206C384C 
+  99      84BC443D 
+ 100 006d 12C61183 		.ascii	"\022\306\021\203:\217\030CBiA\361\2400\217\000\231>"
+ 100      3A8F1843 
+ 100      426941F1 
+ 100      A0308F00 
+ 100      993E
+ 101 007f D8599CE6 		.ascii	"\330Y\234\346\223\206\322\207\362\010\245\037\245\027"
+ 101      9386D287 
+ 101      F208A51F 
+ 101      A517
+ 102 008d A543F3F3 		.ascii	"\245C\363\363k\272e\026\236\200\026+M\363\2235\237\036"
+ 102      6BBA6516 
+ 102      9E80162B 
+ 102      4DF39335 
+ 102      9F1E
+ 103 009f 946E32F3 		.ascii	"\224n2\363\360\374\025;:\246\236Gt\354\331j\370-\301"
+ 103      F0FC153B 
+ 103      3AA69E47 
+ 103      74ECD96A 
+ 103      F82DC1
+ 104 00b2 D383815B 		.ascii	"\323\203\201[\346!\030\004\011\264\306\020\0001\003"
+ 104      E6211804 
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 7
+
+
+ 104      09B4C610 
+ 104      003103
+ 105 00c1 1722849B 		.ascii	"\027\"\204\233\270\220\370L\"[\021E\330L\004\236\357"
+ 105      B890F84C 
+ 105      225B1145 
+ 105      D84C049E 
+ 105      EF
+ 106 00d2 1964FCA7 		.ascii	"\031d\374\247\353\260>8\211\301\016\232\023D2\020^\342"
+ 106      EBB03E38 
+ 106      89C10E9A 
+ 106      13443210 
+ 106      5EE2
+ 107 00e4 5CD25985 		.ascii	"\\\322Y\205\222\014\207(>\221nTN0\275&\320\213>s\241"
+ 107      920C8728 
+ 107      3E916E54 
+ 107      4E30BD26 
+ 107      D08B3E73 
+ 108 00f9 B73A56C6 		.ascii	"\267:V\306\212q=<ui}z3\305q\202R\311jt\346Ax\302\237"
+ 108      8A713D3C 
+ 108      75697D7A 
+ 108      33C57182 
+ 108      52C96A74 
+ 109 0112 3C2EC13C 		.ascii	"<.\301<\005$4\237\215\3667\316As\276\002s\321\374\324"
+ 109      0524349F 
+ 109      8DF637CE 
+ 109      4173BE02 
+ 109      73D1FCD4 
+ 110 0126 5D174E5C 		.ascii	"]\027N\\T\303\374\350\001\232*A\336B\270\012\213\341"
+ 110      54C3FCE8 
+ 110      019A2A41 
+ 110      DE42B80A 
+ 110      8BE1
+ 111 0138 0A2CC640 		.ascii	"\012,\306@\315\260\010\347\242\030\3014\346\253:\235"
+ 111      CDB008E7 
+ 111      A218C134 
+ 111      E6AB3A9D 
+ 112 0148 BCB48936 		.ascii	"\274\264\2116\265\322\221\261\321\314:\352/G/\211\241"
+ 112      B5D291B1 
+ 112      D1CC3AEA 
+ 112      2F472F89 
+ 112      A1
+ 113 0159 E012C870 		.ascii	"\340\022\310p\031\322Yv\270d\352\"\014a\332-\260\224"
+ 113      19D25976 
+ 113      B864EA22 
+ 113      0C61DA2D 
+ 113      B094
+ 114 016b 793E991C 		.ascii	"y>\231\034\236#\257\346\211\006\017u\276\226\005\213"
+ 114      9E23AFE6 
+ 114      89060F75 
+ 114      BE96058B 
+ 115 017b FF792081 		.ascii	"\377y \201>E\2165\234\343\232\301q-\232\303\3039B_j"
+ 115      3E458E35 
+ 115      9CE39AC1 
+ 115      712D9AC3 
+ 115      C339425F 
+ 116 0190 EF2BF266 		.ascii	"\357+\362f\316\361\363\303\251A\0205%\240Y\3369X\225"
+ 116      CEF1F3C3 
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 8
+
+
+ 116      A9411035 
+ 116      25A059DE 
+ 116      395895
+ 117 01a3 2C6A1A61 		.ascii	",j\032a\307\365\235\343!\22386\2439p\260\265A\026f\014"
+ 117      C7F59DE3 
+ 117      21933836 
+ 117      A33970B0 
+ 117      B5411666 
+ 118 01b8 9A5F1FD7 		.ascii	"\232_\037\327\277M\022\350T4\207\006\274od9\237\363"
+ 118      BF4D12E8 
+ 118      54348706 
+ 118      BC6F6439 
+ 118      9FF3
+ 119 01ca BE0A5EBE 		.ascii	"\276\012^\276\312\220i\012\260\253H\306-\317g\337T\242"
+ 119      CA90690A 
+ 119      B0AB48C6 
+ 119      2DCF67DF 
+ 119      54A2
+ 120 01dc D86288D0 		.ascii	"\330b\210\320\360\273o\361\262\312\326\222\367\374\331"
+ 120      F0BB6FF1 
+ 120      B2CAD692 
+ 120      F7FCD9
+ 121 01eb 311328D6 		.ascii	"1\023(\326JJ\313\351\211\003t^0\211@;6\357&6\017:\301"
+ 121      4A4ACBE9 
+ 121      8903745E 
+ 121      3089403B 
+ 121      36EF2636 
+ 122 0202 CA9C5841 		.ascii	"\312\234XAp\0337o\341\346\005\326\346\021_E\336\351"
+ 122      701B376F 
+ 122      E1E605D6 
+ 122      E6115F45 
+ 122      DEE9
+ 123 0214 0AD6B80E 		.ascii	"\012\326\270\016P\300g\024\235\246\210>\237\373Q\363"
+ 123      50C06714 
+ 123      9DA6883E 
+ 123      9FFB51F3 
+ 124 0224 5E918F01 		.ascii	"^\221\217\001\017\330\024\3728\020/\327p\303\324H\353"
+ 124      0FD814FA 
+ 124      38102FD7 
+ 124      70C3D448 
+ 124      EB
+ 125 0235 BD26B0A4 		.ascii	"\275&\260\244X,\326s,\350H8\264\274\241\215\322#\261"
+ 125      582CD673 
+ 125      2CE84838 
+ 125      B4BCA18D 
+ 125      D223B1
+ 126 0248 9CEB0E72 		.ascii	"\234\353\016r\335\205\024#\207\033\374\0263p\"U\332"
+ 126      DD851423 
+ 126      871BFC16 
+ 126      33702255 
+ 126      DA
+ 127 0259 D3A0E022 		.ascii	"\323\240\340\"\320\206\200\353\374\214\3011<\334\303"
+ 127      D08680EB 
+ 127      FC8CC131 
+ 127      3CDCC3
+ 128 0268 6CFD6081 		.ascii	"l\375`\201\036\224n\260\360\307\303C\370kT\235\276\353"
+ 128      1E946EB0 
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 9
+
+
+ 128      F0C7C343 
+ 128      F86B549D 
+ 128      BEEB
+ 129 027a 6FFA1511 		.ascii	"o\372\025\021v\001\255\215@\2753B\333YH\321\004\177"
+ 129      7601AD8D 
+ 129      40BD3342 
+ 129      DB5948D1 
+ 129      047F
+ 130 028c B54AA999 		.ascii	"\265J\251\231a\210V\276\366\\'~u\331\344\036^\256\364"
+ 130      618856BE 
+ 130      F65C277E 
+ 130      75D9E41E 
+ 130      5EAEF4
+ 131 029f BBE1F877 		.ascii	"\273\341\370w\005R\2543\346\016\0170\345\177\245/\342"
+ 131      0552AC33 
+ 131      E60E0F30 
+ 131      E57FA52F 
+ 131      E2
+ 132 02b0 342662A3 		.ascii	"4&b\243{\021v\337h4\213\312\203Mz_\035\216]v\236\322"
+ 132      7B1176DF 
+ 132      68348BCA 
+ 132      834D7A5F 
+ 132      1D8E5D76 
+ 133 02c6 267CD1AD 		.ascii	"&|\321\255e\325\224n\340\330V\201\215\352\023\333\311"
+ 133      65D5946E 
+ 133      E0D85681 
+ 133      8DEA13DB 
+ 133      C9
+ 134 02d7 C13F8D00 		.ascii	"\301?\215\000,C\277\216fO\255\254T\262O\346\277\356"
+ 134      2C43BF8E 
+ 134      664FADAC 
+ 134      54B24FE6 
+ 134      BFEE
+ 135 02e9 9DB9BCA6 		.ascii	"\235\271\274\246\015&\371\205(\314w\373Ss\222x930\204"
+ 135      0D26F985 
+ 135      28CC77FB 
+ 135      53739278 
+ 135      39333084 
+ 136 02fd FEF172F6 		.ascii	"\376\361r\366\325\235\334OS\341\021\3668h\024\364\020"
+ 136      D59DDC4F 
+ 136      53E111F6 
+ 136      386814F4 
+ 136      10
+ 137 030e B4A7E30D 		.ascii	"\264\247\343\015\016\264\307%\0345\036$G\352\314\004"
+ 137      0EB4C725 
+ 137      1C351E24 
+ 137      47EACC04 
+ 138 031e FA2081FF 		.ascii	"\372 \201\377\215\364\361\357\246\347n[\333tto\324\235"
+ 138      8DF4F1EF 
+ 138      A6E76E5B 
+ 138      DB74746F 
+ 138      D49D
+ 139 0330 11E8D7D0 		.ascii	"\021\350\327\320L'n\314\264\025\224:\366\024\330\367"
+ 139      4C276ECC 
+ 139      B415943A 
+ 139      F614D8F7 
+ 140 0340 A8AAD39C 		.ascii	"\250\252\323\234\265%7\325\226\221A,Y\352^\265\244\320"
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 10
+
+
+ 140      B52537D5 
+ 140      9691412C 
+ 140      59EA5EB5 
+ 140      A4D0
+ 141 0352 A56E2FB0 		.ascii	"\245n/\260\027\273K\034j~\266\275\330\266*_GgoNw\220"
+ 141      17BB4B1C 
+ 141      6A7EB6BD 
+ 141      D8B62A5F 
+ 141      47676F4E 
+ 142 0368 24DDDA56 		.ascii	"$\335\332V\270[u;#fQ\241c\267\333i.\335Ulw!E\254{\327"
+ 142      B85B753B 
+ 142      236651A1 
+ 142      63B7DB69 
+ 142      2EDD556C 
+ 143 0382 5ED7CACC 		.ascii	"^\327\312\314%\263P:\312\\eN\2654}'\211s:\270\203\331"
+ 143      25B3503A 
+ 143      CA5C654E 
+ 143      B5347D27 
+ 143      89733AB8 
+ 144 0398 5D5AC417 		.ascii	"]Z\304\027\263\271h\201\320e\201\036s\335Z\333\246\334"
+ 144      B3B96881 
+ 144      D065811E 
+ 144      73DD5ADB 
+ 144      A6DC
+ 145 03aa EC027BCE 		.ascii	"\354\002{\316\326\\[\216\251D\335\2612\363\017a\304"
+ 145      D65C5B8E 
+ 145      A944DDB1 
+ 145      32F30F61 
+ 145      C4
+ 146 03bb D230     		.ascii	"\3220"
+ 147              		.text
+ 148              		.section	.gnu.lto_.symtab.50a2aee8,"",%progbits
+ 149 0000 4932435F 		.ascii	"I2C_scl_Sleep\000"
+ 149      73636C5F 
+ 149      536C6565 
+ 149      7000
+ 150 000e 00       		.ascii	"\000"
+ 151 000f 00       		.ascii	"\000"
+ 152 0010 00       		.ascii	"\000"
+ 153 0011 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 153      00000000 
+ 154 0019 AD000000 		.ascii	"\255\000\000\000"
+ 155 001d 4932435F 		.ascii	"I2C_scl_Wakeup\000"
+ 155      73636C5F 
+ 155      57616B65 
+ 155      757000
+ 156 002c 00       		.ascii	"\000"
+ 157 002d 00       		.ascii	"\000"
+ 158 002e 00       		.ascii	"\000"
+ 159 002f 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 159      00000000 
+ 160 0037 AF000000 		.ascii	"\257\000\000\000"
+ 161              		.text
+ 162              		.section	.gnu.lto_.opts,"",%progbits
+ 163 0000 272D666D 		.ascii	"'-fmath-errno' '-fsigned-zeros' '-ftrapping-math' '"
+ 163      6174682D 
+ 163      6572726E 
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 11
+
+
+ 163      6F272027 
+ 163      2D667369 
+ 164 0033 2D666E6F 		.ascii	"-fno-trapv' '-fno-openmp' '-fno-openacc' '-mcpu=cor"
+ 164      2D747261 
+ 164      70762720 
+ 164      272D666E 
+ 164      6F2D6F70 
+ 165 0066 7465782D 		.ascii	"tex-m0' '-mthumb' '-g' '-Os' '-ffunction-sections' "
+ 165      6D302720 
+ 165      272D6D74 
+ 165      68756D62 
+ 165      2720272D 
+ 166 0099 272D6666 		.ascii	"'-ffat-lto-objects' '-flto'\000"
+ 166      61742D6C 
+ 166      746F2D6F 
+ 166      626A6563 
+ 166      74732720 
+ 167              		.text
+ 168              		.cfi_sections	.debug_frame
+ 169              		.section	.text.I2C_scl_Sleep,"ax",%progbits
+ 170              		.align	1
+ 171              		.global	I2C_scl_Sleep
+ 172              		.code	16
+ 173              		.thumb_func
+ 174              		.type	I2C_scl_Sleep, %function
+ 175              	I2C_scl_Sleep:
+ 176              	.LFB0:
+ 177              		.file 1 "Generated_Source\\PSoC4\\I2C_scl_PM.c"
+   1:Generated_Source\PSoC4/I2C_scl_PM.c **** /*******************************************************************************
+   2:Generated_Source\PSoC4/I2C_scl_PM.c **** * File Name: I2C_scl.c  
+   3:Generated_Source\PSoC4/I2C_scl_PM.c **** * Version 2.20
+   4:Generated_Source\PSoC4/I2C_scl_PM.c **** *
+   5:Generated_Source\PSoC4/I2C_scl_PM.c **** * Description:
+   6:Generated_Source\PSoC4/I2C_scl_PM.c **** *  This file contains APIs to set up the Pins component for low power modes.
+   7:Generated_Source\PSoC4/I2C_scl_PM.c **** *
+   8:Generated_Source\PSoC4/I2C_scl_PM.c **** * Note:
+   9:Generated_Source\PSoC4/I2C_scl_PM.c **** *
+  10:Generated_Source\PSoC4/I2C_scl_PM.c **** ********************************************************************************
+  11:Generated_Source\PSoC4/I2C_scl_PM.c **** * Copyright 2015, Cypress Semiconductor Corporation.  All rights reserved.
+  12:Generated_Source\PSoC4/I2C_scl_PM.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:Generated_Source\PSoC4/I2C_scl_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:Generated_Source\PSoC4/I2C_scl_PM.c **** * the software package with which this file was provided.
+  15:Generated_Source\PSoC4/I2C_scl_PM.c **** *******************************************************************************/
+  16:Generated_Source\PSoC4/I2C_scl_PM.c **** 
+  17:Generated_Source\PSoC4/I2C_scl_PM.c **** #include "cytypes.h"
+  18:Generated_Source\PSoC4/I2C_scl_PM.c **** #include "I2C_scl.h"
+  19:Generated_Source\PSoC4/I2C_scl_PM.c **** 
+  20:Generated_Source\PSoC4/I2C_scl_PM.c **** static I2C_scl_BACKUP_STRUCT  I2C_scl_backup = {0u, 0u, 0u};
+  21:Generated_Source\PSoC4/I2C_scl_PM.c **** 
+  22:Generated_Source\PSoC4/I2C_scl_PM.c **** 
+  23:Generated_Source\PSoC4/I2C_scl_PM.c **** /*******************************************************************************
+  24:Generated_Source\PSoC4/I2C_scl_PM.c **** * Function Name: I2C_scl_Sleep
+  25:Generated_Source\PSoC4/I2C_scl_PM.c **** ****************************************************************************//**
+  26:Generated_Source\PSoC4/I2C_scl_PM.c **** *
+  27:Generated_Source\PSoC4/I2C_scl_PM.c **** * \brief Stores the pin configuration and prepares the pin for entering chip 
+  28:Generated_Source\PSoC4/I2C_scl_PM.c **** *  deep-sleep/hibernate modes. This function applies only to SIO and USBIO pins.
+  29:Generated_Source\PSoC4/I2C_scl_PM.c **** *  It should not be called for GPIO or GPIO_OVT pins.
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 12
+
+
+  30:Generated_Source\PSoC4/I2C_scl_PM.c **** *
+  31:Generated_Source\PSoC4/I2C_scl_PM.c **** * <b>Note</b> This function is available in PSoC 4 only.
+  32:Generated_Source\PSoC4/I2C_scl_PM.c **** *
+  33:Generated_Source\PSoC4/I2C_scl_PM.c **** * \return 
+  34:Generated_Source\PSoC4/I2C_scl_PM.c **** *  None 
+  35:Generated_Source\PSoC4/I2C_scl_PM.c **** *  
+  36:Generated_Source\PSoC4/I2C_scl_PM.c **** * \sideeffect
+  37:Generated_Source\PSoC4/I2C_scl_PM.c **** *  For SIO pins, this function configures the pin input threshold to CMOS and
+  38:Generated_Source\PSoC4/I2C_scl_PM.c **** *  drive level to Vddio. This is needed for SIO pins when in device 
+  39:Generated_Source\PSoC4/I2C_scl_PM.c **** *  deep-sleep/hibernate modes.
+  40:Generated_Source\PSoC4/I2C_scl_PM.c **** *
+  41:Generated_Source\PSoC4/I2C_scl_PM.c **** * \funcusage
+  42:Generated_Source\PSoC4/I2C_scl_PM.c **** *  \snippet I2C_scl_SUT.c usage_I2C_scl_Sleep_Wakeup
+  43:Generated_Source\PSoC4/I2C_scl_PM.c **** *******************************************************************************/
+  44:Generated_Source\PSoC4/I2C_scl_PM.c **** void I2C_scl_Sleep(void)
+  45:Generated_Source\PSoC4/I2C_scl_PM.c **** {
+ 178              		.loc 1 45 0
+ 179              		.cfi_startproc
+ 180              		@ args = 0, pretend = 0, frame = 0
+ 181              		@ frame_needed = 0, uses_anonymous_args = 0
+ 182              		@ link register save eliminated.
+  46:Generated_Source\PSoC4/I2C_scl_PM.c ****     #if defined(I2C_scl__PC)
+  47:Generated_Source\PSoC4/I2C_scl_PM.c ****         I2C_scl_backup.pcState = I2C_scl_PC;
+ 183              		.loc 1 47 0
+ 184 0000 024B     		ldr	r3, .L2
+  48:Generated_Source\PSoC4/I2C_scl_PM.c ****     #else
+  49:Generated_Source\PSoC4/I2C_scl_PM.c ****         #if (CY_PSOC4_4200L)
+  50:Generated_Source\PSoC4/I2C_scl_PM.c ****             /* Save the regulator state and put the PHY into suspend mode */
+  51:Generated_Source\PSoC4/I2C_scl_PM.c ****             I2C_scl_backup.usbState = I2C_scl_CR1_REG;
+  52:Generated_Source\PSoC4/I2C_scl_PM.c ****             I2C_scl_USB_POWER_REG |= I2C_scl_USBIO_ENTER_SLEEP;
+  53:Generated_Source\PSoC4/I2C_scl_PM.c ****             I2C_scl_CR1_REG &= I2C_scl_USBIO_CR1_OFF;
+  54:Generated_Source\PSoC4/I2C_scl_PM.c ****         #endif
+  55:Generated_Source\PSoC4/I2C_scl_PM.c ****     #endif
+  56:Generated_Source\PSoC4/I2C_scl_PM.c ****     #if defined(CYIPBLOCK_m0s8ioss_VERSION) && defined(I2C_scl__SIO)
+  57:Generated_Source\PSoC4/I2C_scl_PM.c ****         I2C_scl_backup.sioState = I2C_scl_SIO_REG;
+  58:Generated_Source\PSoC4/I2C_scl_PM.c ****         /* SIO requires unregulated output buffer and single ended input buffer */
+  59:Generated_Source\PSoC4/I2C_scl_PM.c ****         I2C_scl_SIO_REG &= (uint32)(~I2C_scl_SIO_LPM_MASK);
+  60:Generated_Source\PSoC4/I2C_scl_PM.c ****     #endif  
+  61:Generated_Source\PSoC4/I2C_scl_PM.c **** }
+ 185              		.loc 1 61 0
+ 186              		@ sp needed
+  47:Generated_Source\PSoC4/I2C_scl_PM.c ****     #else
+ 187              		.loc 1 47 0
+ 188 0002 1A68     		ldr	r2, [r3]
+ 189 0004 024B     		ldr	r3, .L2+4
+ 190 0006 1A60     		str	r2, [r3]
+ 191              		.loc 1 61 0
+ 192 0008 7047     		bx	lr
+ 193              	.L3:
+ 194 000a C046     		.align	2
+ 195              	.L2:
+ 196 000c 08040440 		.word	1074005000
+ 197 0010 00000000 		.word	.LANCHOR0
+ 198              		.cfi_endproc
+ 199              	.LFE0:
+ 200              		.size	I2C_scl_Sleep, .-I2C_scl_Sleep
+ 201              		.section	.text.I2C_scl_Wakeup,"ax",%progbits
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 13
+
+
+ 202              		.align	1
+ 203              		.global	I2C_scl_Wakeup
+ 204              		.code	16
+ 205              		.thumb_func
+ 206              		.type	I2C_scl_Wakeup, %function
+ 207              	I2C_scl_Wakeup:
+ 208              	.LFB1:
+  62:Generated_Source\PSoC4/I2C_scl_PM.c **** 
+  63:Generated_Source\PSoC4/I2C_scl_PM.c **** 
+  64:Generated_Source\PSoC4/I2C_scl_PM.c **** /*******************************************************************************
+  65:Generated_Source\PSoC4/I2C_scl_PM.c **** * Function Name: I2C_scl_Wakeup
+  66:Generated_Source\PSoC4/I2C_scl_PM.c **** ****************************************************************************//**
+  67:Generated_Source\PSoC4/I2C_scl_PM.c **** *
+  68:Generated_Source\PSoC4/I2C_scl_PM.c **** * \brief Restores the pin configuration that was saved during Pin_Sleep(). This 
+  69:Generated_Source\PSoC4/I2C_scl_PM.c **** * function applies only to SIO and USBIO pins. It should not be called for
+  70:Generated_Source\PSoC4/I2C_scl_PM.c **** * GPIO or GPIO_OVT pins.
+  71:Generated_Source\PSoC4/I2C_scl_PM.c **** *
+  72:Generated_Source\PSoC4/I2C_scl_PM.c **** * For USBIO pins, the wakeup is only triggered for falling edge interrupts.
+  73:Generated_Source\PSoC4/I2C_scl_PM.c **** *
+  74:Generated_Source\PSoC4/I2C_scl_PM.c **** * <b>Note</b> This function is available in PSoC 4 only.
+  75:Generated_Source\PSoC4/I2C_scl_PM.c **** *
+  76:Generated_Source\PSoC4/I2C_scl_PM.c **** * \return 
+  77:Generated_Source\PSoC4/I2C_scl_PM.c **** *  None
+  78:Generated_Source\PSoC4/I2C_scl_PM.c **** *  
+  79:Generated_Source\PSoC4/I2C_scl_PM.c **** * \funcusage
+  80:Generated_Source\PSoC4/I2C_scl_PM.c **** *  Refer to I2C_scl_Sleep() for an example usage.
+  81:Generated_Source\PSoC4/I2C_scl_PM.c **** *******************************************************************************/
+  82:Generated_Source\PSoC4/I2C_scl_PM.c **** void I2C_scl_Wakeup(void)
+  83:Generated_Source\PSoC4/I2C_scl_PM.c **** {
+ 209              		.loc 1 83 0
+ 210              		.cfi_startproc
+ 211              		@ args = 0, pretend = 0, frame = 0
+ 212              		@ frame_needed = 0, uses_anonymous_args = 0
+ 213              		@ link register save eliminated.
+  84:Generated_Source\PSoC4/I2C_scl_PM.c ****     #if defined(I2C_scl__PC)
+  85:Generated_Source\PSoC4/I2C_scl_PM.c ****         I2C_scl_PC = I2C_scl_backup.pcState;
+ 214              		.loc 1 85 0
+ 215 0000 024B     		ldr	r3, .L5
+  86:Generated_Source\PSoC4/I2C_scl_PM.c ****     #else
+  87:Generated_Source\PSoC4/I2C_scl_PM.c ****         #if (CY_PSOC4_4200L)
+  88:Generated_Source\PSoC4/I2C_scl_PM.c ****             /* Restore the regulator state and come out of suspend mode */
+  89:Generated_Source\PSoC4/I2C_scl_PM.c ****             I2C_scl_USB_POWER_REG &= I2C_scl_USBIO_EXIT_SLEEP_PH1;
+  90:Generated_Source\PSoC4/I2C_scl_PM.c ****             I2C_scl_CR1_REG = I2C_scl_backup.usbState;
+  91:Generated_Source\PSoC4/I2C_scl_PM.c ****             I2C_scl_USB_POWER_REG &= I2C_scl_USBIO_EXIT_SLEEP_PH2;
+  92:Generated_Source\PSoC4/I2C_scl_PM.c ****         #endif
+  93:Generated_Source\PSoC4/I2C_scl_PM.c ****     #endif
+  94:Generated_Source\PSoC4/I2C_scl_PM.c ****     #if defined(CYIPBLOCK_m0s8ioss_VERSION) && defined(I2C_scl__SIO)
+  95:Generated_Source\PSoC4/I2C_scl_PM.c ****         I2C_scl_SIO_REG = I2C_scl_backup.sioState;
+  96:Generated_Source\PSoC4/I2C_scl_PM.c ****     #endif
+  97:Generated_Source\PSoC4/I2C_scl_PM.c **** }
+ 216              		.loc 1 97 0
+ 217              		@ sp needed
+  85:Generated_Source\PSoC4/I2C_scl_PM.c ****     #else
+ 218              		.loc 1 85 0
+ 219 0002 1A68     		ldr	r2, [r3]
+ 220 0004 024B     		ldr	r3, .L5+4
+ 221 0006 1A60     		str	r2, [r3]
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 14
+
+
+ 222              		.loc 1 97 0
+ 223 0008 7047     		bx	lr
+ 224              	.L6:
+ 225 000a C046     		.align	2
+ 226              	.L5:
+ 227 000c 00000000 		.word	.LANCHOR0
+ 228 0010 08040440 		.word	1074005000
+ 229              		.cfi_endproc
+ 230              	.LFE1:
+ 231              		.size	I2C_scl_Wakeup, .-I2C_scl_Wakeup
+ 232              		.bss
+ 233              		.align	2
+ 234              		.set	.LANCHOR0,. + 0
+ 235              		.type	I2C_scl_backup, %object
+ 236              		.size	I2C_scl_backup, 12
+ 237              	I2C_scl_backup:
+ 238 0000 00000000 		.space	12
+ 238      00000000 
+ 238      00000000 
+ 239              		.text
+ 240              	.Letext0:
+ 241              		.file 2 "Generated_Source\\PSoC4\\cytypes.h"
+ 242              		.file 3 "Generated_Source\\PSoC4\\I2C_scl.h"
+ 243              		.section	.debug_info,"",%progbits
+ 244              	.Ldebug_info0:
+ 245 0000 05010000 		.4byte	0x105
+ 246 0004 0400     		.2byte	0x4
+ 247 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 248 000a 04       		.byte	0x4
+ 249 000b 01       		.uleb128 0x1
+ 250 000c 0F000000 		.4byte	.LASF20
+ 251 0010 0C       		.byte	0xc
+ 252 0011 CA010000 		.4byte	.LASF21
+ 253 0015 F2000000 		.4byte	.LASF22
+ 254 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 255 001d 00000000 		.4byte	0
+ 256 0021 00000000 		.4byte	.Ldebug_line0
+ 257 0025 02       		.uleb128 0x2
+ 258 0026 01       		.byte	0x1
+ 259 0027 06       		.byte	0x6
+ 260 0028 B0010000 		.4byte	.LASF0
+ 261 002c 02       		.uleb128 0x2
+ 262 002d 01       		.byte	0x1
+ 263 002e 08       		.byte	0x8
+ 264 002f B8000000 		.4byte	.LASF1
+ 265 0033 02       		.uleb128 0x2
+ 266 0034 02       		.byte	0x2
+ 267 0035 05       		.byte	0x5
+ 268 0036 95010000 		.4byte	.LASF2
+ 269 003a 02       		.uleb128 0x2
+ 270 003b 02       		.byte	0x2
+ 271 003c 07       		.byte	0x7
+ 272 003d D8000000 		.4byte	.LASF3
+ 273 0041 02       		.uleb128 0x2
+ 274 0042 04       		.byte	0x4
+ 275 0043 05       		.byte	0x5
+ 276 0044 A7010000 		.4byte	.LASF4
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 15
+
+
+ 277 0048 02       		.uleb128 0x2
+ 278 0049 04       		.byte	0x4
+ 279 004a 07       		.byte	0x7
+ 280 004b C6000000 		.4byte	.LASF5
+ 281 004f 02       		.uleb128 0x2
+ 282 0050 08       		.byte	0x8
+ 283 0051 05       		.byte	0x5
+ 284 0052 82010000 		.4byte	.LASF6
+ 285 0056 02       		.uleb128 0x2
+ 286 0057 08       		.byte	0x8
+ 287 0058 07       		.byte	0x7
+ 288 0059 4C010000 		.4byte	.LASF7
+ 289 005d 03       		.uleb128 0x3
+ 290 005e 04       		.byte	0x4
+ 291 005f 05       		.byte	0x5
+ 292 0060 696E7400 		.ascii	"int\000"
+ 293 0064 02       		.uleb128 0x2
+ 294 0065 04       		.byte	0x4
+ 295 0066 07       		.byte	0x7
+ 296 0067 3F010000 		.4byte	.LASF8
+ 297 006b 04       		.uleb128 0x4
+ 298 006c 29010000 		.4byte	.LASF12
+ 299 0070 02       		.byte	0x2
+ 300 0071 D401     		.2byte	0x1d4
+ 301 0073 48000000 		.4byte	0x48
+ 302 0077 02       		.uleb128 0x2
+ 303 0078 04       		.byte	0x4
+ 304 0079 04       		.byte	0x4
+ 305 007a B2000000 		.4byte	.LASF9
+ 306 007e 02       		.uleb128 0x2
+ 307 007f 08       		.byte	0x8
+ 308 0080 04       		.byte	0x4
+ 309 0081 EB000000 		.4byte	.LASF10
+ 310 0085 02       		.uleb128 0x2
+ 311 0086 01       		.byte	0x1
+ 312 0087 08       		.byte	0x8
+ 313 0088 90010000 		.4byte	.LASF11
+ 314 008c 04       		.uleb128 0x4
+ 315 008d 00000000 		.4byte	.LASF13
+ 316 0091 02       		.byte	0x2
+ 317 0092 7E02     		.2byte	0x27e
+ 318 0094 98000000 		.4byte	0x98
+ 319 0098 05       		.uleb128 0x5
+ 320 0099 6B000000 		.4byte	0x6b
+ 321 009d 06       		.uleb128 0x6
+ 322 009e 0C       		.byte	0xc
+ 323 009f 03       		.byte	0x3
+ 324 00a0 21       		.byte	0x21
+ 325 00a1 CA000000 		.4byte	0xca
+ 326 00a5 07       		.uleb128 0x7
+ 327 00a6 9F010000 		.4byte	.LASF14
+ 328 00aa 03       		.byte	0x3
+ 329 00ab 23       		.byte	0x23
+ 330 00ac 6B000000 		.4byte	0x6b
+ 331 00b0 00       		.byte	0
+ 332 00b1 07       		.uleb128 0x7
+ 333 00b2 79010000 		.4byte	.LASF15
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 16
+
+
+ 334 00b6 03       		.byte	0x3
+ 335 00b7 24       		.byte	0x24
+ 336 00b8 6B000000 		.4byte	0x6b
+ 337 00bc 04       		.byte	0x4
+ 338 00bd 07       		.uleb128 0x7
+ 339 00be 06000000 		.4byte	.LASF16
+ 340 00c2 03       		.byte	0x3
+ 341 00c3 25       		.byte	0x25
+ 342 00c4 6B000000 		.4byte	0x6b
+ 343 00c8 08       		.byte	0x8
+ 344 00c9 00       		.byte	0
+ 345 00ca 08       		.uleb128 0x8
+ 346 00cb 63010000 		.4byte	.LASF17
+ 347 00cf 03       		.byte	0x3
+ 348 00d0 26       		.byte	0x26
+ 349 00d1 9D000000 		.4byte	0x9d
+ 350 00d5 09       		.uleb128 0x9
+ 351 00d6 BC010000 		.4byte	.LASF18
+ 352 00da 01       		.byte	0x1
+ 353 00db 2C       		.byte	0x2c
+ 354 00dc 00000000 		.4byte	.LFB0
+ 355 00e0 14000000 		.4byte	.LFE0-.LFB0
+ 356 00e4 01       		.uleb128 0x1
+ 357 00e5 9C       		.byte	0x9c
+ 358 00e6 09       		.uleb128 0x9
+ 359 00e7 A3000000 		.4byte	.LASF19
+ 360 00eb 01       		.byte	0x1
+ 361 00ec 52       		.byte	0x52
+ 362 00ed 00000000 		.4byte	.LFB1
+ 363 00f1 14000000 		.4byte	.LFE1-.LFB1
+ 364 00f5 01       		.uleb128 0x1
+ 365 00f6 9C       		.byte	0x9c
+ 366 00f7 0A       		.uleb128 0xa
+ 367 00f8 30010000 		.4byte	.LASF23
+ 368 00fc 01       		.byte	0x1
+ 369 00fd 14       		.byte	0x14
+ 370 00fe CA000000 		.4byte	0xca
+ 371 0102 05       		.uleb128 0x5
+ 372 0103 03       		.byte	0x3
+ 373 0104 00000000 		.4byte	I2C_scl_backup
+ 374 0108 00       		.byte	0
+ 375              		.section	.debug_abbrev,"",%progbits
+ 376              	.Ldebug_abbrev0:
+ 377 0000 01       		.uleb128 0x1
+ 378 0001 11       		.uleb128 0x11
+ 379 0002 01       		.byte	0x1
+ 380 0003 25       		.uleb128 0x25
+ 381 0004 0E       		.uleb128 0xe
+ 382 0005 13       		.uleb128 0x13
+ 383 0006 0B       		.uleb128 0xb
+ 384 0007 03       		.uleb128 0x3
+ 385 0008 0E       		.uleb128 0xe
+ 386 0009 1B       		.uleb128 0x1b
+ 387 000a 0E       		.uleb128 0xe
+ 388 000b 55       		.uleb128 0x55
+ 389 000c 17       		.uleb128 0x17
+ 390 000d 11       		.uleb128 0x11
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 17
+
+
+ 391 000e 01       		.uleb128 0x1
+ 392 000f 10       		.uleb128 0x10
+ 393 0010 17       		.uleb128 0x17
+ 394 0011 00       		.byte	0
+ 395 0012 00       		.byte	0
+ 396 0013 02       		.uleb128 0x2
+ 397 0014 24       		.uleb128 0x24
+ 398 0015 00       		.byte	0
+ 399 0016 0B       		.uleb128 0xb
+ 400 0017 0B       		.uleb128 0xb
+ 401 0018 3E       		.uleb128 0x3e
+ 402 0019 0B       		.uleb128 0xb
+ 403 001a 03       		.uleb128 0x3
+ 404 001b 0E       		.uleb128 0xe
+ 405 001c 00       		.byte	0
+ 406 001d 00       		.byte	0
+ 407 001e 03       		.uleb128 0x3
+ 408 001f 24       		.uleb128 0x24
+ 409 0020 00       		.byte	0
+ 410 0021 0B       		.uleb128 0xb
+ 411 0022 0B       		.uleb128 0xb
+ 412 0023 3E       		.uleb128 0x3e
+ 413 0024 0B       		.uleb128 0xb
+ 414 0025 03       		.uleb128 0x3
+ 415 0026 08       		.uleb128 0x8
+ 416 0027 00       		.byte	0
+ 417 0028 00       		.byte	0
+ 418 0029 04       		.uleb128 0x4
+ 419 002a 16       		.uleb128 0x16
+ 420 002b 00       		.byte	0
+ 421 002c 03       		.uleb128 0x3
+ 422 002d 0E       		.uleb128 0xe
+ 423 002e 3A       		.uleb128 0x3a
+ 424 002f 0B       		.uleb128 0xb
+ 425 0030 3B       		.uleb128 0x3b
+ 426 0031 05       		.uleb128 0x5
+ 427 0032 49       		.uleb128 0x49
+ 428 0033 13       		.uleb128 0x13
+ 429 0034 00       		.byte	0
+ 430 0035 00       		.byte	0
+ 431 0036 05       		.uleb128 0x5
+ 432 0037 35       		.uleb128 0x35
+ 433 0038 00       		.byte	0
+ 434 0039 49       		.uleb128 0x49
+ 435 003a 13       		.uleb128 0x13
+ 436 003b 00       		.byte	0
+ 437 003c 00       		.byte	0
+ 438 003d 06       		.uleb128 0x6
+ 439 003e 13       		.uleb128 0x13
+ 440 003f 01       		.byte	0x1
+ 441 0040 0B       		.uleb128 0xb
+ 442 0041 0B       		.uleb128 0xb
+ 443 0042 3A       		.uleb128 0x3a
+ 444 0043 0B       		.uleb128 0xb
+ 445 0044 3B       		.uleb128 0x3b
+ 446 0045 0B       		.uleb128 0xb
+ 447 0046 01       		.uleb128 0x1
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 18
+
+
+ 448 0047 13       		.uleb128 0x13
+ 449 0048 00       		.byte	0
+ 450 0049 00       		.byte	0
+ 451 004a 07       		.uleb128 0x7
+ 452 004b 0D       		.uleb128 0xd
+ 453 004c 00       		.byte	0
+ 454 004d 03       		.uleb128 0x3
+ 455 004e 0E       		.uleb128 0xe
+ 456 004f 3A       		.uleb128 0x3a
+ 457 0050 0B       		.uleb128 0xb
+ 458 0051 3B       		.uleb128 0x3b
+ 459 0052 0B       		.uleb128 0xb
+ 460 0053 49       		.uleb128 0x49
+ 461 0054 13       		.uleb128 0x13
+ 462 0055 38       		.uleb128 0x38
+ 463 0056 0B       		.uleb128 0xb
+ 464 0057 00       		.byte	0
+ 465 0058 00       		.byte	0
+ 466 0059 08       		.uleb128 0x8
+ 467 005a 16       		.uleb128 0x16
+ 468 005b 00       		.byte	0
+ 469 005c 03       		.uleb128 0x3
+ 470 005d 0E       		.uleb128 0xe
+ 471 005e 3A       		.uleb128 0x3a
+ 472 005f 0B       		.uleb128 0xb
+ 473 0060 3B       		.uleb128 0x3b
+ 474 0061 0B       		.uleb128 0xb
+ 475 0062 49       		.uleb128 0x49
+ 476 0063 13       		.uleb128 0x13
+ 477 0064 00       		.byte	0
+ 478 0065 00       		.byte	0
+ 479 0066 09       		.uleb128 0x9
+ 480 0067 2E       		.uleb128 0x2e
+ 481 0068 00       		.byte	0
+ 482 0069 3F       		.uleb128 0x3f
+ 483 006a 19       		.uleb128 0x19
+ 484 006b 03       		.uleb128 0x3
+ 485 006c 0E       		.uleb128 0xe
+ 486 006d 3A       		.uleb128 0x3a
+ 487 006e 0B       		.uleb128 0xb
+ 488 006f 3B       		.uleb128 0x3b
+ 489 0070 0B       		.uleb128 0xb
+ 490 0071 27       		.uleb128 0x27
+ 491 0072 19       		.uleb128 0x19
+ 492 0073 11       		.uleb128 0x11
+ 493 0074 01       		.uleb128 0x1
+ 494 0075 12       		.uleb128 0x12
+ 495 0076 06       		.uleb128 0x6
+ 496 0077 40       		.uleb128 0x40
+ 497 0078 18       		.uleb128 0x18
+ 498 0079 9742     		.uleb128 0x2117
+ 499 007b 19       		.uleb128 0x19
+ 500 007c 00       		.byte	0
+ 501 007d 00       		.byte	0
+ 502 007e 0A       		.uleb128 0xa
+ 503 007f 34       		.uleb128 0x34
+ 504 0080 00       		.byte	0
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 19
+
+
+ 505 0081 03       		.uleb128 0x3
+ 506 0082 0E       		.uleb128 0xe
+ 507 0083 3A       		.uleb128 0x3a
+ 508 0084 0B       		.uleb128 0xb
+ 509 0085 3B       		.uleb128 0x3b
+ 510 0086 0B       		.uleb128 0xb
+ 511 0087 49       		.uleb128 0x49
+ 512 0088 13       		.uleb128 0x13
+ 513 0089 02       		.uleb128 0x2
+ 514 008a 18       		.uleb128 0x18
+ 515 008b 00       		.byte	0
+ 516 008c 00       		.byte	0
+ 517 008d 00       		.byte	0
+ 518              		.section	.debug_aranges,"",%progbits
+ 519 0000 24000000 		.4byte	0x24
+ 520 0004 0200     		.2byte	0x2
+ 521 0006 00000000 		.4byte	.Ldebug_info0
+ 522 000a 04       		.byte	0x4
+ 523 000b 00       		.byte	0
+ 524 000c 0000     		.2byte	0
+ 525 000e 0000     		.2byte	0
+ 526 0010 00000000 		.4byte	.LFB0
+ 527 0014 14000000 		.4byte	.LFE0-.LFB0
+ 528 0018 00000000 		.4byte	.LFB1
+ 529 001c 14000000 		.4byte	.LFE1-.LFB1
+ 530 0020 00000000 		.4byte	0
+ 531 0024 00000000 		.4byte	0
+ 532              		.section	.debug_ranges,"",%progbits
+ 533              	.Ldebug_ranges0:
+ 534 0000 00000000 		.4byte	.LFB0
+ 535 0004 14000000 		.4byte	.LFE0
+ 536 0008 00000000 		.4byte	.LFB1
+ 537 000c 14000000 		.4byte	.LFE1
+ 538 0010 00000000 		.4byte	0
+ 539 0014 00000000 		.4byte	0
+ 540              		.section	.debug_line,"",%progbits
+ 541              	.Ldebug_line0:
+ 542 0000 8D000000 		.section	.debug_str,"MS",%progbits,1
+ 542      02005400 
+ 542      00000201 
+ 542      FB0E0D00 
+ 542      01010101 
+ 543              	.LASF13:
+ 544 0000 72656733 		.ascii	"reg32\000"
+ 544      3200
+ 545              	.LASF16:
+ 546 0006 75736253 		.ascii	"usbState\000"
+ 546      74617465 
+ 546      00
+ 547              	.LASF20:
+ 548 000f 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 548      43313120 
+ 548      352E342E 
+ 548      31203230 
+ 548      31363036 
+ 549 0042 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 549      20726576 
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 20
+
+
+ 549      6973696F 
+ 549      6E203233 
+ 549      37373135 
+ 550 0075 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects -flto\000"
+ 550      66756E63 
+ 550      74696F6E 
+ 550      2D736563 
+ 550      74696F6E 
+ 551              	.LASF19:
+ 552 00a3 4932435F 		.ascii	"I2C_scl_Wakeup\000"
+ 552      73636C5F 
+ 552      57616B65 
+ 552      757000
+ 553              	.LASF9:
+ 554 00b2 666C6F61 		.ascii	"float\000"
+ 554      7400
+ 555              	.LASF1:
+ 556 00b8 756E7369 		.ascii	"unsigned char\000"
+ 556      676E6564 
+ 556      20636861 
+ 556      7200
+ 557              	.LASF5:
+ 558 00c6 6C6F6E67 		.ascii	"long unsigned int\000"
+ 558      20756E73 
+ 558      69676E65 
+ 558      6420696E 
+ 558      7400
+ 559              	.LASF3:
+ 560 00d8 73686F72 		.ascii	"short unsigned int\000"
+ 560      7420756E 
+ 560      7369676E 
+ 560      65642069 
+ 560      6E7400
+ 561              	.LASF10:
+ 562 00eb 646F7562 		.ascii	"double\000"
+ 562      6C6500
+ 563              	.LASF22:
+ 564 00f2 433A5C47 		.ascii	"C:\\Git\\WW101\\ww101-shield\\firmware\\TestProgram"
+ 564      69745C57 
+ 564      57313031 
+ 564      5C777731 
+ 564      30312D73 
+ 565 0120 344D2E63 		.ascii	"4M.cydsn\000"
+ 565      7964736E 
+ 565      00
+ 566              	.LASF12:
+ 567 0129 75696E74 		.ascii	"uint32\000"
+ 567      333200
+ 568              	.LASF23:
+ 569 0130 4932435F 		.ascii	"I2C_scl_backup\000"
+ 569      73636C5F 
+ 569      6261636B 
+ 569      757000
+ 570              	.LASF8:
+ 571 013f 756E7369 		.ascii	"unsigned int\000"
+ 571      676E6564 
+ 571      20696E74 
+ARM GAS  C:\Users\gjl\AppData\Local\Temp\ccBKbOiV.s 			page 21
+
+
+ 571      00
+ 572              	.LASF7:
+ 573 014c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 573      206C6F6E 
+ 573      6720756E 
+ 573      7369676E 
+ 573      65642069 
+ 574              	.LASF17:
+ 575 0163 4932435F 		.ascii	"I2C_scl_BACKUP_STRUCT\000"
+ 575      73636C5F 
+ 575      4241434B 
+ 575      55505F53 
+ 575      54525543 
+ 576              	.LASF15:
+ 577 0179 73696F53 		.ascii	"sioState\000"
+ 577      74617465 
+ 577      00
+ 578              	.LASF6:
+ 579 0182 6C6F6E67 		.ascii	"long long int\000"
+ 579      206C6F6E 
+ 579      6720696E 
+ 579      7400
+ 580              	.LASF11:
+ 581 0190 63686172 		.ascii	"char\000"
+ 581      00
+ 582              	.LASF2:
+ 583 0195 73686F72 		.ascii	"short int\000"
+ 583      7420696E 
+ 583      7400
+ 584              	.LASF14:
+ 585 019f 70635374 		.ascii	"pcState\000"
+ 585      61746500 
+ 586              	.LASF4:
+ 587 01a7 6C6F6E67 		.ascii	"long int\000"
+ 587      20696E74 
+ 587      00
+ 588              	.LASF0:
+ 589 01b0 7369676E 		.ascii	"signed char\000"
+ 589      65642063 
+ 589      68617200 
+ 590              	.LASF18:
+ 591 01bc 4932435F 		.ascii	"I2C_scl_Sleep\000"
+ 591      73636C5F 
+ 591      536C6565 
+ 591      7000
+ 592              	.LASF21:
+ 593 01ca 47656E65 		.ascii	"Generated_Source\\PSoC4\\I2C_scl_PM.c\000"
+ 593      72617465 
+ 593      645F536F 
+ 593      75726365 
+ 593      5C50536F 
+ 594              		.comm	__gnu_lto_v1,1,1
+ 595              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -1,0 +1,270 @@
+--------------- Rebuild Started: 10/24/2017 19:05:23 Project: TestProgram4M, Configuration: ARM GCC 5.4-2016-q2-update Release ---------------
+Deleting file ".\CortexM0\ARM_GCC_541\Release\main.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_u16toa.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_u8toa.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_string.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_setup.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_selection_list.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_message.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_input_value.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_gpio.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_fonts.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_display.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_debounce.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_uc1701_mini12864.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_uc1701_dogs102.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_uc1611.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_uc1610.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_uc1608.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_uc1604.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_t6963.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_stdio.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_st75256.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_st7920.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_st7588.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_st7567.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_st7565.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1607_200x200.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1606_172x72.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1327.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1325.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1322.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1309.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1306_128x64_noname.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1306_128x32.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1306_64x48.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1305.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_sed1330.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_pcf8812.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_pcd8544_84x48.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_ls013b7dh03.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_ld7032_60x32.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_lc7981.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_ks0108.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_ist3020.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_d_a2printer.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_cad.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_byte.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8x8_8x8.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8g2_setup.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8g2_selection_list.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8g2_polygon.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8g2_message.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8g2_ll_hvline.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8g2_line.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8g2_kerning.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8g2_intersection.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8g2_input_value.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8g2_hvline.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8g2_fonts.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8g2_font.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8g2_d_setup.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8g2_d_memory.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8g2_cleardisplay.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8g2_circle.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8g2_buffer.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8g2_box.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\u8g2_bitmap.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\cyfitter_cfg.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\cymetadata.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\D5.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\D5_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\Red.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\Red_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\Green.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\Green_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\I2C.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\I2C_I2C_INT.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\I2C_I2C.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\I2C_I2C_BOOT.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\I2C_I2C_MASTER.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\I2C_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\I2C_BOOT.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\ADC.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\ADC_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\ADC_INT.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\A0.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\A0_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\A1.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\A1_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\A2.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\A2_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\SW1.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\SW1_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\SWISR.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\Timer.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\Timer_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\Clock_1.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\I2C_SCBCLK.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\I2C_sda.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\I2C_sda_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\I2C_scl.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\I2C_scl_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\I2C_SCB_IRQ.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\ADC_IRQ.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\ADC_intClock.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\Cm0Start.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\CyFlash.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\CyLib.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\cyPm.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\cyutils.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\CyBootAsmGnu.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\CyDMA.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\CyLFClk.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\D11.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\D11_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\D4.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\D4_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\D12.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\D12_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\TestProgram4M.hex"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\TestProgram4M.elf"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\TestProgram4M.map"
+Deleting file ".\TestProgram4M.cycdx"
+Deleting file ".\TestProgram4M.svd"
+Deleting file ".\TestProgram4M.rpt"
+Deleting file ".\TestProgram4M_timing.html"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\.deps\SOURCE_C__ARM_GCC_GENERIC.P"
+Deleting file ".\CortexM0\ARM_GCC_541\Release\.deps\SOURCE_ASM__ARM_GCC_GENERIC.P"
+cydsfit.exe -.appdatapath "C:\Users\gjl\AppData\Local\Cypress Semiconductor\PSoC Creator\4.1" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Git\WW101\ww101-shield\firmware\TestProgram4M.cydsn\TestProgram4M.cyprj -d CY8C4247AZI-M485 -s C:\Git\WW101\ww101-shield\firmware\TestProgram4M.cydsn\Generated_Source\PSoC4 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+HDL Generation...
+Synthesis...
+Tech Mapping...
+Analog Placement...
+Analog Routing...
+Analog Code Generation...
+Digital Placement...
+Digital Routing...
+Bitstream Generation...
+Bitstream Verification...
+Static timing analysis...
+API Generation...
+Dependency Generation...
+Cleanup...
+arm-none-eabi-gcc.exe -c main.c -o .\CortexM0\ARM_GCC_541\Release\main.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/main.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_u16toa.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_u16toa.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_u16toa.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_u8toa.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_u8toa.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_u8toa.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_string.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_string.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_string.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_setup.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_setup.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_setup.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_selection_list.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_selection_list.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_selection_list.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_message.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_message.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_message.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_input_value.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_input_value.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_input_value.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_gpio.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_gpio.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_gpio.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_fonts.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_fonts.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_fonts.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_display.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_display.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_display.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_debounce.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_debounce.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_debounce.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_uc1701_mini12864.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_uc1701_mini12864.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_uc1701_mini12864.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_uc1701_dogs102.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_uc1701_dogs102.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_uc1701_dogs102.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_uc1611.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_uc1611.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_uc1611.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_uc1610.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_uc1610.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_uc1610.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_uc1608.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_uc1608.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_uc1608.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_uc1604.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_uc1604.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_uc1604.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_t6963.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_t6963.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_t6963.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_stdio.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_stdio.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_stdio.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_st75256.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_st75256.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_st75256.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_st7920.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_st7920.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_st7920.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_st7588.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_st7588.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_st7588.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_st7567.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_st7567.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_st7567.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_st7565.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_st7565.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_st7565.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_ssd1607_200x200.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1607_200x200.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_ssd1607_200x200.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_ssd1606_172x72.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1606_172x72.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_ssd1606_172x72.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_ssd1327.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1327.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_ssd1327.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_ssd1325.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1325.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_ssd1325.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_ssd1322.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1322.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_ssd1322.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_ssd1309.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1309.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_ssd1309.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_ssd1306_128x64_noname.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1306_128x64_noname.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_ssd1306_128x64_noname.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_ssd1306_128x32.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1306_128x32.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_ssd1306_128x32.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_ssd1306_64x48.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1306_64x48.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_ssd1306_64x48.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_ssd1305.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1305.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_ssd1305.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_sed1330.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_sed1330.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_sed1330.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_pcf8812.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_pcf8812.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_pcf8812.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_pcd8544_84x48.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_pcd8544_84x48.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_pcd8544_84x48.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_ls013b7dh03.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ls013b7dh03.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_ls013b7dh03.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_ld7032_60x32.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ld7032_60x32.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_ld7032_60x32.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_lc7981.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_lc7981.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_lc7981.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_ks0108.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ks0108.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_ks0108.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_ist3020.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ist3020.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_ist3020.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_d_a2printer.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_d_a2printer.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_d_a2printer.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_cad.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_cad.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_cad.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_byte.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_byte.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_byte.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8x8_8x8.c -o .\CortexM0\ARM_GCC_541\Release\u8x8_8x8.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8x8_8x8.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8g2_setup.c -o .\CortexM0\ARM_GCC_541\Release\u8g2_setup.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8g2_setup.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8g2_selection_list.c -o .\CortexM0\ARM_GCC_541\Release\u8g2_selection_list.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8g2_selection_list.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8g2_polygon.c -o .\CortexM0\ARM_GCC_541\Release\u8g2_polygon.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8g2_polygon.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8g2_message.c -o .\CortexM0\ARM_GCC_541\Release\u8g2_message.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8g2_message.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8g2_ll_hvline.c -o .\CortexM0\ARM_GCC_541\Release\u8g2_ll_hvline.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8g2_ll_hvline.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8g2_line.c -o .\CortexM0\ARM_GCC_541\Release\u8g2_line.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8g2_line.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8g2_kerning.c -o .\CortexM0\ARM_GCC_541\Release\u8g2_kerning.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8g2_kerning.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8g2_intersection.c -o .\CortexM0\ARM_GCC_541\Release\u8g2_intersection.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8g2_intersection.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8g2_input_value.c -o .\CortexM0\ARM_GCC_541\Release\u8g2_input_value.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8g2_input_value.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8g2_hvline.c -o .\CortexM0\ARM_GCC_541\Release\u8g2_hvline.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8g2_hvline.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8g2_fonts.c -o .\CortexM0\ARM_GCC_541\Release\u8g2_fonts.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8g2_fonts.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8g2_font.c -o .\CortexM0\ARM_GCC_541\Release\u8g2_font.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8g2_font.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8g2_d_setup.c -o .\CortexM0\ARM_GCC_541\Release\u8g2_d_setup.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8g2_d_setup.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8g2_d_memory.c -o .\CortexM0\ARM_GCC_541\Release\u8g2_d_memory.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8g2_d_memory.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8g2_cleardisplay.c -o .\CortexM0\ARM_GCC_541\Release\u8g2_cleardisplay.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8g2_cleardisplay.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8g2_circle.c -o .\CortexM0\ARM_GCC_541\Release\u8g2_circle.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8g2_circle.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8g2_buffer.c -o .\CortexM0\ARM_GCC_541\Release\u8g2_buffer.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8g2_buffer.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8g2_box.c -o .\CortexM0\ARM_GCC_541\Release\u8g2_box.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8g2_box.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c ..\u8g2\csrc\u8g2_bitmap.c -o .\CortexM0\ARM_GCC_541\Release\u8g2_bitmap.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/u8g2_bitmap.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\cyfitter_cfg.c -o .\CortexM0\ARM_GCC_541\Release\cyfitter_cfg.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/cyfitter_cfg.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\cymetadata.c -o .\CortexM0\ARM_GCC_541\Release\cymetadata.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/cymetadata.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\D5.c -o .\CortexM0\ARM_GCC_541\Release\D5.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/D5.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\D5_PM.c -o .\CortexM0\ARM_GCC_541\Release\D5_PM.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/D5_PM.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\Red.c -o .\CortexM0\ARM_GCC_541\Release\Red.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/Red.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\Red_PM.c -o .\CortexM0\ARM_GCC_541\Release\Red_PM.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/Red_PM.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\Green.c -o .\CortexM0\ARM_GCC_541\Release\Green.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/Green.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\Green_PM.c -o .\CortexM0\ARM_GCC_541\Release\Green_PM.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/Green_PM.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C.c -o .\CortexM0\ARM_GCC_541\Release\I2C.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/I2C.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_I2C_INT.c -o .\CortexM0\ARM_GCC_541\Release\I2C_I2C_INT.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/I2C_I2C_INT.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_I2C.c -o .\CortexM0\ARM_GCC_541\Release\I2C_I2C.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/I2C_I2C.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_I2C_BOOT.c -o .\CortexM0\ARM_GCC_541\Release\I2C_I2C_BOOT.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/I2C_I2C_BOOT.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_I2C_MASTER.c -o .\CortexM0\ARM_GCC_541\Release\I2C_I2C_MASTER.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/I2C_I2C_MASTER.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_PM.c -o .\CortexM0\ARM_GCC_541\Release\I2C_PM.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/I2C_PM.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_BOOT.c -o .\CortexM0\ARM_GCC_541\Release\I2C_BOOT.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/I2C_BOOT.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\ADC.c -o .\CortexM0\ARM_GCC_541\Release\ADC.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/ADC.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\ADC_PM.c -o .\CortexM0\ARM_GCC_541\Release\ADC_PM.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/ADC_PM.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\ADC_INT.c -o .\CortexM0\ARM_GCC_541\Release\ADC_INT.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/ADC_INT.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\A0.c -o .\CortexM0\ARM_GCC_541\Release\A0.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/A0.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\A0_PM.c -o .\CortexM0\ARM_GCC_541\Release\A0_PM.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/A0_PM.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\A1.c -o .\CortexM0\ARM_GCC_541\Release\A1.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/A1.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\A1_PM.c -o .\CortexM0\ARM_GCC_541\Release\A1_PM.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/A1_PM.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\A2.c -o .\CortexM0\ARM_GCC_541\Release\A2.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/A2.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\A2_PM.c -o .\CortexM0\ARM_GCC_541\Release\A2_PM.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/A2_PM.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SW1.c -o .\CortexM0\ARM_GCC_541\Release\SW1.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/SW1.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SW1_PM.c -o .\CortexM0\ARM_GCC_541\Release\SW1_PM.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/SW1_PM.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SWISR.c -o .\CortexM0\ARM_GCC_541\Release\SWISR.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/SWISR.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\Timer.c -o .\CortexM0\ARM_GCC_541\Release\Timer.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/Timer.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\Timer_PM.c -o .\CortexM0\ARM_GCC_541\Release\Timer_PM.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/Timer_PM.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\Clock_1.c -o .\CortexM0\ARM_GCC_541\Release\Clock_1.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/Clock_1.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_SCBCLK.c -o .\CortexM0\ARM_GCC_541\Release\I2C_SCBCLK.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/I2C_SCBCLK.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_sda.c -o .\CortexM0\ARM_GCC_541\Release\I2C_sda.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/I2C_sda.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_sda_PM.c -o .\CortexM0\ARM_GCC_541\Release\I2C_sda_PM.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/I2C_sda_PM.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_scl.c -o .\CortexM0\ARM_GCC_541\Release\I2C_scl.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/I2C_scl.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_scl_PM.c -o .\CortexM0\ARM_GCC_541\Release\I2C_scl_PM.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/I2C_scl_PM.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\I2C_SCB_IRQ.c -o .\CortexM0\ARM_GCC_541\Release\I2C_SCB_IRQ.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/I2C_SCB_IRQ.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\ADC_IRQ.c -o .\CortexM0\ARM_GCC_541\Release\ADC_IRQ.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/ADC_IRQ.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\ADC_intClock.c -o .\CortexM0\ARM_GCC_541\Release\ADC_intClock.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/ADC_intClock.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\Cm0Start.c -o .\CortexM0\ARM_GCC_541\Release\Cm0Start.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/Cm0Start.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\CyFlash.c -o .\CortexM0\ARM_GCC_541\Release\CyFlash.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/CyFlash.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\CyLib.c -o .\CortexM0\ARM_GCC_541\Release\CyLib.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/CyLib.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\cyPm.c -o .\CortexM0\ARM_GCC_541\Release\cyPm.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/cyPm.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\cyutils.c -o .\CortexM0\ARM_GCC_541\Release\cyutils.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/cyutils.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\CyDMA.c -o .\CortexM0\ARM_GCC_541\Release\CyDMA.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/CyDMA.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\CyLFClk.c -o .\CortexM0\ARM_GCC_541\Release\CyLFClk.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/CyLFClk.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\D11.c -o .\CortexM0\ARM_GCC_541\Release\D11.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/D11.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\D11_PM.c -o .\CortexM0\ARM_GCC_541\Release\D11_PM.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/D11_PM.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\D4.c -o .\CortexM0\ARM_GCC_541\Release\D4.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/D4.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\D4_PM.c -o .\CortexM0\ARM_GCC_541\Release\D4_PM.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/D4_PM.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\D12.c -o .\CortexM0\ARM_GCC_541\Release\D12.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/D12.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\D12_PM.c -o .\CortexM0\ARM_GCC_541\Release\D12_PM.o -mcpu=cortex-m0 -mthumb -I..\I2CRegMap -I..\u8g2\csrc -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/D12_PM.lst -g -D NDEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -flto -Os
+arm-none-eabi-as.exe -o .\CortexM0\ARM_GCC_541\Release\CyBootAsmGnu.o Generated_Source\PSoC4\CyBootAsmGnu.s -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -alh=.\CortexM0\ARM_GCC_541\Release/CyBootAsmGnu.lst -g -W
+arm-none-eabi-ar.exe -rs .\CortexM0\ARM_GCC_541\Release\TestProgram4M.a .\CortexM0\ARM_GCC_541\Release\D5.o .\CortexM0\ARM_GCC_541\Release\D5_PM.o .\CortexM0\ARM_GCC_541\Release\Red.o .\CortexM0\ARM_GCC_541\Release\Red_PM.o .\CortexM0\ARM_GCC_541\Release\Green.o .\CortexM0\ARM_GCC_541\Release\Green_PM.o .\CortexM0\ARM_GCC_541\Release\I2C.o .\CortexM0\ARM_GCC_541\Release\I2C_I2C_INT.o .\CortexM0\ARM_GCC_541\Release\I2C_I2C.o .\CortexM0\ARM_GCC_541\Release\I2C_I2C_BOOT.o .\CortexM0\ARM_GCC_541\Release\I2C_I2C_MASTER.o .\CortexM0\ARM_GCC_541\Release\I2C_PM.o .\CortexM0\ARM_GCC_541\Release\I2C_BOOT.o .\CortexM0\ARM_GCC_541\Release\ADC.o .\CortexM0\ARM_GCC_541\Release\ADC_PM.o .\CortexM0\ARM_GCC_541\Release\ADC_INT.o .\CortexM0\ARM_GCC_541\Release\A0.o .\CortexM0\ARM_GCC_541\Release\A0_PM.o .\CortexM0\ARM_GCC_541\Release\A1.o .\CortexM0\ARM_GCC_541\Release\A1_PM.o .\CortexM0\ARM_GCC_541\Release\A2.o .\CortexM0\ARM_GCC_541\Release\A2_PM.o .\CortexM0\ARM_GCC_541\Release\SW1.o .\CortexM0\ARM_GCC_541\Release\SW1_PM.o .\CortexM0\ARM_GCC_541\Release\SWISR.o .\CortexM0\ARM_GCC_541\Release\Timer.o .\CortexM0\ARM_GCC_541\Release\Timer_PM.o .\CortexM0\ARM_GCC_541\Release\Clock_1.o .\CortexM0\ARM_GCC_541\Release\I2C_SCBCLK.o .\CortexM0\ARM_GCC_541\Release\I2C_sda.o .\CortexM0\ARM_GCC_541\Release\I2C_sda_PM.o .\CortexM0\ARM_GCC_541\Release\I2C_scl.o .\CortexM0\ARM_GCC_541\Release\I2C_scl_PM.o .\CortexM0\ARM_GCC_541\Release\I2C_SCB_IRQ.o .\CortexM0\ARM_GCC_541\Release\ADC_IRQ.o .\CortexM0\ARM_GCC_541\Release\ADC_intClock.o .\CortexM0\ARM_GCC_541\Release\CyFlash.o .\CortexM0\ARM_GCC_541\Release\CyLib.o .\CortexM0\ARM_GCC_541\Release\cyPm.o .\CortexM0\ARM_GCC_541\Release\cyutils.o .\CortexM0\ARM_GCC_541\Release\CyDMA.o .\CortexM0\ARM_GCC_541\Release\CyLFClk.o .\CortexM0\ARM_GCC_541\Release\D11.o .\CortexM0\ARM_GCC_541\Release\D11_PM.o .\CortexM0\ARM_GCC_541\Release\D4.o .\CortexM0\ARM_GCC_541\Release\D4_PM.o .\CortexM0\ARM_GCC_541\Release\D12.o .\CortexM0\ARM_GCC_541\Release\D12_PM.o .\CortexM0\ARM_GCC_541\Release\CyBootAsmGnu.o
+arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_541\Release\TestProgram4M.a
+arm-none-eabi-gcc.exe -Wl,--start-group -o C:\Git\WW101\ww101-shield\firmware\TestProgram4M.cydsn\CortexM0\ARM_GCC_541\Release\TestProgram4M.elf .\CortexM0\ARM_GCC_541\Release\main.o .\CortexM0\ARM_GCC_541\Release\u8x8_u16toa.o .\CortexM0\ARM_GCC_541\Release\u8x8_u8toa.o .\CortexM0\ARM_GCC_541\Release\u8x8_string.o .\CortexM0\ARM_GCC_541\Release\u8x8_setup.o .\CortexM0\ARM_GCC_541\Release\u8x8_selection_list.o .\CortexM0\ARM_GCC_541\Release\u8x8_message.o .\CortexM0\ARM_GCC_541\Release\u8x8_input_value.o .\CortexM0\ARM_GCC_541\Release\u8x8_gpio.o .\CortexM0\ARM_GCC_541\Release\u8x8_fonts.o .\CortexM0\ARM_GCC_541\Release\u8x8_display.o .\CortexM0\ARM_GCC_541\Release\u8x8_debounce.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_uc1701_mini12864.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_uc1701_dogs102.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_uc1611.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_uc1610.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_uc1608.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_uc1604.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_t6963.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_stdio.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_st75256.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_st7920.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_st7588.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_st7567.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_st7565.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1607_200x200.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1606_172x72.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1327.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1325.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1322.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1309.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1306_128x64_noname.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1306_128x32.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1306_64x48.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ssd1305.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_sed1330.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_pcf8812.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_pcd8544_84x48.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ls013b7dh03.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ld7032_60x32.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_lc7981.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ks0108.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_ist3020.o .\CortexM0\ARM_GCC_541\Release\u8x8_d_a2printer.o .\CortexM0\ARM_GCC_541\Release\u8x8_cad.o .\CortexM0\ARM_GCC_541\Release\u8x8_byte.o .\CortexM0\ARM_GCC_541\Release\u8x8_8x8.o .\CortexM0\ARM_GCC_541\Release\u8g2_setup.o .\CortexM0\ARM_GCC_541\Release\u8g2_selection_list.o .\CortexM0\ARM_GCC_541\Release\u8g2_polygon.o .\CortexM0\ARM_GCC_541\Release\u8g2_message.o .\CortexM0\ARM_GCC_541\Release\u8g2_ll_hvline.o .\CortexM0\ARM_GCC_541\Release\u8g2_line.o .\CortexM0\ARM_GCC_541\Release\u8g2_kerning.o .\CortexM0\ARM_GCC_541\Release\u8g2_intersection.o .\CortexM0\ARM_GCC_541\Release\u8g2_input_value.o .\CortexM0\ARM_GCC_541\Release\u8g2_hvline.o .\CortexM0\ARM_GCC_541\Release\u8g2_fonts.o .\CortexM0\ARM_GCC_541\Release\u8g2_font.o .\CortexM0\ARM_GCC_541\Release\u8g2_d_setup.o .\CortexM0\ARM_GCC_541\Release\u8g2_d_memory.o .\CortexM0\ARM_GCC_541\Release\u8g2_cleardisplay.o .\CortexM0\ARM_GCC_541\Release\u8g2_circle.o .\CortexM0\ARM_GCC_541\Release\u8g2_buffer.o .\CortexM0\ARM_GCC_541\Release\u8g2_box.o .\CortexM0\ARM_GCC_541\Release\u8g2_bitmap.o .\CortexM0\ARM_GCC_541\Release\cyfitter_cfg.o .\CortexM0\ARM_GCC_541\Release\cymetadata.o .\CortexM0\ARM_GCC_541\Release\Cm0Start.o .\CortexM0\ARM_GCC_541\Release\TestProgram4M.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_541\Release\CyComponentLibrary.a" -mcpu=cortex-m0 -mthumb -L Generated_Source\PSoC4 -Wl,-Map,.\CortexM0\ARM_GCC_541\Release/TestProgram4M.map -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -u _printf_float -Wl,--gc-sections -g -ffunction-sections -Os -flto -ffat-lto-objects -Wl,--end-group
+cyelftool.exe -C C:\Git\WW101\ww101-shield\firmware\TestProgram4M.cydsn\CortexM0\ARM_GCC_541\Release\TestProgram4M.elf --flash_row_size 128 --flash_size 131072 --flash_offset 0x00000000
+cyelftool.exe -S C:\Git\WW101\ww101-shield\firmware\TestProgram4M.cydsn\CortexM0\ARM_GCC_541\Release\TestProgram4M.elf
+Flash used: 29072 of 131072 bytes (22.2 %).
+SRAM used: 8864 of 16384 bytes (54.1 %). Stack: 4096 bytes. Heap: 4096 bytes.
+--------------- Rebuild Succeeded: 10/24/2017 19:06:23 ---------------

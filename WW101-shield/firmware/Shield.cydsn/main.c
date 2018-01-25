@@ -25,13 +25,13 @@
 
 /* I2C Read/Write Boundary */
 /* Write: 4 bytes for DAC, 1 byte for ledVal, 1 byte for ledControl */
-#define RW_BOUNDARY (6)
+#define RW (6)
 
 /* CapSense LED mode is defined by bit 1 in the led control register */
 #define CAPLEDMASK (0x01)
 
 /* Number of ADC channels */
-#define NUM_ADC_CHAN (4)
+#define NUM_CHAN (4)
 
 /* Constants used to calculate humidity */
 /* This is the capacitance of the sensor at 55% RH with 0.1pF resolution */
@@ -46,6 +46,8 @@
 #define COFFSET                     (150)
 /* This is raw count equivalent to trace capacitance */
 #define OFFSETCOUNT                 (1536)
+#define BUFFERSIZE                  (8)
+#define READ_WRITE_BOUNDARY         (0)
 /* Nominal humidity 55% */
 #define NOMINAL_HUMIDITY            (550)
 #define HUMIDITY_0_PERCENT          (0)
@@ -93,8 +95,11 @@ typedef enum {
 volatile dataSet_t I2Cbuf;   /* I2C buffer containing the data set */
 volatile dataSet_t LocData;  /* Local working copy of the data set */
 
+volatile uint16 capacitance;			    /* Capacitance of the humidity sensor */
+volatile uint16 humidity;			    /* Measured humidity */
+
 volatile uint32 adcState = DONE;          /* The ADC states are: RUNNING, PROCESS and DONE */
-volatile int16  adcResults[NUM_ADC_CHAN];     /* Array to hold raw ADC results */
+volatile int16  adcResults[NUM_CHAN];     /* Array to hold raw ADC results */
 
 volatile bool capLedBase = false;        /* Setting for whether the CapSense LEDs are controlled by CapSense or I2C */
 
@@ -126,7 +131,7 @@ int main(void)
     #ifdef ENABLE_TUNER
     EZI2C_EzI2CSetBuffer1(sizeof(CapSense_dsRam), sizeof(CapSense_dsRam),(uint8 *)&CapSense_dsRam);        
     #else
-    EZI2C_EzI2CSetBuffer1(sizeof(I2Cbuf), RW_BOUNDARY, (void *) &I2Cbuf);     
+    EZI2C_EzI2CSetBuffer1(sizeof(I2Cbuf), RW, (void *) &I2Cbuf);     
     #endif   
     
     SmartIO_Start();    
@@ -196,16 +201,19 @@ int main(void)
 } /* End of main */
 
 /*******************************************************************************
-* Function Name: void SysTickISRCallback( void )
+* Function Name: void SysTick( void )
 ********************************************************************************
 *
 * Summary:
 *  This is the SysTick Timer callback ISR. It is called every 1ms and performs 2 functions:
-*  1. It starts a new ADC conversion every 100ms by setting adcState to RUNNING.
+*  1. It starts a new ADC conversion every 100ms be setting adcState to RUNNING.
 *  2. It resets the CapSense interrupt line every 2nd time it is called.
 *     Since the CapSense interrupt may be asserted at any time, this guarantees a pulse
 *     on the CapSense interrupt output pin between 1ms and 2ms.
 ********************************************************************************/
+/* 1ms SysTick ISR */
+/* This is used to start a new ADC conversion every 100ms
+   and to turn off the CapSense interrupt line */
 void SysTickISRCallback(void)
 {
     static uint8 ADCcounter = 0;
@@ -248,7 +256,7 @@ CY_ISR(ADC_ISR_Callback)
 {
     uint8 i;
     
-    for(i = 0; i < NUM_ADC_CHAN; i++)
+    for(i = 0; i < NUM_CHAN; i++)
     {
         adcResults[i] = ADC_GetResult16(i);        
     }
@@ -337,11 +345,9 @@ void processButtons(void)
 void processCapSense(void)
 {
     static uint8  state = B0;               /* CapSense sensor state machine to cycle through sensors */
+    static uint16 humidityRawCounts;        /* Raw count from CapSense Component for the humidity sensor */
+    static uint16 humidityRefRawCounts;     /* Raw count from CapSense Component for the Reference capacitor */
     static uint8  buttonValPrev = 0x00;     /* Previous CapSense button state */
-    uint16 humidityRawCounts;               /* Raw count from CapSense Component for the humidity sensor */
-    uint16 humidityRefRawCounts;            /* Raw count from CapSense Component for the Reference capacitor */
-    uint16  capacitance;		    	    /* Capacitance of the humidity sensor */
-    uint16 humidity;		        	    /* Measured humidity */
     
     if(!CapSense_IsBusy())
     {

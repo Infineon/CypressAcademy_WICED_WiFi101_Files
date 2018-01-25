@@ -4,7 +4,7 @@
 * There are four display screens tha are used to test various parts of the shield. 
 * The user button on the baseboard is used to switch between screens.
 *
-* On the main screen, each test will show Pass once the test passes. To perform the tests, the
+* On the main scrreen, each test will show Pass once the test passes. To perform the tests, the
 * user must:
 *   1. Touch each CapSense button and press each mechanical button.
 *   2. Turn the POT across its full range.
@@ -31,7 +31,7 @@ volatile dataSet_t pafeDataSet;      /* Data from PSoC 4 on shield read over I2C
 
 int updateData=0;       /* Flag set by the systick timer ISR */
 u8x8_t u8x8;            /* Structure for the OLED display */
-int16 A0,A1,A2;         /* ADC values for the 3 ADC channels - Note: The PSoC 4M ADC range is 0-2.048V, so values above 2.048V will be reported as 2.05V */
+int16 A0,A1,A2;         /* ADC values for the 3 ADC channels */
 char buff[64];          /* Global scratch buffer to hold sprintfs values for the OLED */
 int bootloaderMode = 0; /* The baseboard button toggles bootloader mode when held for 3 seconds */
 
@@ -47,10 +47,6 @@ int currentScreen=0; // Initialize the displayed screen selection to the main te
 
 #define SUCCESS_ALL (SUCCESS_BUTTON_FLAG | SUCCESS_DAC_FLAG | SUCCESS_POT_FLAG | SUCCESS_ALS_FLAG | SUCCESS_HUMIDITY_FLAG | SUCCESS_TEMP_FLAG) 
 uint32 success = 0;
-
-/* I2C Timeout */
-uint32_t timeout = 0;
-#define I2C_TIMEOUT (2000)
 
 /*******************************************************************************
 * Function Name: uint8_t u8x8_byte_hw_i2c( u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr )
@@ -81,7 +77,7 @@ uint8_t u8x8_byte_hw_i2c(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_p
                 (void)I2C_I2CMasterWriteByte(*data);
   	            data++;
 	            arg_int--;
-            }                 
+            }
             break;     
         case U8X8_MSG_BYTE_INIT: // Using the HW block so you dont need to initialize
             break;
@@ -105,7 +101,7 @@ uint8_t u8x8_byte_hw_i2c(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_p
 *
 * Summary:
 *  This is a callback function used by the u8x8 library. It is used to add
-*  a delay using the available PSoC delay functions.
+*  a delay using the avaialable PSoC delay functions.
 *
 *  The delay can be a specified number of milliseconds, 10 microseconds, or 100 nanoseconds
 *
@@ -184,18 +180,16 @@ void sysTickISR(void)
 *
 * Summary:
 *  This function displays the voltage in mV from the 3 Arduino header pins (A0,A1,A2)
-*
-*  Note: The ADC range is 0-2.048V, so values above 2.048V will be reported as 2.05V
 ********************************************************************************/
 void displayDataScreen0(void)
 {
-    sprintf(buff,"A0=%4d mV",ADC_CountsTo_mVolts(0,A0));
+    sprintf(buff,"A0=%d mV   ",ADC_CountsTo_mVolts(0,A0));
     u8x8_DrawString(&u8x8,0,3,buff);
     
-    sprintf(buff,"A1=%4d mV",ADC_CountsTo_mVolts(1,A1));
+    sprintf(buff,"A1=%d mV   ",ADC_CountsTo_mVolts(1,A1));
     u8x8_DrawString(&u8x8,0,4,buff);
     
-    sprintf(buff,"A2=%4d mV",ADC_CountsTo_mVolts(2,A2));
+    sprintf(buff,"A2=%d mV  ",ADC_CountsTo_mVolts(2,A2));
     u8x8_DrawString(&u8x8,0,5,buff);
 }
 
@@ -207,27 +201,26 @@ void displayDataScreen0(void)
 *   This function displays the most recent values I2C Register Map for temperature,
 *   humidity, and illumination. In addition it displays the current values from 
 *   analog pins A1(DAC) and A2 (Pot) in volts.
-*
-*   Note: The PSoC 4M ADC range is 0-2.048V, so values for A1 and A2 above 2.048V will be reported as 2.05V
 ********************************************************************************/
 void displayDataScreen1(void)
 {
-    sprintf(buff,"Temp=%9.1f C",pafeDataSet.temperature);
+    sprintf(buff,"Temp=%.1f C",pafeDataSet.temperature);
     u8x8_DrawString(&u8x8,0,2,buff);
     
-    sprintf(buff,"Humidity=%5.1f %%",pafeDataSet.humidity);
+    sprintf(buff,"Humidity=%.1f%%",pafeDataSet.humidity);
     u8x8_DrawString(&u8x8,0,3,buff);
 
-    sprintf(buff,"Illum=%6.0f lux",pafeDataSet.illuminance);
+    sprintf(buff,"Illum=%.1f lux",pafeDataSet.illuminance);
     u8x8_DrawString(&u8x8,0,4,buff);
     
-    sprintf(buff,"Pot=   %7.2f V",pafeDataSet.potVal);
+    
+    sprintf(buff,"Pot=%.2fV",pafeDataSet.potVal);
     u8x8_DrawString(&u8x8,0,5,buff);
 
-    sprintf(buff,"A2=    %7.2f V",(float)ADC_CountsTo_mVolts(2,A2) / 1000.0);
+    sprintf(buff,"A2=%.2fV",(float)ADC_CountsTo_mVolts(2,A2) / 1000.0);
     u8x8_DrawString(&u8x8,0,6,buff);
     
-    sprintf(buff,"A1=    %7.2f V",(float)ADC_CountsTo_mVolts(1,A1) /1000.0);
+    sprintf(buff,"A1=%.2fV",(float)ADC_CountsTo_mVolts(1,A1) /1000.0);
     u8x8_DrawString(&u8x8,0,7,buff);    
 }
 
@@ -241,14 +234,14 @@ void displayDataScreen1(void)
 // This function displays the I2C Register map variable from the LED and Buttons
 void displayDataScreen2(void)
 {
-    sprintf(buff,"Buttons=   %02X",pafeDataSet.buttonVal);
+    sprintf(buff,"Buttons=%x",pafeDataSet.buttonVal);
     u8x8_DrawString(&u8x8,0,3,buff);
     
-    sprintf(buff,"LEDs=      %02X",pafeDataSet.ledVal);
+    sprintf(buff,"LEDs=%x",pafeDataSet.ledVal);
     u8x8_DrawString(&u8x8,0,4,buff);
     
     
-    sprintf(buff,"LED Cntrl= %02X",pafeDataSet.ledControl);
+    sprintf(buff,"LED Cntrl=%x",pafeDataSet.ledControl);
     u8x8_DrawString(&u8x8,0,5,buff);    
 }
 
@@ -337,23 +330,6 @@ void handleBaseSwitch(void)
     Timer_ClearInterrupt(Timer_INTR_MASK_TC);
     bootloaderMode = !bootloaderMode;
     Red_Write(bootloaderMode);
-}
-
-/*******************************************************************************
-* Function Name: handleBaseSwitch(void)
-********************************************************************************
-*
-* Summary:
-*   This function is the ISR for the input connected to D11. This is driven by
-*   MB2 on the shield. An ISR is used to turn LED2 on the shieild on/off based
-*   on the button state.
-********************************************************************************/
-void handleShieldButton(void)
-{
-    // Look at mechanical Button2 from shield and drive LED2
-    // (Button1 and LED1 are done in hardware)
-    D11_Write(!D12_Read());
-    D12_ClearInterrupt();
 }
 
 /*******************************************************************************
@@ -460,9 +436,9 @@ void testParameters(void)
 *   This is the main program loop.
 ********************************************************************************/
 int main(void)
-{   
+{
     CyGlobalIntEnable; /* Enable global interrupts. */
-	
+  
     ADC_Start();
     ADC_StartConvert();
     I2C_Start();
@@ -471,18 +447,15 @@ int main(void)
    
     // Start ISR for the timer and regiser the callback function for when the timer expires.
     SWISR_StartEx(handleBaseSwitch);
+
     Timer_Start();
-    
-    // Start ISR for the button input from the shield to drive the corresponding LED on the shield
-    D12ISR_StartEx(handleShieldButton);
     
     // Initialize the U8 Display
     u8x8_Setup(&u8x8, u8x8_d_ssd1306_128x64_noname, u8x8_cad_ssd13xx_i2c, u8x8_byte_hw_i2c, psoc_gpio_and_delay_cb);
     u8x8_InitDisplay(&u8x8);  
     u8x8_SetPowerSave(&u8x8,0);
     u8x8_SetFont(&u8x8,u8x8_font_amstrad_cpc_extended_f);
-    u8x8_RefreshDisplay(&u8x8);
-    
+        
     // This structure is used to send the EZI2C register address + the desired DAC value to the PSoC
     typedef CY_PACKED struct SendBuff {
         uint8 address;
@@ -502,15 +475,15 @@ int main(void)
     
     for(;;)
     {
-        /* Feed the watchdog timer - this is used to reset after 1 sec if the I2C bus is hung */
-        CySysWatchdogFeed(CY_SYS_WDT_COUNTER0);
-        
         // Variables to hold the current and previous state of the button on the baseboard
         static int b1Prev=1;
         int b1State;
         
+        // Look at mechanical Button2 from shield and drive LED2
+        // (Button1 and LED1 are done in hardware)
+        D11_Write(!D12_Read());
+        
         // Read the values of the Analog Arduino Pins if a conversion has completed
-        /* Note: The PSoC 4M ADC range is 0-2.048V, so values above 2.048V will be reported as 2.05V */
         if(ADC_IsEndConversion(ADC_RETURN_STATUS)) // The three Arduino A inputs are connected to the channel 0,1,2
         {
             A0 = ADC_GetResult16(0);
@@ -520,32 +493,18 @@ int main(void)
         
         // Handle the user button to switch screens on the display
         b1State = SW1_Read();
-        if(b1State == 0)
+        if(b1State == 0 && b1Prev == 1)
         {
-            if(b1Prev == 1)
-            {
-                b1Prev = 0;
-                currentScreen = (currentScreen + 1) % NUM_SCREENS;
-                switchScreen();
-            }
+            currentScreen = (currentScreen + 1) % NUM_SCREENS;
+            switchScreen();
         }
-        else
-        {
-            b1Prev = 1;
-        }
+        b1Prev = b1State;
         
         // Read the PSoC AFE Shield I2C Register Map
         I2C_I2CMasterReadBuf(PSOC_AFE_I2C,(uint8 *)&pafeDataSet,sizeof(pafeDataSet),I2C_I2C_MODE_COMPLETE_XFER);
-        timeout = 0;
         while (0u == (I2C_I2CMasterStatus() & I2C_I2C_MSTAT_RD_CMPLT))
         {
-            /* Wait  until I2C completes  - timeout after I2C_TIMEOUT ms */        
-            CyDelay(1);
-            timeout++;
-            if(timeout > I2C_TIMEOUT)
-            {
-                break;
-            }
+            /* Wait forever until I2C completes */
         }
         
         // If the SysTick ISR has set the updateData flag then update the DAC value & the Display
@@ -570,17 +529,10 @@ int main(void)
         
             // Send the updated DAC value to the PSoC 4 on the shield
             I2C_I2CMasterWriteBuf(PSOC_AFE_I2C,(uint8 *)&sendBuff,sizeof(sendBuff),I2C_I2C_MODE_COMPLETE_XFER);
-            timeout = 0;
             while (0u == (I2C_I2CMasterStatus() & I2C_I2C_MSTAT_WR_CMPLT))
             {
-                /* Wait  until I2C completes  - timeout after I2C_TIMEOUT ms */        
-                CyDelay(1);
-                timeout++;
-                if(timeout > I2C_TIMEOUT)
-                {
-                    break;
-                }      
-            }           
+                /* Wait forever until I2C completes */        
+            }
         }
         
         /* Check all of the test limits and set success bits as appropriate */
@@ -591,10 +543,8 @@ int main(void)
         // seconds to get the timer to expire again or power cycle the kit.
         while(bootloaderMode) 
         {
-            CySysWatchdogFeed(CY_SYS_WDT_COUNTER0); /* Feed watchdog timer */
             CyDelay(100);
             Red_Write(~Red_Read());
-            
         }     
     }
 }
