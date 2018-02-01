@@ -267,7 +267,7 @@ void application_start(void)
 
 
     // Find the MAC address and calculate 16 bit checksum
-     wwd_wifi_get_mac_address(&myMac, WICED_STA_INTERFACE );
+     wiced_wifi_get_mac_address(&myMac);
      myDeviceId = myMac.octet[0] + myMac.octet[1] + myMac.octet[2] + myMac.octet[3] + myMac.octet[4] + myMac.octet[5];
 
      // Use DNS to find the address.. if you can't look it up after 5 seconds then hard code it.

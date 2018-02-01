@@ -58,7 +58,7 @@ void application_start( )
         printIp(ipAddress);
 
         /* Device MAC Address */
-        wwd_wifi_get_mac_address(&mac , WICED_STA_INTERFACE);
+        wiced_wifi_get_mac_address(&mac);
         WPRINT_APP_INFO(("MAC Address: "));
         WPRINT_APP_INFO(("%X:%X:%X:%X:%X:%X\r\n",
                    mac.octet[0], mac.octet[1], mac.octet[2],
