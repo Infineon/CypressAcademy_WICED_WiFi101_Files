@@ -30,11 +30,11 @@ void application_start( )
         if ( wiced_uart_receive_bytes( STDIO_UART, &receiveChar, &expected_data_size, WICED_NEVER_TIMEOUT ) == WICED_SUCCESS )
         {
             /* If we get here then a character has been received */
-        	if(receiveChar == '0') /* Turn LED off */
+        	if(receiveChar == '0') /* LED OFF for the shield (LED ON if using the baseboard by itself) */
         	{
         		wiced_gpio_output_low( WICED_LED1 );
         	}
-        	if(receiveChar == '1') /* Turn LED on */
+        	if(receiveChar == '1') /* LED ON for the shield (LED OFF if using the baseboard by itself) */
         	{
         		wiced_gpio_output_high( WICED_LED1 );
         	}

@@ -10,11 +10,11 @@ void application_start( )
 
     while ( 1 )
     {
-		/* LED off */
+        /* LED OFF for the shield (LED ON if using the baseboard by itself) */
     	wiced_gpio_output_low( WICED_LED1 );
     	WPRINT_APP_INFO(("LED OFF\n"));
     	wiced_rtos_delay_milliseconds( 250 );
-		/* LED on */
+        /* LED ON for the shield (LED OFF if using the baseboard by itself) */
     	wiced_gpio_output_high( WICED_LED1 );
     	WPRINT_APP_INFO(("LED ON\n"));
         wiced_rtos_delay_milliseconds( 250 );

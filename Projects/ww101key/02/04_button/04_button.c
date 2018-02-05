@@ -16,11 +16,11 @@ void application_start( )
         button1_pressed = wiced_gpio_input_get( WICED_BUTTON1 ) ? WICED_FALSE : WICED_TRUE;  /* The button is active low */
 
         if ( button1_pressed == WICED_TRUE )
-        {   /* Turn LED1 on (off for baseboard) */
+        {   /* LED ON for the shield (LED OFF if using the baseboard by itself) */
             wiced_gpio_output_high( WICED_LED1 );
         }
         else
-        {   /* Turn LED1 off (on for baseboard) */
+        {   /* LED OFF for the shield (LED ON if using the baseboard by itself) */
         	wiced_gpio_output_low( WICED_LED1 );
         }
     }
