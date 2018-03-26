@@ -1,12 +1,11 @@
-NAME := App_WW101KEY_06_07_dual_server
+NAME := App_WW101KEY_06b_02_secure_server
 
-$(NAME)_SOURCES := 07_dual_server.c database.c
+$(NAME)_SOURCES := 02_secure_server.c database.c
 
 #GLOBAL_DEFINES     += RX_PACKET_POOL_SIZE=6
 #GLOBAL_DEFINES     += TX_PACKET_POOL_SIZE=6
 
 WIFI_CONFIG_DCT_H := wifi_config_dct.h
-
 
 CERTIFICATE := $(SOURCE_ROOT)resources/certificates/wwep_cert.pem
 PRIVATE_KEY := $(SOURCE_ROOT)resources/certificates/wwep_privkey.pem

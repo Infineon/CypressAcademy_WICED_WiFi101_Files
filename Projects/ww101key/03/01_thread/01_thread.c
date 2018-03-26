@@ -10,22 +10,14 @@ static wiced_thread_t ledThreadHandle;
 /* Define the thread function that will blink the LED on/off every 500ms */
 void ledThread(wiced_thread_arg_t arg)
 {
-	wiced_bool_t led1 = WICED_FALSE;
-
 	while(1)
 	{
-		/* Toggle LED1 */
-		if ( led1 == WICED_TRUE )
-		{
-			wiced_gpio_output_low( WICED_LED1 );
-			led1 = WICED_FALSE;
-		}
-		else
-		{
-			wiced_gpio_output_high( WICED_LED1 );
-			led1 = WICED_TRUE;
-		}
-		wiced_rtos_delay_milliseconds( 250 );
+        /* LED OFF for the shield (LED ON if using the baseboard by itself) */
+        wiced_gpio_output_low( WICED_LED1 );
+        wiced_rtos_delay_milliseconds( 250 );
+        /* LED ON for the shield (LED OFF if using the baseboard by itself) */
+        wiced_gpio_output_high( WICED_LED1 );
+        wiced_rtos_delay_milliseconds( 250 );
 	}
 }
 

@@ -76,8 +76,6 @@ static wiced_tls_identity_t tls_identity;
 /* We need three headers - host, content type, and content length */
 http_header_field_t header[3];
 
-volatile wiced_result_t        ret = WICED_SUCCESS;
-
 /* Structure to hold data from an IoT device */
 typedef struct {
     uint8_t thingNumber;
@@ -139,6 +137,7 @@ void application_start( )
     uint32_t        size_cert = 0;
     uint32_t        size_key  = 0;
     uint8_t         loop;
+    wiced_result_t  ret = WICED_SUCCESS;
 
     /* Header 0 is the Host header */
     header[0].field        = HTTP_HEADER_HOST;
@@ -303,9 +302,9 @@ void getWeatherDataThread(wiced_thread_arg_t arg)
     } __attribute__((packed)) weather_data;
 
     /* Variables to remember previous values */
-	float tempPrev = 0;
-	float humPrev = 0;
-	float lightPrev = 0;
+	static float tempPrev = 0;
+	static float humPrev = 0;
+	static float lightPrev = 0;
 
     /* Buffer to set the offset */
     uint8_t offset[] = {WEATHER_OFFSET_REG};
@@ -326,6 +325,11 @@ void getWeatherDataThread(wiced_thread_arg_t arg)
 		/* Look at weather data - only update display if a value has changed*/
 		if((tempPrev != iot_data[MY_THING].temp) || (humPrev != iot_data[MY_THING].humidity) || (lightPrev != iot_data[MY_THING].light))
 		{
+            /* Save the new values as previous for next time around */
+            tempPrev  = iot_data[MY_THING].temp;
+            humPrev   = iot_data[MY_THING].humidity;
+            lightPrev = iot_data[MY_THING].light;
+
 			/* Set a semaphore for the OLED to update the display */
 			wiced_rtos_set_semaphore(&displaySemaphore);
 		}
@@ -551,7 +555,8 @@ void commandThread(wiced_thread_arg_t arg)
                 getAll = WICED_FALSE;
                 break;
 			case 'x': /* Print current state of all things */
-                for(loop = 0; loop <= MAX_THING; loop++)
+			    WPRINT_APP_INFO(("----------------------------------------------------------------------------------------------------\n"));
+			    for(loop = 0; loop <= MAX_THING; loop++)
                 {
                     WPRINT_APP_INFO(("Thing: ww101_%02d   IP: %15s   Alert: %d   Temperature: %4.1f   Humidity: %4.1f   Light: %5.0f \n",
                             loop,
@@ -584,7 +589,9 @@ void commandThread(wiced_thread_arg_t arg)
 /* Thread to post and get data to/from the cloud */
 void httpThread(wiced_thread_arg_t arg)
 {
-	char json[100] = "TEST";	  /* JSON message to send */
+    wiced_result_t        ret = WICED_SUCCESS;
+
+    char json[100] = "TEST";	  /* JSON message to send */
 	static char json_size[5];     /* This holds the size of the JSON message as a decimal value */
 
 	uint8_t httpCmd[4]; /* Command pushed ONTO the queue to determine what to post/get */
@@ -660,15 +667,16 @@ void httpThread(wiced_thread_arg_t arg)
         /* Connect to the server */
         if(!connected)
         {
-            /*  Need to de-init and re-init client in case the server has disconnected us */
-            http_client_deinit( &client );
-            http_client_init( &client, WICED_STA_INTERFACE, event_handler, NULL );
-            http_client_configure(&client, &client_configuration);
+            /*  Need to connect the first time and reconnect if the server has disconnected us */
             WPRINT_APP_INFO( ( "Connecting to %s\n", SERVER_HOST ) );
             if ( ( ret = http_client_connect( &client, (const wiced_ip_address_t*)&server_address, SERVER_PORT, HTTP_USE_TLS, CONNECT_TIMEOUT_MS ) ) != WICED_SUCCESS )
             {
                 WPRINT_APP_INFO( ( "Error: failed to connect to server: %u\n", ret) );
                 return;
+            }
+            else
+            {
+                connected = WICED_TRUE;
             }
         }
 
@@ -697,16 +705,38 @@ void httpThread(wiced_thread_arg_t arg)
         http_request_flush( &request );
 
         wiced_rtos_get_semaphore(&httpWaitSemaphore, WICED_WAIT_FOREVER); /* Wait for this request to complete before going on */
-        /* Now that we are done, copy data from the temporary holding structure to the correct things IoT
-         * structure. If the thing number is the local thing, do nothing since we already have the data. */
-        if(iot_holding.thingNumber != MY_THING)
+        /* Now that we are done, if we did a GET we need to decide what to do with the data that came back */
+        if(command[0] == GET_CMD)
         {
-            strcpy(iot_data[iot_holding.thingNumber].ip_str, iot_holding.ip_str);
-            iot_data[iot_holding.thingNumber].temp = iot_holding.temp;
-            iot_data[iot_holding.thingNumber].humidity = iot_holding.humidity;
-            iot_data[iot_holding.thingNumber].light = iot_holding.light;
-            iot_data[iot_holding.thingNumber].alert = iot_holding.alert;
-            /* Update the display if this is the thing we are currently displaying */
+            /* Print the value to the terminal if all thing updates are enabled and if any values for this thing have changed */
+            if(getAll == WICED_TRUE)
+            {
+                if(iot_data[iot_holding.thingNumber].temp     != iot_holding.temp     ||
+                   iot_data[iot_holding.thingNumber].humidity != iot_holding.humidity ||
+                   iot_data[iot_holding.thingNumber].light    != iot_holding.light    ||
+                   iot_data[iot_holding.thingNumber].alert    != iot_holding.alert    )
+                {
+                    WPRINT_APP_INFO(("Thing: ww101_%02d   IP: %15s   Alert: %d   Temperature: %4.1f   Humidity: %4.1f   Light: %5.0f \n",
+                            iot_holding.thingNumber,
+                            iot_holding.ip_str,
+                            iot_holding.alert,
+                            iot_holding.temp,
+                            iot_holding.humidity,
+                            iot_holding.light));
+                }
+            }
+            /* If the thing number is NOT the local thing, copy the values to the thing's location in the database. */
+            /* If it is the local thing, we already have the data so no need to do the copy in that case. */
+            if(iot_holding.thingNumber != MY_THING)
+            {
+                strcpy(iot_data[iot_holding.thingNumber].ip_str, iot_holding.ip_str);
+                iot_data[iot_holding.thingNumber].temp = iot_holding.temp;
+                iot_data[iot_holding.thingNumber].humidity = iot_holding.humidity;
+                iot_data[iot_holding.thingNumber].light = iot_holding.light;
+                iot_data[iot_holding.thingNumber].alert = iot_holding.alert;
+            }
+
+            /* Update the display if the new data is for the thing we are currently displaying */
             if(iot_holding.thingNumber == dispThing)
             {
                 wiced_rtos_set_semaphore(&displaySemaphore);
@@ -725,36 +755,35 @@ static void http_event_handler( http_client_t* client, http_event_t event, http_
     switch( event )
     {
         case HTTP_CONNECTED:
-            connected = WICED_TRUE;
+            /* This state is never called */
             break;
 
-        case HTTP_DISCONNECTED:
-        {
-            WPRINT_APP_INFO(( "Disconnected\n"));
-            connected = WICED_FALSE;
-            break;
-        }
+            /* This is called when we are disconnected by the server */
+            case HTTP_DISCONNECTED:
+            {
+                connected = WICED_FALSE;
+                http_client_disconnect( client ); /* Need to keep client connection state synchronized with the server */
+                WPRINT_APP_INFO(( "Disconnected\n" ));
+                break;
+            }
 
         case HTTP_DATA_RECEIVED:
         {
             /* Parse the JSON response data and put in a temporary holding place */
             /* The data will be moved to the appropriate location once the response is complete */
-            if(iot_holding.thingNumber != MY_THING) /* Only parse the payload for other things */
+            cJSON *root = cJSON_Parse((char*) response->payload);
+            cJSON *state = cJSON_GetObjectItem(root,"state");
+            cJSON *reported = cJSON_GetObjectItem(state,"reported");
+            cJSON *ipValue = cJSON_GetObjectItem(reported,"IPAddress");
+            if(ipValue->type == cJSON_String) /* Make sure we have a string */
             {
-                cJSON *root = cJSON_Parse((char*) response->payload);
-                cJSON *state = cJSON_GetObjectItem(root,"state");
-                cJSON *reported = cJSON_GetObjectItem(state,"reported");
-                cJSON *ipValue = cJSON_GetObjectItem(reported,"IPAddress");
-                if(ipValue->type == cJSON_String) /* Make sure we have a string */
-                {
-                    snprintf(iot_holding.ip_str, sizeof(iot_holding.ip_str), cJSON_GetObjectItem(reported,"IPAddress")->valuestring);
-                }
-                iot_holding.temp = (float) cJSON_GetObjectItem(reported,"temperature")->valuedouble;
-                iot_holding.humidity = (float) cJSON_GetObjectItem(reported,"humidity")->valuedouble;
-                iot_holding.light = (float) cJSON_GetObjectItem(reported,"light")->valuedouble;
-                iot_holding.alert = (wiced_bool_t) cJSON_GetObjectItem(reported,"weatherAlert")->type;
-                cJSON_Delete(root);
+                strcpy(iot_holding.ip_str, ipValue->valuestring);
             }
+            iot_holding.temp = (float) cJSON_GetObjectItem(reported,"temperature")->valuedouble;
+            iot_holding.humidity = (float) cJSON_GetObjectItem(reported,"humidity")->valuedouble;
+            iot_holding.light = (float) cJSON_GetObjectItem(reported,"light")->valuedouble;
+            iot_holding.alert = (wiced_bool_t) cJSON_GetObjectItem(reported,"weatherAlert")->type;
+            cJSON_Delete(root);
 
             /* This is the end of the response, so we will clean up and set the semaphore for the calling thread to go on */
             if(response->remaining_length == 0)
@@ -788,15 +817,16 @@ void timer30sec(void* arg)
     /* Must use WICED_NO_WAIT here because waiting is not allowed in a timer - if the queue is full we wont post */
     wiced_rtos_push_to_queue(&httpQueue, httpCmd, WICED_NO_WAIT); /* Send weather data for local thing */
 
-    /* Get data for all things if enabled otherwise get the displayed thing if it isn't the local thing */
+    /* Get data for all things if enabled, otherwise get the displayed thing if it isn't the local thing */
     if(getAll)
     {
+        WPRINT_APP_INFO(("----------------------------------------------------------------------------------------------------\n"));
         httpCmd[0] = GET_CMD;
         for(loop = 0; loop <= MAX_THING; loop++)
-            {
-                httpCmd[1] = loop;
-                wiced_rtos_push_to_queue(&httpQueue, httpCmd, WICED_NO_WAIT);
-            }
+        {
+            httpCmd[1] = loop;
+            wiced_rtos_push_to_queue(&httpQueue, httpCmd, WICED_NO_WAIT);
+        }
     }
     else if(dispThing != MY_THING)
     {

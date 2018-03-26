@@ -70,7 +70,10 @@ typedef enum command {
 /*************** Global Variables *****************/
 /* Broker object and function return value */
 volatile wiced_mqtt_object_t   mqtt_object;
-volatile wiced_result_t        ret = WICED_SUCCESS;
+
+/* MAC address which will be used as part of the CLIENT_ID to make it unique */
+static wiced_mac_t mac;     // WW101 addition
+static char macString[20];  // WW101 addition
 
 /* Structure to hold data from an IoT device */
 typedef struct {
@@ -129,6 +132,7 @@ void displayThread(wiced_thread_arg_t arg);
 void commandThread(wiced_thread_arg_t arg);
 void publishThread(wiced_thread_arg_t arg);
 void publish30sec(void* arg);
+wiced_result_t open_mqtt_connection();
 /* Functions from the demo/aws_iot/pub_sub/publisher project used for publishing */
 static wiced_result_t wait_for_response( wiced_mqtt_event_type_t event, uint32_t timeout );
 static wiced_result_t mqtt_conn_open( wiced_mqtt_object_t mqtt_obj, wiced_ip_address_t *address, wiced_interface_t interface, wiced_mqtt_callback_t callback, wiced_mqtt_security_t *security );
@@ -142,9 +146,10 @@ static wiced_result_t mqtt_connection_event_cb( wiced_mqtt_object_t mqtt_object,
 void application_start( )
 {
     uint32_t        size_out = 0;
-    int             connection_retries = 0;
     int             sub_retries = 0;
     uint8_t         loop;
+    wiced_result_t  ret = WICED_SUCCESS;
+
 
 	wiced_init();	/* Initialize the WICED device */
 
@@ -207,6 +212,12 @@ void application_start( )
         return;
     }
 
+    /* WW101 addition - get MAC address and save as a string*/
+    wiced_wifi_get_mac_address(&mac);
+    snprintf(macString, sizeof(macString), "%02X:%02X:%02X:%02X:%02X:%02X",
+                       mac.octet[0], mac.octet[1], mac.octet[2],
+                       mac.octet[3], mac.octet[4], mac.octet[5]);
+
     /* Allocate memory for MQTT object*/
     mqtt_object = (wiced_mqtt_object_t) malloc( WICED_MQTT_OBJECT_MEMORY_SIZE_REQUIREMENT );
     if ( mqtt_object == NULL )
@@ -236,32 +247,9 @@ void application_start( )
     /* Update the display so that the IP address is shown */
     wiced_rtos_set_semaphore(&displaySemaphore);
 
-    wiced_mqtt_init( mqtt_object );
+    ret = open_mqtt_connection();
 
-    WPRINT_APP_INFO(("[MQTT] Opening connection..."));
-    connection_retries = 0;
-    do
-    {
-        ret = mqtt_conn_open( mqtt_object, &broker_address, WICED_STA_INTERFACE, mqtt_connection_event_cb, &security );
-        connection_retries++ ;
-    } while ( ( ret != WICED_SUCCESS ) && ( connection_retries < WICED_MQTT_CONNECTION_NUMBER_OF_RETRIES ) );
-
-    if ( ret != WICED_SUCCESS )
-    {
-        /* If we get here, the MQTT connection could not be opened */
-        WPRINT_APP_INFO(("Connection Failed: Error Code %d\n",ret));
-        WPRINT_APP_INFO(("[MQTT] Closing connection..."));
-        mqtt_conn_close( mqtt_object );
-        wiced_rtos_delay_milliseconds( MQTT_DELAY_IN_MILLISECONDS * 2 );
-        wiced_rtos_deinit_semaphore( &msg_semaphore );
-        WPRINT_APP_INFO(("[MQTT] Deinit connection..."));
-        ret = wiced_mqtt_deinit( mqtt_object );
-        free( mqtt_object );
-        mqtt_object = NULL;
-        WPRINT_APP_INFO(("Done\n"));
-        return;
-    }
-    else
+    if(ret == WICED_SUCCESS) /* Start up everything else if the MQTT connection was opened */
     {
         /* Now that the connection is established, get everything else going */
         WPRINT_APP_INFO(("Success\n"));
@@ -377,7 +365,7 @@ void print_thing_info(uint8_t thingNumber)
 /* Thread to read temperature, humidity, and light from the PSoC analog Co-processor */
 void getWeatherDataThread(wiced_thread_arg_t arg)
 {
-    /* Weather data from the PSoC Analog Coprocessor  */
+    /* Weather data from the PSoC Analog Co-processor  */
     struct {
         float temp;
         float humidity;
@@ -385,9 +373,9 @@ void getWeatherDataThread(wiced_thread_arg_t arg)
     } __attribute__((packed)) weather_data;
 
     /* Variables to remember previous values */
-	float tempPrev = 0;
-	float humPrev = 0;
-	float lightPrev = 0;
+	static float tempPrev = 0;
+	static float humPrev = 0;
+	static float lightPrev = 0;
 
     /* Buffer to set the offset */
     uint8_t offset[] = {WEATHER_OFFSET_REG};
@@ -408,7 +396,12 @@ void getWeatherDataThread(wiced_thread_arg_t arg)
 		/* Look at weather data - only update display if a value has changed*/
 		if((tempPrev != iot_data[MY_THING].temp) || (humPrev != iot_data[MY_THING].humidity) || (lightPrev != iot_data[MY_THING].light))
 		{
-			/* Set a semaphore for the OLED to update the display */
+			/* Save the new values as previous for next time around */
+		    tempPrev  = iot_data[MY_THING].temp;
+		    humPrev   = iot_data[MY_THING].humidity;
+		    lightPrev = iot_data[MY_THING].light;
+
+		    /* Set a semaphore for the OLED to update the display */
 			wiced_rtos_set_semaphore(&displaySemaphore);
 		}
 
@@ -654,8 +647,9 @@ void commandThread(wiced_thread_arg_t arg)
 /* Thread to publish data to the cloud */
 void publishThread(wiced_thread_arg_t arg)
 {
-    int         pub_retries = 0;
-    uint8_t     thingNumber;
+    int             pub_retries = 0;
+    uint8_t         thingNumber;
+    wiced_result_t  ret;
 
 	char json[100] = "TEST";	  /* json message to send */
 
@@ -752,6 +746,37 @@ void publish30sec(void* arg)
 	wiced_rtos_push_to_queue(&pubQueue, pubCmd, WICED_NO_WAIT); /* Push value onto queue*/
 }
 
+/*************** Function to try opening MQTT connection that fails gracefully after a few attempts ***************/
+wiced_result_t open_mqtt_connection()
+{
+    int             connection_retries = 0;
+    wiced_result_t  ret = WICED_SUCCESS;
+
+    WPRINT_APP_INFO(("[MQTT] Opening connection..."));
+    wiced_mqtt_init( mqtt_object );
+    connection_retries = 0;
+    do
+    {
+        ret = mqtt_conn_open( mqtt_object, &broker_address, WICED_STA_INTERFACE, mqtt_connection_event_cb, &security );
+        connection_retries++ ;
+    } while ( ( ret != WICED_SUCCESS ) && ( connection_retries < WICED_MQTT_CONNECTION_NUMBER_OF_RETRIES ) );
+
+    if ( ret != WICED_SUCCESS )
+    {
+        /* If we get here, the MQTT connection could not be opened */
+        WPRINT_APP_INFO(("Connection Failed: Error Code %d\n",ret));
+        WPRINT_APP_INFO(("[MQTT] Closing connection..."));
+        mqtt_conn_close( mqtt_object );
+        wiced_rtos_delay_milliseconds( MQTT_DELAY_IN_MILLISECONDS * 2 );
+        wiced_rtos_deinit_semaphore( &msg_semaphore );
+        WPRINT_APP_INFO(("[MQTT] Deinit connection..."));
+        wiced_mqtt_deinit( mqtt_object );
+        free( mqtt_object );
+        mqtt_object = NULL;
+        WPRINT_APP_INFO(("Done\n"));
+    }
+    return ret;
+}
 
 /**************************************************************************************/
 /* Functions copied from the demo/aws_iot/pub_sub/publisher application */
@@ -781,13 +806,16 @@ static wiced_result_t wait_for_response( wiced_mqtt_event_type_t event, uint32_t
 static wiced_result_t mqtt_conn_open( wiced_mqtt_object_t mqtt_obj, wiced_ip_address_t *address, wiced_interface_t interface, wiced_mqtt_callback_t callback, wiced_mqtt_security_t *security )
 {
     wiced_mqtt_pkt_connect_t conninfo;
-    wiced_result_t ret = WICED_SUCCESS;
+    wiced_result_t        ret = WICED_SUCCESS;
+
+    char id_plus_mac[sizeof(macString)+sizeof(CLIENT_ID)];  // WW101 addition
 
     memset( &conninfo, 0, sizeof( conninfo ) );
     conninfo.port_number = 0;
     conninfo.mqtt_version = WICED_MQTT_PROTOCOL_VER4;
     conninfo.clean_session = 1;
-    conninfo.client_id = (uint8_t*) CLIENT_ID;
+    snprintf(id_plus_mac, sizeof(id_plus_mac), "%s_%s", macString, (uint8_t*) CLIENT_ID); // WW101 addition
+    conninfo.client_id = (uint8_t*) id_plus_mac; // WW101 modified
     conninfo.keep_alive = 5;
     conninfo.password = NULL;
     conninfo.username = NULL;
@@ -902,7 +930,11 @@ static wiced_result_t mqtt_connection_event_cb( wiced_mqtt_object_t mqtt_object,
                     cJSON *root = cJSON_Parse((char*) msg.data);
                     cJSON *state = cJSON_GetObjectItem(root,"state");
                     cJSON *reported = cJSON_GetObjectItem(state,"reported");
-                    snprintf(iot_data[thingNumber].ip_str, sizeof(iot_data[thingNumber].ip_str), cJSON_GetObjectItem(reported,"IPAddress")->valuestring);
+                    cJSON *ipValue = cJSON_GetObjectItem(reported,"IPAddress");
+                    if(ipValue->type == cJSON_String) /* Make sure we have a string */
+                    {
+                        strcpy(iot_data[thingNumber].ip_str, ipValue->valuestring);
+                    }
                     iot_data[thingNumber].temp = (float) cJSON_GetObjectItem(reported,"temperature")->valuedouble;
                     iot_data[thingNumber].humidity = (float) cJSON_GetObjectItem(reported,"humidity")->valuedouble;
                     iot_data[thingNumber].light = (float) cJSON_GetObjectItem(reported,"light")->valuedouble;
@@ -920,7 +952,11 @@ static wiced_result_t mqtt_connection_event_cb( wiced_mqtt_object_t mqtt_object,
                     cJSON *current = cJSON_GetObjectItem(root,"current");
                     cJSON *state = cJSON_GetObjectItem(current,"state");
                     cJSON *reported = cJSON_GetObjectItem(state,"reported");
-                    snprintf(iot_data[thingNumber].ip_str, sizeof(iot_data[thingNumber].ip_str), cJSON_GetObjectItem(reported,"IPAddress")->valuestring);
+                    cJSON *ipValue = cJSON_GetObjectItem(reported,"IPAddress");
+                    if(ipValue->type == cJSON_String) /* Make sure we have a string */
+                    {
+                        strcpy(iot_data[thingNumber].ip_str, ipValue->valuestring);
+                    }
                     iot_data[thingNumber].temp = (float) cJSON_GetObjectItem(reported,"temperature")->valuedouble;
                     iot_data[thingNumber].humidity = (float) cJSON_GetObjectItem(reported,"humidity")->valuedouble;
                     iot_data[thingNumber].light = (float) cJSON_GetObjectItem(reported,"light")->valuedouble;

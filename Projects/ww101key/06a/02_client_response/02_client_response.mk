@@ -1,4 +1,4 @@
-NAME := App_WW101KEY_06_02_client_response
+NAME := App_WW101KEY_06a_02_client_response
 
 $(NAME)_SOURCES := 02_client_response.c
 

@@ -3,6 +3,11 @@
 // co-processor on the shield board. The values are printed to the UART
 #include "wiced.h"
 
+/* I2C port to use. If the platform already defines it, use that, otherwise default to WICED_I2C_2 */
+#ifndef PLATFORM_ARDUINO_I2C
+#define PLATFORM_ARDUINO_I2C ( WICED_I2C_2 )
+#endif
+
 #define I2C_ADDRESS (0x42)
 
 #define TEMPERATURE_REG 0x07
@@ -24,7 +29,7 @@ void application_start( )
 
     /* Setup I2C master */
     const wiced_i2c_device_t i2cDevice = {
-    	.port = WICED_I2C_2,
+    	.port = PLATFORM_ARDUINO_I2C,
 		.address = I2C_ADDRESS,
 		.address_width = I2C_ADDRESS_WIDTH_7BIT,
 		.speed_mode = I2C_STANDARD_SPEED_MODE

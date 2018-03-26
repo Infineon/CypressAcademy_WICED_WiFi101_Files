@@ -69,6 +69,10 @@
 /******************************************************
  *                      Macros
  ******************************************************/
+/* I2C port to use. If the platform already defines it, use that, otherwise default to WICED_I2C_2 */
+#ifndef PLATFORM_ARDUINO_I2C
+#define PLATFORM_ARDUINO_I2C ( WICED_I2C_2 )
+#endif
 
 /******************************************************
  *                    Constants
@@ -109,7 +113,7 @@ void application_start()
 {
     wiced_i2c_device_t oled_display =
     {
-        .port          = WICED_I2C_2,
+        .port          = PLATFORM_ARDUINO_I2C,
         .address       = 0x3C,
         .address_width = I2C_ADDRESS_WIDTH_7BIT,
         .flags         = 0,

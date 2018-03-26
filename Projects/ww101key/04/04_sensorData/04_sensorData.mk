@@ -30,9 +30,8 @@
  # so agrees to indemnify Cypress against all liability.
 #
 
-NAME := App_WW101KEY_04_04_cjson
+NAME := App_WW101KEY_04_04_sensorData
 
-$(NAME)_COMPONENTS := utilities/cJSON
+$(NAME)_SOURCES    := 04_sensorData.c
 
-$(NAME)_SOURCES := 04_cjson.c
-
+$(NAME)_COMPONENTS := graphics/u8g

@@ -18,24 +18,14 @@ void button_isr(void* arg)
 /* Define the thread function that will toggle the LED */
 void ledThread(wiced_thread_arg_t arg)
 {
-	static wiced_bool_t led1 = WICED_FALSE;
-
 	while(1)
 	{
-		/* Check for the semaphore here. If it is not set, then this thread will suspend until the semaphore is set by the button thread */
-		wiced_rtos_get_semaphore(&semaphoreHandle, WICED_WAIT_FOREVER);
-
-		/* Toggle LED1 */
-		if ( led1 == WICED_TRUE )
-		{
-			wiced_gpio_output_low( WICED_LED1 );
-			led1 = WICED_FALSE;
-		}
-		else
-		{
-			wiced_gpio_output_high( WICED_LED1 );
-			led1 = WICED_TRUE;
-		}
+        /* LED OFF for the shield (LED ON if using the baseboard by itself) */
+        wiced_gpio_output_low( WICED_LED1 );
+        wiced_rtos_get_semaphore(&semaphoreHandle, WICED_WAIT_FOREVER);
+        /* LED ON for the shield (LED OFF if using the baseboard by itself) */
+        wiced_gpio_output_high( WICED_LED1 );
+        wiced_rtos_get_semaphore(&semaphoreHandle, WICED_WAIT_FOREVER);
 	}
 }
 

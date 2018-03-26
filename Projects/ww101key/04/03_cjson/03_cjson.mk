@@ -18,7 +18,7 @@
  #
  # Disclaimer: THIS SOFTWARE IS PROVIDED AS-IS, WITH NO WARRANTY OF ANY KIND,
  # EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, NONINFRINGEMENT, IMPLIED
- # WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. Cypress
+ # WARRANTIES OF MERCHANTABILITY AND FITNESS NFOR A PARTICULAR PURPOSE. Cypress
  # reserves the right to make changes to the Software without notice. Cypress
  # does not assume any liability arising out of the application or use of the
  # Software or any product or circuit described in the Software. Cypress does
@@ -30,8 +30,9 @@
  # so agrees to indemnify Cypress against all liability.
 #
 
-NAME := App_WW101KEY_04_03_sensorData
+NAME := App_WW101KEY_04_03_cjson
 
-$(NAME)_SOURCES    := 03_sensorData.c
+$(NAME)_COMPONENTS := utilities/cJSON
 
-$(NAME)_COMPONENTS := graphics/u8g
+$(NAME)_SOURCES := 03_cjson.c
+

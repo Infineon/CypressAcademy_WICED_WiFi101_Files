@@ -1,11 +1,34 @@
 /*
- * Broadcom Proprietary and Confidential. Copyright 2016 Broadcom
- * All Rights Reserved.
+ * Copyright 2018, Cypress Semiconductor Corporation or a subsidiary of 
+ * Cypress Semiconductor Corporation. All Rights Reserved.
+ * 
+ * This software, associated documentation and materials ("Software"),
+ * is owned by Cypress Semiconductor Corporation
+ * or one of its subsidiaries ("Cypress") and is protected by and subject to
+ * worldwide patent protection (United States and foreign),
+ * United States copyright laws and international treaty provisions.
+ * Therefore, you may use this Software only as provided in the license
+ * agreement accompanying the software package from which you
+ * obtained this Software ("EULA").
+ * If no EULA applies, Cypress hereby grants you a personal, non-exclusive,
+ * non-transferable license to copy, modify, and compile the Software
+ * source code solely for use in connection with Cypress's
+ * integrated circuit products. Any reproduction, modification, translation,
+ * compilation, or representation of this Software except as specified
+ * above is prohibited without the express written permission of Cypress.
  *
- * This is UNPUBLISHED PROPRIETARY SOURCE CODE of Broadcom Corporation;
- * the contents of this file may not be disclosed to third parties, copied
- * or duplicated in any form, in whole or in part, without the prior
- * written permission of Broadcom Corporation.
+ * Disclaimer: THIS SOFTWARE IS PROVIDED AS-IS, WITH NO WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, NONINFRINGEMENT, IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. Cypress
+ * reserves the right to make changes to the Software without notice. Cypress
+ * does not assume any liability arising out of the application or use of the
+ * Software or any product or circuit described in the Software. Cypress does
+ * not authorize its products for use in any products where a malfunction or
+ * failure of the Cypress product may reasonably be expected to result in
+ * significant property damage, injury or death ("High Risk Product"). By
+ * including Cypress's product in a High Risk Product, the manufacturer
+ * of such system or application assumes all risk of such use and in doing
+ * so agrees to indemnify Cypress against all liability.
  */
 
 /** @file
@@ -39,10 +62,10 @@
  *                      Macros
  ******************************************************/
 #define MQTT_BROKER_ADDRESS                 "amk6m51qrxr2u.iot.us-east-1.amazonaws.com"
-//#define MQTT_BROKER_ADDRESS                 "data.iot.us-east-1.amazonaws.com"
-
-#define WICED_TOPIC                         "GJL_TestTopic"
-#define CLIENT_ID                           "wiced_publisher_aws_GJL"
+#define MQTT_BROKER_PEER_COMMON_NAME        "*.iot.us-east-1.amazonaws.com"
+#define WICED_TOPIC                         "KEY_TestTopic"
+/* The MAC ID of the board will be appended to this before it is used */
+#define CLIENT_ID                           "wiced_publisher_aws"
 #define MQTT_REQUEST_TIMEOUT                (5000)
 #define MQTT_DELAY_IN_MILLISECONDS          (1000)
 #define MQTT_MAX_RESOURCE_SIZE              (0x7fffffff)
@@ -59,6 +82,10 @@ static wiced_semaphore_t                    msg_semaphore;
 static wiced_semaphore_t                    wake_semaphore;
 static wiced_mqtt_security_t                security;
 static uint8_t                              pub_in_progress = 0;
+static wiced_bool_t                         is_connected = WICED_FALSE;
+
+static wiced_mac_t mac;     // WW101 addition
+static char macString[20];  // WW101 addition
 
 /******************************************************
  *               Static Function Definitions
@@ -99,15 +126,18 @@ static wiced_result_t mqtt_conn_open( wiced_mqtt_object_t mqtt_obj, wiced_ip_add
     wiced_mqtt_pkt_connect_t conninfo;
     wiced_result_t ret = WICED_SUCCESS;
 
+    char id_plus_mac[sizeof(macString)+sizeof(CLIENT_ID)];  // WW101 addition
+
     memset( &conninfo, 0, sizeof( conninfo ) );
     conninfo.port_number = 0;
     conninfo.mqtt_version = WICED_MQTT_PROTOCOL_VER4;
     conninfo.clean_session = 1;
-    conninfo.client_id = (uint8_t*) CLIENT_ID;
+    snprintf(id_plus_mac, sizeof(id_plus_mac), "%s_%s", macString, (uint8_t*) CLIENT_ID); // WW101 addition
+    conninfo.client_id = (uint8_t*) id_plus_mac; // WW101 modified
     conninfo.keep_alive = 5;
     conninfo.password = NULL;
     conninfo.username = NULL;
-    conninfo.peer_cn = (uint8_t*) "*.iot.us-east-1.amazonaws.com";
+    conninfo.peer_cn = (uint8_t*) MQTT_BROKER_PEER_COMMON_NAME;
     ret = wiced_mqtt_connect( mqtt_obj, address, interface, callback, security, &conninfo );
     if ( ret != WICED_SUCCESS )
     {
@@ -164,8 +194,11 @@ static wiced_result_t mqtt_connection_event_cb( wiced_mqtt_object_t mqtt_object,
 {
     switch ( event->type )
     {
-        case WICED_MQTT_EVENT_TYPE_CONNECT_REQ_STATUS:
         case WICED_MQTT_EVENT_TYPE_DISCONNECTED:
+        {
+            is_connected = WICED_FALSE;
+        }
+        case WICED_MQTT_EVENT_TYPE_CONNECT_REQ_STATUS:
         case WICED_MQTT_EVENT_TYPE_PUBLISHED:
         case WICED_MQTT_EVENT_TYPE_SUBCRIBED:
         case WICED_MQTT_EVENT_TYPE_UNSUBSCRIBED:
@@ -227,6 +260,12 @@ void application_start( void )
         return;
     }
 
+    /* WW101 addition - get MAC address and save as a string*/
+    wiced_wifi_get_mac_address(&mac);
+    snprintf(macString, sizeof(macString), "%02X:%02X:%02X:%02X:%02X:%02X",
+                       mac.octet[0], mac.octet[1], mac.octet[2],
+                       mac.octet[3], mac.octet[4], mac.octet[5]);
+
     /* Allocate memory for MQTT object*/
     mqtt_object = (wiced_mqtt_object_t) malloc( WICED_MQTT_OBJECT_MEMORY_SIZE_REQUIREMENT );
     if ( mqtt_object == NULL )
@@ -236,7 +275,7 @@ void application_start( void )
     }
 
     WPRINT_APP_INFO( ( "Resolving IP address of MQTT broker...\n" ) );
-    ret = wiced_hostname_lookup( MQTT_BROKER_ADDRESS, &broker_address, 10000 , WICED_STA_INTERFACE);
+    ret = wiced_hostname_lookup( MQTT_BROKER_ADDRESS, &broker_address, 10000, WICED_STA_INTERFACE );
     WPRINT_APP_INFO(("Resolved Broker IP: %u.%u.%u.%u\n\n", (uint8_t)(GET_IPV4_ADDRESS(broker_address) >> 24),
                     (uint8_t)(GET_IPV4_ADDRESS(broker_address) >> 16),
                     (uint8_t)(GET_IPV4_ADDRESS(broker_address) >> 8),
@@ -253,25 +292,40 @@ void application_start( void )
 
     do
     {
+        pub_in_progress = 0;
+        retries = 0;
+        count = 0;
+        connection_retries = 0;
+        is_connected = WICED_FALSE;
+
         WPRINT_APP_INFO(("[MQTT] Opening connection..."));
         do
         {
             ret = mqtt_conn_open( mqtt_object, &broker_address, WICED_STA_INTERFACE, mqtt_connection_event_cb, &security );
+            wiced_rtos_delay_milliseconds( 100 );
             connection_retries++ ;
         } while ( ( ret != WICED_SUCCESS ) && ( connection_retries < WICED_MQTT_CONNECTION_NUMBER_OF_RETRIES ) );
 
         if ( ret != WICED_SUCCESS )
         {
-            WPRINT_APP_INFO(("Failed\n"));
-            break;
+            WPRINT_APP_INFO(("Failed\r\n"));
+            wiced_rtos_delay_milliseconds( MQTT_DELAY_IN_MILLISECONDS * 5 );
+            continue;
         }
-        WPRINT_APP_INFO(("Success\n"));
+        WPRINT_APP_INFO(("Success\r\n"));
+        is_connected = WICED_TRUE;
         /* configure push button to publish a message */
         wiced_gpio_input_irq_enable( WICED_BUTTON1, IRQ_TRIGGER_RISING_EDGE, publish_callback, NULL );
 
         while ( 1 )
         {
-            wiced_rtos_get_semaphore( &wake_semaphore, WICED_NEVER_TIMEOUT );
+            retries = 0;
+
+            wiced_rtos_get_semaphore( &wake_semaphore, MQTT_DELAY_IN_MILLISECONDS * 5 );
+            if ( is_connected == WICED_FALSE )
+            {
+                break;
+            }
             if ( pub_in_progress == 1 )
             {
                 WPRINT_APP_INFO(("[MQTT] Publishing..."));
@@ -283,7 +337,6 @@ void application_start( void )
                 {
                     msg = MSG_OFF;
                 }
-                retries = 0; // reset retries to 0 before going into the loop so that the next publish after a failure will still work
                 do
                 {
                     ret = mqtt_app_publish( mqtt_object, WICED_MQTT_QOS_DELIVER_AT_LEAST_ONCE, (uint8_t*) WICED_TOPIC, (uint8_t*) msg, strlen( msg ) );
@@ -291,12 +344,12 @@ void application_start( void )
                 } while ( ( ret != WICED_SUCCESS ) && ( retries < MQTT_PUBLISH_RETRY_COUNT ) );
                 if ( ret != WICED_SUCCESS )
                 {
-                    WPRINT_APP_INFO((" Failed\n"));
+                    WPRINT_APP_INFO((" Failed\r\n"));
                     break;
                 }
                 else
                 {
-                    WPRINT_APP_INFO((" Success\n"));
+                    WPRINT_APP_INFO((" Success\r\n"));
                 }
 
                 pub_in_progress = 0;
@@ -306,16 +359,16 @@ void application_start( void )
             wiced_rtos_delay_milliseconds( 100 );
         }
 
-        pub_in_progress = 0; // Reset flag if we got a failure so that another button push is needed after a failre
-
-        WPRINT_APP_INFO(("[MQTT] Closing connection..."));
+        WPRINT_APP_INFO(("[MQTT] Closing connection...\r\n"));
         mqtt_conn_close( mqtt_object );
+        wiced_gpio_input_irq_disable( WICED_BUTTON1 );
 
-        wiced_rtos_delay_milliseconds( MQTT_DELAY_IN_MILLISECONDS * 2 );
+        WPRINT_APP_INFO(("[MQTT] Wait for 40 seconds so that wifi network will be ready ( delay is only for testing purpose )...\r\n"));
+        wiced_rtos_delay_milliseconds( MQTT_DELAY_IN_MILLISECONDS * 40 );
     } while ( 1 );
 
     wiced_rtos_deinit_semaphore( &msg_semaphore );
-    WPRINT_APP_INFO(("[MQTT] Deinit connection...\n"));
+    WPRINT_APP_INFO(("[MQTT] Deinit connection...\r\n"));
     ret = wiced_mqtt_deinit( mqtt_object );
     wiced_rtos_deinit_semaphore( &wake_semaphore );
     free( mqtt_object );

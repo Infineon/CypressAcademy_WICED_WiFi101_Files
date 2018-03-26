@@ -1,21 +1,52 @@
 /*
- * Broadcom Proprietary and Confidential. Copyright 2016 Broadcom
- * All Rights Reserved.
+ * Copyright 2018, Cypress Semiconductor Corporation or a subsidiary of 
+ * Cypress Semiconductor Corporation. All Rights Reserved.
+ * 
+ * This software, associated documentation and materials ("Software"),
+ * is owned by Cypress Semiconductor Corporation
+ * or one of its subsidiaries ("Cypress") and is protected by and subject to
+ * worldwide patent protection (United States and foreign),
+ * United States copyright laws and international treaty provisions.
+ * Therefore, you may use this Software only as provided in the license
+ * agreement accompanying the software package from which you
+ * obtained this Software ("EULA").
+ * If no EULA applies, Cypress hereby grants you a personal, non-exclusive,
+ * non-transferable license to copy, modify, and compile the Software
+ * source code solely for use in connection with Cypress's
+ * integrated circuit products. Any reproduction, modification, translation,
+ * compilation, or representation of this Software except as specified
+ * above is prohibited without the express written permission of Cypress.
  *
- * This is UNPUBLISHED PROPRIETARY SOURCE CODE of Broadcom Corporation;
- * the contents of this file may not be disclosed to third parties, copied
- * or duplicated in any form, in whole or in part, without the prior
- * written permission of Broadcom Corporation.
+ * Disclaimer: THIS SOFTWARE IS PROVIDED AS-IS, WITH NO WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, NONINFRINGEMENT, IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. Cypress
+ * reserves the right to make changes to the Software without notice. Cypress
+ * does not assume any liability arising out of the application or use of the
+ * Software or any product or circuit described in the Software. Cypress does
+ * not authorize its products for use in any products where a malfunction or
+ * failure of the Cypress product may reasonably be expected to result in
+ * significant property damage, injury or death ("High Risk Product"). By
+ * including Cypress's product in a High Risk Product, the manufacturer
+ * of such system or application assumes all risk of such use and in doing
+ * so agrees to indemnify Cypress against all liability.
  */
 
 /** @file
  * This file contains common APP and MQTT functionalities which can be used across AWS IOT applications
  */
 
-#include "./aws_common.h"
+#include "aws_common.h"
+
+#ifndef WICED_LED2
+#define WICED_LED2  WICED_LED1
+#endif
+
 
 static aws_app_info_t *aws_app_info;
 static wiced_ip_address_t broker_address;
+
+static wiced_mac_t mac;     // WW101 addition
+static char macString[20];  // WW101 addition
 
 static wiced_result_t wait_for_response( wiced_mqtt_event_type_t event, uint32_t timeout )
 {
@@ -55,9 +86,9 @@ wiced_result_t aws_app_init( aws_app_info_t *app_info )
 
     for ( int i = 0; i < 25; i++ )
     {
-        wiced_gpio_output_high( WICED_LED1 );
+        wiced_gpio_output_high( WICED_LED2 );
         wiced_rtos_delay_milliseconds( 100 );
-        wiced_gpio_output_low( WICED_LED1 );
+        wiced_gpio_output_low( WICED_LED2 );
         wiced_rtos_delay_milliseconds( 100 );
 
         if ( !wiced_gpio_input_get( WICED_BUTTON1 ) )
@@ -72,11 +103,11 @@ wiced_result_t aws_app_init( aws_app_info_t *app_info )
                     .thing_name = AWS_DEFAULT_THING_NAME
                 };
 
-                wiced_gpio_output_high( WICED_LED2 );
+                wiced_gpio_output_high( WICED_LED1 );
                 WPRINT_APP_INFO(( "DCT clearing start\n" ));
                 wiced_dct_write( &aws_dct, DCT_APP_SECTION, 0, sizeof( aws_config_dct_t ) );
                 wiced_rtos_delay_milliseconds( 1000 );
-                wiced_gpio_output_low( WICED_LED2 );
+                wiced_gpio_output_low( WICED_LED1 );
                 WPRINT_APP_INFO(( "DCT clearing end\n" ));
 
                 break;
@@ -95,6 +126,12 @@ wiced_result_t aws_app_init( aws_app_info_t *app_info )
 
     /* Bringup the network interface */
     wiced_network_up( WICED_STA_INTERFACE, WICED_USE_EXTERNAL_DHCP_SERVER, NULL );
+
+    /* WW101 addition - get MAC address and save as a string*/
+    wiced_wifi_get_mac_address(&mac);
+    snprintf(macString, sizeof(macString), "%X:%X:%X:%X:%X:%X",
+                       mac.octet[0], mac.octet[1], mac.octet[2],
+                       mac.octet[3], mac.octet[4], mac.octet[5]);
 
     wiced_hostname_lookup( AWS_IOT_HOST_NAME, &broker_address, 10000, WICED_STA_INTERFACE );
 
@@ -156,6 +193,8 @@ wiced_result_t aws_mqtt_conn_open( wiced_mqtt_object_t mqtt_obj, wiced_mqtt_call
     wiced_interface_t         interface = WICED_STA_INTERFACE;
     uint32_t                  size_out;
 
+    char id_plus_mac[sizeof(macString)+sizeof(aws_app_info->mqtt_client_id)];  // WW101 addition
+
     /* Read security parameters from DCT */
     resource_get_readonly_buffer( &resources_apps_DIR_aws_iot_DIR_rootca_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.ca_cert );
     security.ca_cert_len = size_out;
@@ -177,11 +216,12 @@ wiced_result_t aws_mqtt_conn_open( wiced_mqtt_object_t mqtt_obj, wiced_mqtt_call
     conninfo.port_number = 0;
     conninfo.mqtt_version = WICED_MQTT_PROTOCOL_VER4;
     conninfo.clean_session = 1;
-    conninfo.client_id = (uint8_t*) aws_app_info->mqtt_client_id;
+    snprintf(id_plus_mac, sizeof(id_plus_mac), "%s_%s", macString, (uint8_t*) aws_app_info->mqtt_client_id); // WW101 addition
+    conninfo.client_id = (uint8_t*) id_plus_mac; // WW101 modified
     conninfo.keep_alive = 5;
     conninfo.password = NULL;
     conninfo.username = NULL;
-    conninfo.peer_cn = (uint8_t*) "*.iot.us-east-1.amazonaws.com";
+    conninfo.peer_cn = (uint8_t*) AWS_IOT_PEER_COMMON_NAME;
 
     WPRINT_APP_INFO(("[MQTT] Connecting to MQTT Broker...\n"));
     ret = wiced_mqtt_connect( mqtt_obj, &broker_address, interface, callback, &security, &conninfo );
