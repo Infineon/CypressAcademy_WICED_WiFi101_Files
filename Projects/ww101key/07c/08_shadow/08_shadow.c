@@ -82,7 +82,7 @@
 #define SHADOW_PUBLISH_MESSAGE_STR_OFF_DESIRED_AND_REPORTED     "{ \"state\": {\"desired\": { \"status\": \"OFF\" } ,\"reported\": { \"status\": \"OFF\" } } }"
 #define SHADOW_PUBLISH_MESSAGE_STR_ON_DESIRED_AND_REPORTED      "{ \"state\": {\"desired\": { \"status\": \"ON\" } ,\"reported\": { \"status\": \"ON\" } } }"
 
-#define CLIENT_ID                           "wiced_shadow_aws"
+#define CLIENT_ID                           "KEY_TestThing"
 
 /******************************************************
  *               Variable Definitions

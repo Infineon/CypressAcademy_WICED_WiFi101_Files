@@ -45,9 +45,6 @@
 static aws_app_info_t *aws_app_info;
 static wiced_ip_address_t broker_address;
 
-static wiced_mac_t mac;     // WW101 addition
-static char macString[20];  // WW101 addition
-
 static wiced_result_t wait_for_response( wiced_mqtt_event_type_t event, uint32_t timeout )
 {
     if ( wiced_rtos_get_semaphore( &aws_app_info->msg_semaphore, timeout ) != WICED_SUCCESS )
@@ -127,12 +124,6 @@ wiced_result_t aws_app_init( aws_app_info_t *app_info )
     /* Bringup the network interface */
     wiced_network_up( WICED_STA_INTERFACE, WICED_USE_EXTERNAL_DHCP_SERVER, NULL );
 
-    /* WW101 addition - get MAC address and save as a string*/
-    wiced_wifi_get_mac_address(&mac);
-    snprintf(macString, sizeof(macString), "%X:%X:%X:%X:%X:%X",
-                       mac.octet[0], mac.octet[1], mac.octet[2],
-                       mac.octet[3], mac.octet[4], mac.octet[5]);
-
     wiced_hostname_lookup( AWS_IOT_HOST_NAME, &broker_address, 10000, WICED_STA_INTERFACE );
 
     WPRINT_APP_INFO(("[MQTT] Connecting to broker %u.%u.%u.%u ...\n\n", (uint8_t)(GET_IPV4_ADDRESS(broker_address) >> 24),
@@ -193,8 +184,6 @@ wiced_result_t aws_mqtt_conn_open( wiced_mqtt_object_t mqtt_obj, wiced_mqtt_call
     wiced_interface_t         interface = WICED_STA_INTERFACE;
     uint32_t                  size_out;
 
-    char id_plus_mac[sizeof(macString)+sizeof(aws_app_info->mqtt_client_id)];  // WW101 addition
-
     /* Read security parameters from DCT */
     resource_get_readonly_buffer( &resources_apps_DIR_aws_iot_DIR_rootca_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.ca_cert );
     security.ca_cert_len = size_out;
@@ -216,8 +205,7 @@ wiced_result_t aws_mqtt_conn_open( wiced_mqtt_object_t mqtt_obj, wiced_mqtt_call
     conninfo.port_number = 0;
     conninfo.mqtt_version = WICED_MQTT_PROTOCOL_VER4;
     conninfo.clean_session = 1;
-    snprintf(id_plus_mac, sizeof(id_plus_mac), "%s_%s", macString, (uint8_t*) aws_app_info->mqtt_client_id); // WW101 addition
-    conninfo.client_id = (uint8_t*) id_plus_mac; // WW101 modified
+    conninfo.client_id = (uint8_t*) aws_app_info->mqtt_client_id;
     conninfo.keep_alive = 5;
     conninfo.password = NULL;
     conninfo.username = NULL;

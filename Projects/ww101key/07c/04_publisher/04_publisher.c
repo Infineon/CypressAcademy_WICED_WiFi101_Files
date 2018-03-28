@@ -64,8 +64,8 @@
 #define MQTT_BROKER_ADDRESS                 "amk6m51qrxr2u.iot.us-east-1.amazonaws.com"
 #define MQTT_BROKER_PEER_COMMON_NAME        "*.iot.us-east-1.amazonaws.com"
 #define WICED_TOPIC                         "KEY_TestTopic"
-/* The MAC ID of the board will be appended to this before it is used */
-#define CLIENT_ID                           "wiced_publisher_aws"
+/* The CLIENT_ID is the AWS Thing Name */
+#define CLIENT_ID                           "KEY_TestThing"
 #define MQTT_REQUEST_TIMEOUT                (5000)
 #define MQTT_DELAY_IN_MILLISECONDS          (1000)
 #define MQTT_MAX_RESOURCE_SIZE              (0x7fffffff)
@@ -83,9 +83,6 @@ static wiced_semaphore_t                    wake_semaphore;
 static wiced_mqtt_security_t                security;
 static uint8_t                              pub_in_progress = 0;
 static wiced_bool_t                         is_connected = WICED_FALSE;
-
-static wiced_mac_t mac;     // WW101 addition
-static char macString[20];  // WW101 addition
 
 /******************************************************
  *               Static Function Definitions
@@ -126,14 +123,11 @@ static wiced_result_t mqtt_conn_open( wiced_mqtt_object_t mqtt_obj, wiced_ip_add
     wiced_mqtt_pkt_connect_t conninfo;
     wiced_result_t ret = WICED_SUCCESS;
 
-    char id_plus_mac[sizeof(macString)+sizeof(CLIENT_ID)];  // WW101 addition
-
     memset( &conninfo, 0, sizeof( conninfo ) );
     conninfo.port_number = 0;
     conninfo.mqtt_version = WICED_MQTT_PROTOCOL_VER4;
     conninfo.clean_session = 1;
-    snprintf(id_plus_mac, sizeof(id_plus_mac), "%s_%s", macString, (uint8_t*) CLIENT_ID); // WW101 addition
-    conninfo.client_id = (uint8_t*) id_plus_mac; // WW101 modified
+    conninfo.client_id = (uint8_t*) CLIENT_ID;
     conninfo.keep_alive = 5;
     conninfo.password = NULL;
     conninfo.username = NULL;
@@ -259,12 +253,6 @@ void application_start( void )
         WPRINT_APP_INFO( ( "\nNot able to join the requested AP\n\n" ) );
         return;
     }
-
-    /* WW101 addition - get MAC address and save as a string*/
-    wiced_wifi_get_mac_address(&mac);
-    snprintf(macString, sizeof(macString), "%02X:%02X:%02X:%02X:%02X:%02X",
-                       mac.octet[0], mac.octet[1], mac.octet[2],
-                       mac.octet[3], mac.octet[4], mac.octet[5]);
 
     /* Allocate memory for MQTT object*/
     mqtt_object = (wiced_mqtt_object_t) malloc( WICED_MQTT_OBJECT_MEMORY_SIZE_REQUIREMENT );

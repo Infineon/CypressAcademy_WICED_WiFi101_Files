@@ -46,7 +46,7 @@
 
 /* Broker info */
 #define MQTT_BROKER_ADDRESS                 "amk6m51qrxr2u.iot.us-east-1.amazonaws.com"
-#define CLIENT_ID                           "wiced_weather_aws"
+#define THING_NAME_BASE                     "ww101_"
 #define TOPIC_HEAD							"$aws/things/ww101_"
 #define TOPIC_SUBSCRIBE                     "$aws/things/+/shadow/update/documents"
 #define TOPIC_GETSUBSCRIBE                  "$aws/things/+/shadow/get/accepted"
@@ -70,10 +70,6 @@ typedef enum command {
 /*************** Global Variables *****************/
 /* Broker object and function return value */
 volatile wiced_mqtt_object_t   mqtt_object;
-
-/* MAC address which will be used as part of the CLIENT_ID to make it unique */
-static wiced_mac_t mac;     // WW101 addition
-static char macString[20];  // WW101 addition
 
 /* Structure to hold data from an IoT device */
 typedef struct {
@@ -211,12 +207,6 @@ void application_start( )
         WPRINT_APP_INFO( ( "\nNot able to join the requested AP\n\n" ) );
         return;
     }
-
-    /* WW101 addition - get MAC address and save as a string*/
-    wiced_wifi_get_mac_address(&mac);
-    snprintf(macString, sizeof(macString), "%02X:%02X:%02X:%02X:%02X:%02X",
-                       mac.octet[0], mac.octet[1], mac.octet[2],
-                       mac.octet[3], mac.octet[4], mac.octet[5]);
 
     /* Allocate memory for MQTT object*/
     mqtt_object = (wiced_mqtt_object_t) malloc( WICED_MQTT_OBJECT_MEMORY_SIZE_REQUIREMENT );
@@ -808,14 +798,14 @@ static wiced_result_t mqtt_conn_open( wiced_mqtt_object_t mqtt_obj, wiced_ip_add
     wiced_mqtt_pkt_connect_t conninfo;
     wiced_result_t        ret = WICED_SUCCESS;
 
-    char id_plus_mac[sizeof(macString)+sizeof(CLIENT_ID)];  // WW101 addition
+    char thingName[10];
+    snprintf(thingName, sizeof(thingName), "%s%02d", THING_NAME_BASE, MY_THING);
 
     memset( &conninfo, 0, sizeof( conninfo ) );
     conninfo.port_number = 0;
     conninfo.mqtt_version = WICED_MQTT_PROTOCOL_VER4;
     conninfo.clean_session = 1;
-    snprintf(id_plus_mac, sizeof(id_plus_mac), "%s_%s", macString, (uint8_t*) CLIENT_ID); // WW101 addition
-    conninfo.client_id = (uint8_t*) id_plus_mac; // WW101 modified
+    conninfo.client_id = (uint8_t*) thingName;
     conninfo.keep_alive = 5;
     conninfo.password = NULL;
     conninfo.username = NULL;
