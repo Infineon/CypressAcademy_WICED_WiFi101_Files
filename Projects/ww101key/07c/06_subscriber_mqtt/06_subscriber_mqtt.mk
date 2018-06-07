@@ -30,17 +30,18 @@
  # so agrees to indemnify Cypress against all liability.
 #
 
-NAME := App_WW101KEY_07c_06_subcriber
+NAME := App_WW101KEY_07c_06_subcriber_mqtt
 
-$(NAME)_SOURCES := 06_subscriber.c
+$(NAME)_SOURCES := 06_subscriber_mqtt.c
 
-$(NAME)_COMPONENTS := protocols/AWS
+$(NAME)_COMPONENTS := protocols/MQTT
 
 WIFI_CONFIG_DCT_H := wifi_config_dct.h
 
 $(NAME)_RESOURCES  := apps/aws/iot/rootca.cer \
                       apps/aws/iot/subscriber/client.cer \
                       apps/aws/iot/subscriber/privkey.cer
+
 # To support Low memory platforms, disabling components which are not required
 GLOBAL_DEFINES += WICED_CONFIG_DISABLE_SSL_SERVER \
                   WICED_CONFIG_DISABLE_DTLS \
@@ -48,12 +49,11 @@ GLOBAL_DEFINES += WICED_CONFIG_DISABLE_SSL_SERVER \
                   WICED_CONFIG_DISABLE_DES \
                   WICED_CONFIG_DISABLE_ADVANCED_SECURITY_CURVES
 
-VALID_OSNS_COMBOS  := ThreadX-NetX_Duo FreeRTOS-LwIP
 VALID_PLATFORMS := BCM943362WCD4 \
                    BCM943362WCD6 \
                    BCM943362WCD8 \
                    BCM943364WCD1 \
-                   CYW94343WWCD1_EVB \
+                   BCM94343WWCD1 \
                    BCM943438WCD1 \
                    BCM94343WWCD2 \
                    CY8CKIT_062 \
@@ -61,11 +61,7 @@ VALID_PLATFORMS := BCM943362WCD4 \
                    CYW9MCU7X9N364 \
                    CYW943907AEVAL1F \
                    CYW9WCD2REFAD* \
-                   CYW9WCD760PINSDAD2 \
-                   CYW943012EVB* \
-                   CYW943455EVB* \
                    WW101_*
-                   
 
 ifeq ($(PLATFORM),$(filter $(PLATFORM), CYW9MCU7X9N364))
 GLOBAL_DEFINES += PLATFORM_HEAP_SIZE=34*1024

@@ -43,7 +43,7 @@ extern "C" {
 /******************************************************
  *                      Macros
  ******************************************************/
-#define AWS_DEFAULT_THING_NAME   "KEY_TestThing"
+#define AWS_DEFAULT_THING_NAME   "lightbulb"
 
 /******************************************************
  *                    Constants

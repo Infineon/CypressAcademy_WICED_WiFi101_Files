@@ -41,12 +41,22 @@
  * If we press the button first time it publishes "LIGHT OFF" and if we press next the same button
  * it will publish "LIGHT ON".
  *
+ *  The application should provide typical AWS IoT configuration like:
+ *  i.   Publisher's 'Thing' name( Your device's logical name as per AWS IoT console)
+ *  ii.  Publisher's AWS Security credentials - Private Key & Certificate.
+ *  iii. AWS IoT Root CA certificate
+ *  iv.  Publisher's AWS endpoint( typically unique for a single account )
+ *         For example - "a38tdxxxxxxxx.iot.us-east-1.amazonaws.com"
+ *         Note: This app can also be used to connect & publish directly to AWS MQTT broker.
+ *         For example - "data.iot.us-east-1.amazonaws.com" is valid MQTT Broker URI.
+ *         Use this if you don't know your AWS endpoint URI.
+ *
  * To run the app, work through the following steps.
  *  1. Modify Wi-Fi configuration settings CLIENT_AP_SSID and CLIENT_AP_PASSPHRASE in wifi_config_dct.h to match your router settings.
  *  2. Update the AWS MQTT broker address (MQTT_BROKER_ADDRESS) if needed.
- *  3. Make sure AWS Root Certifcate 'resources/apps/aws_iot/rootca.cer' is up to date while building the app.
- *  4. Copy client certificate and private key for the given AWS IOT user in resources/apps/aws_iot folder.
- *     Ensure that valid client certificates and private keys are provided for the AWS IOT user in resources/apps/aws_iot folder.
+ *  3. Make sure AWS Root Certifcate 'resources/apps/aws/iot/rootca.cer' is up to date while building the app.
+ *  4. Copy client certificate and private key for the given AWS IOT user in resources/apps/aws/iot/publisher/ folder.
+ *     Ensure that valid client certificates and private keys are provided for the AWS IOT user in resources/apps/aws/iot folder.
  *  5. Build and run this application.
  *  6. Run another application which subscribes to the same topic.
  *  7. Press button WICED_BUTTON1 to publish the messages "LIGHT ON" or LIGHT OFF" alternatively and check if
@@ -55,312 +65,290 @@
  */
 
 #include "wiced.h"
-#include "mqtt_api.h"
+#include "wiced_aws.h"
+#include "aws_common.h"
+
 #include "resources.h"
 
 /******************************************************
  *                      Macros
  ******************************************************/
-#define MQTT_BROKER_ADDRESS                 "amk6m51qrxr2u.iot.us-east-1.amazonaws.com"
-#define MQTT_BROKER_PEER_COMMON_NAME        "*.iot.us-east-1.amazonaws.com"
-#define WICED_TOPIC                         "KEY_TestTopic"
-/* The CLIENT_ID is the AWS Thing Name */
-#define CLIENT_ID                           "KEY_TestThing"
-#define MQTT_REQUEST_TIMEOUT                (5000)
-#define MQTT_DELAY_IN_MILLISECONDS          (1000)
-#define MQTT_MAX_RESOURCE_SIZE              (0x7fffffff)
-#define MQTT_PUBLISH_RETRY_COUNT            (3)
-#define MSG_ON                              "LIGHT ON"
-#define MSG_OFF                             "LIGHT OFF"
+
+#define APPLICATION_DELAY_IN_MILLISECONDS          (1000)
+
+#define PUBLISHER_CERTIFICATES_MAX_SIZE            (0x7fffffff)
+
+/* Use these URIs if this Publishers's AWS IoT Endpoint is not known */
+#define AWS_IOT_MQTT_BROKER_ADDRESS                "data.iot.us-east-1.amazonaws.com"
+#define AWS_IOT_MQTT_BROKER_PEER_COMMON_NAME       "*.iot.us-east-1.amazonaws.com"
+
+#define WICED_TOPIC                                "KEY_TestTopic"
+#define MSG_ON                                     "LIGHT ON"
+#define MSG_OFF                                    "LIGHT OFF"
+#define APP_PUBLISH_RETRY_COUNT                    (5)
 
 /******************************************************
  *               Variable Definitions
  ******************************************************/
-static wiced_ip_address_t                   broker_address;
-static wiced_mqtt_event_type_t              expected_event;
-static wiced_semaphore_t                    msg_semaphore;
-static wiced_semaphore_t                    wake_semaphore;
-static wiced_mqtt_security_t                security;
-static uint8_t                              pub_in_progress = 0;
-static wiced_bool_t                         is_connected = WICED_FALSE;
+
+static wiced_semaphore_t  wake_semaphore;
+static uint8_t            do_publish = 0;
+static wiced_bool_t       is_connected = WICED_FALSE;
+
+static wiced_aws_thing_security_info_t my_publisher_security_creds =
+{
+    .private_key         = NULL,
+    .key_length          = 0,
+    .certificate         = NULL,
+    .certificate_length  = 0,
+};
+
+static wiced_aws_endpoint_info_t my_publisher_aws_iot_endpoint = {
+    .transport           = WICED_AWS_TRANSPORT_MQTT_NATIVE,
+    .uri                 = "amk6m51qrxr2u.iot.us-east-1.amazonaws.com",
+    .peer_common_name    = NULL,
+    .ip_addr             = {0},
+    .port                = WICED_AWS_IOT_DEFAULT_MQTT_PORT,
+    .root_ca_certificate = NULL,
+    .root_ca_length      = 0,
+};
+
+static wiced_aws_thing_info_t my_publisher_aws_config = {
+    .name            = "KEY_TestThing",
+    .credentials     = &my_publisher_security_creds,
+};
+
+static wiced_aws_handle_t my_app_aws_handle;
 
 /******************************************************
  *               Static Function Definitions
  ******************************************************/
-static void publish_callback( void* arg )
+
+static void button_press_callback( void* arg )
 {
-    if(pub_in_progress == 0)
+    if(do_publish == 0)
     {
-        pub_in_progress = 1;
+        do_publish = 1;
         wiced_rtos_set_semaphore( &wake_semaphore );
     }
 }
 
-/*
- * A blocking call to an expected event.
- */
-static wiced_result_t wait_for_response( wiced_mqtt_event_type_t event, uint32_t timeout )
+static wiced_result_t get_aws_credentials_from_resources( void )
 {
-    if ( wiced_rtos_get_semaphore( &msg_semaphore, timeout ) != WICED_SUCCESS )
+    uint32_t size_out = 0;
+    wiced_result_t result = WICED_ERROR;
+
+    wiced_aws_thing_security_info_t* security = &my_publisher_security_creds;
+    uint8_t** root_ca_certificate = &my_publisher_aws_iot_endpoint.root_ca_certificate;
+
+    if( security->certificate && security->private_key && (*root_ca_certificate) )
     {
-        return WICED_ERROR;
+        WPRINT_APP_INFO(("\n[Application/AWS] Security Credentials already set(not NULL). Abort Reading from Resources...\n"));
+        return WICED_SUCCESS;
     }
-    else
+
+    /* Get AWS Root CA certificate filename: 'rootca.cer' located @ resources/apps/aws/iot folder */
+    result = resource_get_readonly_buffer( &resources_apps_DIR_aws_DIR_iot_DIR_rootca_cer, 0, PUBLISHER_CERTIFICATES_MAX_SIZE, &size_out, (const void **) root_ca_certificate);
+    if( result != WICED_SUCCESS )
     {
-        if ( event != expected_event )
+        goto _fail_aws_certificate;
+    }
+    if( size_out < 64 )
+    {
+        WPRINT_APP_INFO( ( "\n[Application/AWS] Invalid Root CA Certificate! Replace the dummy certificate with AWS one[<YOUR_WICED_SDK>/resources/app/aws/iot/'rootca.cer']\n\n" ) );
+        resource_free_readonly_buffer( &resources_apps_DIR_aws_DIR_iot_DIR_rootca_cer, (const void *)*root_ca_certificate );
+        goto _fail_aws_certificate;
+    }
+
+    my_publisher_aws_iot_endpoint.root_ca_length = size_out;
+
+    /* Get Publisher's Certificate filename: 'client.cer' located @ resources/apps/aws/iot/pubisher folder */
+    result = resource_get_readonly_buffer( &resources_apps_DIR_aws_DIR_iot_DIR_publisher_DIR_client_cer, 0, PUBLISHER_CERTIFICATES_MAX_SIZE, &size_out, (const void **) &security->certificate );
+    if( result != WICED_SUCCESS )
+    {
+        goto _fail_client_certificate;
+    }
+    if(size_out < 64)
+    {
+        WPRINT_APP_INFO( ( "\n[Application/AWS] Invalid Device Certificate! Replace the dummy certificate with AWS one[<YOUR_WICED_SDK>/resources/app/aws/iot/publisher/'client.cer']\n\n" ) );
+        resource_free_readonly_buffer( &resources_apps_DIR_aws_DIR_iot_DIR_publisher_DIR_client_cer, (const void *)security->certificate );
+        goto _fail_client_certificate;
+    }
+
+    security->certificate_length = size_out;
+
+    /* Get Publisher's Private Key filename: 'privkey.cer' located @ resources/apps/aws/iot/publisher folder */
+    result = resource_get_readonly_buffer( &resources_apps_DIR_aws_DIR_iot_DIR_publisher_DIR_privkey_cer, 0, PUBLISHER_CERTIFICATES_MAX_SIZE, &size_out, (const void **) &security->private_key );
+    if( result != WICED_SUCCESS )
+    {
+        goto _fail_private_key;
+    }
+    if(size_out < 64)
+    {
+        WPRINT_APP_INFO( ( "\n[Application/AWS] Invalid Device Private-Key! Replace the dummy Private-key with AWS one[<YOUR_WICED_SDK>/resources/app/aws/iot/publisher/'privkey.cer'\n\n" ) );
+        resource_free_readonly_buffer( &resources_apps_DIR_aws_DIR_iot_DIR_publisher_DIR_privkey_cer, (const void *)security->private_key );
+        goto _fail_private_key;
+    }
+    security->key_length = size_out;
+
+    return WICED_SUCCESS;
+
+_fail_private_key:
+    resource_free_readonly_buffer( &resources_apps_DIR_aws_DIR_iot_DIR_publisher_DIR_client_cer, (const void *)security->certificate );
+_fail_client_certificate:
+    resource_free_readonly_buffer( &resources_apps_DIR_aws_DIR_iot_DIR_rootca_cer, (const void *)*root_ca_certificate );
+_fail_aws_certificate:
+    return WICED_ERROR;
+}
+
+/*
+ * Call back function to handle AWS events.
+ */
+static void my_publisher_aws_callback( wiced_aws_handle_t aws, wiced_aws_event_type_t event, wiced_aws_callback_data_t* data )
+{
+    if( !aws || !data || (aws != my_app_aws_handle) )
+        return;
+
+    switch ( event )
+    {
+        case WICED_AWS_EVENT_CONNECTED:
         {
-            return WICED_ERROR;
-        }
-    }
-    return WICED_SUCCESS;
-}
-
-/*
- * Open a connection and wait for MQTT_REQUEST_TIMEOUT period to receive a connection open OK event
- */
-static wiced_result_t mqtt_conn_open( wiced_mqtt_object_t mqtt_obj, wiced_ip_address_t *address, wiced_interface_t interface, wiced_mqtt_callback_t callback, wiced_mqtt_security_t *security )
-{
-    wiced_mqtt_pkt_connect_t conninfo;
-    wiced_result_t ret = WICED_SUCCESS;
-
-    memset( &conninfo, 0, sizeof( conninfo ) );
-    conninfo.port_number = 0;
-    conninfo.mqtt_version = WICED_MQTT_PROTOCOL_VER4;
-    conninfo.clean_session = 1;
-    conninfo.client_id = (uint8_t*) CLIENT_ID;
-    conninfo.keep_alive = 5;
-    conninfo.password = NULL;
-    conninfo.username = NULL;
-    conninfo.peer_cn = (uint8_t*) MQTT_BROKER_PEER_COMMON_NAME;
-    ret = wiced_mqtt_connect( mqtt_obj, address, interface, callback, security, &conninfo );
-    if ( ret != WICED_SUCCESS )
-    {
-        return WICED_ERROR;
-    }
-    if ( wait_for_response( WICED_MQTT_EVENT_TYPE_CONNECT_REQ_STATUS, MQTT_REQUEST_TIMEOUT ) != WICED_SUCCESS )
-    {
-        return WICED_ERROR;
-    }
-    return WICED_SUCCESS;
-}
-
-/*
- * Publish (send) message to WICED_TOPIC and wait for 5 seconds to receive a PUBCOMP (as it is QoS=2).
- */
-static wiced_result_t mqtt_app_publish( wiced_mqtt_object_t mqtt_obj, uint8_t qos, uint8_t *topic, uint8_t *data, uint32_t data_len )
-{
-    wiced_mqtt_msgid_t pktid;
-
-    pktid = wiced_mqtt_publish( mqtt_obj, topic, data, data_len, qos );
-
-    if ( pktid == 0 )
-    {
-        return WICED_ERROR;
-    }
-
-    if ( wait_for_response( WICED_MQTT_EVENT_TYPE_PUBLISHED, MQTT_REQUEST_TIMEOUT ) != WICED_SUCCESS )
-    {
-        return WICED_ERROR;
-    }
-    return WICED_SUCCESS;
-}
-
-/*
- * Close a connection and wait for 5 seconds to receive a connection close OK event
- */
-static wiced_result_t mqtt_conn_close( wiced_mqtt_object_t mqtt_obj )
-{
-    if ( wiced_mqtt_disconnect( mqtt_obj ) != WICED_SUCCESS )
-    {
-        return WICED_ERROR;
-    }
-    if ( wait_for_response( WICED_MQTT_EVENT_TYPE_DISCONNECTED, MQTT_REQUEST_TIMEOUT ) != WICED_SUCCESS )
-    {
-        return WICED_ERROR;
-    }
-    return WICED_SUCCESS;
-}
-
-/*
- * Call back function to handle connection events.
- */
-static wiced_result_t mqtt_connection_event_cb( wiced_mqtt_object_t mqtt_object, wiced_mqtt_event_info_t *event )
-{
-    switch ( event->type )
-    {
-        case WICED_MQTT_EVENT_TYPE_DISCONNECTED:
-        {
-            is_connected = WICED_FALSE;
-        }
-        case WICED_MQTT_EVENT_TYPE_CONNECT_REQ_STATUS:
-        case WICED_MQTT_EVENT_TYPE_PUBLISHED:
-        case WICED_MQTT_EVENT_TYPE_SUBCRIBED:
-        case WICED_MQTT_EVENT_TYPE_UNSUBSCRIBED:
-        {
-            expected_event = event->type;
-            wiced_rtos_set_semaphore( &msg_semaphore );
-        }
+            if( data->connection.status == WICED_SUCCESS )
+            {
+                is_connected = WICED_TRUE;
+            }
             break;
-        case WICED_MQTT_EVENT_TYPE_PUBLISH_MSG_RECEIVED:
+        }
+
+        case WICED_AWS_EVENT_DISCONNECTED:
+        {
+            if( data->disconnection.status == WICED_SUCCESS )
+            {
+                is_connected = WICED_FALSE;
+            }
+            break;
+        }
+
+        case WICED_AWS_EVENT_PUBLISHED:
+        case WICED_AWS_EVENT_SUBSCRIBED:
+        case WICED_AWS_EVENT_UNSUBSCRIBED:
+        case WICED_AWS_EVENT_PAYLOAD_RECEIVED:
         default:
             break;
     }
-    return WICED_SUCCESS;
 }
 
 /******************************************************
  *               Function Definitions
  ******************************************************/
+
 void application_start( void )
 {
-    wiced_mqtt_object_t   mqtt_object;
-    wiced_result_t        ret = WICED_SUCCESS;
-    uint32_t              size_out = 0;
-    int                   connection_retries = 0;
-    int                   retries = 0;
-    int                   count = 0;
+    wiced_aws_handle_t aws_connection = 0;
+    wiced_result_t ret = WICED_SUCCESS;
+    uint32_t count = 0;
+    int pub_retries = 0;
     char*                 msg = MSG_OFF;
 
     wiced_init( );
 
-    /* Get AWS root certificate, client certificate and private key respectively */
-    resource_get_readonly_buffer( &resources_apps_DIR_aws_iot_DIR_rootca_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.ca_cert );
-    security.ca_cert_len = size_out;
-
-    resource_get_readonly_buffer( &resources_apps_DIR_aws_iot_DIR_client_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.cert );
-    if(size_out < 64)
-    {
-        WPRINT_APP_INFO( ( "\nNot a valid Certificate! Please replace the dummy certificate file 'resources/app/aws_iot/client.cer' with the one got from AWS\n\n" ) );
-        return;
-    }
-    security.cert_len = size_out;
-
-    resource_get_readonly_buffer( &resources_apps_DIR_aws_iot_DIR_privkey_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.key );
-    if(size_out < 64)
-    {
-        WPRINT_APP_INFO( ( "\nNot a valid Private Key! Please replace the dummy private key file 'resources/app/aws_iot/privkey.cer' with the one got from AWS\n\n" ) );
-        return;
-    }
-    security.key_len = size_out;
-
-    /* Disable roaming to other access points */
-    wiced_wifi_set_roam_trigger( -99 ); /* -99dBm ie. extremely low signal level */
-
     /* Bring up the network interface */
-    ret = wiced_network_up( WICED_STA_INTERFACE, WICED_USE_EXTERNAL_DHCP_SERVER, NULL );
+    ret = wiced_network_up( WICED_AWS_DEFAULT_INTERFACE, WICED_USE_EXTERNAL_DHCP_SERVER, NULL );
     if ( ret != WICED_SUCCESS )
     {
-        WPRINT_APP_INFO( ( "\nNot able to join the requested AP\n\n" ) );
+        WPRINT_APP_INFO( ( "[Application/AWS] Not able to join the requested AP\n\n" ) );
         return;
     }
 
-    /* Allocate memory for MQTT object*/
-    mqtt_object = (wiced_mqtt_object_t) malloc( WICED_MQTT_OBJECT_MEMORY_SIZE_REQUIREMENT );
-    if ( mqtt_object == NULL )
+    ret = get_aws_credentials_from_resources();
+    if( ret != WICED_SUCCESS )
     {
-        WPRINT_APP_ERROR("Dont have memory to allocate for mqtt object...\n");
+        WPRINT_APP_INFO( ("[Application/AWS] Error fetching credentials from resources\n" ) );
         return;
     }
 
-    WPRINT_APP_INFO( ( "Resolving IP address of MQTT broker...\n" ) );
-    ret = wiced_hostname_lookup( MQTT_BROKER_ADDRESS, &broker_address, 10000, WICED_STA_INTERFACE );
-    WPRINT_APP_INFO(("Resolved Broker IP: %u.%u.%u.%u\n\n", (uint8_t)(GET_IPV4_ADDRESS(broker_address) >> 24),
-                    (uint8_t)(GET_IPV4_ADDRESS(broker_address) >> 16),
-                    (uint8_t)(GET_IPV4_ADDRESS(broker_address) >> 8),
-                    (uint8_t)(GET_IPV4_ADDRESS(broker_address) >> 0)));
-    if ( ret == WICED_ERROR || broker_address.ip.v4 == 0 )
+    ret = wiced_aws_init( &my_publisher_aws_config , my_publisher_aws_callback );
+    if( ret != WICED_SUCCESS )
     {
-        WPRINT_APP_INFO(("Error in resolving DNS\n"));
+        WPRINT_APP_INFO( ( "[Application/AWS] Failed to Initialize AWS library\n\n" ) );
         return;
     }
+
+    aws_connection = (wiced_aws_handle_t)wiced_aws_create_endpoint(&my_publisher_aws_iot_endpoint);
+    if( !aws_connection )
+    {
+        WPRINT_APP_INFO( ( "[Application/AWS] Failed to create AWS connection handle\n\n" ) );
+        return;
+    }
+
+    my_app_aws_handle = aws_connection;
 
     wiced_rtos_init_semaphore( &wake_semaphore );
-    wiced_mqtt_init( mqtt_object );
-    wiced_rtos_init_semaphore( &msg_semaphore );
 
-    do
+    WPRINT_APP_INFO(("[Application/AWS] Opening connection...\n"));
+    ret = wiced_aws_connect(aws_connection);
+    if ( ret != WICED_SUCCESS )
     {
-        pub_in_progress = 0;
-        retries = 0;
-        count = 0;
-        connection_retries = 0;
-        is_connected = WICED_FALSE;
+        WPRINT_APP_INFO(("[Application/AWS] Connect Failed\r\n"));
+        return;
+    }
 
-        WPRINT_APP_INFO(("[MQTT] Opening connection..."));
-        do
-        {
-            ret = mqtt_conn_open( mqtt_object, &broker_address, WICED_STA_INTERFACE, mqtt_connection_event_cb, &security );
-            wiced_rtos_delay_milliseconds( 100 );
-            connection_retries++ ;
-        } while ( ( ret != WICED_SUCCESS ) && ( connection_retries < WICED_MQTT_CONNECTION_NUMBER_OF_RETRIES ) );
+    wiced_rtos_delay_milliseconds(1500);
+    do_publish = 0;
 
-        if ( ret != WICED_SUCCESS )
+    /* configure push button to publish a message */
+    wiced_gpio_input_irq_enable( WICED_BUTTON1, IRQ_TRIGGER_RISING_EDGE, button_press_callback, NULL );
+
+    while ( 1 )
+    {
+
+        pub_retries = 0;
+
+        wiced_rtos_get_semaphore( &wake_semaphore, APPLICATION_DELAY_IN_MILLISECONDS * 5 );
+        if ( is_connected == WICED_FALSE )
         {
-            WPRINT_APP_INFO(("Failed\r\n"));
-            wiced_rtos_delay_milliseconds( MQTT_DELAY_IN_MILLISECONDS * 5 );
-            continue;
+            break;
         }
-        WPRINT_APP_INFO(("Success\r\n"));
-        is_connected = WICED_TRUE;
-        /* configure push button to publish a message */
-        wiced_gpio_input_irq_enable( WICED_BUTTON1, IRQ_TRIGGER_RISING_EDGE, publish_callback, NULL );
-
-        while ( 1 )
+        if ( do_publish == 1 )
         {
-            retries = 0;
-
-            wiced_rtos_get_semaphore( &wake_semaphore, MQTT_DELAY_IN_MILLISECONDS * 5 );
-            if ( is_connected == WICED_FALSE )
+            WPRINT_APP_INFO(("[Application/AWS] Publishing..."));
+            if ( count % 2 )
             {
+                msg = MSG_ON;
+            }
+            else
+            {
+                msg = MSG_OFF;
+            }
+            do
+            {
+                ret = wiced_aws_publish( aws_connection, WICED_TOPIC, (uint8_t *)msg, strlen( msg ), WICED_AWS_QOS_ATLEAST_ONCE );
+                pub_retries++ ;
+            } while ( ( ret != WICED_SUCCESS ) && ( pub_retries < APP_PUBLISH_RETRY_COUNT ) );
+            if ( ret != WICED_SUCCESS )
+            {
+                WPRINT_APP_INFO((" Failed\r\n"));
                 break;
             }
-            if ( pub_in_progress == 1 )
+            else
             {
-                WPRINT_APP_INFO(("[MQTT] Publishing..."));
-                if ( count % 2 )
-                {
-                    msg = MSG_ON;
-                }
-                else
-                {
-                    msg = MSG_OFF;
-                }
-                do
-                {
-                    ret = mqtt_app_publish( mqtt_object, WICED_MQTT_QOS_DELIVER_AT_LEAST_ONCE, (uint8_t*) WICED_TOPIC, (uint8_t*) msg, strlen( msg ) );
-                    retries++ ;
-                } while ( ( ret != WICED_SUCCESS ) && ( retries < MQTT_PUBLISH_RETRY_COUNT ) );
-                if ( ret != WICED_SUCCESS )
-                {
-                    WPRINT_APP_INFO((" Failed\r\n"));
-                    break;
-                }
-                else
-                {
-                    WPRINT_APP_INFO((" Success\r\n"));
-                }
-
-                pub_in_progress = 0;
-                count++ ;
+                WPRINT_APP_INFO((" Success\r\n"));
             }
 
-            wiced_rtos_delay_milliseconds( 100 );
+            do_publish = 0;
+            count++ ;
         }
 
-        WPRINT_APP_INFO(("[MQTT] Closing connection...\r\n"));
-        mqtt_conn_close( mqtt_object );
-        wiced_gpio_input_irq_disable( WICED_BUTTON1 );
+        wiced_rtos_delay_milliseconds( 100 );
+    }
 
-        WPRINT_APP_INFO(("[MQTT] Wait for 40 seconds so that wifi network will be ready ( delay is only for testing purpose )...\r\n"));
-        wiced_rtos_delay_milliseconds( MQTT_DELAY_IN_MILLISECONDS * 40 );
-    } while ( 1 );
+    WPRINT_APP_INFO(("[Application/AWS] Closing connection...\r\n"));
+    wiced_aws_disconnect( aws_connection );
 
-    wiced_rtos_deinit_semaphore( &msg_semaphore );
-    WPRINT_APP_INFO(("[MQTT] Deinit connection...\r\n"));
-    ret = wiced_mqtt_deinit( mqtt_object );
     wiced_rtos_deinit_semaphore( &wake_semaphore );
-    free( mqtt_object );
-    mqtt_object = NULL;
+
+    WPRINT_APP_INFO(("[Application/AWS] Deinitializing AWS library...\r\n"));
+    ret = wiced_aws_deinit( );
 
     return;
 }

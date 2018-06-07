@@ -30,55 +30,24 @@
  # so agrees to indemnify Cypress against all liability.
 #
 
-NAME := App_WW101KEY_07c_08_shadow
+NAME := App_WW101KEY_07c_04_publisher_mqtt
 
-$(NAME)_SOURCES := 08_shadow.c
+$(NAME)_SOURCES := 04_publisher_mqtt.c
 
-$(NAME)_SOURCES += aws_config.c \
-                   aws_common.c
-
-$(NAME)_INCLUDES   := .
+$(NAME)_COMPONENTS := protocols/MQTT
 
 WIFI_CONFIG_DCT_H := wifi_config_dct.h
-APPLICATION_DCT := aws_config_dct.c
 
-#GLOBAL_DEFINES     += USE_HTTPS
-ifneq (,$(findstring USE_HTTPS,$(GLOBAL_DEFINES)))
-CERTIFICATE := $(SOURCE_ROOT)resources/certificates/wiced_demo_server_cert.cer
-PRIVATE_KEY := $(SOURCE_ROOT)resources/certificates/wiced_demo_server_cert_key.key
-endif
+$(NAME)_RESOURCES  := apps/aws/iot/rootca.cer \
+                      apps/aws/iot/publisher/client.cer \
+                      apps/aws/iot/publisher/privkey.cer
 
-$(NAME)_COMPONENTS := protocols/MQTT \
-                      inputs/gpio_button \
-                      libraries/utilities/JSON_parser
-
-$(NAME)_RESOURCES  := apps/aws_iot/rootca.cer
-
-$(NAME)_RESOURCES += images/cypresslogo.png \
-                     images/cypresslogo_line.png \
-                     images/favicon.ico \
-                     images/scan_icon.png \
-                     images/wps_icon.png \
-                     images/64_0bars.png \
-                     images/64_1bars.png \
-                     images/64_2bars.png \
-                     images/64_3bars.png \
-                     images/64_4bars.png \
-                     images/64_5bars.png \
-                     images/tick.png \
-                     images/cross.png \
-                     images/lock.png \
-                     images/progress.gif \
-                     scripts/general_ajax_script.js \
-                     scripts/wpad.dat \
-                     apps/aws_iot/aws_config.html \
-                     config/scan_page_outer.html \
-                     styles/buttons.css \
-                     styles/border_radius.htc
-
-$(NAME)_COMPONENTS += daemons/HTTP_server \
-                      daemons/DNS_redirect \
-                      protocols/DNS
+# To support Low memory platforms, disabling components which are not required
+GLOBAL_DEFINES += WICED_CONFIG_DISABLE_SSL_SERVER \
+                  WICED_CONFIG_DISABLE_DTLS \
+                  WICED_CONFIG_DISABLE_ENTERPRISE_SECURITY \
+                  WICED_CONFIG_DISABLE_DES \
+                  WICED_CONFIG_DISABLE_ADVANCED_SECURITY_CURVES
 
 VALID_PLATFORMS := BCM943362WCD4 \
                    BCM943362WCD6 \
@@ -89,6 +58,12 @@ VALID_PLATFORMS := BCM943362WCD4 \
                    BCM94343WWCD2 \
                    CY8CKIT_062 \
                    NEB1DX* \
+                   CYW9MCU7X9N364 \
                    CYW943907AEVAL1F \
                    CYW9WCD2REFAD2* \
                    WW101_*
+
+ifeq ($(PLATFORM),$(filter $(PLATFORM), CYW9MCU7X9N364))
+GLOBAL_DEFINES += PLATFORM_HEAP_SIZE=34*1024
+USE_LIBC_PRINTF     := 0
+endif

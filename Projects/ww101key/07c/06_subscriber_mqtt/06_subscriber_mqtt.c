@@ -1,11 +1,34 @@
 /*
- * Broadcom Proprietary and Confidential. Copyright 2016 Broadcom
- * All Rights Reserved.
+ * Copyright 2018, Cypress Semiconductor Corporation or a subsidiary of 
+ * Cypress Semiconductor Corporation. All Rights Reserved.
+ * 
+ * This software, associated documentation and materials ("Software"),
+ * is owned by Cypress Semiconductor Corporation
+ * or one of its subsidiaries ("Cypress") and is protected by and subject to
+ * worldwide patent protection (United States and foreign),
+ * United States copyright laws and international treaty provisions.
+ * Therefore, you may use this Software only as provided in the license
+ * agreement accompanying the software package from which you
+ * obtained this Software ("EULA").
+ * If no EULA applies, Cypress hereby grants you a personal, non-exclusive,
+ * non-transferable license to copy, modify, and compile the Software
+ * source code solely for use in connection with Cypress's
+ * integrated circuit products. Any reproduction, modification, translation,
+ * compilation, or representation of this Software except as specified
+ * above is prohibited without the express written permission of Cypress.
  *
- * This is UNPUBLISHED PROPRIETARY SOURCE CODE of Broadcom Corporation;
- * the contents of this file may not be disclosed to third parties, copied
- * or duplicated in any form, in whole or in part, without the prior
- * written permission of Broadcom Corporation.
+ * Disclaimer: THIS SOFTWARE IS PROVIDED AS-IS, WITH NO WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, NONINFRINGEMENT, IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. Cypress
+ * reserves the right to make changes to the Software without notice. Cypress
+ * does not assume any liability arising out of the application or use of the
+ * Software or any product or circuit described in the Software. Cypress does
+ * not authorize its products for use in any products where a malfunction or
+ * failure of the Cypress product may reasonably be expected to result in
+ * significant property damage, injury or death ("High Risk Product"). By
+ * including Cypress's product in a High Risk Product, the manufacturer
+ * of such system or application assumes all risk of such use and in doing
+ * so agrees to indemnify Cypress against all liability.
  */
 
 #include "wiced.h"
@@ -35,8 +58,10 @@
  *                      Macros
  ******************************************************/
 #define MQTT_BROKER_ADDRESS                 "amk6m51qrxr2u.iot.us-east-1.amazonaws.com"
-#define WICED_TOPIC                         "GJL_TestTopic"
-#define CLIENT_ID                           "wiced_subcriber_aws_GJL"
+#define MQTT_BROKER_PEER_COMMON_NAME        "*.iot.us-east-1.amazonaws.com"
+#define WICED_TOPIC                         "KEY_TestTopic"
+/* The CLIENT_ID is the AWS Thing Name */
+#define CLIENT_ID                           "KEY_TestThing"
 #define MQTT_REQUEST_TIMEOUT                (5000)
 #define MQTT_DELAY_IN_MILLISECONDS          (1000)
 #define MQTT_MAX_RESOURCE_SIZE              (0x7fffffff)
@@ -49,6 +74,8 @@ static wiced_ip_address_t                    broker_address;
 static wiced_mqtt_event_type_t               expected_event;
 static wiced_semaphore_t                     semaphore;
 static wiced_mqtt_security_t                 security;
+static wiced_bool_t                          is_connected = WICED_FALSE;
+static wiced_bool_t                          is_subscribed = WICED_FALSE;
 
 /******************************************************
  *               Static Function Definitions
@@ -58,12 +85,11 @@ static wiced_mqtt_security_t                 security;
  */
 static wiced_result_t mqtt_connection_event_cb( wiced_mqtt_object_t mqtt_object, wiced_mqtt_event_info_t *event )
 {
-    static char data[ 10 ];
-
     switch ( event->type )
     {
-        case WICED_MQTT_EVENT_TYPE_CONNECT_REQ_STATUS:
         case WICED_MQTT_EVENT_TYPE_DISCONNECTED:
+            is_connected = WICED_FALSE;
+        case WICED_MQTT_EVENT_TYPE_CONNECT_REQ_STATUS:
         case WICED_MQTT_EVENT_TYPE_PUBLISHED:
         case WICED_MQTT_EVENT_TYPE_SUBCRIBED:
         case WICED_MQTT_EVENT_TYPE_UNSUBSCRIBED:
@@ -75,9 +101,8 @@ static wiced_result_t mqtt_connection_event_cb( wiced_mqtt_object_t mqtt_object,
         case WICED_MQTT_EVENT_TYPE_PUBLISH_MSG_RECEIVED:
         {
             wiced_mqtt_topic_msg_t msg = event->data.pub_recvd;
-            memcpy( data, msg.data, msg.data_len );
-            data[ msg.data_len + 1 ] = '\0';
-            if ( !strncmp( data, "LIGHT ON", msg.data_len ) )
+
+            if ( !strncmp( (char*) msg.data, "LIGHT ON", msg.data_len ) )
             {
                 wiced_gpio_output_high( WICED_LED1 );
                 WPRINT_APP_INFO(( "light on\n" ));
@@ -121,6 +146,7 @@ static wiced_result_t mqtt_conn_open( wiced_mqtt_object_t mqtt_obj, wiced_ip_add
 {
     wiced_mqtt_pkt_connect_t conninfo;
     wiced_result_t ret = WICED_SUCCESS;
+
     memset( &conninfo, 0, sizeof( conninfo ) );
     conninfo.port_number = 0;
     conninfo.mqtt_version = WICED_MQTT_PROTOCOL_VER4;
@@ -129,7 +155,7 @@ static wiced_result_t mqtt_conn_open( wiced_mqtt_object_t mqtt_obj, wiced_ip_add
     conninfo.keep_alive = 5;
     conninfo.password = NULL;
     conninfo.username = NULL;
-    conninfo.peer_cn = (uint8_t*) "*.iot.us-east-1.amazonaws.com";
+    conninfo.peer_cn = (uint8_t*) MQTT_BROKER_PEER_COMMON_NAME;
 
     ret = wiced_mqtt_connect( mqtt_obj, address, interface, callback, security, &conninfo );
     if ( ret != WICED_SUCCESS )
@@ -191,10 +217,10 @@ void application_start( void )
     wiced_init( );
 
     /* Get AWS root certificate, client certificate and private key respectively */
-    resource_get_readonly_buffer( &resources_apps_DIR_aws_iot_DIR_rootca_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.ca_cert );
+    resource_get_readonly_buffer( &resources_apps_DIR_aws_DIR_iot_DIR_rootca_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.ca_cert );
     security.ca_cert_len = size_out;
 
-    resource_get_readonly_buffer( &resources_apps_DIR_aws_iot_DIR_client_subscriber_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.cert );
+    resource_get_readonly_buffer( &resources_apps_DIR_aws_DIR_iot_DIR_subscriber_DIR_client_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.cert );
     if(size_out < 64)
     {
         WPRINT_APP_INFO( ( "\nNot a valid Certificate! Please replace the dummy certificate file 'resources/app/aws_iot/client.cer' with the one got from AWS\n\n" ) );
@@ -202,7 +228,7 @@ void application_start( void )
     }
     security.cert_len = size_out;
 
-    resource_get_readonly_buffer( &resources_apps_DIR_aws_iot_DIR_privkey_subscriber_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.key );
+    resource_get_readonly_buffer( &resources_apps_DIR_aws_DIR_iot_DIR_subscriber_DIR_privkey_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.key );
     if(size_out < 64)
     {
         WPRINT_APP_INFO( ( "\nNot a valid Private Key! Please replace the dummy private key file 'resources/app/aws_iot/privkey.cer' with the one got from AWS\n\n" ) );
@@ -245,6 +271,11 @@ void application_start( void )
     wiced_rtos_init_semaphore( &semaphore );
     do
     {
+        is_connected = WICED_FALSE;
+        is_subscribed = WICED_FALSE;
+        connection_retries = 0;
+        retries = 0;
+
         WPRINT_APP_INFO(("[MQTT] Opening connection..."));
         do
         {
@@ -254,13 +285,16 @@ void application_start( void )
         if ( ret != WICED_SUCCESS )
         {
             WPRINT_APP_INFO((" Failed\n"));
-            return;
+            wiced_rtos_delay_milliseconds( MQTT_DELAY_IN_MILLISECONDS * 5 );
+            continue;
         }
         else
         {
+            is_connected = WICED_TRUE;
             WPRINT_APP_INFO((" Success\n"));
 
         }
+
         WPRINT_APP_INFO(("[MQTT] Subscribing..."));
 
         do
@@ -271,13 +305,20 @@ void application_start( void )
         if ( ret != WICED_SUCCESS )
         {
             WPRINT_APP_INFO((" Failed\n"));
-            return;
+            is_subscribed = WICED_FALSE;
         }
+        else
+        {
         WPRINT_APP_INFO(("Success...\n"));
-
+        is_subscribed = WICED_TRUE;
+        }
         /* Wait in a loop*/
         while ( 1 )
         {
+            if ( is_connected == WICED_FALSE || is_subscribed == WICED_FALSE )
+            {
+                break;
+            }
             wiced_rtos_delay_milliseconds( MQTT_DELAY_IN_MILLISECONDS * 2 );
         }
         WPRINT_APP_INFO(("[MQTT] Closing connection...\n"));

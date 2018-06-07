@@ -35,7 +35,7 @@
  *
  */
 
-#include "aws_config.h"
+#include "device_config.h"
 #include "wiced_framework.h"
 
 

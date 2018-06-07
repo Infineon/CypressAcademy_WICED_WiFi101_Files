@@ -30,25 +30,55 @@
  # so agrees to indemnify Cypress against all liability.
 #
 
-NAME := App_WW101KEY_07c_06_subcriber
+NAME := App_AWS_08_thing_shadow
 
-$(NAME)_SOURCES := 06_subscriber.c
+$(NAME)_SOURCES := 08_thing_shadow.c
 
-$(NAME)_COMPONENTS := protocols/AWS
+$(NAME)_SOURCES += device_config.c
 
-WIFI_CONFIG_DCT_H := wifi_config_dct.h
+$(NAME)_INCLUDES   := .
 
-$(NAME)_RESOURCES  := apps/aws/iot/rootca.cer \
-                      apps/aws/iot/subscriber/client.cer \
-                      apps/aws/iot/subscriber/privkey.cer
-# To support Low memory platforms, disabling components which are not required
-GLOBAL_DEFINES += WICED_CONFIG_DISABLE_SSL_SERVER \
-                  WICED_CONFIG_DISABLE_DTLS \
-                  WICED_CONFIG_DISABLE_ENTERPRISE_SECURITY \
-                  WICED_CONFIG_DISABLE_DES \
-                  WICED_CONFIG_DISABLE_ADVANCED_SECURITY_CURVES
+#WIFI_CONFIG_DCT_H := wifi_config_dct.h
 
-VALID_OSNS_COMBOS  := ThreadX-NetX_Duo FreeRTOS-LwIP
+APPLICATION_DCT   := device_dct_config.c
+
+#GLOBAL_DEFINES     += USE_HTTPS
+ifneq (,$(findstring USE_HTTPS,$(GLOBAL_DEFINES)))
+CERTIFICATE := $(SOURCE_ROOT)resources/certificates/wiced_demo_server_cert.cer
+PRIVATE_KEY := $(SOURCE_ROOT)resources/certificates/wiced_demo_server_cert_key.key
+endif
+
+$(NAME)_COMPONENTS := protocols/AWS \
+                      inputs/gpio_button
+
+$(NAME)_RESOURCES  := apps/aws/iot/rootca.cer
+
+$(NAME)_RESOURCES += images/cypresslogo.png \
+                     images/cypresslogo_line.png \
+                     images/favicon.ico \
+                     images/scan_icon.png \
+                     images/wps_icon.png \
+                     images/64_0bars.png \
+                     images/64_1bars.png \
+                     images/64_2bars.png \
+                     images/64_3bars.png \
+                     images/64_4bars.png \
+                     images/64_5bars.png \
+                     images/tick.png \
+                     images/cross.png \
+                     images/lock.png \
+                     images/progress.gif \
+                     scripts/general_ajax_script.js \
+                     scripts/wpad.dat \
+                     apps/aws/iot/aws_config.html \
+                     config/scan_page_outer.html \
+                     styles/buttons.css \
+                     styles/border_radius.htc
+
+$(NAME)_COMPONENTS += daemons/HTTP_server \
+                      daemons/DNS_redirect \
+                      protocols/DNS
+
 VALID_PLATFORMS := BCM943362WCD4 \
                    BCM943362WCD6 \
                    BCM943362WCD8 \
@@ -58,16 +88,7 @@ VALID_PLATFORMS := BCM943362WCD4 \
                    BCM94343WWCD2 \
                    CY8CKIT_062 \
                    NEB1DX* \
-                   CYW9MCU7X9N364 \
                    CYW943907AEVAL1F \
-                   CYW9WCD2REFAD* \
+                   CYW9WCD2REFAD2* \
                    CYW9WCD760PINSDAD2 \
-                   CYW943012EVB* \
-                   CYW943455EVB* \
                    WW101_*
-                   
-
-ifeq ($(PLATFORM),$(filter $(PLATFORM), CYW9MCU7X9N364))
-GLOBAL_DEFINES += PLATFORM_HEAP_SIZE=34*1024
-USE_LIBC_PRINTF     := 0
-endif

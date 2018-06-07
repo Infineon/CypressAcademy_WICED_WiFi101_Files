@@ -1,3 +1,4 @@
+
 #
 # Copyright 2018, Cypress Semiconductor Corporation or a subsidiary of 
  # Cypress Semiconductor Corporation. All Rights Reserved.
@@ -34,13 +35,13 @@ NAME := App_WW101KEY_07c_04_publisher
 
 $(NAME)_SOURCES := 04_publisher.c
 
-$(NAME)_COMPONENTS := protocols/MQTT
+$(NAME)_COMPONENTS := protocols/AWS
 
 WIFI_CONFIG_DCT_H := wifi_config_dct.h
 
-$(NAME)_RESOURCES  := apps/aws_iot/rootca.cer \
-                      apps/aws_iot/client.cer \
-                      apps/aws_iot/privkey.cer
+$(NAME)_RESOURCES  := apps/aws/iot/rootca.cer \
+                      apps/aws/iot/publisher/client.cer \
+                      apps/aws/iot/publisher/privkey.cer
 
 # To support Low memory platforms, disabling components which are not required
 GLOBAL_DEFINES += WICED_CONFIG_DISABLE_SSL_SERVER \
@@ -49,11 +50,12 @@ GLOBAL_DEFINES += WICED_CONFIG_DISABLE_SSL_SERVER \
                   WICED_CONFIG_DISABLE_DES \
                   WICED_CONFIG_DISABLE_ADVANCED_SECURITY_CURVES
 
+VALID_OSNS_COMBOS  := ThreadX-NetX_Duo FreeRTOS-LwIP
 VALID_PLATFORMS := BCM943362WCD4 \
                    BCM943362WCD6 \
                    BCM943362WCD8 \
                    BCM943364WCD1 \
-                   BCM94343WWCD1 \
+                   CYW94343WWCD1_EVB \
                    BCM943438WCD1 \
                    BCM94343WWCD2 \
                    CY8CKIT_062 \
@@ -61,6 +63,9 @@ VALID_PLATFORMS := BCM943362WCD4 \
                    CYW9MCU7X9N364 \
                    CYW943907AEVAL1F \
                    CYW9WCD2REFAD2* \
+                   CYW9WCD760PINSDAD2 \
+                   CYW943012EVB* \
+                   CYW943455EVB* \
                    WW101_*
 
 ifeq ($(PLATFORM),$(filter $(PLATFORM), CYW9MCU7X9N364))

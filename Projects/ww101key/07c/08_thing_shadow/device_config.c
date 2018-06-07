@@ -35,6 +35,7 @@
  *
  */
 
+#define _GNU_SOURCE /*needed for strcasestr() */
 #include <stdlib.h>
 #include <string.h>
 #include "wiced.h"
@@ -46,15 +47,22 @@
 #include "wiced_network.h"
 #include "wiced_framework.h"
 #include "wiced_wps.h"
-#include "aws_config.h"
+#include "device_config.h"
 
 #ifdef USE_HTTPS
 #include "wiced_tls.h"
 #endif
 
+#include "gpio_button.h"
+
 /******************************************************
  *                      Macros
  ******************************************************/
+
+#ifndef WICED_LED2
+#define WICED_LED2  WICED_LED1
+#endif
+
 #define HTTPS_PORT                  443
 #define HTTP_PORT                   80
 #define PIN_FIELD_NAME              "pin"
@@ -178,6 +186,47 @@ static uint16_t header_length = 0;
 /******************************************************
  *             Static Function Definitions
  ******************************************************/
+
+static void check_for_dct_reset(void)
+{
+    WPRINT_APP_INFO((" Please wait, connecting to network...\n"));
+    WPRINT_APP_INFO(("(To return to SSID console screen, hold USER switch for 5 seconds during RESET to clear DCT configuration)\n"));
+
+    wiced_rtos_delay_milliseconds( 1000 );
+
+    for ( int i = 0; i < 25; i++ )
+    {
+        wiced_gpio_output_high( WICED_LED2 );
+        wiced_rtos_delay_milliseconds( 100 );
+        wiced_gpio_output_low( WICED_LED2 );
+        wiced_rtos_delay_milliseconds( 100 );
+
+        if ( !wiced_gpio_input_get( WICED_BUTTON1 ) )
+        {
+            wiced_rtos_delay_milliseconds( 5000 );
+
+            if ( !wiced_gpio_input_get( WICED_BUTTON1 ) )
+            {
+                aws_config_dct_t aws_dct =
+                {
+                    .is_configured = WICED_FALSE,
+                    .thing_name = AWS_DEFAULT_THING_NAME
+                };
+
+                wiced_gpio_output_high( WICED_LED1 );
+                WPRINT_APP_INFO(( "DCT clearing start\n" ));
+                wiced_dct_write( &aws_dct, DCT_APP_SECTION, 0, sizeof( aws_config_dct_t ) );
+                wiced_rtos_delay_milliseconds( 1000 );
+                wiced_gpio_output_low( WICED_LED1 );
+                WPRINT_APP_INFO(( "DCT clearing end\n" ));
+
+                break;
+            }
+        }
+    }
+
+}
+
 static int32_t process_upgrade_chunk( const char* url_parameters, const char* url_query_string, wiced_http_response_stream_t* stream, void* arg, wiced_http_message_body_t* http_data )
 {
     uint32_t         offset      = 0;
@@ -339,7 +388,7 @@ static int32_t process_app_settings_page( const char* url_parameters, const char
     UNUSED_PARAMETER( arg );
     UNUSED_PARAMETER( http_data );
 
-    wiced_http_response_stream_write_resource( stream, &resources_apps_DIR_aws_iot_DIR_aws_config_html );
+    wiced_http_response_stream_write_resource( stream, &resources_apps_DIR_aws_DIR_iot_DIR_aws_config_html );
 
     return 0;
 }
@@ -589,7 +638,7 @@ static wiced_result_t aws_http_receive_callback ( wiced_http_response_stream_t* 
     wiced_result_t ret = WICED_SUCCESS;
     char *temp = NULL;
 
-    if ( isHeader == WICED_TRUE && strnstr( (const char*)*data, *data_length, "upgrade_chunk.html", sizeof( "upgrade_chunk.html" ) - 1 ) == NULL )
+    if ( isHeader == WICED_TRUE && strnstrn( (const char*)*data, *data_length, "upgrade_chunk.html", sizeof( "upgrade_chunk.html" ) - 1 ) == NULL )
     {
         //printf("May be GET request or not related to upload...\n");
         return ret;
@@ -597,7 +646,7 @@ static wiced_result_t aws_http_receive_callback ( wiced_http_response_stream_t* 
 
     if ( isHeader == WICED_TRUE )
     {
-        temp = strnstr( (const char*)*data, *data_length, CRLF_CRLF, sizeof( CRLF_CRLF ) - 1 );
+        temp = strnstrn( (const char*)*data, *data_length, CRLF_CRLF, sizeof( CRLF_CRLF ) - 1 );
         if(temp != NULL)
         {
             if ( ((int)temp + strlen(CRLF_CRLF)) < ((int)*data + *data_length) )
@@ -637,12 +686,15 @@ static wiced_result_t aws_http_receive_callback ( wiced_http_response_stream_t* 
 /******************************************************
  *               Function Definitions
  ******************************************************/
+
 wiced_result_t aws_configure_device(void)
 {
     wiced_bool_t             device_configured;
     wiced_result_t           result;
     wiced_config_soft_ap_t*  config_ap;
     aws_config_dct_t*        aws_dct_ptr;
+
+    check_for_dct_reset();
 
     result = wiced_dct_read_lock( (void**) &aws_dct_ptr, WICED_FALSE, DCT_APP_SECTION, 0, sizeof( aws_config_dct_t ) );
     if ( result != WICED_SUCCESS )
