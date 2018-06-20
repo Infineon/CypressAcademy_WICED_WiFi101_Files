@@ -282,31 +282,43 @@ static void tcp_server_thread_main(wiced_thread_arg_t arg)
             return;
         }
 
-        result = wiced_tls_init_context( &tls_context, &tls_identity, NULL );
-        if(result != WICED_SUCCESS)
-        {
-            WPRINT_APP_INFO(("Init context failed %d",result));
-            return;
-        }
-
-        result = wiced_tcp_enable_tls(&socket,&tls_context);
-
-        if(result != WICED_SUCCESS)
-        {
-            WPRINT_APP_INFO(("Enabling TLS failed %d",result));
-            return;
-        }
     }
-    wiced_tcp_stream_init(&stream,&socket);
-    if(WICED_SUCCESS != result)
+    else
     {
-        WPRINT_APP_INFO(("Init stream failed\n"));
-        return; // this is a bad outcome
+        wiced_tcp_stream_init(&stream,&socket);
+        if(WICED_SUCCESS != result)
+        {
+            WPRINT_APP_INFO(("Init stream failed\n"));
+            return; // this is a bad outcome
+        }
     }
-
 
     while (1 )
     {
+        if(wwepSecurity == WICED_TRUE)
+        {
+            result = wiced_tls_init_context( &tls_context, &tls_identity, NULL );
+            if(result != WICED_SUCCESS)
+            {
+                WPRINT_APP_INFO(("Init context failed %d",result));
+                return;
+            }
+
+            result = wiced_tcp_enable_tls(&socket,&tls_context);
+
+            if(result != WICED_SUCCESS)
+            {
+                WPRINT_APP_INFO(("Enabling TLS failed %d",result));
+                return;
+            }
+
+            wiced_tcp_stream_init(&stream,&socket);
+            if(WICED_SUCCESS != result)
+            {
+                WPRINT_APP_INFO(("Init stream failed\n"));
+                return; // this is a bad outcome
+            }
+        }
 
         result = wiced_tcp_accept( &socket ); // this halts the thread until there is a connection
 
@@ -337,7 +349,7 @@ static void tcp_server_thread_main(wiced_thread_arg_t arg)
 
         if(wwepSecurity == WICED_TRUE)
         {
-            wiced_tls_reset_context(&tls_context);
+            wiced_tls_deinit_context(&tls_context);
         }
 
         wiced_tcp_stream_deinit(&stream); // clear the stream if any crap left

@@ -207,12 +207,12 @@ static void displayResult(wiced_ip_address_t peerAddress, uint16_t    peerPort, 
     WPRINT_APP_INFO(("%d\t",secureConnectionCount));
 
     WPRINT_APP_INFO(("%u.%u.%u.%u",
-                           (uint8_t)(GET_IPV4_ADDRESS(peerAddress) >> 24),
-                           (uint8_t)(GET_IPV4_ADDRESS(peerAddress) >> 16),
-                           (uint8_t)(GET_IPV4_ADDRESS(peerAddress) >> 8),
-                           (uint8_t)(GET_IPV4_ADDRESS(peerAddress) >> 0)
-                           ));
-       WPRINT_APP_INFO(("\t%d\t%s\n",peerPort,returnMessage));
+            (uint8_t)(GET_IPV4_ADDRESS(peerAddress) >> 24),
+            (uint8_t)(GET_IPV4_ADDRESS(peerAddress) >> 16),
+            (uint8_t)(GET_IPV4_ADDRESS(peerAddress) >> 8),
+            (uint8_t)(GET_IPV4_ADDRESS(peerAddress) >> 0)
+    ));
+    WPRINT_APP_INFO(("\t%d\t%s\n",peerPort,returnMessage));
 }
 
 // The secure server thread
@@ -264,33 +264,31 @@ static void tcp_server_secure_thread_main(wiced_thread_arg_t arg)
         return;
     }
 
-    result = wiced_tls_init_context( &tls_context, &tls_identity, NULL );
-
-    if(result != WICED_SUCCESS)
-    {
-        WPRINT_APP_INFO(("Init context failed %d",result));
-        return;
-    }
-
-    result = wiced_tcp_enable_tls(&socket,&tls_context);
-
-    if(result != WICED_SUCCESS)
-    {
-        WPRINT_APP_INFO(("Enabling TLS failed %d",result));
-        return;
-    }
-
-
-    wiced_tcp_stream_init(&stream,&socket);
-    if(WICED_SUCCESS != result)
-    {
-        WPRINT_APP_INFO(("Init stream failed\n"));
-        return; // this is a bad outcome
-    }
-
-
     while (1 )
     {
+        result = wiced_tls_init_context( &tls_context, &tls_identity, NULL );
+
+        if(result != WICED_SUCCESS)
+        {
+            WPRINT_APP_INFO(("Init context failed %d",result));
+            return;
+        }
+
+        result = wiced_tcp_enable_tls(&socket,&tls_context);
+
+        if(result != WICED_SUCCESS)
+        {
+            WPRINT_APP_INFO(("Enabling TLS failed %d",result));
+            return;
+        }
+
+
+        wiced_tcp_stream_init(&stream,&socket);
+        if(WICED_SUCCESS != result)
+        {
+            WPRINT_APP_INFO(("Init stream failed\n"));
+            return; // this is a bad outcome
+        }
 
         result = wiced_tcp_accept( &socket ); // this halts the thread until there is a connection
 
@@ -317,7 +315,7 @@ static void tcp_server_secure_thread_main(wiced_thread_arg_t arg)
         wiced_tcp_stream_flush(&stream);
         wiced_tcp_disconnect(&socket); // disconnect the connection
 
-        wiced_tls_reset_context(&tls_context);
+        wiced_tls_deinit_context(&tls_context);
 
         wiced_tcp_stream_deinit(&stream); // clear the stream if any crap left
         wiced_tcp_stream_init(&stream,&socket); // setup for next connection
