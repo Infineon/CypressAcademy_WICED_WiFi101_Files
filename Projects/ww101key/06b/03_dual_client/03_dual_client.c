@@ -272,7 +272,7 @@ void application_start(void)
 
      // Use DNS to find the address.. if you can't look it up after 5 seconds then hard code it.
      WPRINT_APP_INFO(("DNS Lookup wwep.ww101.cypress.com\n"));
-     result = wiced_hostname_lookup( "xwwep.ww101.cypress.com", &serverAddress, 5000, WICED_STA_INTERFACE );
+     result = wiced_hostname_lookup( "wwep.ww101.cypress.com", &serverAddress, 5000, WICED_STA_INTERFACE );
      //result = WICED_ERROR;
 
      if ( result == WICED_ERROR || serverAddress.ip.v4 == 0 )
