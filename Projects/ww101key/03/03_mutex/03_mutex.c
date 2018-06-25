@@ -9,7 +9,7 @@
 #include "wiced.h"
 
 // Comment out the following line to see what happens without the mutex
-//#define USE_MUTEX
+#define USE_MUTEX
 
 /* Thread parameters */
 #define THREAD_PRIORITY     (10)

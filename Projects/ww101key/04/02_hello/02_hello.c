@@ -124,11 +124,12 @@ void application_start()
     u8g_init_wiced_i2c_device(&oled_display);
     u8g_InitComFn(&u8g, &u8g_dev_ssd1306_128x64_i2c, u8g_com_hw_i2c_fn);
 
+    u8g_FirstPage(&u8g);
+    do {
+        draw(&u8g);
+    } while (u8g_NextPage(&u8g));
+
 	while(1)
 	{
-		u8g_FirstPage(&u8g);
-		do {
-			draw(&u8g);
-		} while (u8g_NextPage(&u8g));
 	}
 }

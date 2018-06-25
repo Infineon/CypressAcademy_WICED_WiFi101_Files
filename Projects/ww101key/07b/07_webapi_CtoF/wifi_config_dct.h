@@ -35,7 +35,7 @@ extern "C"
 #define SOFT_AP_PASSPHRASE   "12345678"
 
 /* This is the default AP the device will connect to (as a client)*/
-#define CLIENT_AP_SSID       "WW101WPA"
+#define CLIENT_AP_SSID       "CYFI_IOT_EXT"
 #define CLIENT_AP_PASSPHRASE "cypresswicedwifi101"
 #define CLIENT_AP_BSS_TYPE   WICED_BSS_TYPE_INFRASTRUCTURE
 #define CLIENT_AP_SECURITY   WICED_SECURITY_WPA2_MIXED_PSK
