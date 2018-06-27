@@ -87,10 +87,10 @@ void application_start( )
             		print_network_info();
             		break;
             	case '1': // Switch to Alternate Network
-            		update_network_info("WW101WPA_SWITCH", "cypresswicedwifi101s", WICED_SECURITY_WPA2_AES_PSK);
+            		update_network_info("CYFI_IOT_EXT_SW", "cypresswicedwifi101s", WICED_SECURITY_WPA2_AES_PSK);
             		break;
             	case '0': // Switch to WPA Network
-            		update_network_info("WW101WPA", "cypresswicedwifi101", WICED_SECURITY_WPA2_AES_PSK);
+            		update_network_info("CYFI_IOT_EXT", "cypresswicedwifi101", WICED_SECURITY_WPA2_AES_PSK);
             		break;
         	}
         }

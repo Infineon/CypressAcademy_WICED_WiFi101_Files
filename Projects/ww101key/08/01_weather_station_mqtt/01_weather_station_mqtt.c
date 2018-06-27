@@ -7,7 +7,7 @@
 
 /*******************************************************************************************************/
 /* Update this number for the number of the thing that you want to publish to. The default is ww101_00 */
-#define MY_THING  0
+#define MY_THING  00
 /*******************************************************************************************************/
 
 /* The highest number thing on the MQTT Broker that you want to subscribe to */
@@ -132,7 +132,7 @@ wiced_result_t open_mqtt_connection();
 /* Functions from the demo/aws_iot/pub_sub/publisher project used for publishing */
 static wiced_result_t wait_for_response( wiced_mqtt_event_type_t event, uint32_t timeout );
 static wiced_result_t mqtt_conn_open( wiced_mqtt_object_t mqtt_obj, wiced_ip_address_t *address, wiced_interface_t interface, wiced_mqtt_callback_t callback, wiced_mqtt_security_t *security );
-static wiced_result_t mqtt_app_publish( wiced_mqtt_object_t mqtt_obj, uint8_t qos, uint8_t *topic, uint8_t *data, uint32_t data_len );
+static wiced_result_t mqtt_app_publish( wiced_mqtt_object_t mqtt_obj, uint8_t qos, char *topic, uint8_t *data, uint32_t data_len );
 static wiced_result_t mqtt_app_subscribe( wiced_mqtt_object_t mqtt_obj, char *topic, uint8_t qos );
 static wiced_result_t mqtt_conn_close( wiced_mqtt_object_t mqtt_obj );
 static wiced_result_t mqtt_connection_event_cb( wiced_mqtt_object_t mqtt_object, wiced_mqtt_event_info_t *event );
@@ -710,7 +710,7 @@ void publishThread(wiced_thread_arg_t arg)
         pub_retries = 0; // reset retries to 0 before going into the loop so that the next publish after a failure will still work
         do
         {
-            ret = mqtt_app_publish( mqtt_object, WICED_MQTT_QOS_DELIVER_AT_MOST_ONCE, (uint8_t*) topic, (uint8_t*) json, strlen( json ) );
+            ret = mqtt_app_publish( mqtt_object, WICED_MQTT_QOS_DELIVER_AT_MOST_ONCE, topic, (uint8_t*) json, strlen( json ) );
             pub_retries++ ;
         } while ( ( ret != WICED_SUCCESS ) && ( pub_retries < MQTT_PUBLISH_RETRY_COUNT ) );
         if ( ret != WICED_SUCCESS )
@@ -826,7 +826,7 @@ static wiced_result_t mqtt_conn_open( wiced_mqtt_object_t mqtt_obj, wiced_ip_add
 /*
  * Publish (send) message to WICED_TOPIC and wait for 5 seconds to receive a PUBCOMP (as it is QoS=2).
  */
-static wiced_result_t mqtt_app_publish( wiced_mqtt_object_t mqtt_obj, uint8_t qos, uint8_t *topic, uint8_t *data, uint32_t data_len )
+static wiced_result_t mqtt_app_publish( wiced_mqtt_object_t mqtt_obj, uint8_t qos, char *topic, uint8_t *data, uint32_t data_len )
 {
     wiced_mqtt_msgid_t pktid;
 
