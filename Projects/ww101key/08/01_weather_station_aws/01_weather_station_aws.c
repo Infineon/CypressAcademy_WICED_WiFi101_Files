@@ -1,16 +1,18 @@
 /* This is the class project for the WICED WiFi WW-101 class */
 #include "wiced.h"
 #include "u8g_arm.h"
-#include "mqtt_api.h"
+#include "wiced_aws.h"
+#include "aws_common.h"
 #include "resources.h"
 #include "cJSON.h"
 
 /*******************************************************************************************************/
 /* Update this number for the number of the thing that you want to publish to. The default is ww101_00 */
-#define MY_THING  00
+/* Thing number must be 2 digits */
+#define MY_THING_NUMBER  00
 /*******************************************************************************************************/
 
-/* The highest number thing on the MQTT Broker that you want to subscribe to */
+/* The highest number thing on the Broker that you want to subscribe to */
 #define MAX_THING 39
 
 /* I2C port to use. If the platform already defines it, use that, otherwise default to WICED_I2C_2 */
@@ -45,16 +47,19 @@
 #define TIMER_TIME (30000)
 
 /* Broker info */
-#define MQTT_BROKER_ADDRESS                 "amk6m51qrxr2u.iot.us-east-1.amazonaws.com"
+#define AWS_BROKER_ADDRESS                  "amk6m51qrxr2u.iot.us-east-1.amazonaws.com"
 #define THING_NAME_BASE                     "ww101_"
 #define TOPIC_HEAD							"$aws/things/ww101_"
 #define TOPIC_SUBSCRIBE                     "$aws/things/+/shadow/update/documents"
 #define TOPIC_GETSUBSCRIBE                  "$aws/things/+/shadow/get/accepted"
-#define MQTT_REQUEST_TIMEOUT                (5000)
-#define MQTT_DELAY_IN_MILLISECONDS          (1000)
-#define MQTT_MAX_RESOURCE_SIZE              (0x7fffffff)
-#define MQTT_PUBLISH_RETRY_COUNT            (3)
-#define MQTT_SUBSCRIBE_RETRY_COUNT          (3)
+#define CERTIFICATES_MAX_SIZE               (0x7fffffff)
+#define AWS_RETRY_COUNT                     (5)
+#define TIMEOUT                             (2000)
+
+/* This generates the full thing name as a string */
+#define STR1(NUM) #NUM
+#define STR2(NUM) STR1(NUM)
+#define THING_NAME THING_NAME_BASE STR2(MY_THING_NUMBER)
 
 /* Publish commands */
 typedef enum command {
@@ -68,9 +73,6 @@ typedef enum command {
 } CMD;
 
 /*************** Global Variables *****************/
-/* Broker object and function return value */
-volatile wiced_mqtt_object_t   mqtt_object;
-
 /* Structure to hold data from an IoT device */
 typedef struct {
     uint8_t thingNumber;
@@ -94,18 +96,42 @@ const wiced_i2c_device_t i2cPsoc = {
 
 volatile wiced_bool_t printAll = WICED_FALSE;       /* Flag to print updates from all things to UART when true */
 
-volatile uint8_t dispThing = MY_THING; /* Which thing to display data for on the OLED */
+volatile uint8_t dispThing = MY_THING_NUMBER; /* Which thing to display data for on the OLED */
 
 /* IP Address of the local host in IP format */
 wiced_ip_address_t ipAddress;
 
-static wiced_ip_address_t                   broker_address;
-static wiced_mqtt_event_type_t              expected_event;
-static wiced_semaphore_t                    msg_semaphore;
-static wiced_mqtt_security_t                security;
+/* AWS server variables */
+static wiced_aws_thing_security_info_t aws_security_creds =
+{
+    .private_key         = NULL,
+    .key_length          = 0,
+    .certificate         = NULL,
+    .certificate_length  = 0,
+};
+
+static wiced_aws_endpoint_info_t aws_iot_endpoint = {
+    .transport           = WICED_AWS_TRANSPORT_MQTT_NATIVE,
+    .uri                 = AWS_BROKER_ADDRESS,
+    .peer_common_name    = NULL,
+    .ip_addr             = {0},
+    .port                = WICED_AWS_IOT_DEFAULT_MQTT_PORT,
+    .root_ca_certificate = NULL,
+    .root_ca_length      = 0,
+};
+
+static wiced_aws_thing_info_t aws_config = {
+    .name            = THING_NAME,
+    .credentials     = &aws_security_creds,
+};
+
+static volatile wiced_aws_handle_t aws_handle;
+static volatile wiced_bool_t       is_connected = WICED_FALSE;
+
 
 /* RTOS global constructs */
 static wiced_semaphore_t displaySemaphore;
+static wiced_semaphore_t connectSemaphore;
 static wiced_mutex_t i2cMutex;
 static wiced_mutex_t pubSubMutex;
 static wiced_queue_t pubQueue;
@@ -115,6 +141,7 @@ static wiced_thread_t getCapSenseThreadHandle;
 static wiced_thread_t displayThreadHandle;
 static wiced_thread_t commandThreadHandle;
 static wiced_thread_t publishThreadHandle;
+static wiced_thread_t awsConnectThreadHandle;
 
 /*************** Function Prototypes ***************/
 /* ISRs */
@@ -127,25 +154,19 @@ void getCapSenseThread(wiced_thread_arg_t arg);
 void displayThread(wiced_thread_arg_t arg);
 void commandThread(wiced_thread_arg_t arg);
 void publishThread(wiced_thread_arg_t arg);
+void  awsConnectThread(wiced_thread_arg_t arg);
 void publish30sec(void* arg);
-wiced_result_t open_mqtt_connection();
-/* Functions from the demo/aws_iot/pub_sub/publisher project used for publishing */
-static wiced_result_t wait_for_response( wiced_mqtt_event_type_t event, uint32_t timeout );
-static wiced_result_t mqtt_conn_open( wiced_mqtt_object_t mqtt_obj, wiced_ip_address_t *address, wiced_interface_t interface, wiced_mqtt_callback_t callback, wiced_mqtt_security_t *security );
-static wiced_result_t mqtt_app_publish( wiced_mqtt_object_t mqtt_obj, uint8_t qos, char *topic, uint8_t *data, uint32_t data_len );
-static wiced_result_t mqtt_app_subscribe( wiced_mqtt_object_t mqtt_obj, char *topic, uint8_t qos );
-static wiced_result_t mqtt_conn_close( wiced_mqtt_object_t mqtt_obj );
-static wiced_result_t mqtt_connection_event_cb( wiced_mqtt_object_t mqtt_object, wiced_mqtt_event_info_t *event );
+/* Functions from the demo/aws/iot/pub_sub/publisher project */
+static wiced_result_t get_aws_credentials_from_resources( void );
+static void aws_callback( wiced_aws_handle_t aws, wiced_aws_event_type_t event, wiced_aws_callback_data_t* data );
 
 /*************** Functions **********************/
 /*************** Main application ***************/
 void application_start( )
 {
-    uint32_t        size_out = 0;
-    int             sub_retries = 0;
-    uint8_t         loop;
-    wiced_result_t  ret = WICED_SUCCESS;
-
+    int                 sub_retries = 0;
+    uint8_t             loop;
+    wiced_result_t      ret = WICED_SUCCESS;
 
 	wiced_init();	/* Initialize the WICED device */
 
@@ -153,8 +174,8 @@ void application_start( )
      wiced_rtos_init_mutex(&i2cMutex);
      wiced_rtos_init_mutex(&pubSubMutex);
      wiced_rtos_init_semaphore(&displaySemaphore);
+     wiced_rtos_init_semaphore(&connectSemaphore);
      wiced_rtos_init_queue(&pubQueue, NULL, MESSAGE_SIZE, QUEUE_SIZE);
-     wiced_rtos_init_semaphore( &msg_semaphore );
 
 	/* Initialize the I2C to read from the PSoC
 	 * 2 different threads will use this - reading weather data, and reading CapSense */
@@ -176,26 +197,13 @@ void application_start( )
 	wiced_rtos_create_thread(&getWeatherDataThreadHandle, THREAD_BASE_PRIORITY+2, NULL, getWeatherDataThread, THREAD_STACK_SIZE, NULL);
     wiced_rtos_create_thread(&displayThreadHandle, THREAD_BASE_PRIORITY+4, NULL, displayThread, THREAD_STACK_SIZE, NULL);
 
-    /* Start up the MQTT connection to the server */
     /* Get AWS root certificate, client certificate and private key respectively */
-    resource_get_readonly_buffer( &resources_apps_DIR_ww101_DIR_awskeys_DIR_rootca_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.ca_cert );
-    security.ca_cert_len = size_out;
-
-    resource_get_readonly_buffer( &resources_apps_DIR_ww101_DIR_awskeys_DIR_client_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.cert );
-    if(size_out < 64)
+    ret = get_aws_credentials_from_resources();
+    if( ret != WICED_SUCCESS )
     {
-        WPRINT_APP_INFO( ( "\nNot a valid Certificate! Please replace the dummy certificate file 'resources/app/aws_iot/client.cer' with the one got from AWS\n\n" ) );
+        WPRINT_APP_INFO( ("[Application/AWS] Error fetching credentials from resources\n" ) );
         return;
     }
-    security.cert_len = size_out;
-
-    resource_get_readonly_buffer( &resources_apps_DIR_ww101_DIR_awskeys_DIR_privkey_cer, 0, MQTT_MAX_RESOURCE_SIZE, &size_out, (const void **) &security.key );
-    if(size_out < 64)
-    {
-        WPRINT_APP_INFO( ( "\nNot a valid Private Key! Please replace the dummy private key file 'resources/app/aws_iot/privkey.cer' with the one got from AWS\n\n" ) );
-        return;
-    }
-    security.key_len = size_out;
 
     /* Disable roaming to other access points */
     wiced_wifi_set_roam_trigger( -99 ); /* -99dBm ie. extremely low signal level */
@@ -208,94 +216,101 @@ void application_start( )
         return;
     }
 
-    /* Allocate memory for MQTT object*/
-    mqtt_object = (wiced_mqtt_object_t) malloc( WICED_MQTT_OBJECT_MEMORY_SIZE_REQUIREMENT );
-    if ( mqtt_object == NULL )
-    {
-        WPRINT_APP_ERROR("Don't have memory to allocate for mqtt object...\n");
-        return;
-    }
-
-    WPRINT_APP_INFO( ( "Resolving IP address of MQTT broker...\n" ) );
-    ret = wiced_hostname_lookup( MQTT_BROKER_ADDRESS, &broker_address, 10000, WICED_STA_INTERFACE );
-    WPRINT_APP_INFO(("Resolved Broker IP: %u.%u.%u.%u\n\n", (uint8_t)(GET_IPV4_ADDRESS(broker_address) >> 24),
-                    (uint8_t)(GET_IPV4_ADDRESS(broker_address) >> 16),
-                    (uint8_t)(GET_IPV4_ADDRESS(broker_address) >> 8),
-                    (uint8_t)(GET_IPV4_ADDRESS(broker_address) >> 0)));
-    if ( ret == WICED_ERROR || broker_address.ip.v4 == 0 )
-    {
-        WPRINT_APP_INFO(("Error in resolving DNS\n"));
-        return;
-    }
-
     /* Get IP Address for MyThing and save in the Thing data structure */
     wiced_ip_get_ipv4_address(WICED_STA_INTERFACE, &ipAddress);
-    snprintf(iot_data[MY_THING].ip_str, sizeof(iot_data[MY_THING].ip_str), "%d.%d.%d.%d",
+    snprintf(iot_data[MY_THING_NUMBER].ip_str, sizeof(iot_data[MY_THING_NUMBER].ip_str), "%d.%d.%d.%d",
                    (int)((ipAddress.ip.v4 >> 24) & 0xFF), (int)((ipAddress.ip.v4 >> 16) & 0xFF),
                    (int)((ipAddress.ip.v4 >> 8) & 0xFF),  (int)(ipAddress.ip.v4 & 0xFF));
 
     /* Update the display so that the IP address is shown */
     wiced_rtos_set_semaphore(&displaySemaphore);
 
-    ret = open_mqtt_connection();
-
-    if(ret == WICED_SUCCESS) /* Start up everything else if the MQTT connection was opened */
+    /* Initialize the AWS connection and register the callback */
+    ret = wiced_aws_init( &aws_config , aws_callback );
+    if( ret != WICED_SUCCESS )
     {
-        /* Now that the connection is established, get everything else going */
-        WPRINT_APP_INFO(("Success\n"));
-
-        /* Subscribe to the update/documents topic for all things using the + wildcard */
-        wiced_rtos_lock_mutex(&pubSubMutex);
-        WPRINT_APP_INFO(("[MQTT] Subscribing to %s...",TOPIC_SUBSCRIBE));
-        do
-        {
-            ret = mqtt_app_subscribe( mqtt_object, TOPIC_SUBSCRIBE, WICED_MQTT_QOS_DELIVER_AT_MOST_ONCE );
-            sub_retries++ ;
-        } while ( ( ret != WICED_SUCCESS ) && ( sub_retries < MQTT_SUBSCRIBE_RETRY_COUNT ) );
-        if ( ret != WICED_SUCCESS )
-        {
-            WPRINT_APP_INFO(("Subscribe Failed: Error Code %d\n",ret));
-        }
-        else
-        {
-            WPRINT_APP_INFO(("Subscribe Success\n"));
-        }
-        wiced_rtos_unlock_mutex(&pubSubMutex);
-
-        /* Subscribe to the get/accepted topic for all things using the + wildcard */
-        wiced_rtos_lock_mutex(&pubSubMutex);
-        WPRINT_APP_INFO(("[MQTT] Subscribing to %s...",TOPIC_GETSUBSCRIBE));
-        do
-        {
-            ret = mqtt_app_subscribe( mqtt_object, TOPIC_GETSUBSCRIBE, WICED_MQTT_QOS_DELIVER_AT_MOST_ONCE );
-            sub_retries++ ;
-        } while ( ( ret != WICED_SUCCESS ) && ( sub_retries < MQTT_SUBSCRIBE_RETRY_COUNT ) );
-        if ( ret != WICED_SUCCESS )
-        {
-            WPRINT_APP_INFO(("Subscribe Failed: Error Code %d\n",ret));
-        }
-        else
-        {
-            WPRINT_APP_INFO(("Subscribe Success\n"));
-        }
-        wiced_rtos_unlock_mutex(&pubSubMutex);
-
-        /* Start the publish thread */
-        /* This has to be done after the subscriptions are done so that we can get an initial state from all things */
-        wiced_rtos_create_thread(&publishThreadHandle, THREAD_BASE_PRIORITY+1, NULL, publishThread, THREAD_STACK_SIZE, NULL);
-
-        /* Wait and then start command thread last so that help info is displayed at the bottom of the terminal window */
-        wiced_rtos_delay_milliseconds(5500);
-        wiced_rtos_create_thread(&commandThreadHandle, THREAD_BASE_PRIORITY+3, NULL, commandThread, THREAD_STACK_SIZE, NULL);
-
-        /* Start timer to publish weather data every 30 seconds */
-        wiced_rtos_init_timer(&publishTimer, TIMER_TIME, publish30sec, NULL);
-        wiced_rtos_start_timer(&publishTimer);
-
-        /* Setup interrupts for the 2 mechanical buttons */
-        wiced_gpio_input_irq_enable(WICED_BUTTON2, IRQ_TRIGGER_FALLING_EDGE, publish_button_isr, NULL);
-        wiced_gpio_input_irq_enable(WICED_BUTTON1, IRQ_TRIGGER_FALLING_EDGE, alert_button_isr, NULL);
+        WPRINT_APP_INFO( ( "[Application/AWS] Failed to Initialize AWS library\n\n" ) );
+        return;
     }
+
+    aws_handle = (wiced_aws_handle_t)wiced_aws_create_endpoint(&aws_iot_endpoint);
+    if( !aws_handle )
+    {
+        WPRINT_APP_INFO( ( "[Application/AWS] Failed to create AWS connection handle\n\n" ) );
+        return;
+    }
+
+    /* Connect to AWS */
+    wiced_rtos_create_thread(&awsConnectThreadHandle, THREAD_BASE_PRIORITY+5, NULL, awsConnectThread, THREAD_STACK_SIZE, NULL);
+    wiced_rtos_set_semaphore(&connectSemaphore);
+    //GJL
+//    WPRINT_APP_INFO(("[Application/AWS] Opening connection...\n"));
+//    ret = wiced_aws_connect(aws_handle);
+//    if ( ret != WICED_SUCCESS )
+//    {
+//        WPRINT_APP_INFO(("[Application/AWS] Connect Failed\r\n"));
+//        return;
+//    }
+
+    while(is_connected == WICED_FALSE)
+    {
+        /* Wait until connection is up. This is set in the aws callback */
+        wiced_rtos_delay_milliseconds(TIMEOUT);
+        WPRINT_APP_INFO(("[Application/AWS] Waiting For Connection\r\n"));
+    }
+
+    /* Subscribe to the update/documents topic for all things using the + wildcard */
+    wiced_rtos_lock_mutex(&pubSubMutex);
+    WPRINT_APP_INFO(("[Application/AWS] Subscribing to %s...",TOPIC_SUBSCRIBE));
+    do
+    {
+        ret = wiced_aws_subscribe( aws_handle, TOPIC_SUBSCRIBE, WICED_AWS_QOS_ATMOST_ONCE);
+        sub_retries++ ;
+    } while ( ( ret != WICED_SUCCESS ) && ( sub_retries < AWS_RETRY_COUNT ) );
+    if ( ret != WICED_SUCCESS )
+    {
+        WPRINT_APP_INFO(("Subscribe Failed: Error Code %d\n",ret));
+    }
+    else
+    {
+        WPRINT_APP_INFO(("Subscribe Success\n"));
+    }
+    wiced_rtos_unlock_mutex(&pubSubMutex);
+
+    /* Subscribe to the get/accepted topic for all things using the + wildcard */
+    wiced_rtos_lock_mutex(&pubSubMutex);
+    WPRINT_APP_INFO(("[Application/AWS] Subscribing to %s...",TOPIC_GETSUBSCRIBE));
+    do
+    {
+        ret = wiced_aws_subscribe( aws_handle, TOPIC_GETSUBSCRIBE, WICED_AWS_QOS_ATMOST_ONCE);
+        sub_retries++ ;
+    } while ( ( ret != WICED_SUCCESS ) && ( sub_retries < AWS_RETRY_COUNT ) );
+    if ( ret != WICED_SUCCESS )
+    {
+        WPRINT_APP_INFO(("Subscribe Failed: Error Code %d\n",ret));
+    }
+    else
+    {
+        WPRINT_APP_INFO(("Subscribe Success\n"));
+    }
+    wiced_rtos_unlock_mutex(&pubSubMutex);
+
+    /* Start the publish thread */
+    /* This has to be done after the subscriptions are done so that we can get an initial state from all things */
+    wiced_rtos_create_thread(&publishThreadHandle, THREAD_BASE_PRIORITY+1, NULL, publishThread, THREAD_STACK_SIZE, NULL);
+
+    /* Wait and then start command thread last so that help info is displayed at the bottom of the terminal window */
+    wiced_rtos_delay_milliseconds(5500);
+    wiced_rtos_create_thread(&commandThreadHandle, THREAD_BASE_PRIORITY+3, NULL, commandThread, THREAD_STACK_SIZE, NULL);
+
+    /* Start timer to publish weather data every 30 seconds */
+    wiced_rtos_init_timer(&publishTimer, TIMER_TIME, publish30sec, NULL);
+    wiced_rtos_start_timer(&publishTimer);
+
+    /* Setup interrupts for the 2 mechanical buttons */
+    wiced_gpio_input_irq_enable(WICED_BUTTON2, IRQ_TRIGGER_FALLING_EDGE, publish_button_isr, NULL);
+    wiced_gpio_input_irq_enable(WICED_BUTTON1, IRQ_TRIGGER_FALLING_EDGE, alert_button_isr, NULL);
+
 
     /* No while(1) here since everything is done by the new threads. */
     return;
@@ -319,13 +334,13 @@ void alert_button_isr(void* arg)
 {
     char pubCmd[4]; /* Command pushed onto the queue to determine what to publish */
 
-    if(iot_data[MY_THING].alert == WICED_TRUE)
+    if(iot_data[MY_THING_NUMBER].alert == WICED_TRUE)
      {
-        iot_data[MY_THING].alert = WICED_FALSE;
+        iot_data[MY_THING_NUMBER].alert = WICED_FALSE;
      }
      else
      {
-         iot_data[MY_THING].alert = WICED_TRUE;
+         iot_data[MY_THING_NUMBER].alert = WICED_TRUE;
      }
 
      /* Set a semaphore for the OLED to update the display */
@@ -379,17 +394,17 @@ void getWeatherDataThread(wiced_thread_arg_t arg)
 		wiced_rtos_unlock_mutex(&i2cMutex);
 
 		/* Copy weather data into my thing's data structure */
-		iot_data[MY_THING].temp =     weather_data.temp;
-		iot_data[MY_THING].humidity = weather_data.humidity;
-		iot_data[MY_THING].light =    weather_data.light;
+		iot_data[MY_THING_NUMBER].temp =     weather_data.temp;
+		iot_data[MY_THING_NUMBER].humidity = weather_data.humidity;
+		iot_data[MY_THING_NUMBER].light =    weather_data.light;
 
 		/* Look at weather data - only update display if a value has changed*/
-		if((tempPrev != iot_data[MY_THING].temp) || (humPrev != iot_data[MY_THING].humidity) || (lightPrev != iot_data[MY_THING].light))
+		if((tempPrev != iot_data[MY_THING_NUMBER].temp) || (humPrev != iot_data[MY_THING_NUMBER].humidity) || (lightPrev != iot_data[MY_THING_NUMBER].light))
 		{
 			/* Save the new values as previous for next time around */
-		    tempPrev  = iot_data[MY_THING].temp;
-		    humPrev   = iot_data[MY_THING].humidity;
-		    lightPrev = iot_data[MY_THING].light;
+		    tempPrev  = iot_data[MY_THING_NUMBER].temp;
+		    humPrev   = iot_data[MY_THING_NUMBER].humidity;
+		    lightPrev = iot_data[MY_THING_NUMBER].light;
 
 		    /* Set a semaphore for the OLED to update the display */
 			wiced_rtos_set_semaphore(&displaySemaphore);
@@ -428,7 +443,7 @@ void getCapSenseThread(wiced_thread_arg_t arg)
             if((CapSenseValues & B0_MASK) == B0_MASK) /* Button 0 goes to the local thing's screen */
             {
                 buttonPressed = WICED_TRUE;
-                dispThing = MY_THING;
+                dispThing = MY_THING_NUMBER;
                 wiced_rtos_set_semaphore(&displaySemaphore);
             }
             if((CapSenseValues & B1_MASK) == B1_MASK) /* Button 1 goes to next thing's screen */
@@ -569,33 +584,33 @@ void commandThread(wiced_thread_arg_t arg)
 				WPRINT_APP_INFO(("\t? - Print the list of commands\n"));
 				break;
 			case 't': /* Print temperature to terminal and publish */
-				WPRINT_APP_INFO(("Temperature: %.1f\n", iot_data[MY_THING].temp)); /* Print temperature to terminal */
+				WPRINT_APP_INFO(("Temperature: %.1f\n", iot_data[MY_THING_NUMBER].temp)); /* Print temperature to terminal */
 			    /* Publish temperature to the cloud */
 				pubCmd[0] = TEMPERATURE_CMD;
 				wiced_rtos_push_to_queue(&pubQueue, pubCmd, WICED_WAIT_FOREVER); /* Push value onto queue*/
 				break;
 			case 'h': /* Print humidity to terminal and publish */
-				WPRINT_APP_INFO(("Humidity: %.1f\t\n", iot_data[MY_THING].humidity)); /* Print humidity to terminal */
+				WPRINT_APP_INFO(("Humidity: %.1f\t\n", iot_data[MY_THING_NUMBER].humidity)); /* Print humidity to terminal */
 			    /* Publish humidity to the cloud */
 				pubCmd[0] = HUMIDITY_CMD;
 				wiced_rtos_push_to_queue(&pubQueue, pubCmd, WICED_WAIT_FOREVER); /* Push value onto queue*/
 				break;
             case 'l': /* Print light value to terminal and publish */
-                WPRINT_APP_INFO(("Light: %.1f\t\n", iot_data[MY_THING].light)); /* Print humidity to terminal */
+                WPRINT_APP_INFO(("Light: %.1f\t\n", iot_data[MY_THING_NUMBER].light)); /* Print humidity to terminal */
                 /* Publish light value to the cloud */
                 pubCmd[0] = LIGHT_CMD;
                 wiced_rtos_push_to_queue(&pubQueue, pubCmd, WICED_WAIT_FOREVER); /* Push value onto queue*/
                 break;
 			case 'A': /* Publish Weather Alert ON */
 				WPRINT_APP_INFO(("Weather Alert ON\n"));
-				iot_data[MY_THING].alert = WICED_TRUE;
+				iot_data[MY_THING_NUMBER].alert = WICED_TRUE;
 			    wiced_rtos_set_semaphore(&displaySemaphore); /* Update display */
 	            pubCmd[0] = ALERT_CMD;
 				wiced_rtos_push_to_queue(&pubQueue, pubCmd, WICED_WAIT_FOREVER); /* Push value onto queue*/
 				break;
 			case 'a': /* Publish Weather Alert OFF */
 				WPRINT_APP_INFO(("Weather Alert OFF\n"));
-				iot_data[MY_THING].alert = WICED_FALSE;
+				iot_data[MY_THING_NUMBER].alert = WICED_FALSE;
                 wiced_rtos_set_semaphore(&displaySemaphore); /* Update display */
 				pubCmd[0] = ALERT_CMD;
 				wiced_rtos_push_to_queue(&pubQueue, pubCmd, WICED_WAIT_FOREVER); /* Push value onto queue*/
@@ -668,25 +683,25 @@ void publishThread(wiced_thread_arg_t arg)
         wiced_rtos_pop_from_queue(&pubQueue, &command, WICED_WAIT_FOREVER);
 
         /* Set the topic for an update of my thing */
-        snprintf(topic, sizeof(topic), "%s%02d/shadow/update", TOPIC_HEAD,MY_THING);
+        snprintf(topic, sizeof(topic), "%s%02d/shadow/update", TOPIC_HEAD,MY_THING_NUMBER);
 
         /* Setup the JSON message based on the command */
         switch(command[0])
         {
             case WEATHER_CMD: 	/* publish temperature and humidity */
-                snprintf(json, sizeof(json), "{\"state\" : {\"reported\" : {\"temperature\":%.1f,\"humidity\":%.1f,\"light\":%.0f}}}", iot_data[MY_THING].temp, iot_data[MY_THING].humidity, iot_data[MY_THING].light);
+                snprintf(json, sizeof(json), "{\"state\" : {\"reported\" : {\"temperature\":%.1f,\"humidity\":%.1f,\"light\":%.0f}}}", iot_data[MY_THING_NUMBER].temp, iot_data[MY_THING_NUMBER].humidity, iot_data[MY_THING_NUMBER].light);
                 break;
             case TEMPERATURE_CMD: 	/* publish temperature */
-                snprintf(json, sizeof(json), "{\"state\" : {\"reported\" : {\"temperature\":%.1f} } }", iot_data[MY_THING].temp);
+                snprintf(json, sizeof(json), "{\"state\" : {\"reported\" : {\"temperature\":%.1f} } }", iot_data[MY_THING_NUMBER].temp);
                 break;
             case HUMIDITY_CMD: 	/* publish humidity */
-                snprintf(json, sizeof(json), "{\"state\" : {\"reported\" : {\"humidity\":%.1f} } }", iot_data[MY_THING].humidity);
+                snprintf(json, sizeof(json), "{\"state\" : {\"reported\" : {\"humidity\":%.1f} } }", iot_data[MY_THING_NUMBER].humidity);
                 break;
             case LIGHT_CMD:  /* publish light value */
-                snprintf(json, sizeof(json), "{\"state\" : {\"reported\" : {\"light\":%.1f} } }", iot_data[MY_THING].light);
+                snprintf(json, sizeof(json), "{\"state\" : {\"reported\" : {\"light\":%.1f} } }", iot_data[MY_THING_NUMBER].light);
                 break;
             case ALERT_CMD: /* weather alert */
-                if(iot_data[MY_THING].alert)
+                if(iot_data[MY_THING_NUMBER].alert)
                 {
                     snprintf(json, sizeof(json), "{\"state\" : {\"reported\" : {\"weatherAlert\":true} } }");
                 }
@@ -696,7 +711,7 @@ void publishThread(wiced_thread_arg_t arg)
                 }
                 break;
             case IP_CMD:	/* IP address */
-                snprintf(json, sizeof(json), "{\"state\" : {\"reported\" : {\"IPAddress\":\"%s\"} } }", iot_data[MY_THING].ip_str);
+                snprintf(json, sizeof(json), "{\"state\" : {\"reported\" : {\"IPAddress\":\"%s\"} } }", iot_data[MY_THING_NUMBER].ip_str);
                 break;
             case GET_CMD:   /* Get starting state of other things */
                 snprintf(json, sizeof(json), "{}");
@@ -705,27 +720,48 @@ void publishThread(wiced_thread_arg_t arg)
                 break;
         }
 
-        wiced_rtos_lock_mutex(&pubSubMutex);
-        WPRINT_APP_INFO(("[MQTT] Publishing..."));
-        pub_retries = 0; // reset retries to 0 before going into the loop so that the next publish after a failure will still work
-        do
+        if(is_connected)
         {
-            ret = mqtt_app_publish( mqtt_object, WICED_MQTT_QOS_DELIVER_AT_MOST_ONCE, topic, (uint8_t*) json, strlen( json ) );
-            pub_retries++ ;
-        } while ( ( ret != WICED_SUCCESS ) && ( pub_retries < MQTT_PUBLISH_RETRY_COUNT ) );
-        if ( ret != WICED_SUCCESS )
-        {
-            WPRINT_APP_INFO(("Publish Failed: Error Code %d\n",ret));
+            wiced_rtos_lock_mutex(&pubSubMutex);
+            WPRINT_APP_INFO(("[Application/AWS] Publishing..."));
+            pub_retries = 0; // reset retries to 0 before going into the loop so that the next publish after a failure will still work
+            do
+            {
+                ret = wiced_aws_publish( aws_handle, topic, (uint8_t*) json, strlen( json ), WICED_AWS_QOS_ATMOST_ONCE );
+                pub_retries++ ;
+            } while ( ( ret != WICED_SUCCESS ) && ( pub_retries < AWS_RETRY_COUNT ) );
+            if ( ret != WICED_SUCCESS )
+            {
+                WPRINT_APP_INFO(("Publish Failed: Error Code %d\n",ret));
+            }
+            else
+            {
+                WPRINT_APP_INFO(("Publish Success\n"));
+            }
+            wiced_rtos_unlock_mutex(&pubSubMutex);
         }
-        else
-        {
-            WPRINT_APP_INFO(("Publish Success\n"));
-        }
-        wiced_rtos_unlock_mutex(&pubSubMutex);
         wiced_rtos_delay_milliseconds( 100 );
     }
 }
 
+
+/*************** Thread to connect to AWS whenever the semaphore is set ***************/
+void awsConnectThread(wiced_thread_arg_t arg)
+{
+    wiced_result_t ret;
+
+    while(1)
+    {
+        wiced_rtos_get_semaphore(&connectSemaphore, WICED_NEVER_TIMEOUT);
+        WPRINT_APP_INFO(("[Application/AWS] Opening connection...\n"));
+        ret = wiced_aws_connect(aws_handle);
+        if ( ret != WICED_SUCCESS )
+        {
+            WPRINT_APP_INFO(("[Application/AWS] Connect Failed\r\n"));
+            return;
+        }
+    }
+}
 
 /*************** Timer to publish weather data every 30sec ***************/
 void publish30sec(void* arg)
@@ -736,188 +772,133 @@ void publish30sec(void* arg)
 	wiced_rtos_push_to_queue(&pubQueue, pubCmd, WICED_NO_WAIT); /* Push value onto queue*/
 }
 
-/*************** Function to try opening MQTT connection that fails gracefully after a few attempts ***************/
-wiced_result_t open_mqtt_connection()
+
+/*************** Function to load certificates ***************/
+static wiced_result_t get_aws_credentials_from_resources( void )
 {
-    int             connection_retries = 0;
-    wiced_result_t  ret = WICED_SUCCESS;
+    uint32_t size_out = 0;
+    wiced_result_t result = WICED_ERROR;
 
-    WPRINT_APP_INFO(("[MQTT] Opening connection..."));
-    wiced_mqtt_init( mqtt_object );
-    connection_retries = 0;
-    do
-    {
-        ret = mqtt_conn_open( mqtt_object, &broker_address, WICED_STA_INTERFACE, mqtt_connection_event_cb, &security );
-        connection_retries++ ;
-    } while ( ( ret != WICED_SUCCESS ) && ( connection_retries < WICED_MQTT_CONNECTION_NUMBER_OF_RETRIES ) );
+    wiced_aws_thing_security_info_t* security = &aws_security_creds;
+    uint8_t** root_ca_certificate = &aws_iot_endpoint.root_ca_certificate;
 
-    if ( ret != WICED_SUCCESS )
+    if( security->certificate && security->private_key && (*root_ca_certificate) )
     {
-        /* If we get here, the MQTT connection could not be opened */
-        WPRINT_APP_INFO(("Connection Failed: Error Code %d\n",ret));
-        WPRINT_APP_INFO(("[MQTT] Closing connection..."));
-        mqtt_conn_close( mqtt_object );
-        wiced_rtos_delay_milliseconds( MQTT_DELAY_IN_MILLISECONDS * 2 );
-        wiced_rtos_deinit_semaphore( &msg_semaphore );
-        WPRINT_APP_INFO(("[MQTT] Deinit connection..."));
-        wiced_mqtt_deinit( mqtt_object );
-        free( mqtt_object );
-        mqtt_object = NULL;
-        WPRINT_APP_INFO(("Done\n"));
+        WPRINT_APP_INFO(("\n[Application/AWS] Security Credentials already set(not NULL). Abort Reading from Resources...\n"));
+        return WICED_SUCCESS;
     }
-    return ret;
-}
 
-/**************************************************************************************/
-/* Functions copied from the demo/aws_iot/pub_sub/publisher application */
-/*
- * A blocking call to an expected event.
- */
-static wiced_result_t wait_for_response( wiced_mqtt_event_type_t event, uint32_t timeout )
-{
-    if ( wiced_rtos_get_semaphore( &msg_semaphore, timeout ) != WICED_SUCCESS )
+    /* Get AWS Root CA certificate filename: 'rootca.cer' */
+    result = resource_get_readonly_buffer( &resources_apps_DIR_ww101_DIR_awskeys_DIR_rootca_cer, 0, CERTIFICATES_MAX_SIZE, &size_out, (const void **) root_ca_certificate);
+    if( result != WICED_SUCCESS )
     {
-        return WICED_ERROR;
+        goto _fail_aws_certificate;
     }
-    else
+    if( size_out < 64 )
     {
-        if ( event != expected_event )
-        {
-            return WICED_ERROR;
-        }
+        WPRINT_APP_INFO( ( "\n[Application/AWS] Invalid Root CA Certificate!\n\n" ) );
+        resource_free_readonly_buffer( &resources_apps_DIR_ww101_DIR_awskeys_DIR_rootca_cer, (const void *)*root_ca_certificate );
+        goto _fail_aws_certificate;
     }
+
+    aws_iot_endpoint.root_ca_length = size_out;
+
+    /* Get Publisher's Certificate filename: 'client.cer' */
+    result = resource_get_readonly_buffer( &resources_apps_DIR_ww101_DIR_awskeys_DIR_client_cer, 0, CERTIFICATES_MAX_SIZE, &size_out, (const void **) &security->certificate );
+    if( result != WICED_SUCCESS )
+    {
+        goto _fail_client_certificate;
+    }
+    if(size_out < 64)
+    {
+        WPRINT_APP_INFO( ( "\n[Application/AWS] Invalid Device Certificate!\n\n" ) );
+        resource_free_readonly_buffer( &resources_apps_DIR_ww101_DIR_awskeys_DIR_client_cer, (const void *)security->certificate );
+        goto _fail_client_certificate;
+    }
+
+    security->certificate_length = size_out;
+
+    /* Get Publisher's Private Key filename: 'privkey.cer' located @ resources/apps/aws/iot/publisher folder */
+    result = resource_get_readonly_buffer( &resources_apps_DIR_ww101_DIR_awskeys_DIR_privkey_cer, 0, CERTIFICATES_MAX_SIZE, &size_out, (const void **) &security->private_key );
+    if( result != WICED_SUCCESS )
+    {
+        goto _fail_private_key;
+    }
+    if(size_out < 64)
+    {
+        WPRINT_APP_INFO( ( "\n[Application/AWS] Invalid Device Private-Key!\n\n" ) );
+        resource_free_readonly_buffer( &resources_apps_DIR_ww101_DIR_awskeys_DIR_privkey_cer, (const void *)security->private_key );
+        goto _fail_private_key;
+    }
+    security->key_length = size_out;
+
     return WICED_SUCCESS;
+
+_fail_private_key:
+    resource_free_readonly_buffer( &resources_apps_DIR_ww101_DIR_awskeys_DIR_client_cer, (const void *)security->certificate );
+_fail_client_certificate:
+    resource_free_readonly_buffer( &resources_apps_DIR_ww101_DIR_awskeys_DIR_rootca_cer, (const void *)*root_ca_certificate );
+_fail_aws_certificate:
+    return WICED_ERROR;
 }
 
 
-/*
- * Open a connection and wait for MQTT_REQUEST_TIMEOUT period to receive a connection open OK event
- */
-static wiced_result_t mqtt_conn_open( wiced_mqtt_object_t mqtt_obj, wiced_ip_address_t *address, wiced_interface_t interface, wiced_mqtt_callback_t callback, wiced_mqtt_security_t *security )
-{
-    wiced_mqtt_pkt_connect_t conninfo;
-    wiced_result_t        ret = WICED_SUCCESS;
-
-    char thingName[10];
-    snprintf(thingName, sizeof(thingName), "%s%02d", THING_NAME_BASE, MY_THING);
-
-    memset( &conninfo, 0, sizeof( conninfo ) );
-    conninfo.port_number = 0;
-    conninfo.mqtt_version = WICED_MQTT_PROTOCOL_VER4;
-    conninfo.clean_session = 1;
-    conninfo.client_id = (uint8_t*) thingName;
-    conninfo.keep_alive = 5;
-    conninfo.password = NULL;
-    conninfo.username = NULL;
-    conninfo.peer_cn = (uint8_t*) "*.iot.us-east-1.amazonaws.com";
-    ret = wiced_mqtt_connect( mqtt_obj, address, interface, callback, security, &conninfo );
-    if ( ret != WICED_SUCCESS )
-    {
-        return WICED_ERROR;
-    }
-    if ( wait_for_response( WICED_MQTT_EVENT_TYPE_CONNECT_REQ_STATUS, MQTT_REQUEST_TIMEOUT ) != WICED_SUCCESS )
-    {
-        return WICED_ERROR;
-    }
-    return WICED_SUCCESS;
-}
-
-
-/*
- * Publish (send) message to WICED_TOPIC and wait for 5 seconds to receive a PUBCOMP (as it is QoS=2).
- */
-static wiced_result_t mqtt_app_publish( wiced_mqtt_object_t mqtt_obj, uint8_t qos, char *topic, uint8_t *data, uint32_t data_len )
-{
-    wiced_mqtt_msgid_t pktid;
-
-    pktid = wiced_mqtt_publish( mqtt_obj, topic, data, data_len, qos );
-
-    if ( pktid == 0 )
-    {
-        return WICED_ERROR;
-    }
-
-    if ( wait_for_response( WICED_MQTT_EVENT_TYPE_PUBLISHED, MQTT_REQUEST_TIMEOUT ) != WICED_SUCCESS )
-    {
-        return WICED_ERROR;
-    }
-    return WICED_SUCCESS;
-}
-
-
-/*
- * Subscribe to WICED_TOPIC and wait for 5 seconds to receive an ACM.
- */
-static wiced_result_t mqtt_app_subscribe( wiced_mqtt_object_t mqtt_obj, char *topic, uint8_t qos )
-{
-    wiced_mqtt_msgid_t pktid;
-    pktid = wiced_mqtt_subscribe( mqtt_obj, topic, qos );
-    if ( pktid == 0 )
-    {
-        return WICED_ERROR;
-    }
-    if ( wait_for_response( WICED_MQTT_EVENT_TYPE_SUBCRIBED, MQTT_REQUEST_TIMEOUT ) != WICED_SUCCESS )
-    {
-        return WICED_ERROR;
-    }
-    return WICED_SUCCESS;
-}
-
-
-/*
- * Close a connection and wait for 5 seconds to receive a connection close OK event
- */
-static wiced_result_t mqtt_conn_close( wiced_mqtt_object_t mqtt_obj )
-{
-    if ( wiced_mqtt_disconnect( mqtt_obj ) != WICED_SUCCESS )
-    {
-        return WICED_ERROR;
-    }
-    if ( wait_for_response( WICED_MQTT_EVENT_TYPE_DISCONNECTED, MQTT_REQUEST_TIMEOUT ) != WICED_SUCCESS )
-    {
-        return WICED_ERROR;
-    }
-    return WICED_SUCCESS;
-}
-
-
-/*
- * Call back function to handle connection events.
- */
-static wiced_result_t mqtt_connection_event_cb( wiced_mqtt_object_t mqtt_object, wiced_mqtt_event_info_t *event )
+/*************** Callback function to handle AWS events ***************/
+static void aws_callback( wiced_aws_handle_t aws, wiced_aws_event_type_t event, wiced_aws_callback_data_t* data )
 {
     uint thingNumber;           /* The number of the thing that published a message */
-    wiced_mqtt_topic_msg_t msg; /* The message from the thing */
     char topicStr[50] = {0};    /* String to copy the topic into */
     char pubType[20] =  {0};    /* String to compare to the publish type */
 
-    switch ( event->type )
+    if( !aws || !data || (aws != aws_handle) )
     {
-        case WICED_MQTT_EVENT_TYPE_CONNECT_REQ_STATUS:
-        case WICED_MQTT_EVENT_TYPE_DISCONNECTED:
-        case WICED_MQTT_EVENT_TYPE_PUBLISHED:
-        case WICED_MQTT_EVENT_TYPE_SUBCRIBED:
-        case WICED_MQTT_EVENT_TYPE_UNSUBSCRIBED:
+        WPRINT_APP_INFO( ("[Application/AWS] Invalid AWS callback params\n") );
+        return;
+    }
+
+    switch ( event )
+    {
+        case WICED_AWS_EVENT_CONNECTED:
         {
-            expected_event = event->type;
-            wiced_rtos_set_semaphore( &msg_semaphore );
-        }
+            if( data->connection.status == WICED_SUCCESS )
+            {
+                is_connected = WICED_TRUE;
+            }
             break;
-        case WICED_MQTT_EVENT_TYPE_PUBLISH_MSG_RECEIVED:
-            msg = event->data.pub_recvd;
+        }
+
+        case WICED_AWS_EVENT_DISCONNECTED:
+        {
+            if( data->disconnection.status == WICED_SUCCESS )
+            {
+                is_connected = WICED_FALSE;
+                /* Disconnect on our end and then set semaphore to reconnect to the server */
+                wiced_aws_disconnect(aws_handle);
+                wiced_rtos_set_semaphore(&connectSemaphore);
+            }
+            break;
+        }
+
+        case WICED_AWS_EVENT_PUBLISHED:
+        case WICED_AWS_EVENT_SUBSCRIBED:
+        case WICED_AWS_EVENT_UNSUBSCRIBED:
+            break;
+
+        case WICED_AWS_EVENT_PAYLOAD_RECEIVED:
+        {
             /* Copy the message to a null terminated string */
-            memcpy(topicStr, msg.topic, msg.topic_len);
-            topicStr[msg.topic_len+1] = 0; /* Add termination */
+            memcpy(topicStr, data->message.topic, data->message.topic_length);
+            topicStr[data->message.topic_length+1] = 0; /* Add termination */
 
             /* Scan the topic to see if it is one of the things we are interested in */
             sscanf(topicStr, "$aws/things/ww101_%2u/shadow/%19s", &thingNumber, pubType);
             /* Check to see if it is an initial get of the values of other things */
             if(strcmp(pubType,"get/accepted") == 0)
             {
-                if(thingNumber != MY_THING) /* Only do the rest if it isn't the local thing */
+                if(thingNumber != MY_THING_NUMBER) /* Only do the rest if it isn't the local thing */
                 {
                     /* Parse JSON message for the weather station data */
-                    cJSON *root = cJSON_Parse((char*) msg.data);
+                    cJSON *root = cJSON_Parse((char*) data->message.data);
                     cJSON *state = cJSON_GetObjectItem(root,"state");
                     cJSON *reported = cJSON_GetObjectItem(state,"reported");
                     cJSON *ipValue = cJSON_GetObjectItem(reported,"IPAddress");
@@ -935,10 +916,10 @@ static wiced_result_t mqtt_connection_event_cb( wiced_mqtt_object_t mqtt_object,
             /* Check to see if it is an update published by another thing */
             if(strcmp(pubType,"update/documents") == 0)
             {
-                if(thingNumber != MY_THING) /* Only do the rest if it isn't the local thing */
+                if(thingNumber != MY_THING_NUMBER) /* Only do the rest if it isn't the local thing */
                 {
                     /* Parse JSON message for the weather station data */
-                    cJSON *root = cJSON_Parse((char*) msg.data);
+                    cJSON *root = cJSON_Parse((char*) data->message.data);
                     cJSON *current = cJSON_GetObjectItem(root,"current");
                     cJSON *state = cJSON_GetObjectItem(current,"state");
                     cJSON *reported = cJSON_GetObjectItem(state,"reported");
@@ -951,6 +932,7 @@ static wiced_result_t mqtt_connection_event_cb( wiced_mqtt_object_t mqtt_object,
                     iot_data[thingNumber].humidity = (float) cJSON_GetObjectItem(reported,"humidity")->valuedouble;
                     iot_data[thingNumber].light = (float) cJSON_GetObjectItem(reported,"light")->valuedouble;
                     iot_data[thingNumber].alert = (wiced_bool_t) cJSON_GetObjectItem(reported,"weatherAlert")->valueint;
+
                     cJSON_Delete(root);
 
                     /* If printing of updates is enabled, print the new info */
@@ -967,8 +949,8 @@ static wiced_result_t mqtt_connection_event_cb( wiced_mqtt_object_t mqtt_object,
                 }
             }
             break;
+        }
         default:
             break;
     }
-    return WICED_SUCCESS;
 }

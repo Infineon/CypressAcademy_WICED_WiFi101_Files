@@ -8,7 +8,7 @@
 
 /*******************************************************************************************************/
 /* Update this number for the number of the thing that you want to post to. The default is ww101_00 */
-#define MY_THING  0
+#define MY_THING  00
 /*******************************************************************************************************/
 
 /* The highest number thing that you want to get information on */
@@ -592,7 +592,7 @@ void httpThread(wiced_thread_arg_t arg)
     wiced_result_t        ret = WICED_SUCCESS;
 
     char json[100] = "TEST";	  /* JSON message to send */
-	static char json_size[5];     /* This holds the size of the JSON message as a decimal value */
+	static char json_size[11];    /* This holds the size of the JSON message as a decimal value */
 
 	uint8_t httpCmd[4]; /* Command pushed ONTO the queue to determine what to post/get */
 
@@ -691,7 +691,7 @@ void httpThread(wiced_thread_arg_t arg)
         else /* All other commands do a post */
         {
             /* Find content length and write that value to the 3rd header */
-            sprintf(json_size,"%d",strlen(json));
+            snprintf(json_size,sizeof(json_size),"%d",strlen(json));
             header[2].field        =  HTTP_HEADER_CONTENT_LENGTH;
             header[2].field_length = strlen( HTTP_HEADER_CONTENT_LENGTH );
             header[2].value        = json_size;
@@ -782,7 +782,7 @@ static void http_event_handler( http_client_t* client, http_event_t event, http_
             iot_holding.temp = (float) cJSON_GetObjectItem(reported,"temperature")->valuedouble;
             iot_holding.humidity = (float) cJSON_GetObjectItem(reported,"humidity")->valuedouble;
             iot_holding.light = (float) cJSON_GetObjectItem(reported,"light")->valuedouble;
-            iot_holding.alert = (wiced_bool_t) cJSON_GetObjectItem(reported,"weatherAlert")->type;
+            iot_holding.alert = (wiced_bool_t) cJSON_GetObjectItem(reported,"weatherAlert")->valueint;
             cJSON_Delete(root);
 
             /* This is the end of the response, so we will clean up and set the semaphore for the calling thread to go on */
