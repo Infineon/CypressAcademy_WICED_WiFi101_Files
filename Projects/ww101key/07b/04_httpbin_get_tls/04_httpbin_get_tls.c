@@ -78,7 +78,7 @@ void application_start( void )
     /* Configure HTTP client parameters */
     client_configuration.flag = (http_client_configuration_flags_t)(HTTP_CLIENT_CONFIG_FLAG_SERVER_NAME | HTTP_CLIENT_CONFIG_FLAG_MAX_FRAGMENT_LEN);
     client_configuration.server_name = (uint8_t*)SERVER_HOST;
-    /* Note: the max_fragment_length is required for TLS but not requred for non-TLS connections */
+    /* Note: the max_fragment_length is required for TLS but not required for non-TLS connections */
     client_configuration.max_fragment_length = TLS_FRAGMENT_LENGTH_1024;
 
     /* Initialize and configure client */

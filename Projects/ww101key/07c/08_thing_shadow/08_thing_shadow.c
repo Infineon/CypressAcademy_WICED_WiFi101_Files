@@ -125,7 +125,7 @@ static wiced_aws_endpoint_info_t my_shadow_aws_iot_endpoint =
 {
     .transport           = WICED_AWS_TRANSPORT_MQTT_NATIVE,
 
-    .uri                 = "a38td4ke8seeky.iot.us-east-1.amazonaws.com",
+    .uri                 = "amk6m51qrxr2u.iot.us-east-1.amazonaws.com",
     .ip_addr             = {0},
     .port                = WICED_AWS_IOT_DEFAULT_MQTT_PORT,
     .root_ca_certificate = NULL,
@@ -281,6 +281,16 @@ static wiced_result_t get_aws_credentials_from_dct( void )
     /* Finished accessing the certificates */
     wiced_dct_read_unlock( dct_security, WICED_FALSE );
 
+    // GJL TEMP DEBUGGING
+    char cert[1000] = {0};
+    char key[1000]  = {0};
+    WPRINT_APP_INFO(("[GJL] CertLen: %d\n",my_shadow_security_creds.certificate_length));
+    WPRINT_APP_INFO(("[GJL] KeyLen: %d\n",my_shadow_security_creds.key_length));
+    snprintf(cert, my_shadow_security_creds.certificate_length+1, "%s",my_shadow_security_creds.certificate);
+    snprintf(key,  my_shadow_security_creds.key_length+1, "%s",my_shadow_security_creds.private_key);
+    WPRINT_APP_INFO(("[GJL] Cert:\n   %s\n",cert));
+    WPRINT_APP_INFO(("[GJL] Key:\n    %s\n",key));
+
     return WICED_SUCCESS;
 }
 
@@ -341,7 +351,7 @@ void application_start( void )
     ret = get_aws_credentials_from_dct();
     if( ret != WICED_SUCCESS )
     {
-        WPRINT_APP_INFO(("[Shadow] Failed to get Security credentials for AWS IoT\n"));
+        WPRINT_APP_INFO(("[Shadow] Failed to get Security credentials for AWS IoT: %d\n",ret));
         return;
     }
 
@@ -351,14 +361,14 @@ void application_start( void )
     ret = wiced_aws_init( &my_shadow_aws_config, my_shadow_aws_callback );
     if( ret != WICED_SUCCESS )
     {
-        WPRINT_APP_INFO(("[Shadow] Failed to Initialize Wiced AWS library\n"));
+        WPRINT_APP_INFO(("[Shadow] Failed to Initialize Wiced AWS library: %d\n",ret));
         return;
     }
 
     ret = build_shadow_topics();
     if( ret != WICED_SUCCESS )
     {
-        WPRINT_APP_INFO(("[Shadow] Error while building Shadow topics\n"));
+        WPRINT_APP_INFO(("[Shadow] Error while building Shadow topics: %d\n",ret));
         return;
     }
 

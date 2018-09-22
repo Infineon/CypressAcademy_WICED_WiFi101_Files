@@ -180,6 +180,10 @@ void application_start(void)
          WPRINT_APP_INFO(("Unable to lock DCT to read certificate\n"));
          return;
      }
+     else
+     {
+         WPRINT_APP_INFO(("Certificate Length = %d\n",strlen(dct_security->certificate)));
+     }
 
      result = wiced_tls_init_root_ca_certificates( dct_security->certificate, strlen( dct_security->certificate ) );
      if ( result != WICED_SUCCESS )

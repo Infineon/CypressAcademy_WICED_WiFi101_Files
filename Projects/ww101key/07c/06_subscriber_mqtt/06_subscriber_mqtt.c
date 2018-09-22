@@ -61,7 +61,7 @@
 #define MQTT_BROKER_PEER_COMMON_NAME        "*.iot.us-east-1.amazonaws.com"
 #define WICED_TOPIC                         "KEY_TestTopic"
 /* The CLIENT_ID is the AWS Thing Name */
-#define CLIENT_ID                           "KEY_TestThing"
+#define CLIENT_ID                           "KEY_TestThing_Sub"
 #define MQTT_REQUEST_TIMEOUT                (5000)
 #define MQTT_DELAY_IN_MILLISECONDS          (1000)
 #define MQTT_MAX_RESOURCE_SIZE              (0x7fffffff)

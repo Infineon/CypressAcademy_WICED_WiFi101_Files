@@ -125,7 +125,7 @@ static wiced_aws_endpoint_info_t my_subscriber_aws_iot_endpoint = {
 };
 
 static wiced_aws_thing_info_t my_subscriber_aws_config = {
-    .name                = "KEY_TestThing",
+    .name                = "KEY_TestThing_Sub",
     .credentials         = &my_subscriber_security_creds,
 };
 

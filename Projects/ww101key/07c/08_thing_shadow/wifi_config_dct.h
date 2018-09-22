@@ -46,7 +46,7 @@ extern "C"
  ******************************************************/
 
 /* This is the soft AP used for device configuration */
-#define CONFIG_AP_SSID       "WICED_AWS"
+#define CONFIG_AP_SSID       "KEY_WICED_AWS"
 #define CONFIG_AP_CHANNEL    1
 #define CONFIG_AP_SECURITY   WICED_SECURITY_WPA2_AES_PSK
 #define CONFIG_AP_PASSPHRASE "12345678"

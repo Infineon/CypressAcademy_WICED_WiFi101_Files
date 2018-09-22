@@ -38,7 +38,7 @@ $(NAME)_SOURCES += device_config.c
 
 $(NAME)_INCLUDES   := .
 
-#WIFI_CONFIG_DCT_H := wifi_config_dct.h
+WIFI_CONFIG_DCT_H := wifi_config_dct.h
 
 APPLICATION_DCT   := device_dct_config.c
 

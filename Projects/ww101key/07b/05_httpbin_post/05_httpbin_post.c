@@ -20,7 +20,6 @@ static wiced_semaphore_t httpWait;
 
 static http_client_t  client;
 static http_request_t request;
-static http_client_configuration_info_t client_configuration;
 static wiced_bool_t connected = WICED_FALSE;
 
 static char json_len[5]; /* This holds the length of the JSON message as a sting containing the decimal value */
@@ -68,13 +67,8 @@ void application_start( void )
                                                  (uint8_t)(GET_IPV4_ADDRESS(ip_address) >> 8),
                                                  (uint8_t)(GET_IPV4_ADDRESS(ip_address) >> 0) ) );
 
-    /* Configure HTTP client parameters */
-    client_configuration.flag = (http_client_configuration_flags_t)(HTTP_CLIENT_CONFIG_FLAG_SERVER_NAME | HTTP_CLIENT_CONFIG_FLAG_MAX_FRAGMENT_LEN);
-    client_configuration.server_name = (uint8_t*)SERVER_HOST;
-
-    /* Initialize and configure client */
+    /* Initialize client */
     http_client_init( &client, WICED_STA_INTERFACE, event_handler, NULL );
-    http_client_configure(&client, &client_configuration);
     client.peer_cn = NULL; /* If you set hostname, library will make sure subject name in the server certificate is matching with host name you are trying to connect. Pass NULL if you don't want to enable this check */
 
     /* Connect to the server */

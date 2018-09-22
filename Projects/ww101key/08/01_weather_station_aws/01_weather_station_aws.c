@@ -1,10 +1,11 @@
 /* This is the class project for the WICED WiFi WW-101 class */
 #include "wiced.h"
 #include "u8g_arm.h"
-#include "wiced_aws.h"
-#include "aws_common.h"
 #include "resources.h"
 #include "cJSON.h"
+#include "wiced_aws.h"
+#include "aws_common.h"
+
 
 /*******************************************************************************************************/
 /* Update this number for the number of the thing that you want to publish to. The default is ww101_00 */
@@ -91,7 +92,7 @@ const wiced_i2c_device_t i2cPsoc = {
     .port          = PLATFORM_ARDUINO_I2C,
     .address = PSOC_ADDRESS,
     .address_width = I2C_ADDRESS_WIDTH_7BIT,
-    .speed_mode = I2C_STANDARD_SPEED_MODE
+    .speed_mode = I2C_HIGH_SPEED_MODE
 };
 
 volatile wiced_bool_t printAll = WICED_FALSE;       /* Flag to print updates from all things to UART when true */
@@ -128,6 +129,7 @@ static wiced_aws_thing_info_t aws_config = {
 static volatile wiced_aws_handle_t aws_handle;
 static volatile wiced_bool_t       is_connected = WICED_FALSE;
 
+static volatile uint8_t reconnectCount = 0; // Number of times we have had to reconnect to AWS
 
 /* RTOS global constructs */
 static wiced_semaphore_t displaySemaphore;
@@ -141,20 +143,21 @@ static wiced_thread_t getCapSenseThreadHandle;
 static wiced_thread_t displayThreadHandle;
 static wiced_thread_t commandThreadHandle;
 static wiced_thread_t publishThreadHandle;
-static wiced_thread_t awsConnectThreadHandle;
+static wiced_thread_t awsReConnectThreadHandle;
 
 /*************** Function Prototypes ***************/
 /* ISRs */
 void publish_button_isr(void* arg);
 void alert_button_isr(void* arg);
 void print_thing_info(uint8_t thingNumber);
+wiced_result_t awsConnect(void);
 /* Threads and timer functions */
 void getWeatherDataThread(wiced_thread_arg_t arg);
 void getCapSenseThread(wiced_thread_arg_t arg);
 void displayThread(wiced_thread_arg_t arg);
 void commandThread(wiced_thread_arg_t arg);
 void publishThread(wiced_thread_arg_t arg);
-void  awsConnectThread(wiced_thread_arg_t arg);
+void awsReConnectThread(wiced_thread_arg_t arg);
 void publish30sec(void* arg);
 /* Functions from the demo/aws/iot/pub_sub/publisher project */
 static wiced_result_t get_aws_credentials_from_resources( void );
@@ -164,7 +167,6 @@ static void aws_callback( wiced_aws_handle_t aws, wiced_aws_event_type_t event, 
 /*************** Main application ***************/
 void application_start( )
 {
-    int                 sub_retries = 0;
     uint8_t             loop;
     wiced_result_t      ret = WICED_SUCCESS;
 
@@ -225,75 +227,17 @@ void application_start( )
     /* Update the display so that the IP address is shown */
     wiced_rtos_set_semaphore(&displaySemaphore);
 
-    /* Initialize the AWS connection and register the callback */
-    ret = wiced_aws_init( &aws_config , aws_callback );
-    if( ret != WICED_SUCCESS )
+    /* Create thread that will reconnect if we ever get a disconnect from the server */
+    wiced_rtos_create_thread(&awsReConnectThreadHandle, THREAD_BASE_PRIORITY+5, NULL, awsReConnectThread, THREAD_STACK_SIZE, NULL);
+
+    /* Connect to the server, setup subscriptions for all other thing's update/documents and get/accepted topics */
+    ret = awsConnect();
+    if( ret != WICED_SUCCESS)
     {
-        WPRINT_APP_INFO( ( "[Application/AWS] Failed to Initialize AWS library\n\n" ) );
+        WPRINT_APP_INFO( ( "[Application/AWS] Connect Failed\n\n" ) );
         return;
-    }
 
-    aws_handle = (wiced_aws_handle_t)wiced_aws_create_endpoint(&aws_iot_endpoint);
-    if( !aws_handle )
-    {
-        WPRINT_APP_INFO( ( "[Application/AWS] Failed to create AWS connection handle\n\n" ) );
-        return;
     }
-
-    /* Connect to AWS */
-    wiced_rtos_create_thread(&awsConnectThreadHandle, THREAD_BASE_PRIORITY+5, NULL, awsConnectThread, THREAD_STACK_SIZE, NULL);
-    wiced_rtos_set_semaphore(&connectSemaphore);
-    //GJL
-//    WPRINT_APP_INFO(("[Application/AWS] Opening connection...\n"));
-//    ret = wiced_aws_connect(aws_handle);
-//    if ( ret != WICED_SUCCESS )
-//    {
-//        WPRINT_APP_INFO(("[Application/AWS] Connect Failed\r\n"));
-//        return;
-//    }
-
-    while(is_connected == WICED_FALSE)
-    {
-        /* Wait until connection is up. This is set in the aws callback */
-        wiced_rtos_delay_milliseconds(TIMEOUT);
-        WPRINT_APP_INFO(("[Application/AWS] Waiting For Connection\r\n"));
-    }
-
-    /* Subscribe to the update/documents topic for all things using the + wildcard */
-    wiced_rtos_lock_mutex(&pubSubMutex);
-    WPRINT_APP_INFO(("[Application/AWS] Subscribing to %s...",TOPIC_SUBSCRIBE));
-    do
-    {
-        ret = wiced_aws_subscribe( aws_handle, TOPIC_SUBSCRIBE, WICED_AWS_QOS_ATMOST_ONCE);
-        sub_retries++ ;
-    } while ( ( ret != WICED_SUCCESS ) && ( sub_retries < AWS_RETRY_COUNT ) );
-    if ( ret != WICED_SUCCESS )
-    {
-        WPRINT_APP_INFO(("Subscribe Failed: Error Code %d\n",ret));
-    }
-    else
-    {
-        WPRINT_APP_INFO(("Subscribe Success\n"));
-    }
-    wiced_rtos_unlock_mutex(&pubSubMutex);
-
-    /* Subscribe to the get/accepted topic for all things using the + wildcard */
-    wiced_rtos_lock_mutex(&pubSubMutex);
-    WPRINT_APP_INFO(("[Application/AWS] Subscribing to %s...",TOPIC_GETSUBSCRIBE));
-    do
-    {
-        ret = wiced_aws_subscribe( aws_handle, TOPIC_GETSUBSCRIBE, WICED_AWS_QOS_ATMOST_ONCE);
-        sub_retries++ ;
-    } while ( ( ret != WICED_SUCCESS ) && ( sub_retries < AWS_RETRY_COUNT ) );
-    if ( ret != WICED_SUCCESS )
-    {
-        WPRINT_APP_INFO(("Subscribe Failed: Error Code %d\n",ret));
-    }
-    else
-    {
-        WPRINT_APP_INFO(("Subscribe Success\n"));
-    }
-    wiced_rtos_unlock_mutex(&pubSubMutex);
 
     /* Start the publish thread */
     /* This has to be done after the subscriptions are done so that we can get an initial state from all things */
@@ -351,6 +295,80 @@ void alert_button_isr(void* arg)
      wiced_rtos_push_to_queue(&pubQueue, pubCmd, WICED_NO_WAIT); /* Push value onto queue*/
 }
 
+wiced_result_t awsConnect(void)
+{
+    wiced_result_t  ret;
+    int sub_retries = 0; // Number of times to try re-subscribing on a failure
+
+    /* Initialize the AWS connection and register the callback */
+    ret = wiced_aws_init( &aws_config , aws_callback );
+    if( ret != WICED_SUCCESS )
+    {
+        WPRINT_APP_INFO( ( "[Application/AWS] Failed to Initialize AWS library\n\n" ) );
+        return ret;
+    }
+
+    aws_handle = (wiced_aws_handle_t)wiced_aws_create_endpoint(&aws_iot_endpoint);
+    if( !aws_handle )
+    {
+        WPRINT_APP_INFO( ( "[Application/AWS] Failed to create AWS connection handle\n\n" ) );
+        return WICED_ERROR;
+    }
+
+    /* Connect to AWS */
+    WPRINT_APP_INFO(("[Application/AWS] Opening connection...\n"));
+    ret = wiced_aws_connect(aws_handle);
+    if ( ret != WICED_SUCCESS )
+    {
+        WPRINT_APP_INFO(("[Application/AWS] Connect Failed\r\n"));
+        return ret;
+    }
+
+    while(is_connected == WICED_FALSE)
+    {
+        /* Wait until connection is up. This is set in the aws callback */
+        wiced_rtos_delay_milliseconds(TIMEOUT);
+        WPRINT_APP_INFO(("[Application/AWS] Waiting For Connection\r\n"));
+    }
+
+    /* Subscribe to the update/documents topic for all things using the + wildcard */
+    wiced_rtos_lock_mutex(&pubSubMutex);
+    WPRINT_APP_INFO(("[Application/AWS] Subscribing to %s...",TOPIC_SUBSCRIBE));
+    do
+    {
+        ret = wiced_aws_subscribe( aws_handle, TOPIC_SUBSCRIBE, WICED_AWS_QOS_ATMOST_ONCE);
+        sub_retries++ ;
+    } while ( ( ret != WICED_SUCCESS ) && ( sub_retries < AWS_RETRY_COUNT ) );
+    if ( ret != WICED_SUCCESS )
+    {
+        WPRINT_APP_INFO(("Subscribe Failed: Error Code %d\n",ret));
+    }
+    else
+    {
+        WPRINT_APP_INFO(("Subscribe Success\n"));
+    }
+    wiced_rtos_unlock_mutex(&pubSubMutex);
+
+    /* Subscribe to the get/accepted topic for all things using the + wildcard */
+    wiced_rtos_lock_mutex(&pubSubMutex);
+    WPRINT_APP_INFO(("[Application/AWS] Subscribing to %s...",TOPIC_GETSUBSCRIBE));
+    do
+    {
+        ret = wiced_aws_subscribe( aws_handle, TOPIC_GETSUBSCRIBE, WICED_AWS_QOS_ATMOST_ONCE);
+        sub_retries++ ;
+    } while ( ( ret != WICED_SUCCESS ) && ( sub_retries < AWS_RETRY_COUNT ) );
+    if ( ret != WICED_SUCCESS )
+    {
+        WPRINT_APP_INFO(("Subscribe Failed: Error Code %d\n",ret));
+    }
+    else
+    {
+        WPRINT_APP_INFO(("Subscribe Success\n"));
+    }
+    wiced_rtos_unlock_mutex(&pubSubMutex);
+
+    return WICED_SUCCESS;
+}
 
 /*************** Print Thing Info ***************/
 /* Print information for the given thing */
@@ -505,7 +523,7 @@ void displayThread(wiced_thread_arg_t arg)
         .address       = DISP_ADDRESS,
         .address_width = I2C_ADDRESS_WIDTH_7BIT,
         .flags         = 0,
-        .speed_mode    = I2C_STANDARD_SPEED_MODE,
+        .speed_mode    = I2C_HIGH_SPEED_MODE,
     };
 
     u8g_t display;
@@ -745,21 +763,28 @@ void publishThread(wiced_thread_arg_t arg)
 }
 
 
-/*************** Thread to connect to AWS whenever the semaphore is set ***************/
-void awsConnectThread(wiced_thread_arg_t arg)
+/*************** Thread to reset and re-connect to AWS whenever the semaphore is set ***************/
+void awsReConnectThread(wiced_thread_arg_t arg)
 {
     wiced_result_t ret;
 
     while(1)
     {
         wiced_rtos_get_semaphore(&connectSemaphore, WICED_NEVER_TIMEOUT);
-        WPRINT_APP_INFO(("[Application/AWS] Opening connection...\n"));
-        ret = wiced_aws_connect(aws_handle);
+        WPRINT_APP_INFO(("[Application/AWS] Reconnecting\r\n"));
+        /* Close existing connection */
+        wiced_aws_disconnect(aws_handle);
+        wiced_aws_deinit();
+        aws_handle = 0;
+
+        /* Reconnect */
+        ret = awsConnect();
         if ( ret != WICED_SUCCESS )
         {
             WPRINT_APP_INFO(("[Application/AWS] Connect Failed\r\n"));
             return;
         }
+        reconnectCount++;
     }
 }
 
@@ -768,8 +793,11 @@ void publish30sec(void* arg)
 {
 	char pubCmd[4]; /* Command pushed onto the queue to determine what to publish */
 	pubCmd[0] = WEATHER_CMD;
-	/* Must use WICED_NO_WAIT here because waiting is not allowed in a timer - if the queue is full we wont publish */
+	/* Must use WICED_NO_WAIT here because waiting is not allowed in a timer - if the queue is full we won't publish */
 	wiced_rtos_push_to_queue(&pubQueue, pubCmd, WICED_NO_WAIT); /* Push value onto queue*/
+
+	/* Print number of times we have had to reconnect to AWS */
+	WPRINT_APP_INFO(("Number of re-connects: %d\n",reconnectCount));
 }
 
 
@@ -872,8 +900,7 @@ static void aws_callback( wiced_aws_handle_t aws, wiced_aws_event_type_t event, 
             if( data->disconnection.status == WICED_SUCCESS )
             {
                 is_connected = WICED_FALSE;
-                /* Disconnect on our end and then set semaphore to reconnect to the server */
-                wiced_aws_disconnect(aws_handle);
+                /* Set semaphore to reconnect to the server */
                 wiced_rtos_set_semaphore(&connectSemaphore);
             }
             break;
