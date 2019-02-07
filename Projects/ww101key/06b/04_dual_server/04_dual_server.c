@@ -136,7 +136,7 @@ void processClientCommand(uint8_t *rbuffer, int dataReadCount, char *returnMessa
 {
     if(dataReadCount > 12 || dataReadCount == 0) // 0 or too many characters reject
     {
-        sprintf(returnMessage, "X illegal message length");
+        sprintf(returnMessage, "X illegal message length (%d)",dataReadCount);
         return;
     }
 
@@ -145,21 +145,30 @@ void processClientCommand(uint8_t *rbuffer, int dataReadCount, char *returnMessa
 
     // You can test using the unix command "nc" ...but this appends a "0xA" to the end
     // echo "W1234567890" | nc 198.51.100.3 27708
+    // Lengths other than 11 (for a W) or 7 (for a R) are illegal
     // 12 or 8 may mean that there is a 0x0A a the end of the string (if you used nc)
     if(dataReadCount == 12 || dataReadCount == 8)
     {
-        if(rbuffer[dataReadCount-1] != 0x0A)
+        if(rbuffer[dataReadCount-1] == 0x0A)
         {
-            sprintf(returnMessage, "X illegal message length");
+            dataReadCount -= 1; // Ignore the 0x0A at the end of the string
+        }
+        else
+        {
+            sprintf(returnMessage, "X illegal message length (Length: %d)", dataReadCount);
             return;
         }
-        dataReadCount -= 1; // Ignore the 0x0A at the end of the string
+    }
+    else if(dataReadCount != 11 && dataReadCount != 7)
+    {
+        sprintf(returnMessage, "X illegal message length (Length: %d)", dataReadCount);
+        return;
     }
 
     // Check that it is the correct length and has a legal command
     if(!((dataReadCount  == 7 && rbuffer[0] == 'R') || (dataReadCount == 11 && rbuffer[0] == 'W'))) // if it isnt a R/W then it is illegal
     {
-        sprintf(returnMessage,"X illegal command");
+        sprintf(returnMessage,"X illegal command/length (Command: %c), (Length: %d)", rbuffer[0], dataReadCount);
         return;
     }
 
@@ -167,7 +176,7 @@ void processClientCommand(uint8_t *rbuffer, int dataReadCount, char *returnMessa
     {
         if(!isxdigit(rbuffer[i]))
         {
-            sprintf(returnMessage,"X illegal character");
+            sprintf(returnMessage,"X illegal character (Character: %c)", rbuffer[i]);
             return;
         }
     }
@@ -281,6 +290,8 @@ static void tcp_server_thread_main(wiced_thread_arg_t arg)
             WPRINT_APP_INFO(( "Unable to initialize TLS identity. Error = [%d]\n", result ));
             return;
         }
+
+        wiced_dct_read_unlock(dct_security, WICED_FALSE);
 
     }
     else

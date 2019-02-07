@@ -7,6 +7,23 @@
 
 static wiced_thread_t ledThreadHandle;
 
+/* This function will print out the max amount of stack a thread has used */
+/* This is ThreadX specific code so it will only work for ThreadX RTOS */
+uint32_t maxStackUsage(TX_THREAD *thread)
+{
+    uint8_t *end =   thread->tx_thread_stack_end;
+    uint8_t *start = thread->tx_thread_stack_start;
+    while(start < end)
+    {
+        if(*start != 0xEF)
+        {
+            return end-start;
+        }
+        start++;
+    }
+    return 0;
+}
+
 /* Define the thread function that will blink the LED on/off every 500ms */
 void ledThread(wiced_thread_arg_t arg)
 {
@@ -28,5 +45,10 @@ void application_start( )
 	/* Initialize and start a new thread */
     wiced_rtos_create_thread(&ledThreadHandle, THREAD_PRIORITY, "ledThread", ledThread, THREAD_STACK_SIZE, NULL);
 
-    /* No while(1) here since everything is done by the new thread. */
+    /* Check to see the thread's max stack usage and print it every 5 seconds */
+    while(1)
+    {
+        WPRINT_APP_INFO(("Max Stack: %d\n",(int) maxStackUsage((TX_THREAD*) &ledThreadHandle)));
+        wiced_rtos_delay_milliseconds(5000);
+    }
 }

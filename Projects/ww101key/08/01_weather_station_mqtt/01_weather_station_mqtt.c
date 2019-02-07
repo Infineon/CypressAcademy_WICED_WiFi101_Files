@@ -45,7 +45,7 @@
 #define TIMER_TIME (30000)
 
 /* Broker info */
-#define MQTT_BROKER_ADDRESS                 "amk6m51qrxr2u.iot.us-east-1.amazonaws.com"
+#define MQTT_BROKER_ADDRESS                 "amk6m51qrxr2u-ats.iot.us-east-1.amazonaws.com"
 #define THING_NAME_BASE                     "ww101_"
 #define TOPIC_HEAD							"$aws/things/ww101_"
 #define TOPIC_SUBSCRIBE                     "$aws/things/+/shadow/update/documents"

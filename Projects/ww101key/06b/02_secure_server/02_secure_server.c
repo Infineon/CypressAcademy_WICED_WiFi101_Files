@@ -255,7 +255,6 @@ static void tcp_server_secure_thread_main(wiced_thread_arg_t arg)
         return;
     }
 
-
     /* Setup TLS identity */
     result = wiced_tls_init_identity( &tls_identity, dct_security->private_key, strlen( dct_security->private_key ), (uint8_t*) dct_security->certificate, strlen( dct_security->certificate ) );
     if ( result != WICED_SUCCESS )
@@ -263,6 +262,8 @@ static void tcp_server_secure_thread_main(wiced_thread_arg_t arg)
         WPRINT_APP_INFO(( "Unable to initialize TLS identity. Error = [%d]\n", result ));
         return;
     }
+
+    wiced_dct_read_unlock(dct_security, WICED_FALSE);
 
     while (1 )
     {

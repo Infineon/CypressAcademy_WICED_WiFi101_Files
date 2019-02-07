@@ -85,6 +85,8 @@ void sendDataSecure(int data)
          return;
      }
 
+     wiced_dct_read_unlock(dct_security, WICED_FALSE);
+
      result = wiced_tls_init_context( &tls_context, NULL, NULL );
     if ( result != WICED_SUCCESS )
     {

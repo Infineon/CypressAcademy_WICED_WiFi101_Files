@@ -29,7 +29,7 @@ extern "C"
 #define CONFIG_AP_PASSPHRASE "12345678"
 
 /* This is the soft AP available for normal operation (if used)*/
-#define SOFT_AP_SSID         "WW101WPA"
+#define SOFT_AP_SSID         "CYFI_IOT_EXT"
 #define SOFT_AP_PASSPHRASE   "cypresswicedwifi101"
 #define SOFT_AP_SECURITY     WICED_SECURITY_WPA2_AES_PSK
 

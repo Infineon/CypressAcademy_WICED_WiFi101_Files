@@ -146,11 +146,6 @@ void buttonThreadMain()
     wiced_rtos_init_semaphore(&button_semaphore); // the semaphore unlocks when the user presses the button
     wiced_gpio_input_irq_enable(WICED_BUTTON1, IRQ_TRIGGER_FALLING_EDGE, button_isr, NULL); // call the ISR when the button is pressed
 
-
-
-
-
-
     WPRINT_APP_INFO(("Starting Main Loop\n"));
 
     // Main Loop: wait for semaphore.. then send the data
@@ -191,6 +186,8 @@ void application_start(void)
          WPRINT_APP_INFO(( "Unable to initialize Root Certificate = [%d]\n", result ));
          return;
      }
+
+     wiced_dct_read_unlock(dct_security, WICED_FALSE);
 
     wiced_rtos_create_thread(&buttonThread, WICED_DEFAULT_LIBRARY_PRIORITY, "Button Thread", buttonThreadMain, TCP_CLIENT_STACK_SIZE, 0);
     char receiveChar;
